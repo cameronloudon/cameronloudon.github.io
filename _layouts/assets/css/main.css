@@ -1,0 +1,590 @@
+/* ============================================
+   cameronloudon.com
+   Three-mode theme system
+   Light | Dark | Fallout Terminal
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&family=Share+Tech+Mono&display=swap');
+
+/* ============================================
+   CSS VARIABLES — LIGHT MODE (default)
+   ============================================ */
+:root {
+  --bg:           #f9f7f4;
+  --bg-secondary: #f0ede8;
+  --text:         #1a1a1a;
+  --text-muted:   #6b6560;
+  --accent:       #1a1a1a;
+  --accent-hover: #3d3d3d;
+  --border:       #e0dbd4;
+  --tag-bg:       #e8e4de;
+  --tag-text:     #4a4540;
+  --link:         #1a1a1a;
+  --link-hover:   #555;
+
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-body:    'DM Sans', system-ui, sans-serif;
+  --font-mono:    'Share Tech Mono', 'Courier New', monospace;
+
+  --toggle-bg:    #e0dbd4;
+  --radius:       4px;
+  --max-width:    720px;
+  --transition:   0.2s ease;
+}
+
+/* ============================================
+   DARK MODE
+   ============================================ */
+[data-theme="dark"] {
+  --bg:           #111111;
+  --bg-secondary: #1c1c1c;
+  --text:         #e8e4de;
+  --text-muted:   #888074;
+  --accent:       #e8e4de;
+  --accent-hover: #ffffff;
+  --border:       #2a2a2a;
+  --tag-bg:       #222222;
+  --tag-text:     #a09890;
+  --link:         #e8e4de;
+  --link-hover:   #ffffff;
+  --toggle-bg:    #2a2a2a;
+}
+
+/* ============================================
+   FALLOUT TERMINAL MODE
+   ============================================ */
+[data-theme="terminal"] {
+  --bg:           #0a0f0a;
+  --bg-secondary: #0d140d;
+  --text:         #00ff41;
+  --text-muted:   #00aa2c;
+  --accent:       #00ff41;
+  --accent-hover: #33ff66;
+  --border:       #003d10;
+  --tag-bg:       #001a06;
+  --tag-text:     #00cc33;
+  --link:         #00ff41;
+  --link-hover:   #33ff66;
+  --toggle-bg:    #001a06;
+
+  --font-display: 'Share Tech Mono', 'Courier New', monospace;
+  --font-body:    'Share Tech Mono', 'Courier New', monospace;
+}
+
+/* Terminal scanline effect */
+[data-theme="terminal"]::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 255, 65, 0.015) 2px,
+    rgba(0, 255, 65, 0.015) 4px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Terminal flicker animation */
+[data-theme="terminal"] body {
+  animation: flicker 8s infinite;
+}
+
+@keyframes flicker {
+  0%   { opacity: 1; }
+  92%  { opacity: 1; }
+  93%  { opacity: 0.97; }
+  94%  { opacity: 1; }
+  96%  { opacity: 0.98; }
+  100% { opacity: 1; }
+}
+
+/* Terminal cursor blink on headings */
+[data-theme="terminal"] h1::after,
+[data-theme="terminal"] h2::after {
+  content: "_";
+  animation: blink 1.2s step-end infinite;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* ============================================
+   RESET & BASE
+   ============================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-weight: 300;
+  line-height: 1.7;
+  transition: background-color var(--transition), color var(--transition);
+  min-height: 100vh;
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+h2 { font-size: clamp(1.5rem, 3vw, 2.25rem); }
+h3 { font-size: 1.35rem; }
+h4 { font-size: 1.1rem; }
+
+p {
+  margin-bottom: 1.25rem;
+  color: var(--text);
+}
+
+a {
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--border);
+  transition: color var(--transition), text-decoration-color var(--transition);
+}
+
+a:hover {
+  color: var(--link-hover);
+  text-decoration-color: var(--link-hover);
+}
+
+code, pre {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+}
+
+pre {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+
+code {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 0.1em 0.35em;
+}
+
+blockquote {
+  border-left: 2px solid var(--accent);
+  padding-left: 1.25rem;
+  margin: 1.5rem 0;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2.5rem 0;
+}
+
+/* ============================================
+   LAYOUT
+   ============================================ */
+.site-wrapper {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ============================================
+   HEADER & NAV
+   ============================================ */
+.site-header {
+  border-bottom: 1px solid var(--border);
+  padding: 1.25rem 0;
+  margin-bottom: 3rem;
+}
+
+.site-header .site-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.site-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 400;
+  text-decoration: none;
+  color: var(--text);
+  letter-spacing: 0.02em;
+}
+
+.site-title:hover {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  flex-wrap: wrap;
+}
+
+.site-nav a {
+  font-size: 0.875rem;
+  font-weight: 400;
+  text-decoration: none;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: color var(--transition);
+}
+
+.site-nav a:hover {
+  color: var(--text);
+}
+
+/* ============================================
+   THEME TOGGLE
+   ============================================ */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: var(--toggle-bg);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: 0.25rem 0.35rem;
+}
+
+.theme-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.3rem 0.5rem;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-family: var(--font-body);
+  color: var(--text-muted);
+  transition: background var(--transition), color var(--transition);
+  white-space: nowrap;
+}
+
+.theme-btn:hover {
+  color: var(--text);
+}
+
+.theme-btn.active {
+  background: var(--bg);
+  color: var(--text);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+}
+
+[data-theme="terminal"] .theme-btn.active {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+/* Terminal mode label */
+.theme-btn[data-mode="terminal"] {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+}
+
+/* ============================================
+   MAIN CONTENT
+   ============================================ */
+.site-main {
+  padding-bottom: 4rem;
+}
+
+/* ============================================
+   HOME PAGE
+   ============================================ */
+.home-hero {
+  padding: 3rem 0 4rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 3rem;
+}
+
+.home-hero .eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.home-hero h1 {
+  margin-bottom: 1.5rem;
+}
+
+.home-hero .intro {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  max-width: 560px;
+  line-height: 1.8;
+}
+
+.home-sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.home-section-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  text-decoration: none;
+  display: block;
+  transition: border-color var(--transition), background var(--transition);
+}
+
+.home-section-card:hover {
+  border-color: var(--text-muted);
+  background: var(--bg-secondary);
+  text-decoration: none;
+}
+
+.home-section-card .card-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.home-section-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+
+.home-section-card p {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ============================================
+   ENTRIES (Ideas, Signals)
+   ============================================ */
+.entry-list {
+  list-style: none;
+}
+
+.entry-list li {
+  border-bottom: 1px solid var(--border);
+  padding: 1.5rem 0;
+}
+
+.entry-list li:first-child {
+  border-top: 1px solid var(--border);
+}
+
+.entry-meta {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 0.35rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.entry-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.entry-title a {
+  text-decoration: none;
+  color: var(--text);
+}
+
+.entry-title a:hover {
+  color: var(--text-muted);
+}
+
+.entry-excerpt {
+  font-size: 0.925rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ============================================
+   TAGS
+   ============================================ */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+}
+
+.tag {
+  background: var(--tag-bg);
+  color: var(--tag-text);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 100px;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+}
+
+.tag:hover {
+  color: var(--text);
+  text-decoration: none;
+}
+
+/* ============================================
+   COLLABORATION NOTE
+   ============================================ */
+.collab-note {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  margin-top: 3rem;
+  background: var(--bg-secondary);
+}
+
+.collab-note-header {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.collab-note-body {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+.collab-note-body p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 2rem 0;
+  margin-top: 4rem;
+}
+
+.site-footer .site-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.site-footer p {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ============================================
+   NOW PAGE
+   ============================================ */
+.now-updated {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ============================================
+   TERMINAL MODE EXTRAS
+   ============================================ */
+[data-theme="terminal"] .home-section-card {
+  border-color: var(--border);
+}
+
+[data-theme="terminal"] .home-section-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 12px rgba(0, 255, 65, 0.15);
+}
+
+[data-theme="terminal"] .collab-note {
+  border-color: var(--accent);
+  box-shadow: 0 0 8px rgba(0, 255, 65, 0.1);
+}
+
+[data-theme="terminal"] a {
+  text-decoration-color: var(--accent);
+}
+
+[data-theme="terminal"] .tag {
+  border: 1px solid var(--border);
+  border-radius: 0;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 600px) {
+  .site-header .site-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .site-nav {
+    gap: 1rem;
+  }
+
+  .home-sections {
+    grid-template-columns: 1fr;
+  }
+}
