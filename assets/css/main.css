@@ -1,7 +1,7 @@
 /* ============================================
    cameronloudon.com
-   Three-mode theme system
-   Light | Dark | Fallout Terminal
+   Four-mode theme system
+   Light | Dark | Fallout Terminal | Folder Tree
    ============================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&family=Share+Tech+Mono&display=swap');
@@ -51,7 +51,7 @@
 }
 
 /* ============================================
-   FALLOUT TERMINAL MODE
+   FALLOUT TERMINAL MODE — Green Phosphor
    ============================================ */
 [data-theme="terminal"] {
   --bg:           #0a0f0a;
@@ -71,14 +71,11 @@
   --font-body:    'Share Tech Mono', 'Courier New', monospace;
 }
 
-/* Terminal scanline effect */
 [data-theme="terminal"]::before {
   content: "";
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   background: repeating-linear-gradient(
     0deg,
     transparent,
@@ -90,7 +87,6 @@
   z-index: 9999;
 }
 
-/* Terminal flicker animation */
 [data-theme="terminal"] body {
   animation: flicker 8s infinite;
 }
@@ -104,7 +100,6 @@
   100% { opacity: 1; }
 }
 
-/* Terminal cursor blink on headings */
 [data-theme="terminal"] h1::after,
 [data-theme="terminal"] h2::after {
   content: "_";
@@ -115,6 +110,156 @@
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50%       { opacity: 0; }
+}
+
+/* ============================================
+   FOLDER TREE MODE — Amber Phosphor
+   ============================================ */
+[data-theme="tree"] {
+  --bg:           #0f0c07;
+  --bg-secondary: #161008;
+  --text:         #ffb000;
+  --text-muted:   #a87000;
+  --accent:       #ffb000;
+  --accent-hover: #ffc840;
+  --border:       #3d2800;
+  --tag-bg:       #1f1400;
+  --tag-text:     #cc8c00;
+  --link:         #ffb000;
+  --link-hover:   #ffc840;
+  --toggle-bg:    #1f1400;
+
+  --font-display: 'Share Tech Mono', 'Courier New', monospace;
+  --font-body:    'Share Tech Mono', 'Courier New', monospace;
+}
+
+[data-theme="tree"]::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(255, 176, 0, 0.012) 2px,
+    rgba(255, 176, 0, 0.012) 4px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+
+[data-theme="tree"] body {
+  animation: amber-flicker 12s infinite;
+}
+
+@keyframes amber-flicker {
+  0%   { opacity: 1; }
+  88%  { opacity: 1; }
+  89%  { opacity: 0.96; }
+  90%  { opacity: 1; }
+  95%  { opacity: 0.98; }
+  100% { opacity: 1; }
+}
+
+/* Tree structure on nav */
+[data-theme="tree"] .site-nav a {
+  text-transform: lowercase;
+  letter-spacing: 0;
+}
+
+[data-theme="tree"] .site-nav a::before {
+  content: "├── ";
+  color: var(--text-muted);
+}
+
+[data-theme="tree"] .site-nav a:last-of-type::before {
+  content: "└── ";
+}
+
+/* Site title shows as root path */
+[data-theme="tree"] .site-title::before {
+  content: "~/";
+  color: var(--text-muted);
+  margin-right: 2px;
+}
+
+/* Tree cursor prefix on headings */
+[data-theme="tree"] h1::before {
+  content: "> ";
+  color: var(--text-muted);
+}
+
+[data-theme="tree"] h2::before {
+  content: "# ";
+  color: var(--text-muted);
+}
+
+/* Homepage eyebrow gets shell prompt */
+[data-theme="tree"] .home-hero .eyebrow::before {
+  content: "$ ";
+}
+
+/* Cards become tree entries */
+[data-theme="tree"] .home-section-card {
+  border-radius: 0;
+  border-left: 2px solid var(--border);
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+  padding-left: 1.25rem;
+}
+
+[data-theme="tree"] .home-section-card:hover {
+  border-left-color: var(--accent);
+  box-shadow: 0 0 10px rgba(255, 176, 0, 0.12);
+  background: var(--bg-secondary);
+}
+
+[data-theme="tree"] .home-section-card .card-label {
+  text-transform: lowercase;
+  letter-spacing: 0;
+}
+
+[data-theme="tree"] .home-section-card .card-label::before {
+  content: "├── ";
+  color: var(--text-muted);
+}
+
+/* Entry list as tree */
+[data-theme="tree"] .entry-list li::before {
+  content: "├── ";
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+[data-theme="tree"] .entry-list li:last-child::before {
+  content: "└── ";
+}
+
+/* Tags — square, file-like */
+[data-theme="tree"] .tag {
+  border-radius: 0;
+  border: 1px solid var(--border);
+}
+
+[data-theme="tree"] .tag::before {
+  content: "#";
+  margin-right: 2px;
+  opacity: 0.6;
+}
+
+/* Collab note */
+[data-theme="tree"] .collab-note {
+  border-color: var(--accent);
+  box-shadow: 0 0 8px rgba(255, 176, 0, 0.1);
+  border-radius: 0;
+}
+
+/* Footer tree lines */
+[data-theme="tree"] .site-footer p::before {
+  content: "└── ";
+  color: var(--text-muted);
 }
 
 /* ============================================
@@ -307,13 +452,14 @@ hr {
   box-shadow: 0 1px 3px rgba(0,0,0,0.15);
 }
 
-[data-theme="terminal"] .theme-btn.active {
+[data-theme="terminal"] .theme-btn.active,
+[data-theme="tree"] .theme-btn.active {
   background: var(--accent);
   color: var(--bg);
 }
 
-/* Terminal mode label */
-.theme-btn[data-mode="terminal"] {
+.theme-btn[data-mode="terminal"],
+.theme-btn[data-mode="tree"] {
   font-family: var(--font-mono);
   font-size: 0.7rem;
   letter-spacing: 0.05em;
@@ -548,10 +694,6 @@ hr {
 /* ============================================
    TERMINAL MODE EXTRAS
    ============================================ */
-[data-theme="terminal"] .home-section-card {
-  border-color: var(--border);
-}
-
 [data-theme="terminal"] .home-section-card:hover {
   border-color: var(--accent);
   box-shadow: 0 0 12px rgba(0, 255, 65, 0.15);
