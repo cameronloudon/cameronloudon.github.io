@@ -1,0 +1,52 @@
+title: Cameron Loudon
+description: Personal brand, ideas repository and ground zero for Radical Collaboration Transparency
+url: "https://cameronloudon.github.io"
+baseurl: ""
+
+author:
+  name: Cameron Loudon
+  email: ""
+
+theme: minima
+
+plugins:
+  - jekyll-feed
+
+# Collections
+collections:
+  ideas:
+    output: true
+    permalink: /ideas/:name/
+  signals:
+    output: true
+    permalink: /signals/:name/
+  skills:
+    output: true
+    permalink: /about/skills/:name/
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+      type: "ideas"
+    values:
+      layout: "entry"
+  - scope:
+      path: ""
+      type: "signals"
+    values:
+      layout: "entry"
+  - scope:
+      path: ""
+      type: "skills"
+    values:
+      layout: "skill"
+
+markdown: kramdown
+highlighter: rouge
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
