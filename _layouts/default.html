@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} — {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+
+  <!-- Fonts & CSS -->
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+
+  <!-- Theme script runs immediately to prevent flash -->
+  <script src="{{ '/assets/js/theme.js' | relative_url }}"></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-wrapper">
+
+      <a href="{{ '/' | relative_url }}" class="site-title">Cameron Loudon</a>
+
+      <nav class="site-nav">
+        <a href="{{ '/about' | relative_url }}">About</a>
+        <a href="{{ '/ideas' | relative_url }}">Ideas</a>
+        <a href="{{ '/signals' | relative_url }}">Signals</a>
+        <a href="{{ '/now' | relative_url }}">Now</a>
+        <a href="{{ '/approach' | relative_url }}">Approach</a>
+        <a href="{{ '/contact' | relative_url }}">Contact</a>
+
+        <!-- Theme Toggle -->
+        <div class="theme-toggle" role="group" aria-label="Choose colour theme">
+          <button class="theme-btn active" data-mode="light" title="Light mode">Light</button>
+          <button class="theme-btn" data-mode="dark" title="Dark mode">Dark</button>
+          <button class="theme-btn" data-mode="terminal" title="Fallout Terminal mode">&gt;_</button>
+        </div>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="site-main">
+    <div class="site-wrapper">
+      {{ content }}
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-wrapper">
+      <p>© {{ site.time | date: '%Y' }} Cameron Loudon</p>
+      <p>Built with radical transparency. <a href="{{ '/approach' | relative_url }}">Read the approach →</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
