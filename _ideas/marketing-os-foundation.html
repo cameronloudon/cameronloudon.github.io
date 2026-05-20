@@ -1,0 +1,2667 @@
+---
+layout: default
+title: "Marketing OS — Foundation Layer"
+permalink: /ideas/marketing-os-foundation/
+description: Six foundational skills that define what this marketing function is, who it serves, how it competes, what it promises, how it positions itself, and what its brand stands for.
+---
+
+<style>
+/* ── THEME-AWARE VARIABLES ──
+   Map site CSS variables to the Marketing OS document's internal variables
+   so all four visual modes (Light/Dark/Terminal/Tree) work correctly
+*/
+.mos-doc {
+  --bg: var(--bg);
+  --surface: var(--bg-secondary);
+  --surface-2: var(--bg-secondary);
+  --border: var(--border);
+  --border-light: var(--border);
+  --text: var(--text);
+  --text-muted: var(--text-muted);
+  --text-faint: var(--text-muted);
+  --gold: var(--accent);
+  --gold-dim: var(--text-muted);
+  --gold-bg: rgba(128,128,128,0.06);
+  --tbd: #4a7c6b;
+  --tbd-bg: rgba(74,124,107,0.08);
+  --tbd-border: rgba(74,124,107,0.25);
+  --red: #c85a3a;
+}
+
+/* Back navigation */
+.mos-back {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 0;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+  width: 100%;
+}
+.mos-back:hover { color: var(--text); text-decoration: none; }
+
+/* Full width breakout from site-wrapper */
+.mos-doc {
+  margin: 0 -1.5rem;
+  background: var(--bg);
+}
+
+/* ── FONTS ── */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+/* ── NOISE OVERLAY ── */
+.mos-doc::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.2;
+}
+
+/* ── COVER ── */
+.mos-doc .cover {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 80px 80px 72px;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+}
+
+.mos-doc .cover-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 60px 60px;
+  opacity: 0.3;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black, transparent);
+}
+
+.mos-doc .cover-glow {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(128,128,128,0.06) 0%, transparent 70%);
+  top: -100px;
+  right: -100px;
+  pointer-events: none;
+}
+
+.mos-doc .cover-eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 32px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.mos-doc .cover-eyebrow::before {
+  content: '';
+  width: 40px;
+  height: 1px;
+  background: var(--accent);
+}
+
+.mos-doc .cover h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 5vw, 72px);
+  font-weight: 400;
+  line-height: 1.05;
+  position: relative;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+.mos-doc .cover h1 em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.mos-doc .cover-sub {
+  font-size: 16px;
+  color: var(--text-muted);
+  max-width: 520px;
+  position: relative;
+  margin-top: 24px;
+  margin-bottom: 40px;
+  line-height: 1.75;
+}
+
+.mos-doc .cover-stats {
+  display: flex;
+  gap: 0;
+  position: relative;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  max-width: 600px;
+}
+
+.mos-doc .cover-stat {
+  flex: 1;
+  padding: 20px 24px;
+  border-right: 1px solid var(--border);
+}
+.mos-doc .cover-stat:last-child { border-right: none; }
+
+.mos-doc .stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.mos-doc .stat-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* ── NAV ── */
+.mos-doc .nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  padding: 0 80px;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  overflow-x: auto;
+  opacity: 0.96;
+}
+
+.mos-doc .nav-item {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 16px 20px;
+  border-right: 1px solid var(--border);
+  white-space: nowrap;
+  text-decoration: none;
+  transition: color 0.2s;
+  cursor: pointer;
+}
+.mos-doc .nav-item:first-child { border-left: 1px solid var(--border); }
+.mos-doc .nav-item:hover { color: var(--accent); }
+
+/* ── MAIN LAYOUT ── */
+.mos-doc .main { position: relative; z-index: 1; }
+
+/* ── SKILL SECTION ── */
+.mos-doc .skill-section {
+  border-bottom: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  min-height: 60vh;
+}
+
+.mos-doc .skill-sidebar {
+  border-right: 1px solid var(--border);
+  padding: 64px 40px;
+  position: sticky;
+  top: 49px;
+  height: calc(100vh - 49px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.mos-doc .skill-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 120px;
+  color: var(--bg-secondary);
+  line-height: 1;
+  margin-bottom: 24px;
+  letter-spacing: -4px;
+}
+
+.mos-doc .skill-folder {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+.mos-doc .skill-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+
+.mos-doc .skill-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.65;
+  flex: 1;
+}
+
+.mos-doc .skill-toc {
+  margin-top: 32px;
+  border-top: 1px solid var(--border);
+  padding-top: 20px;
+}
+
+.mos-doc .skill-toc-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.mos-doc .skill-toc-item {
+  font-size: 12px;
+  color: var(--text-muted);
+  padding: 4px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  line-height: 1.4;
+}
+.mos-doc .skill-toc-item::before {
+  content: '─';
+  color: var(--border);
+  flex-shrink: 0;
+}
+
+/* ── SKILL CONTENT ── */
+.mos-doc .skill-content {
+  padding: 64px 72px;
+}
+
+/* ── BLOCKS ── */
+.mos-doc .block {
+  margin-bottom: 48px;
+}
+
+.mos-doc .block-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.mos-doc .block-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.mos-doc .block-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 400;
+  margin-bottom: 16px;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.mos-doc .block-body {
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* ── TBD FIELDS ── */
+.mos-doc .tbd-field {
+  background: var(--tbd-bg);
+  border: 1px solid var(--tbd-border);
+  border-left: 3px solid var(--tbd);
+  border-radius: 6px;
+  padding: 16px 20px;
+  margin: 16px 0;
+}
+
+.mos-doc .tbd-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--tbd);
+  margin-bottom: 8px;
+}
+
+.mos-doc .tbd-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+/* ── QUESTION LISTS ── */
+.mos-doc .question-list {
+  list-style: none;
+  margin: 16px 0;
+}
+
+.mos-doc .question-list li {
+  font-size: 14px;
+  color: var(--text-muted);
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  gap: 14px;
+  line-height: 1.55;
+}
+.mos-doc .question-list li:last-child { border-bottom: none; }
+
+.mos-doc .q-mark {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* ── DEFINITION LIST ── */
+.mos-doc .def-list {
+  display: grid;
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.mos-doc .def-item {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 16px 20px;
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.mos-doc .def-term {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--text);
+  font-weight: 500;
+  padding-top: 1px;
+}
+
+.mos-doc .def-body {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ── NOTE BLOCKS ── */
+.mos-doc .note-block {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 6px;
+  padding: 16px 20px;
+  margin: 16px 0;
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+.mos-doc .note-block strong {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+/* ── AI COLLABORATOR BOX ── */
+.mos-doc .ai-box {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 28px 32px;
+  margin-top: 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+.mos-doc .ai-box::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+}
+
+.mos-doc .ai-box-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mos-doc .ai-box-label::before {
+  content: '◆';
+  font-size: 8px;
+}
+
+.mos-doc .ai-box-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+
+.mos-doc .ai-checklist {
+  list-style: none;
+  display: grid;
+  gap: 8px;
+}
+
+.mos-doc .ai-checklist li {
+  font-size: 13px;
+  color: var(--text-muted);
+  display: flex;
+  gap: 12px;
+  line-height: 1.55;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+.mos-doc .ai-checklist li:last-child { border-bottom: none; }
+
+.mos-doc .ai-check {
+  color: var(--accent);
+  flex-shrink: 0;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  margin-top: 1px;
+}
+
+.mos-doc .ai-flag {
+  background: rgba(200,90,58,0.08);
+  border: 1px solid rgba(200,90,58,0.2);
+  border-radius: 4px;
+  padding: 12px 16px;
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.mos-doc .ai-flag strong { color: #c85a3a; font-weight: 500; }
+
+/* ── SEGMENT CARDS ── */
+.mos-doc .segment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+  margin: 16px 0;
+}
+
+.mos-doc .segment-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.mos-doc .segment-name {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.mos-doc .segment-body {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+/* ── FUNNEL VISUAL ── */
+.mos-doc .funnel-wrap {
+  margin: 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.mos-doc .funnel-stage {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 20px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.mos-doc .funnel-stage.reentry {
+  border-left: 3px solid var(--accent);
+  margin-left: 24px;
+}
+
+.mos-doc .funnel-stage.handoff {
+  border-left: 3px solid var(--tbd);
+}
+
+.mos-doc .funnel-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--border);
+  flex-shrink: 0;
+}
+.mos-doc .funnel-stage.reentry .funnel-dot { background: var(--accent); }
+.mos-doc .funnel-stage.handoff .funnel-dot { background: var(--tbd); }
+
+.mos-doc .funnel-name {
+  font-size: 14px;
+  color: var(--text);
+  font-weight: 500;
+  flex: 1;
+}
+
+.mos-doc .funnel-tag {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+/* ── POSITIONING TEMPLATE ── */
+.mos-doc .pos-template {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 28px 32px;
+  margin: 16px 0;
+  font-size: 15px;
+  line-height: 2;
+  color: var(--text-muted);
+}
+
+.mos-doc .pos-slot {
+  display: inline-block;
+  border-bottom: 1px dashed var(--text-muted);
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 0 4px;
+  min-width: 160px;
+}
+
+/* ── BRAND PILLARS ── */
+.mos-doc .pillar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.mos-doc .pillar-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 20px;
+}
+
+.mos-doc .pillar-n {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  color: var(--border);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.mos-doc .pillar-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.mos-doc .pillar-body {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ── MEASUREMENT TABLE ── */
+.mos-doc .m-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 13px;
+}
+
+.mos-doc .m-table th {
+  background: var(--bg-secondary);
+  padding: 10px 14px;
+  text-align: left;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+  font-weight: 400;
+}
+
+.mos-doc .m-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-muted);
+  vertical-align: top;
+  line-height: 1.55;
+}
+
+.mos-doc .m-table tr:last-child td { border-bottom: none; }
+.mos-doc .m-table td:first-child { color: var(--text); font-weight: 500; }
+
+/* ── INTEGRITY LIST ── */
+.mos-doc .integrity-list {
+  list-style: none;
+  display: grid;
+  gap: 8px;
+  margin: 16px 0;
+}
+
+.mos-doc .integrity-list li {
+  display: flex;
+  gap: 12px;
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.55;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  align-items: flex-start;
+}
+.mos-doc .integrity-list li:last-child { border-bottom: none; }
+
+.mos-doc .integrity-mark {
+  color: #c85a3a;
+  flex-shrink: 0;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  margin-top: 1px;
+}
+
+/* ── FOLDER STRUCTURE ── */
+.mos-doc .folder-tree {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 28px 32px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 2;
+  margin: 24px 0;
+}
+
+.mos-doc .folder-tree .dir { color: var(--accent); }
+.mos-doc .folder-tree .active { color: var(--text); font-weight: 500; }
+.mos-doc .folder-tree .dim { color: var(--text-muted); opacity: 0.6; }
+
+/* ── CLOSING SECTION ── */
+.mos-doc .closing {
+  padding: 80px;
+  border-bottom: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.mos-doc .closing-head {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  color: var(--text);
+}
+
+.mos-doc .closing-head em { color: var(--accent); font-style: italic; }
+
+.mos-doc .closing-body {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+.mos-doc .next-steps {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+}
+
+.mos-doc .next-step {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 16px 20px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.mos-doc .next-n {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: var(--accent);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.mos-doc .next-text {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.mos-doc .next-text strong { color: var(--text); font-weight: 500; display: block; margin-bottom: 2px; }
+
+/* ── FOOTER ── */
+.mos-doc .footer {
+  padding: 32px 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--border);
+}
+
+.mos-doc .footer-left, .mos-doc .footer-right {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.mos-doc .cover > * {
+  animation: fadeUp 0.8s ease forwards;
+  opacity: 0;
+}
+.mos-doc .cover-eyebrow { animation-delay: 0.1s; }
+.mos-doc .cover h1 { animation-delay: 0.25s; }
+.mos-doc .cover-sub { animation-delay: 0.4s; }
+.mos-doc .cover-stats { animation-delay: 0.55s; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .mos-doc .cover { padding: 48px 32px 56px; }
+  .mos-doc .nav { padding: 0 32px; }
+  .mos-doc .skill-section { grid-template-columns: 1fr; }
+  .mos-doc .skill-sidebar { position: relative; height: auto; top: 0; padding: 40px 32px; border-right: none; border-bottom: 1px solid var(--border); }
+  .mos-doc .skill-number { font-size: 72px; }
+  .mos-doc .skill-content { padding: 40px 32px; }
+  .mos-doc .closing { grid-template-columns: 1fr; gap: 40px; padding: 48px 32px; }
+  .mos-doc .footer { padding: 24px 32px; flex-direction: column; gap: 8px; text-align: center; }
+  .mos-doc .def-item { grid-template-columns: 1fr; }
+}
+</style>
+
+<a href="/ideas/marketing-os/" class="mos-back">← Back to Strategic Marketing Operating System</a>
+
+<div class="mos-doc">
+
+ayout: default
+title: "Marketing OS — Foundation Layer"
+description: Six foundational skills that define what this marketing function is, who it serves, how it competes, what it promises, how it positions itself, and what its brand stands for.
+permalink: /ideas/marketing-os-foundation/
+---
+
+<style>
+/* ── THEME BRIDGE ──
+   Map site CSS variables into this document's variable names
+   so all four visual modes work correctly
+*/
+.mos-wrapper {
+  --bg: var(--bg);
+  --surface: var(--bg-secondary);
+  --surface-2: var(--bg-secondary);
+  --border: var(--border);
+  --border-light: var(--border);
+  --text: var(--text);
+  --text-muted: var(--text-muted);
+  --text-faint: var(--text-muted);
+  --gold: var(--accent);
+  --gold-dim: var(--text-muted);
+  --gold-bg: rgba(128,128,128,0.06);
+  --tbd: #4a7c6b;
+  --tbd-bg: rgba(74,124,107,0.08);
+  --tbd-border: rgba(74,124,107,0.25);
+  --red: #c85a3a;
+}
+
+/* Back link */
+.mos-back {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 0;
+  margin-bottom: 0;
+  border-bottom: 1px solid var(--border);
+  width: 100%;
+}
+.mos-back:hover { color: var(--text); text-decoration: none; }
+
+/* Reset site-wrapper constraints for this full-width document */
+.mos-wrapper {
+  margin: 0 -1.5rem;
+}
+
+@media (max-width: 600px) {
+  .mos-wrapper { margin: 0 -1rem; }
+}
+
+</style>
+
+<a href="/ideas/marketing-os" class="mos-back">← Back to Strategic Marketing Operating System</a>
+
+<div class="mos-wrapper">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+  :root {
+    --bg: #0f0f0d;
+    --surface: #1a1a16;
+    --surface-2: #222220;
+    --border: #2e2e28;
+    --border-light: #3a3a34;
+    --text: #e8e6de;
+    --text-muted: #8a887e;
+    --text-faint: #555550;
+    --gold: #c8a84b;
+    --gold-dim: #7a6528;
+    --gold-bg: rgba(200,168,75,0.06);
+    --tbd: #4a7c6b;
+    --tbd-bg: rgba(74,124,107,0.08);
+    --tbd-border: rgba(74,124,107,0.25);
+    --red: #c85a3a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* ── NOISE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.4;
+  }
+
+  /* ── COVER ── */
+  .cover {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 80px 80px 72px;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .cover-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 60px 60px;
+    opacity: 0.3;
+    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black, transparent);
+  }
+
+  .cover-glow {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(200,168,75,0.08) 0%, transparent 70%);
+    top: -100px;
+    right: -100px;
+    pointer-events: none;
+  }
+
+  .cover-eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 32px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .cover-eyebrow::before {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .cover h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 6vw, 80px);
+    font-weight: 400;
+    line-height: 1.05;
+    position: relative;
+    margin-bottom: 8px;
+    color: var(--text);
+  }
+
+  .cover h1 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .cover-sub {
+    font-size: 16px;
+    color: var(--text-muted);
+    max-width: 520px;
+    position: relative;
+    margin-top: 24px;
+    margin-bottom: 60px;
+    line-height: 1.75;
+  }
+
+  .cover-stats {
+    display: flex;
+    gap: 0;
+    position: relative;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    max-width: 600px;
+  }
+
+  .cover-stat {
+    flex: 1;
+    padding: 20px 24px;
+    border-right: 1px solid var(--border);
+  }
+  .cover-stat:last-child { border-right: none; }
+
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .stat-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+  }
+
+  /* ── NAV ── */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(15,15,13,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 80px;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    overflow-x: auto;
+  }
+
+  .nav-item {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    padding: 16px 20px;
+    border-right: 1px solid var(--border);
+    white-space: nowrap;
+    text-decoration: none;
+    transition: color 0.2s;
+    cursor: pointer;
+  }
+  .nav-item:first-child { border-left: 1px solid var(--border); }
+  .nav-item:hover { color: var(--gold); }
+
+  /* ── MAIN LAYOUT ── */
+  .main { position: relative; z-index: 1; }
+
+  /* ── SKILL SECTION ── */
+  .skill-section {
+    border-bottom: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    min-height: 100vh;
+  }
+
+  .skill-sidebar {
+    border-right: 1px solid var(--border);
+    padding: 64px 40px;
+    position: sticky;
+    top: 49px;
+    height: calc(100vh - 49px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+
+  .skill-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 120px;
+    color: var(--surface-2);
+    line-height: 1;
+    margin-bottom: 24px;
+    letter-spacing: -4px;
+  }
+
+  .skill-folder {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+
+  .skill-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--text);
+    margin-bottom: 20px;
+  }
+
+  .skill-desc {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.65;
+    flex: 1;
+  }
+
+  .skill-toc {
+    margin-top: 32px;
+    border-top: 1px solid var(--border);
+    padding-top: 20px;
+  }
+
+  .skill-toc-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin-bottom: 10px;
+  }
+
+  .skill-toc-item {
+    font-size: 12px;
+    color: var(--text-faint);
+    padding: 4px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    line-height: 1.4;
+  }
+  .skill-toc-item::before {
+    content: '─';
+    color: var(--border-light);
+    flex-shrink: 0;
+  }
+
+  /* ── SKILL CONTENT ── */
+  .skill-content {
+    padding: 64px 72px;
+  }
+
+  /* ── BLOCKS ── */
+  .block {
+    margin-bottom: 48px;
+  }
+
+  .block-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .block-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  .block-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 16px;
+    color: var(--text);
+    line-height: 1.3;
+  }
+
+  .block-body {
+    color: var(--text-muted);
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  /* ── TBD FIELDS ── */
+  .tbd-field {
+    background: var(--tbd-bg);
+    border: 1px solid var(--tbd-border);
+    border-left: 3px solid var(--tbd);
+    border-radius: 6px;
+    padding: 16px 20px;
+    margin: 16px 0;
+  }
+
+  .tbd-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--tbd);
+    margin-bottom: 8px;
+  }
+
+  .tbd-desc {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.65;
+  }
+
+  /* ── QUESTION LISTS ── */
+  .question-list {
+    list-style: none;
+    margin: 16px 0;
+  }
+
+  .question-list li {
+    font-size: 14px;
+    color: var(--text-muted);
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 14px;
+    line-height: 1.55;
+  }
+  .question-list li:last-child { border-bottom: none; }
+
+  .q-mark {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--gold-dim);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* ── DEFINITION LIST ── */
+  .def-list {
+    display: grid;
+    gap: 12px;
+    margin: 16px 0;
+  }
+
+  .def-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 16px 20px;
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 16px;
+    align-items: start;
+  }
+
+  .def-term {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: var(--text);
+    font-weight: 500;
+    padding-top: 1px;
+  }
+
+  .def-body {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* ── WARNING / NOTE BLOCKS ── */
+  .note-block {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--gold);
+    border-radius: 6px;
+    padding: 16px 20px;
+    margin: 16px 0;
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.65;
+  }
+
+  .note-block strong {
+    color: var(--gold);
+    font-weight: 500;
+  }
+
+  /* ── AI COLLABORATOR BOX ── */
+  .ai-box {
+    background: var(--surface-2);
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: 28px 32px;
+    margin-top: 48px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ai-box::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+  }
+
+  .ai-box-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .ai-box-label::before {
+    content: '◆';
+    font-size: 8px;
+  }
+
+  .ai-box-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 16px;
+    color: var(--text);
+  }
+
+  .ai-checklist {
+    list-style: none;
+    display: grid;
+    gap: 8px;
+  }
+
+  .ai-checklist li {
+    font-size: 13px;
+    color: var(--text-muted);
+    display: flex;
+    gap: 12px;
+    line-height: 1.55;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .ai-checklist li:last-child { border-bottom: none; }
+
+  .ai-check {
+    color: var(--gold);
+    flex-shrink: 0;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    margin-top: 1px;
+  }
+
+  .ai-flag {
+    background: rgba(200,90,58,0.1);
+    border: 1px solid rgba(200,90,58,0.25);
+    border-radius: 4px;
+    padding: 12px 16px;
+    margin-top: 16px;
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  .ai-flag strong { color: var(--red); font-weight: 500; }
+
+  /* ── SEGMENT CARDS ── */
+  .segment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+    margin: 16px 0;
+  }
+
+  .segment-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+  }
+
+  .segment-name {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+
+  .segment-body {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.65;
+  }
+
+  /* ── FUNNEL VISUAL ── */
+  .funnel-wrap {
+    margin: 24px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .funnel-stage {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    position: relative;
+    transition: border-color 0.2s;
+  }
+  .funnel-stage:hover { border-color: var(--border-light); }
+
+  .funnel-stage.reentry {
+    border-left: 3px solid var(--gold);
+    margin-left: 24px;
+  }
+
+  .funnel-stage.handoff {
+    border-left: 3px solid var(--tbd);
+  }
+
+  .funnel-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--border-light);
+    flex-shrink: 0;
+  }
+  .funnel-stage.reentry .funnel-dot { background: var(--gold); }
+  .funnel-stage.handoff .funnel-dot { background: var(--tbd); }
+
+  .funnel-name {
+    font-size: 14px;
+    color: var(--text);
+    font-weight: 500;
+    flex: 1;
+  }
+
+  .funnel-tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    color: var(--text-faint);
+  }
+  .funnel-stage.reentry .funnel-tag { color: var(--gold-dim); }
+
+  /* ── POSITIONING TEMPLATE ── */
+  .pos-template {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 28px 32px;
+    margin: 16px 0;
+    font-size: 15px;
+    line-height: 2;
+    color: var(--text-muted);
+  }
+
+  .pos-slot {
+    display: inline-block;
+    border-bottom: 1px dashed var(--gold-dim);
+    color: var(--text-faint);
+    font-style: italic;
+    padding: 0 4px;
+    min-width: 160px;
+  }
+
+  /* ── BRAND PILLARS ── */
+  .pillar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 12px;
+    margin: 16px 0;
+  }
+
+  .pillar-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 20px;
+  }
+
+  .pillar-n {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    color: var(--surface-2);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .pillar-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+
+  .pillar-body {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* ── MEASUREMENT TABLE ── */
+  .m-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 13px;
+  }
+
+  .m-table th {
+    background: var(--surface-2);
+    padding: 10px 14px;
+    text-align: left;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    border-bottom: 1px solid var(--border);
+    font-weight: 400;
+  }
+
+  .m-table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-muted);
+    vertical-align: top;
+    line-height: 1.55;
+  }
+
+  .m-table tr:last-child td { border-bottom: none; }
+  .m-table td:first-child { color: var(--text); font-weight: 500; }
+
+  /* ── INTEGRITY LIST ── */
+  .integrity-list {
+    list-style: none;
+    display: grid;
+    gap: 8px;
+    margin: 16px 0;
+  }
+
+  .integrity-list li {
+    display: flex;
+    gap: 12px;
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.55;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    align-items: flex-start;
+  }
+  .integrity-list li:last-child { border-bottom: none; }
+
+  .integrity-mark {
+    color: var(--red);
+    flex-shrink: 0;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    margin-top: 1px;
+  }
+
+  /* ── FOLDER STRUCTURE ── */
+  .folder-tree {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 28px 32px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 2;
+    margin: 24px 0;
+  }
+
+  .folder-tree .dir { color: var(--gold); }
+  .folder-tree .active { color: var(--text); font-weight: 500; }
+  .folder-tree .dim { color: var(--text-faint); }
+
+  /* ── CLOSING SECTION ── */
+  .closing {
+    padding: 80px;
+    border-bottom: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .closing-head {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+
+  .closing-body {
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.8;
+  }
+
+  .next-steps {
+    list-style: none;
+    display: grid;
+    gap: 12px;
+  }
+
+  .next-step {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 16px 20px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .next-n {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--gold);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .next-text {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  .next-text strong { color: var(--text); font-weight: 500; display: block; margin-bottom: 2px; }
+
+  /* ── FOOTER ── */
+  .footer {
+    padding: 32px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border);
+  }
+
+  .footer-left {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--text-faint);
+  }
+
+  .footer-right {
+    font-size: 12px;
+    color: var(--text-faint);
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .cover > * {
+    animation: fadeUp 0.8s ease forwards;
+    opacity: 0;
+  }
+  .cover-eyebrow { animation-delay: 0.1s; }
+  .cover h1 { animation-delay: 0.25s; }
+  .cover-sub { animation-delay: 0.4s; }
+  .cover-stats { animation-delay: 0.55s; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .cover { padding: 48px 32px 56px; }
+    .nav { padding: 0 32px; }
+    .skill-section { grid-template-columns: 1fr; }
+    .skill-sidebar { position: relative; height: auto; top: 0; padding: 40px 32px; border-right: none; border-bottom: 1px solid var(--border); }
+    .skill-number { font-size: 72px; }
+    .skill-content { padding: 40px 32px; }
+    .closing { grid-template-columns: 1fr; gap: 40px; padding: 48px 32px; }
+    .footer { padding: 24px 32px; flex-direction: column; gap: 8px; text-align: center; }
+    .def-item { grid-template-columns: 1fr; }
+  }
+</style>
+
+<!-- ══════════ COVER ══════════ -->
+<div class="cover">
+  <div class="cover-grid"></div>
+  <div class="cover-glow"></div>
+  <div class="cover-eyebrow">Marketing OS · Foundation Layer · Higher Education Framework</div>
+  <h1>The Strategic<br><em>Operating System</em></h1>
+  <p class="cover-sub">Six foundational skills that define what this marketing function is, who it serves, how it competes, what it promises, how it positions itself, and what its brand stands for. Every execution decision references this layer.</p>
+  <div class="cover-stats">
+    <div class="cover-stat">
+      <div class="stat-num">6</div>
+      <div class="stat-label">Foundation skills</div>
+    </div>
+    <div class="cover-stat">
+      <div class="stat-num">2</div>
+      <div class="stat-label">Execution layers</div>
+    </div>
+    <div class="cover-stat">
+      <div class="stat-num">∞</div>
+      <div class="stat-label">AI reference depth</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ NAV ══════════ -->
+<nav class="nav">
+  <a class="nav-item" href="#skill-01">01 Market Definition</a>
+  <a class="nav-item" href="#skill-02">02 Objectives & Measurement</a>
+  <a class="nav-item" href="#skill-03">03 Competitive Landscape</a>
+  <a class="nav-item" href="#skill-04">04 Value Proposition</a>
+  <a class="nav-item" href="#skill-05">05 Positioning</a>
+  <a class="nav-item" href="#skill-06">06 Brand Strategy</a>
+</nav>
+
+<main class="main">
+
+<!-- ══════════ SKILL 01 ══════════ -->
+<section class="skill-section" id="skill-01">
+  <aside class="skill-sidebar">
+    <div>
+      <div class="skill-number">01</div>
+      <div class="skill-folder">foundation/market-definition/</div>
+      <div class="skill-name">Market Definition</div>
+      <div class="skill-desc">The foundational reference for every other skill in this system. Defines what business we are in, who we truly serve, what our students are actually buying, and who we genuinely compete with.</div>
+    </div>
+    <div class="skill-toc">
+      <div class="skill-toc-label">Sections</div>
+      <div class="skill-toc-item">What business are we in</div>
+      <div class="skill-toc-item">Who we serve</div>
+      <div class="skill-toc-item">What students are buying</div>
+      <div class="skill-toc-item">True competitive set</div>
+      <div class="skill-toc-item">Category language</div>
+      <div class="skill-toc-item">Nature of the decision</div>
+      <div class="skill-toc-item">AI Collaborator instructions</div>
+    </div>
+  </aside>
+
+  <div class="skill-content">
+
+    <div class="block">
+      <div class="block-label">Purpose</div>
+      <div class="block-body">This skill is the foundational reference for every other skill in this system. No positioning, messaging, campaign, or content decision should be made without first consulting this skill. It defines the market we compete in at the level of outcome — not product, not category label — and must be treated as the anchor of all strategic thinking.</div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">What Business Are We In</div>
+      <div class="tbd-field">
+        <div class="tbd-label">To be defined through research</div>
+        <div class="tbd-desc">The single sentence that describes what problem we solve and for whom. Not our product. Not our category label. The outcome we deliver in the student's life. This must be expressed in student language derived from research — not institutional language derived from internal consensus.</div>
+      </div>
+      <div class="note-block"><strong>Why this matters:</strong> How we answer this question determines who our real competitors are, what problem our marketing must solve, what category frame we compete in, and therefore every positioning and messaging decision that follows. Getting this wrong means the entire strategy is aimed at the wrong target.</div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">Who We Serve</div>
+      <div class="block-body">Our student population is not homogeneous. It contains two fundamentally different audiences making different decisions in different contexts. They must never be treated as one market.</div>
+      <div class="segment-grid">
+        <div class="segment-card">
+          <div class="segment-name">Primary — Adult Learners Online</div>
+          <div class="segment-body">Approximately 80% of total students. Majority are over 30. Studying online while managing existing careers, family commitments, and financial obligations. Making a deliberate, high-stakes life decision. Long consideration period. High motivation once in market. Different competitive context to school leavers.</div>
+        </div>
+        <div class="segment-card">
+          <div class="segment-name">Secondary — School Leavers Campus</div>
+          <div class="segment-body">Approximately 20% of total students. On campus or hybrid. First experience of higher education in most cases. Different motivations, different influences, different fears, different decision process. Must not receive messaging designed for adult learners.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">What Our Students Are Actually Buying</div>
+      <div class="block-body">Students do not buy degrees. They buy outcomes they believe a degree will deliver. For adult learners the motivation is a combination of the following — the weighting between them differs by individual and must be defined per segment through research.</div>
+      <ul class="question-list">
+        <li><span class="q-mark">→</span>Credential and formal qualification that opens a door currently closed to them</li>
+        <li><span class="q-mark">→</span>Career advancement — promotion, salary increase, expanded role</li>
+        <li><span class="q-mark">→</span>Career protection — staying relevant, future-proofing against displacement</li>
+        <li><span class="q-mark">→</span>Career change — moving to a new field entirely</li>
+        <li><span class="q-mark">→</span>Competitive advantage over peers and colleagues</li>
+        <li><span class="q-mark">→</span>Identity and confidence — becoming the kind of person who has this qualification</li>
+      </ul>
+      <div class="tbd-field">
+        <div class="tbd-label">To be defined through research</div>
+        <div class="tbd-desc">The actual weighting of these motivations by audience segment. The primary motivation that drives the decision to act. The language students use to describe what they are trying to achieve. This must come from research — not assumption.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">Our True Competitive Set</div>
+      <div class="tbd-field">
+        <div class="tbd-label">To be defined through research</div>
+        <div class="tbd-desc">Who students seriously considered before choosing us. Who they chose us over and why. Who chose a competitor instead of us and why. What switching to a non-university alternative looks like. Defined per audience segment.</div>
+      </div>
+      <div class="note-block"><strong>The invisible competitor:</strong> For many adult learners the real competitor is not another institution — it is inertia. The decision to delay, defer, or abandon the idea of studying entirely. This competitor must be treated with the same strategic seriousness as any named institution. Understanding what keeps people from acting is as important as understanding why they choose a competitor.</div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">How Students Define The Category</div>
+      <div class="tbd-field">
+        <div class="tbd-label">To be defined through research</div>
+        <div class="tbd-desc">The exact words and language students use when describing their decision to study. When they told someone they were going back to study — how did they describe it? Do they say degree, course, uni, study, upskilling, training? This language must be used in all communications. Our language must match their language precisely.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">The Nature of The Decision</div>
+      <div class="tbd-field">
+        <div class="tbd-label">To be defined through research</div>
+        <div class="tbd-desc">How long the consideration period typically is before action. Who else is involved in the decision — partner, employer, family. What the triggering moment looks like — what happened that made them decide to act now rather than later. What finally converts consideration into an application.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">Strategic Constraints</div>
+      <div class="block-body">This skill must be reviewed and potentially updated when any of the following occur:</div>
+      <ul class="question-list">
+        <li><span class="q-mark">!</span>New audience research is completed that changes our understanding of motivation or decision-making</li>
+        <li><span class="q-mark">!</span>A new audience segment is added to marketing scope</li>
+        <li><span class="q-mark">!</span>A significant market shift occurs — economic, regulatory, competitive, or technological</li>
+        <li><span class="q-mark">!</span>Enrolment trends diverge meaningfully from expectations in ways that suggest our market understanding is wrong</li>
+      </ul>
+    </div>
+
+    <div class="ai-box">
+      <div class="ai-box-label">AI Collaborator Instructions</div>
+      <div class="ai-box-title">Before producing any output, check this skill against the following:</div>
+      <ul class="ai-checklist">
+        <li><span class="ai-check">→</span>Does this output speak to the right audience segment with language appropriate to that segment?</li>
+        <li><span class="ai-check">→</span>Does it address what students are actually buying — outcomes — rather than what we are selling — product?</li>
+        <li><span class="ai-check">→</span>Is it using the language students use to describe their decision, not institutional language?</li>
+        <li><span class="ai-check">→</span>Does it acknowledge the right competitive context including the invisible competitor of inertia?</li>
+        <li><span class="ai-check">→</span>Is it calibrated to where this student is in their decision journey?</li>
+      </ul>
+      <div class="ai-flag"><strong>Flag and do not proceed</strong> if any of the above cannot be confirmed, or if [TO BE DEFINED] fields relevant to the output have not yet been completed by research.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════ SKILL 02 ══════════ -->
+<section class="skill-section" id="skill-02">
+  <aside class="skill-sidebar">
+    <div>
+      <div class="skill-number">02</div>
+      <div class="skill-folder">foundation/objectives-and-measurement/</div>
+      <div class="skill-name">Objectives & Measurement</div>
+      <div class="skill-desc">Defines what success looks like for this marketing function. The calibration point for every activity, campaign, and report. All execution skills trace their objectives back to this skill.</div>
+    </div>
+    <div class="skill-toc">
+      <div class="skill-toc-label">Sections</div>
+      <div class="skill-toc-item">The ultimate objective</div>
+      <div class="skill-toc-item">Marketing's scope</div>
+      <div class="skill-toc-item">Brand health objectives</div>
+      <div class="skill-toc-item">Commercial objectives</div>
+      <div class="skill-toc-item">The re-entry loops</div>
+      <div class="skill-toc-item">Measurement principles</div>
+      <div class="skill-toc-item">Time horizons</div>
+      <div class="skill-toc-item">The tension to manage</div>
+      <div class="skill-toc-item">AI Collaborator instructions</div>
+    </div>
+  </aside>
+
+  <div class="skill-content">
+
+    <div class="block">
+      <div class="block-label">Purpose</div>
+      <div class="block-body">This skill defines what success looks like for this marketing function. It is the calibration point for every activity, every campaign, and every report in this system. Every execution skill must be able to trace its objectives back to this skill. Measurement is not a reporting function — it is a strategic function embedded in every element of this system.</div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">The Ultimate Objective</div>
+      <div class="block-body">Generate new commencing students and the revenue they represent for the university, within each intake period. Every marketing activity must be traceable to this objective — directly or indirectly through brand health.</div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">Marketing's Scope</div>
+      <div class="block-body">Marketing owns the complete journey from first awareness to first unit enrolment. Responsibility transfers to the retention team at first unit enrolment. Marketing does not own retention or advocacy. This boundary is fixed and must not creep in either direction.</div>
+      <div class="funnel-wrap">
+        <div class="funnel-stage"><div class="funnel-dot"></div><div class="funnel-name">Unprompted Awareness</div><div class="funnel-tag">Brand health</div></div>
+        <div class="funnel-stage"><div class="funnel-dot"></div><div class="funnel-name">Prompted Awareness</div><div class="funnel-tag">Brand health</div></div>
+        <div class="funnel-stage"><div class="funnel-dot"></div><div class="funnel-name">Consideration</div><div class="funnel-tag">Brand health</div></div>
+        <div class="funnel-stage"><div class="funnel-dot"></div><div class="funnel-name">Investigation</div><div class="funnel-tag">Brand health</div></div>
+        <div class="funnel-stage"><div class="funnel-dot"></div><div class="funnel-name">Preference</div><div class="funnel-tag">Brand health</div></div>
+        <div class="funnel-stage"><div class="funnel-dot"></div><div class="funnel-name">Prospect Acquisition</div><div class="funnel-tag">Commercial</div></div>
+        <div class="funnel-stage"><div class="funnel-dot"></div><div class="funnel-name">Application Conversion</div><div class="funnel-tag">Commercial</div></div>
+        <div class="funnel-stage reentry"><div class="funnel-dot"></div><div class="funnel-name">Incomplete Application Re-engagement</div><div class="funnel-tag">Re-entry loop</div></div>
+        <div class="funnel-stage reentry"><div class="funnel-dot"></div><div class="funnel-name">Offer Follow-up Conversion</div><div class="funnel-tag">Re-entry loop</div></div>
+        <div class="funnel-stage reentry"><div class="funnel-dot"></div><div class="funnel-name">Enrolment Conversion</div><div class="funnel-tag">Re-entry loop</div></div>
+        <div class="funnel-stage handoff"><div class="funnel-dot"></div><div class="funnel-name">First Unit Enrolment → Handoff to Retention</div><div class="funnel-tag">Scope boundary</div></div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">The Two Objective Types</div>
+      <div class="def-list">
+        <div class="def-item">
+          <div class="def-term">Brand Health Objectives</div>
+          <div class="def-body">Move slowly. Investment may take 12–24 months to show measurable shift. They are the conditions that make commercial objectives achievable over time. Cannot be sacrificed for short-term commercial pressure without strategic sign-off. Measured quarterly, trended annually.</div>
+        </div>
+        <div class="def-item">
+          <div class="def-term">Commercial Objectives</div>
+          <div class="def-body">Move faster. Measurable week to week and intake to intake. Directly tied to new commencing student numbers and revenue. Must be reported per intake period with trend visibility across intakes. Leading indicators monitored continuously.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">The Re-Entry Loops</div>
+      <div class="block-body">The pipeline is not strictly linear. Three specific re-entry points exist where prospects who have stalled are re-engaged by marketing. These represent the highest-value conversion activity in the entire pipeline — the prospect has already raised their hand. Conversion cost is low relative to cold acquisition. They must be measured separately, resourced adequately, and treated as a strategic priority — not an afterthought.</div>
+      <div class="def-list">
+        <div class="def-item">
+          <div class="def-term">Incomplete Application</div>
+          <div class="def-body">Started but not submitted. The student demonstrated intent. Re-engagement must be timely, relevant, and frictionless. Must not feel punitive or pressuring.</div>
+        </div>
+        <div class="def-item">
+          <div class="def-term">Offer Follow-up</div>
+          <div class="def-body">Received an offer but has not responded. This student has cleared academic requirements. Re-engagement must address the real barrier — which is rarely academic and usually emotional, financial, or logistical.</div>
+        </div>
+        <div class="def-item">
+          <div class="def-term">Enrolment Conversion</div>
+          <div class="def-body">Accepted but not completed unit enrolment. Almost at the line. Re-engagement must be practical, clear, and supportive. Remove every possible friction from completion.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">The Measurement Principle</div>
+      <div class="block-body">Measurement is not a reporting function. It is a strategic function embedded in every element of this system. Every execution skill carries its own measurement. All measurement rolls up to the objectives defined in this skill. Nothing is measured in isolation. An activity that cannot be connected to an objective in this skill should not exist.</div>
+      <table class="m-table">
+        <thead>
+          <tr>
+            <th>Indicator type</th>
+            <th>Definition</th>
+            <th>Example</th>
+            <th>Cadence</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Leading</td>
+            <td>Signals something is working before outcomes are confirmed</td>
+            <td>Website traffic, enquiry volume, application starts, brand search volume, content engagement</td>
+            <td>Weekly</td>
+          </tr>
+          <tr>
+            <td>Lagging</td>
+            <td>Confirms outcomes were achieved after the fact</td>
+            <td>Applications submitted, offers accepted, enrolments confirmed, commencing students, revenue</td>
+            <td>Per intake</td>
+          </tr>
+          <tr>
+            <td>Brand health</td>
+            <td>Measures position in the mind of the market over time</td>
+            <td>Unprompted awareness, consideration inclusion, preference rating</td>
+            <td>Quarterly</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="block">
+      <div class="block-label">The Tension To Manage</div>
+      <div class="block-body">Brand investment and commercial conversion operate on fundamentally different time horizons and require different types of resource and activity. This tension must be explicitly managed — it will not resolve itself. Short-term commercial pressure must not consistently cannibalise brand investment without deliberate strategic sign-off. If it does, commercial performance will decline in future periods even if it is protected in the current period.</div>
+      <div class="note-block"><strong>The rule:</strong> If leadership only watches enrolment numbers, the brand investment that makes enrolment easier gets cut. If marketing only watches brand metrics, accountability for commercial outcomes is lost. Both must be held simultaneously.</div>
+    </div>
+
+    <div class="ai-box">
+      <div class="ai-box-label">AI Collaborator Instructions</div>
+      <div class="ai-box-title">Before producing any output, check this skill against the following:</div>
+      <ul class="ai-checklist">
+        <li><span class="ai-check">→</span>Which objective does this activity serve — brand health or commercial or both?</li>
+        <li><span class="ai-check">→</span>What is the expected leading indicator that this activity is working?</li>
+        <li><span class="ai-check">→</span>What is the lagging indicator that will confirm it worked?</li>
+        <li><span class="ai-check">→</span>Can this activity be traced to new commencing students and revenue — directly or through brand health?</li>
+        <li><span class="ai-check">→</span>If this is a re-entry loop activity — is it being measured and reported separately from cold acquisition?</li>
+        <li><span class="ai-check">→</span>Is this output balanced between brand and commercial objectives or is it cannibalising one for the other?</li>
+      </ul>
+      <div class="ai-flag"><strong>Flag and do not proceed</strong> if an activity cannot be connected to an objective in this skill. Flag if re-entry loop activities are being treated as lower priority than cold acquisition activities.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════ SKILL 03 ══════════ -->
+<section class="skill-section" id="skill-03">
+  <aside class="skill-sidebar">
+    <div>
+      <div class="skill-number">03</div>
+      <div class="skill-folder">foundation/competitive-landscape/</div>
+      <div class="skill-name">Competitive Landscape</div>
+      <div class="skill-desc">Defines who we compete with, how we compete, and the conditions under which we win or lose. A living document — the competitive environment shifts and this skill must shift with it.</div>
+    </div>
+    <div class="skill-toc">
+      <div class="skill-toc-label">Sections</div>
+      <div class="skill-toc-item">The competitive framework</div>
+      <div class="skill-toc-item">Direct competitors</div>
+      <div class="skill-toc-item">Indirect competitors</div>
+      <div class="skill-toc-item">The invisible competitor</div>
+      <div class="skill-toc-item">How we compete</div>
+      <div class="skill-toc-item">Where we win</div>
+      <div class="skill-toc-item">Where we lose</div>
+      <div class="skill-toc-item">What we will not do</div>
+      <div class="skill-toc-item">Signals to monitor</div>
+      <div class="skill-toc-item">AI Collaborator instructions</div>
+    </div>
+  </aside>
+
+  <div class="skill-content">
+
+    <div class="block">
+      <div class="block-label">Purpose</div>
+      <div class="block-body">This skill defines who we compete with, how we compete, and the conditions under which we win or lose. It is a living document — the competitive environment shifts and this skill must be updated when it does. No campaign, message, or positioning decision should be made without understanding the competitive context defined here.</div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">Direct Competitors</div>
+      <div class="tbd-field">
+        <div class="tbd-label">To be defined through research</div>
+        <div class="tbd-desc">Other universities and higher education providers targeting the same audiences with comparable qualifications. For each direct competitor define: who they primarily serve, how they position themselves, where they are stronger than us, where we are stronger than them, and the conditions under which a student chooses them over us.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">Indirect Competitors</div>
+      <div class="tbd-field">
+        <div class="tbd-label">To be defined through research</div>
+        <div class="tbd-desc">Providers who solve the same underlying problem through a different product. Includes vocational training providers, professional development programs, short course and micro-credential providers, bootcamps, and employer-funded training. These are increasingly important as adult learners have more alternatives to a full degree than at any previous point. Must be mapped and assessed with the same rigour as direct competitors.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">The Invisible Competitor</div>
+      <div class="block-body">Inertia. Doing nothing. For many adult learners the real competitor is not another institution — it is the decision to delay, defer, or abandon the idea of studying entirely. This competitor must be treated as seriously as any named institution. The conditions that keep people from acting are as strategically important as the conditions that make them choose a competitor.</div>
+      <div class="note-block"><strong>Why this is the most important competitor:</strong> You cannot win against inertia with features or price. You win by making the cost of not acting feel real and urgent and personal. This requires a different type of message than competitive comparison.</div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">How We Compete</div>
+      <div class="tbd-field">
+        <div class="tbd-label">To be defined through research</div>
+        <div class="tbd-desc">The specific dimensions on which we are genuinely differentiated. Not claims we make — actual differences students experience before, during, and after studying with us. Must be expressed in student language not institutional language. Must be verifiable — every competitive claim must have proof.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">Where We Win</div>
+      <div class="tbd-field">
+        <div class="tbd-label">To be defined through research and win/loss analysis</div>
+        <div class="tbd-desc">The specific conditions — audience type, motivation, situation, life stage, course category — under which we consistently win against competitors. These are the conditions we should seek to create more of through marketing activity. Defined through systematic win/loss analysis not assumption.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">Where We Lose</div>
+      <div class="tbd-field">
+        <div class="tbd-label">To be defined through research and win/loss analysis</div>
+        <div class="tbd-desc">The specific conditions under which we consistently lose. This is the section most organisations leave blank or fill with comfortable rationalisations. Understanding loss is as strategically important as understanding wins — arguably more so. Must be approached with honesty. Comfortable answers that protect internal sensitivities are not acceptable here.</div>
+      </div>
+      <div class="note-block"><strong>The discipline required:</strong> Where we lose must be answered honestly or this skill has no strategic value. Rationalising losses as "not our target market" or "price sensitivity" when the real reason is a genuine competitive weakness produces a strategy built on false foundations.</div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">What We Will Not Do</div>
+      <div class="tbd-field">
+        <div class="tbd-label">To be defined as positioning decisions are made</div>
+        <div class="tbd-desc">Competitive positioning requires explicit choice. Being differentiated means deliberately deciding what we are not, what we will not claim, and which audiences we will not pursue — in order to own something specific. This section defines the positions, claims, and audiences we deliberately cede to competitors. A strategy that tries to be everything to everyone owns nothing.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">Competitive Signals To Monitor</div>
+      <div class="block-body">The competitive landscape is not static. The following must be monitored on a defined cadence and fed back into this skill when significant changes are detected:</div>
+      <ul class="question-list">
+        <li><span class="q-mark">→</span>New entrants to the market — particularly non-university providers entering the adult learner space</li>
+        <li><span class="q-mark">→</span>Competitor positioning and messaging changes — what are they now claiming?</li>
+        <li><span class="q-mark">→</span>Competitor pricing and offer structure changes</li>
+        <li><span class="q-mark">→</span>Competitor product and course catalogue changes</li>
+        <li><span class="q-mark">→</span>Shifts in student perception of competitors — from brand tracking research</li>
+        <li><span class="q-mark">→</span>Emerging alternative pathways that bypass university entirely — micro-credentials, employer credentials, AI-enabled self-education</li>
+        <li><span class="q-mark">→</span>Regulatory changes that alter the competitive landscape</li>
+      </ul>
+    </div>
+
+    <div class="ai-box">
+      <div class="ai-box-label">AI Collaborator Instructions</div>
+      <div class="ai-box-title">Before producing any output, check this skill against the following:</div>
+      <ul class="ai-checklist">
+        <li><span class="ai-check">→</span>Does this output acknowledge the real competitive context for the audience it is addressing?</li>
+        <li><span class="ai-check">→</span>Does it speak to why us over the specific alternative this audience would consider?</li>
+        <li><span class="ai-check">→</span>Does it address the invisible competitor — inertia — where relevant to the funnel stage?</li>
+        <li><span class="ai-check">→</span>Does it avoid competing on dimensions where we do not genuinely win?</li>
+        <li><span class="ai-check">→</span>Does it avoid making claims that fall into what we will not do?</li>
+        <li><span class="ai-check">→</span>Is every competitive claim supported by verifiable proof?</li>
+      </ul>
+      <div class="ai-flag"><strong>Flag and do not proceed</strong> if competitive claims cannot be substantiated. Flag if the output inadvertently reinforces a competitor's position or concedes ground we should be defending.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════ SKILL 04 ══════════ -->
+<section class="skill-section" id="skill-04">
+  <aside class="skill-sidebar">
+    <div>
+      <div class="skill-number">04</div>
+      <div class="skill-folder">foundation/value-proposition/</div>
+      <div class="skill-name">Value Proposition</div>
+      <div class="skill-desc">The bridge between what we know about our market and what we say to it. Defines the specific value we deliver to students, expressed in their language not ours. The honest answer to why us.</div>
+    </div>
+    <div class="skill-toc">
+      <div class="skill-toc-label">Sections</div>
+      <div class="skill-toc-item">The core value proposition</div>
+      <div class="skill-toc-item">Value by audience segment</div>
+      <div class="skill-toc-item">The jobs to be done</div>
+      <div class="skill-toc-item">The proof layer</div>
+      <div class="skill-toc-item">What we do not claim</div>
+      <div class="skill-toc-item">Testing the proposition</div>
+      <div class="skill-toc-item">AI Collaborator instructions</div>
+    </div>
+  </aside>
+
+  <div class="skill-content">
+
+    <div class="block">
+      <div class="block-label">Purpose</div>
+      <div class="block-body">This skill defines the specific value we deliver to our students, expressed in their language not ours. It is the bridge between what we know about our market and what we say to that market. The value proposition is not a tagline. It is not a mission statement. It is the honest answer to the question every prospective student is asking: why should I choose this, and why should I believe you?</div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">The Core Value Proposition</div>
+      <div class="tbd-field">
+        <div class="tbd-label">To be defined through research</div>
+        <div class="tbd-desc">A clear, specific, believable statement of the value we deliver. Derived from research. Expressed in student language. Must answer three things simultaneously: what we deliver, who it is for specifically, and why we are the best choice to deliver it. It must be specific enough to be meaningful, differentiated enough to be ownable, and credible enough to be believable.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">Value By Audience Segment</div>
+      <div class="block-body">The same institution delivers different value to different audiences. The core value proposition has one answer — but its expression must be calibrated to each segment. These are not different propositions. They are different expressions of the same truth.</div>
+      <div class="segment-grid">
+        <div class="segment-card">
+          <div class="segment-name">Adult Learners — Over 30, Online</div>
+          <div class="tbd-field" style="margin-top:8px;">
+            <div class="tbd-label">To be defined</div>
+            <div class="tbd-desc">This segment carries a full life alongside study. Value must speak to: what studying makes possible that is not possible without it, why our model fits their life rather than disrupting it, what the return on their investment of time and money looks like, and why now is the right time and we are the right choice.</div>
+          </div>
+        </div>
+        <div class="segment-card">
+          <div class="segment-name">Adult Learners — Under 30, Online</div>
+          <div class="tbd-field" style="margin-top:8px;">
+            <div class="tbd-label">To be defined</div>
+            <div class="tbd-desc">Earlier in career. Different risk profile, different motivations, different competitive context. Value proposition must be calibrated accordingly — same institution, different expression.</div>
+          </div>
+        </div>
+        <div class="segment-card">
+          <div class="segment-name">School Leavers — On Campus and Hybrid</div>
+          <div class="tbd-field" style="margin-top:8px;">
+            <div class="tbd-label">To be defined</div>
+            <div class="tbd-desc">Fundamentally different decision context. Likely first experience of higher education. Different influences, different fears, different definition of value. Must not be served the adult learner proposition.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">The Jobs To Be Done</div>
+      <div class="block-body">Students hire us to do specific jobs in their lives. Our value proposition must speak to all three layers of the job — weighted according to what research tells us matters most to each segment. Communications that only address functional jobs leave the most powerful motivators untouched.</div>
+      <div class="def-list">
+        <div class="def-item">
+          <div class="def-term">Functional Jobs</div>
+          <div class="def-body">The practical outcomes they need. A qualification. A credential that opens a specific door. Skills that make them more capable at work. A new career pathway.</div>
+        </div>
+        <div class="def-item">
+          <div class="def-term">Emotional Jobs</div>
+          <div class="def-body">How they want to feel as a result. Confident. Credible. Future-proof. Like they took action when it mattered. No longer behind. Proud.</div>
+        </div>
+        <div class="def-item">
+          <div class="def-term">Social Jobs</div>
+          <div class="def-body">How they want to be perceived by others. By their employer, their peers, their family. The kind of person who has this qualification. Someone who invested in themselves.</div>
+        </div>
+      </div>
+      <div class="tbd-field">
+        <div class="tbd-label">To be defined through research</div>
+        <div class="tbd-desc">The specific weighting of functional, emotional, and social jobs by audience segment. The primary job driver for the decision to enrol. The language students use to describe each layer.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">The Proof Layer</div>
+      <div class="block-body">A value proposition without proof is a claim. Every element of our value proposition must be supported by evidence. For each proposition element define what evidence exists, what student outcomes demonstrate it, what third-party validation supports it, and what graduates say when asked.</div>
+      <div class="tbd-field">
+        <div class="tbd-label">To be defined</div>
+        <div class="tbd-desc">Specific proof points per proposition element. Graduate outcome data. Employer feedback. Student testimonials that are specific not generic. Third-party validation where available. Without this layer the value proposition cannot be used in communications without making unsubstantiated claims.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">What We Do Not Claim</div>
+      <div class="block-body">Every institution claims quality, flexibility, support, student-centricity, and career outcomes. These are table stakes. They do not differentiate. They must not be the centre of our value proposition — they can exist in communications as proof of competence but never as the primary reason to choose us.</div>
+      <div class="tbd-field">
+        <div class="tbd-label">To be defined</div>
+        <div class="tbd-desc">The specific generic claims we deliberately avoid because they are used by every competitor and do not move a prospective student closer to choosing us. Defined once research confirms what competitors are claiming and where our genuine differentiation actually lies.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">Testing The Value Proposition</div>
+      <div class="block-body">Before committing to a value proposition it must pass these tests:</div>
+      <ul class="question-list">
+        <li><span class="q-mark">?</span>Is it specific enough to be meaningful — or could any university say exactly this?</li>
+        <li><span class="q-mark">?</span>Is it believable given who we are and what we can substantiate?</li>
+        <li><span class="q-mark">?</span>Is it differentiated from what our direct and indirect competitors claim?</li>
+        <li><span class="q-mark">?</span>Does it speak to what students actually care about — not what we want them to care about?</li>
+        <li><span class="q-mark">?</span>Would a prospective student recognise themselves and their situation in it?</li>
+        <li><span class="q-mark">?</span>Does it hold up when a student investigates further — or does it fall apart under scrutiny?</li>
+        <li><span class="q-mark">?</span>Does it address functional, emotional, and social jobs?</li>
+      </ul>
+    </div>
+
+    <div class="ai-box">
+      <div class="ai-box-label">AI Collaborator Instructions</div>
+      <div class="ai-box-title">Before producing any output, check this skill against the following:</div>
+      <ul class="ai-checklist">
+        <li><span class="ai-check">→</span>Does this output deliver the value proposition or inadvertently undermine it?</li>
+        <li><span class="ai-check">→</span>Is it speaking to the right segment with the right expression of the proposition?</li>
+        <li><span class="ai-check">→</span>Is it using student language — not institutional language?</li>
+        <li><span class="ai-check">→</span>Is every claim supported by the proof layer defined in this skill?</li>
+        <li><span class="ai-check">→</span>Is it avoiding the generic table-stakes claims we have defined as what we do not claim?</li>
+        <li><span class="ai-check">→</span>Does it address functional, emotional, and social jobs — or only functional?</li>
+      </ul>
+      <div class="ai-flag"><strong>Flag and do not proceed</strong> if any output makes a claim that cannot be supported by the proof layer in this skill, or relies on generic claims we have defined as table stakes.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════ SKILL 05 ══════════ -->
+<section class="skill-section" id="skill-05">
+  <aside class="skill-sidebar">
+    <div>
+      <div class="skill-number">05</div>
+      <div class="skill-folder">foundation/positioning/</div>
+      <div class="skill-name">Positioning</div>
+      <div class="skill-desc">How we want to be known in the mind of our prospective student, relative to every alternative they could choose. A strategic choice made before any creative or messaging work begins.</div>
+    </div>
+    <div class="skill-toc">
+      <div class="skill-toc-label">Sections</div>
+      <div class="skill-toc-item">What positioning is not</div>
+      <div class="skill-toc-item">Our positioning statement</div>
+      <div class="skill-toc-item">The position we claim</div>
+      <div class="skill-toc-item">The audience we position for</div>
+      <div class="skill-toc-item">Positioning against alternatives</div>
+      <div class="skill-toc-item">What we own</div>
+      <div class="skill-toc-item">What we cede</div>
+      <div class="skill-toc-item">Positioning through the funnel</div>
+      <div class="skill-toc-item">Positioning integrity</div>
+      <div class="skill-toc-item">AI Collaborator instructions</div>
+    </div>
+  </aside>
+
+  <div class="skill-content">
+
+    <div class="block">
+      <div class="block-label">Purpose</div>
+      <div class="block-body">This skill defines how we want to be known in the mind of our prospective student, relative to every alternative they could choose. Positioning is a strategic choice — not a creative choice. It is decided before any creative or messaging work begins. Everything creative, content-related, and campaign-related in this system must express this positioning and never contradict it.</div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">What Positioning Is Not</div>
+      <ul class="integrity-list">
+        <li><span class="integrity-mark">✗</span>Positioning is not a tagline or a headline</li>
+        <li><span class="integrity-mark">✗</span>Positioning is not a brand identity or a visual direction</li>
+        <li><span class="integrity-mark">✗</span>Positioning is not a list of features, benefits, or proof points</li>
+        <li><span class="integrity-mark">✗</span>Positioning is not something that changes with each campaign or each year</li>
+        <li><span class="integrity-mark">✗</span>Positioning is not what we want to be — it is the strategic choice of what we will consistently be in order to own a specific place in a specific mind relative to specific alternatives</li>
+      </ul>
+    </div>
+
+    <div class="block">
+      <div class="block-label">Our Positioning Statement</div>
+      <div class="block-body">The positioning statement is an internal strategic tool. It is not used verbatim in external communications. Everything external must be consistent with it. It follows this structure:</div>
+      <div class="pos-template">
+        For <span class="pos-slot">[specific audience]</span><br>
+        who <span class="pos-slot">[specific situation or need]</span><br>
+        we are the <span class="pos-slot">[category or frame of reference]</span><br>
+        that <span class="pos-slot">[primary benefit or differentiation]</span><br>
+        unlike <span class="pos-slot">[named or implied alternative]</span><br>
+        we <span class="pos-slot">[specific proof point or reason to believe]</span>
+      </div>
+      <div class="tbd-field">
+        <div class="tbd-label">To be defined — after market definition, competitive landscape, and value proposition are complete</div>
+        <div class="tbd-desc">The positioning statement cannot be written until the preceding foundation skills have been completed and validated through research. Attempting to write it before then produces positioning built on assumption rather than insight.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">The Position We Are Claiming</div>
+      <div class="tbd-field">
+        <div class="tbd-label">To be defined</div>
+        <div class="tbd-desc">The single idea we want to own in the market. It must be specific enough to be meaningful. Differentiated enough to be ownable. Credible enough to be believable given what we can substantiate. Valuable enough to drive preference over alternatives. One position — not a list of positions.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">The Audience We Position For</div>
+      <div class="block-body">Our dominant audience is the adult learner making a high-stakes life and career decision while managing a full and complex life. This is who our positioning is primarily designed for. School leavers are a secondary audience and may require a different expression of the same core position. We do not attempt to hold two contradictory positions simultaneously. A position designed to appeal to everyone appeals to no one.</div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">What We Must Own</div>
+      <div class="tbd-field">
+        <div class="tbd-label">To be defined</div>
+        <div class="tbd-desc">The specific territory — rational, emotional, or both — that we claim and defend consistently over time. Owning a position requires repetition and consistency across every touchpoint over an extended period. A position that changes with every campaign or every year is not a position — it is noise.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">What We Deliberately Cede</div>
+      <div class="tbd-field">
+        <div class="tbd-label">To be defined</div>
+        <div class="tbd-desc">The territories, claims, and associations we deliberately do not pursue — because they belong to competitors who own them more credibly, or because claiming them would dilute what we actually own. This is as strategically important as defining what we claim. The willingness to cede ground is what makes a position ownable.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">Positioning Through The Funnel</div>
+      <div class="block-body">Our positioning must work at every stage of the funnel — but its expression adapts to where the student is in their decision journey. The underlying position never changes. The way it is expressed does.</div>
+      <div class="def-list">
+        <div class="def-item"><div class="def-term">Awareness</div><div class="def-body">The position creates recognition and curiosity. Plant the idea. Make us memorable for a specific reason.</div></div>
+        <div class="def-item"><div class="def-term">Consideration</div><div class="def-body">The position creates relevance and resonance. Make the student feel seen. Connect our position to their specific situation.</div></div>
+        <div class="def-item"><div class="def-term">Investigation</div><div class="def-body">The position is validated by evidence and proof. Everything they find when they look closer must reinforce — never contradict — the position.</div></div>
+        <div class="def-item"><div class="def-term">Preference</div><div class="def-body">The position creates conviction. Make the choice feel obvious. Give them the language to explain their choice to others.</div></div>
+        <div class="def-item"><div class="def-term">Conversion</div><div class="def-body">The position removes doubt and justifies the decision. Reinforce that this was the right choice. Eliminate the last barriers.</div></div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">Positioning Integrity</div>
+      <div class="block-body">The following will undermine our positioning and must be actively prevented:</div>
+      <ul class="integrity-list">
+        <li><span class="integrity-mark">✗</span>Inconsistent messaging across channels that creates a fragmented picture of who we are</li>
+        <li><span class="integrity-mark">✗</span>Creative that prioritises novelty or awards over strategic consistency</li>
+        <li><span class="integrity-mark">✗</span>Claims that contradict or dilute the position we have chosen to own</li>
+        <li><span class="integrity-mark">✗</span>Campaigns that chase short-term conversion at the expense of long-term position without strategic sign-off</li>
+        <li><span class="integrity-mark">✗</span>Internal stakeholder pressure to represent every faculty, school, or product equally regardless of strategic priority — this is one of the most common and most damaging sources of positioning erosion in university marketing</li>
+        <li><span class="integrity-mark">✗</span>Repositioning without strategic process — changing position because someone is bored with it or a new leader wants to make their mark</li>
+      </ul>
+    </div>
+
+    <div class="ai-box">
+      <div class="ai-box-label">AI Collaborator Instructions</div>
+      <div class="ai-box-title">Before producing any output, check this skill against the following:</div>
+      <ul class="ai-checklist">
+        <li><span class="ai-check">→</span>Does this output express our position or contradict it?</li>
+        <li><span class="ai-check">→</span>Does it speak to the right audience within our positioning frame?</li>
+        <li><span class="ai-check">→</span>Does it acknowledge the right alternatives without undermining our claimed position?</li>
+        <li><span class="ai-check">→</span>Does it express the position appropriately for the funnel stage it is targeting?</li>
+        <li><span class="ai-check">→</span>Is it consistent with every other output produced by this system — does it reinforce the same position?</li>
+        <li><span class="ai-check">→</span>Does it defend what we own and avoid what we have deliberately ceded?</li>
+        <li><span class="ai-check">→</span>Is this output responding to internal stakeholder pressure in a way that compromises positioning integrity?</li>
+      </ul>
+      <div class="ai-flag"><strong>Flag and do not proceed</strong> if any output contradicts the positioning statement, makes claims we have ceded, or appears to be driven by internal stakeholder pressure rather than strategic direction. Flag if the position has not yet been defined and remind that it cannot be defined until the preceding skills are complete.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════ SKILL 06 ══════════ -->
+<section class="skill-section" id="skill-06">
+  <aside class="skill-sidebar">
+    <div>
+      <div class="skill-number">06</div>
+      <div class="skill-folder">foundation/brand-strategy/</div>
+      <div class="skill-name">Brand Strategy</div>
+      <div class="skill-desc">The long-term relationship between this institution and its audiences. Not visual identity. The emotional contract, the personality, the voice, and the promise that is kept consistently across every touchpoint over time.</div>
+    </div>
+    <div class="skill-toc">
+      <div class="skill-toc-label">Sections</div>
+      <div class="skill-toc-item">What brand strategy is</div>
+      <div class="skill-toc-item">Brand purpose</div>
+      <div class="skill-toc-item">Brand personality</div>
+      <div class="skill-toc-item">Brand voice and tone</div>
+      <div class="skill-toc-item">Brand promise</div>
+      <div class="skill-toc-item">Brand pillars</div>
+      <div class="skill-toc-item">Brand experience</div>
+      <div class="skill-toc-item">What damages brand</div>
+      <div class="skill-toc-item">AI Collaborator instructions</div>
+    </div>
+  </aside>
+
+  <div class="skill-content">
+
+    <div class="block">
+      <div class="block-label">Purpose</div>
+      <div class="block-body">This skill defines the long-term relationship between this institution and its audiences. Brand strategy is not visual identity — that is an expression of brand, not the strategy itself. Brand strategy is the emotional contract we make with our audience: what we stand for, how we behave, what we promise, and how we consistently show up across every touchpoint over time. It is built on the positioning and value proposition defined in the preceding skills.</div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">What Brand Strategy Is</div>
+      <div class="def-list">
+        <div class="def-item">
+          <div class="def-term">Not visual identity</div>
+          <div class="def-body">Logos, colours, and typography are expressions of brand. Brand strategy is what those expressions are communicating. One is a tool, the other is the decision about what the tool must say.</div>
+        </div>
+        <div class="def-item">
+          <div class="def-term">Not a campaign</div>
+          <div class="def-body">Campaigns come and go. Brand is what persists across campaigns. Every campaign should build the brand — never contradict it.</div>
+        </div>
+        <div class="def-item">
+          <div class="def-term">Not a tagline</div>
+          <div class="def-body">A tagline is an expression of a brand idea. The brand idea must exist and be strategically sound before a tagline is written.</div>
+        </div>
+        <div class="def-item">
+          <div class="def-term">What it is</div>
+          <div class="def-body">The cumulative impression left in the mind of every person who encounters this institution across every touchpoint — and the strategic decisions about what that impression should be and how it is consistently created.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">Brand Purpose</div>
+      <div class="tbd-field">
+        <div class="tbd-label">To be defined</div>
+        <div class="tbd-desc">Why this institution exists beyond commercial objectives. The contribution it makes to the lives of its students and to society. Not a marketing statement — a genuine answer to why this institution matters. Purpose must be believable given our history and our actual behaviour. Aspirational purposes that contradict lived experience destroy brand trust faster than having no stated purpose at all.</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">Brand Personality</div>
+      <div class="tbd-field">
+        <div class="tbd-label">To be defined</div>
+        <div class="tbd-desc">If this institution were a person, how would they behave? What would make them distinctive in a room? Personality defines the consistent human qualities that should be recognisable across every interaction — from a social media post to a phone call to a campus visit. Defined as a small set of qualities with specific behavioural implications — not a generic list of adjectives.</div>
+      </div>
+      <div class="note-block"><strong>The test of brand personality:</strong> Every quality must have a "not this, but this" definition. Not "professional" — that says nothing. "Straight-talking rather than corporate-formal" — that gives the team something to act on.</div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">Brand Voice and Tone</div>
+      <div class="block-body">Voice is consistent — it is who we are. Tone adapts to context — it is how we adjust our voice to the situation. Both must be defined specifically enough to guide every piece of communication this system produces.</div>
+      <div class="def-list">
+        <div class="def-item">
+          <div class="def-term">Voice</div>
+          <div class="def-body">
+            <div class="tbd-field" style="margin:0;">
+              <div class="tbd-label">To be defined</div>
+              <div class="tbd-desc">The consistent qualities of how we write and speak. Defined with specific examples of what this sounds like in practice versus what it does not sound like. Must be specific enough that two different people writing independently produce outputs that feel like the same institution.</div>
+            </div>
+          </div>
+        </div>
+        <div class="def-item">
+          <div class="def-term">Tone — Awareness</div>
+          <div class="def-body">
+            <div class="tbd-field" style="margin:0;">
+              <div class="tbd-label">To be defined</div>
+              <div class="tbd-desc">How the voice adapts when communicating with someone who barely knows us. The emotional register, the level of directness, the degree of challenge versus reassurance.</div>
+            </div>
+          </div>
+        </div>
+        <div class="def-item">
+          <div class="def-term">Tone — Conversion</div>
+          <div class="def-body">
+            <div class="tbd-field" style="margin:0;">
+              <div class="tbd-label">To be defined</div>
+              <div class="tbd-desc">How the voice adapts when communicating with someone close to deciding. More specific, more proof-oriented, more direct about what happens next and why it is the right decision.</div>
+            </div>
+          </div>
+        </div>
+        <div class="def-item">
+          <div class="def-term">Tone — Re-entry Loops</div>
+          <div class="def-body">
+            <div class="tbd-field" style="margin:0;">
+              <div class="tbd-label">To be defined</div>
+              <div class="tbd-desc">How the voice adapts when re-engaging someone who has stalled. Must be warm and frictionless — never pressuring, never guilt-inducing, never making them feel like a number in a pipeline.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">Brand Promise</div>
+      <div class="tbd-field">
+        <div class="tbd-label">To be defined</div>
+        <div class="tbd-desc">The specific commitment we make to every student who chooses us. Not a marketing claim — an operational commitment that must be kept. If the brand promise is not delivered in the actual student experience, the brand is being damaged with every student who enrols. The brand promise connects marketing to the institution — it is the contract between what we say and what we do.</div>
+      </div>
+      <div class="note-block"><strong>The critical test:</strong> Can the institution actually deliver this promise to every student every time? If not, either the promise must change or the institution must change. Making a promise that is not kept is worse than making no promise.</div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">Brand Pillars</div>
+      <div class="block-body">The small number of core themes that anchor everything we communicate. Not a list of features — a set of strategic territories that every piece of content and communication should be able to connect to. Typically three to five. More than five cannot be held in the mind of an audience.</div>
+      <div class="pillar-grid">
+        <div class="pillar-card">
+          <div class="pillar-n">01</div>
+          <div class="pillar-title">[To be defined]</div>
+          <div class="pillar-body">First brand pillar — a strategic territory that anchors a category of communication. Defined after positioning is complete.</div>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-n">02</div>
+          <div class="pillar-title">[To be defined]</div>
+          <div class="pillar-body">Second brand pillar. Each pillar should be distinct — no overlap. Overlap creates confusion not reinforcement.</div>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-n">03</div>
+          <div class="pillar-title">[To be defined]</div>
+          <div class="pillar-body">Third brand pillar. The complete set of pillars should feel like a coherent whole — aspects of one idea rather than a list of separate ideas.</div>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-n">04</div>
+          <div class="pillar-title">[To be defined]</div>
+          <div class="pillar-body">Fourth pillar if required. Should only exist if it represents a genuinely distinct strategic territory not covered by the preceding three.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">Brand Experience</div>
+      <div class="block-body">Brand is not built by marketing alone. It is built by every interaction a student has with this institution — from the first ad they see to the call they make to enquire to the enrolment process to the first day of their first unit. Marketing owns the impression before enrolment. But brand strategy must acknowledge that every operational touchpoint either reinforces or erodes the brand promise.</div>
+      <div class="note-block"><strong>The implication for marketing:</strong> If operational touchpoints are delivering a different experience to what marketing is promising, the marketing function will always be working against itself. Brand strategy must be shared with and owned by the whole institution — not just the marketing team.</div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">What Damages Brand</div>
+      <div class="block-body">Brand equity is built slowly and can be damaged quickly. The following must be actively prevented:</div>
+      <ul class="integrity-list">
+        <li><span class="integrity-mark">✗</span>Inconsistency across touchpoints — the brand feels different depending on where you encounter it</li>
+        <li><span class="integrity-mark">✗</span>Overpromising in marketing that is not matched by the actual student experience</li>
+        <li><span class="integrity-mark">✗</span>Generic communications that could have come from any institution</li>
+        <li><span class="integrity-mark">✗</span>Reactive communications that chase trends at the expense of brand consistency</li>
+        <li><span class="integrity-mark">✗</span>Internal fragmentation — different faculties or departments projecting contradictory identities</li>
+        <li><span class="integrity-mark">✗</span>Crisis communications that abandon brand personality and revert to corporate defensive language</li>
+        <li><span class="integrity-mark">✗</span>Treating brand as a marketing function responsibility rather than an institutional responsibility</li>
+      </ul>
+    </div>
+
+    <div class="ai-box">
+      <div class="ai-box-label">AI Collaborator Instructions</div>
+      <div class="ai-box-title">Before producing any output, check this skill against the following:</div>
+      <ul class="ai-checklist">
+        <li><span class="ai-check">→</span>Does this output reflect our brand personality — would a person with our defined qualities produce this?</li>
+        <li><span class="ai-check">→</span>Is it written in our brand voice with the appropriate tone for this context and funnel stage?</li>
+        <li><span class="ai-check">→</span>Does it connect to at least one brand pillar?</li>
+        <li><span class="ai-check">→</span>Does it honour the brand promise — does it make or imply a commitment the institution can actually keep?</li>
+        <li><span class="ai-check">→</span>Is it consistent with every other output in this system — does it feel like the same institution?</li>
+        <li><span class="ai-check">→</span>Does it avoid the generic, the corporate-defensive, and the trend-reactive?</li>
+        <li><span class="ai-check">→</span>Could this output have come from any university — or is it distinctly and recognisably ours?</li>
+      </ul>
+      <div class="ai-flag"><strong>Flag and do not proceed</strong> if any output feels generic, contradicts the brand personality, makes a promise the institution cannot keep, or could plausibly have come from a competitor. The test of any output is: remove the logo. Does it still feel like us?</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════ CLOSING ══════════ -->
+<section class="closing">
+  <div>
+    <div class="closing-head">The Foundation<br><em>is complete.</em><br>What comes next.</div>
+    <p class="closing-body">These six skills define the strategic operating system for this marketing function. They are not a document to be filed — they are a living reference that every execution decision checks against. The [TO BE DEFINED] fields are not gaps. They are the research agenda. Each one is a question that must be answered before the execution layer can operate with confidence.</p>
+  </div>
+  <div>
+    <ul class="next-steps">
+      <li class="next-step">
+        <div class="next-n">01</div>
+        <div class="next-text"><strong>Complete the research agenda</strong>Every [TO BE DEFINED] field across these six skills represents a question requiring market research, win/loss analysis, or strategic decision. These must be prioritised and answered before execution skills are built.</div>
+      </li>
+      <li class="next-step">
+        <div class="next-n">02</div>
+        <div class="next-text"><strong>Build the execution layer</strong>TAM/SAM/SOM, ICP and Persona Development, Go-to-Market, Campaign Design, Creative and Content, Channels, and Project Management — each as a SKILL.md that references these foundation skills.</div>
+      </li>
+      <li class="next-step">
+        <div class="next-n">03</div>
+        <div class="next-text"><strong>Build the measurement layer</strong>Brand Health reporting, Pipeline reporting, Campaign Performance, and Executive reporting — each structured to roll up to the objectives defined in Skill 02.</div>
+      </li>
+      <li class="next-step">
+        <div class="next-n">04</div>
+        <div class="next-text"><strong>Activate the AI collaborator</strong>With the foundation skills complete and populated, the AI collaborator has the strategic rails it needs to assist with execution — writing copy, reviewing campaigns, generating reports — while remaining anchored to strategy.</div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ══════════ FOLDER STRUCTURE ══════════ -->
+<section style="padding: 64px 80px; border-bottom: 1px solid var(--border);">
+  <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); margin-bottom:24px;">Complete system structure</div>
+  <div class="folder-tree">
+    <div class="dir">marketing-os/</div>
+    <div>├── <span class="dir">foundation/</span></div>
+    <div>│   ├── <span class="active">market-definition/SKILL.md</span> <span class="dim">✓ complete</span></div>
+    <div>│   ├── <span class="active">objectives-and-measurement/SKILL.md</span> <span class="dim">✓ complete</span></div>
+    <div>│   ├── <span class="active">competitive-landscape/SKILL.md</span> <span class="dim">✓ complete</span></div>
+    <div>│   ├── <span class="active">value-proposition/SKILL.md</span> <span class="dim">✓ complete</span></div>
+    <div>│   ├── <span class="active">positioning/SKILL.md</span> <span class="dim">✓ complete</span></div>
+    <div>│   └── <span class="active">brand-strategy/SKILL.md</span> <span class="dim">✓ complete</span></div>
+    <div>├── <span class="dir">execution/</span></div>
+    <div>│   ├── <span class="dim">tam-sam-som/SKILL.md</span></div>
+    <div>│   ├── <span class="dim">icp-and-personas/SKILL.md</span></div>
+    <div>│   ├── <span class="dim">go-to-market/SKILL.md</span></div>
+    <div>│   ├── <span class="dim">campaign-design/SKILL.md</span></div>
+    <div>│   ├── <span class="dim">creative-and-content/SKILL.md</span></div>
+    <div>│   ├── <span class="dir">channels/</span></div>
+    <div>│   │   ├── <span class="dim">social/SKILL.md</span></div>
+    <div>│   │   ├── <span class="dim">events/SKILL.md</span></div>
+    <div>│   │   ├── <span class="dim">sales/SKILL.md</span></div>
+    <div>│   │   ├── <span class="dim">contact-centre/SKILL.md</span></div>
+    <div>│   │   └── <span class="dim">digital/SKILL.md</span></div>
+    <div>│   └── <span class="dim">project-management/SKILL.md</span></div>
+    <div>└── <span class="dir">measurement/</span></div>
+    <div>    ├── <span class="dim">brand-health/SKILL.md</span></div>
+    <div>    ├── <span class="dim">pipeline-reporting/SKILL.md</span></div>
+    <div>    ├── <span class="dim">campaign-performance/SKILL.md</span></div>
+    <div>    └── <span class="dim">executive-reporting/SKILL.md</span></div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-left">Marketing OS · Foundation Layer · Higher Education Framework · 2026</div>
+  <div class="footer-right">Built through structured strategic conversation · Powered by Claude</div>
+</footer>
+
+</div>
+
+</div>
