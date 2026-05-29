@@ -1,0 +1,122 @@
+---
+layout: default
+title: Contact
+description: Get in touch with Cameron Loudon.
+permalink: /contact/
+---
+
+<article class="contact-page">
+
+  <header class="page-header">
+    <span class="eyebrow">Get in touch</span>
+    <h1>Contact</h1>
+    <p class="intro">No form. No friction. Just an email address.</p>
+  </header>
+
+  <hr>
+
+  <section class="contact-section">
+    <p>If something on this site sparked a thought, a question, or a conversation worth having — I want to hear it.</p>
+
+    <div class="contact-email">
+      <span class="contact-label">Email</span>
+      <a href="mailto:cameronloudon@gmail.com" class="contact-link">cameronloudon@gmail.com</a>
+    </div>
+
+    <p class="contact-note">I read everything. I reply when I have something worth saying.</p>
+  </section>
+
+</article>
+
+<style>
+.contact-page .page-header {
+  padding: 2rem 0 2.5rem;
+}
+
+.page-header .eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.page-header .intro {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  max-width: 580px;
+  margin-top: 1rem;
+}
+
+.contact-section {
+  padding: 2.5rem 0;
+}
+
+.contact-section > p {
+  max-width: 520px;
+  margin-bottom: 2rem;
+}
+
+.contact-email {
+  display: flex;
+  align-items: baseline;
+  gap: 1.25rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+  margin-bottom: 1.75rem;
+}
+
+.contact-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  flex-shrink: 0;
+}
+
+.contact-link {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+  transition: color var(--transition), border-color var(--transition);
+}
+
+.contact-link:hover {
+  color: var(--accent-hover);
+  border-bottom-color: var(--accent);
+  text-decoration: none;
+}
+
+.contact-note {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-top: 0;
+}
+
+[data-theme="terminal"] .contact-email {
+  border-left-color: var(--accent);
+  box-shadow: -3px 0 12px rgba(0, 255, 65, 0.15);
+}
+
+[data-theme="terminal"] .contact-link:hover {
+  text-shadow: 0 0 8px rgba(0, 255, 65, 0.6);
+}
+
+[data-theme="tree"] .contact-email {
+  border-left-color: var(--accent);
+  box-shadow: -3px 0 12px rgba(255, 176, 0, 0.15);
+}
+
+[data-theme="tree"] .contact-link:hover {
+  text-shadow: 0 0 8px rgba(255, 176, 0, 0.5);
+}
+</style>
