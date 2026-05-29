@@ -1,0 +1,1186 @@
+---
+layout: default
+title: "Local AI Stack — Complete Installation Guide"
+permalink: /local-ai-stack/
+description: A complete 18-phase installation guide for a fully local, GPU-accelerated AI stack on Ubuntu 24.04 LTS with AMD ROCm, Ollama, Open WebUI, OpenBrain, Obsidian, context-mode, and OpenCode.
+---
+
+<article class="idea-page">
+
+<header class="page-header">
+  <span class="eyebrow">Local AI Stack · Technical Reference · Complete</span>
+  <h1>Local AI Stack — Complete Installation Guide</h1>
+  <p class="intro">An 18-phase guide to building a fully local, GPU-accelerated AI stack on Ubuntu 24.04 LTS. No cloud. No API bills. No data leaving the network.</p>
+</header>
+
+<hr>
+
+<section class="idea-section">
+
+## System Configuration
+
+| Component | Specification |
+|-----------|--------------|
+| CPU | AMD Ryzen 9 9800X3D |
+| RAM | 32 GB |
+| GPU | AMD RX 9070 XT (16 GB VRAM) |
+| Motherboard | Gigabyte B650 Eagle AX |
+| OS Drive (C:) | Windows 11 (primary M.2) — untouched |
+| Linux Drive (D:) | Ubuntu 24.04 LTS (dedicated second M.2) |
+
+</section>
+
+<hr>
+
+<section class="idea-section">
+
+## Overview & Installation Order
+
+This guide covers the complete setup of a local AI stack on Ubuntu 24.04 LTS, installed on a dedicated second M.2 drive alongside Windows 11. All AI services run on Ubuntu. Follow the phases in order — each phase depends on the previous one being complete.
+
+| Phase | Task | OS |
+|-------|------|----|
+| 1 | Prepare for dual boot (BIOS + Windows Fast Startup) | Windows / BIOS |
+| 2 | Create Ubuntu USB installer | Windows (one time) |
+| 3 | Install Ubuntu 24.04 LTS on second M.2 (dedicated) | BIOS / Ubuntu |
+| 4 | Post-install Ubuntu setup | Ubuntu |
+| 5 | Install Docker | Ubuntu |
+| 6 | Install Ollama | Ubuntu |
+| 7 | Install Open WebUI | Ubuntu / Docker |
+| 8 | Pull Gemma 4 model | Ubuntu / Ollama |
+| 9 | Install SearXNG | Ubuntu / Docker |
+| 10 | Install Whisper | Ubuntu / Docker |
+| 11 | Install yt-dlp | Ubuntu |
+| 12 | Install Apache Tika | Ubuntu / Docker |
+| 13 | Connect everything in Open WebUI | Browser |
+| 14 | Set up Tailscale for remote collaboration | Ubuntu |
+| 15 | Install OpenBrain (persistent AI memory) | Ubuntu / Docker |
+| 16 | Install Obsidian (knowledge base + local AI) | Ubuntu |
+| 17 | Install context-mode (context window optimiser) | Ubuntu / npm |
+| 18 | Install OpenCode (terminal coding agent) | Ubuntu / npm |
+
+### Port Reference
+
+| Port | Service | Purpose |
+|------|---------|---------|
+| 3000 | Open WebUI | Browser chat interface |
+| 8080 | SearXNG | Private web search |
+| 8000 | OpenBrain API | REST memory API |
+| 8088 | OpenBrain MCP | MCP tool server |
+| 9000 | Whisper | Speech-to-text API |
+| 9998 | Apache Tika | File extraction |
+| 11434 | Ollama | Local LLM inference |
+
+> **Note:** OpenBrain MCP runs on port 8088 (not 8080) to avoid conflict with SearXNG. Both run simultaneously.
+
+</section>
+
+<hr>
+
+<section class="idea-section">
+
+## Phase 1 — Prepare Windows for Dual Boot
+
+Because Ubuntu will be installed on a completely separate second M.2 drive, you do not need to resize or modify your Windows C: drive at all. Windows remains fully independent.
+
+### Check second M.2 is detected in BIOS
+
+- Restart PC and press **Delete** to enter the Gigabyte BIOS
+- Go to **Settings → Miscellaneous → NVMe Configuration**
+- Confirm both M.2 drives are listed — the second drive should show its full capacity
+- Press Escape to return to main BIOS screen — do not exit yet
+
+### Disable Secure Boot
+
+- In BIOS: **Settings → Miscellaneous → Secure Boot** → set to **Disabled**
+
+> Note: Most Ubuntu 24.04 installs work with Secure Boot on, but disabling it avoids complications with ROCm and third-party drivers.
+
+### Disable Fast Startup in Windows
+
+- Open **Control Panel → Power Options → Choose what the power buttons do**
+- Click **Change settings that are currently unavailable**
+- Uncheck **Turn on fast startup** → Save changes
+
+> Note: Fast Startup keeps Windows drives in a locked state. Disabling it ensures Ubuntu can safely read your Windows drive if needed.
+
+Press **F10** to save BIOS changes and exit.
+
+</section>
+
+<hr>
+
+<section class="idea-section">
+
+## Phase 2 — Create Ubuntu USB Installer
+
+You need a USB drive of at least 8 GB for this step.
+
+### Download Ubuntu 24.04.4 LTS
+
+- Go to **https://ubuntu.com/download/desktop**
+- Download Ubuntu **24.04.4 LTS** ISO (~5 GB)
+
+> **Important:** Download 24.04.4 specifically — earlier point releases (24.04.1, 24.04.2, 24.04.3) ship with older kernels that do not fully support the RX 9070 XT. Verify the ISO filename includes `24.04.4` before writing to USB.
+
+### Download and Run Rufus
+
+- Go to **https://rufus.ie** and download the latest version
+- Plug in your USB drive and open Rufus
+- Select your USB drive at the top
+- Click **SELECT** and choose the Ubuntu ISO
+- Partition scheme: **GPT**
+- Target system: **UEFI (non CSM)**
+- Click **START** → choose **Write in ISO Image mode** when prompted
+
+</section>
+
+<hr>
+
+<section class="idea-section">
+
+## Phase 3 — Install Ubuntu 24.04 LTS on Second M.2
+
+### Boot from USB
+
+- With USB plugged in, restart PC
+- Press **F12** at the Gigabyte splash screen to open boot menu
+- Select your USB drive
+
+### Run the Installer
+
+- Select **Try or Install Ubuntu**
+- Double-click **Install Ubuntu** on the desktop
+- Language: English (or your preference)
+- Keyboard layout: match your keyboard
+
+### Partitioning — Critical Step
+
+> **Warning:** On the installation type screen, choose **Something else** (manual partitioning). Do NOT choose "Install Ubuntu alongside Windows" — that targets your C: drive.
+
+- Select **Something else** → Continue
+- In the partition table, identify your second M.2 drive — it will show as `/dev/nvme1n1` with its full capacity available
+- If the second drive has old partitions, select each one and click the minus (−) button to delete them all
+- Select the free space and click the plus (+) button to create a new partition:
+
+| Setting | Value |
+|---------|-------|
+| Size | All remaining free space (leave at maximum) |
+| Type for the new partition | Primary |
+| Location for the new partition | Beginning of this space |
+| Use as | Ext4 journaling file system |
+| Mount point | `/` |
+
+- At the bottom of the screen, find **Device for boot loader installation**
+- Set this to your second M.2 drive (e.g. `/dev/nvme1n1`) — NOT the Windows drive (`/dev/nvme0n1`)
+- This installs GRUB on the Linux drive, leaving your Windows drive completely untouched
+- Click **Install Now** → confirm → continue with timezone and account setup
+- Timezone: **Australia/Sydney**
+- Create your username and password
+- Wait for install to complete (~10–20 mins) → remove USB when prompted → reboot
+
+### Set boot drive order in BIOS
+
+- After reboot, press **Delete** to enter BIOS
+- Go to **Boot → Boot Option Priorities**
+- Set Boot Option 1 to your second M.2 (the Linux drive)
+- Set Boot Option 2 to your first M.2 (the Windows drive)
+- Press **F10** to save and exit
+- GRUB will now appear on every startup with Ubuntu and Windows Boot Manager as options
+
+> Note: To boot Windows without the GRUB menu (e.g. for gaming), press F12 at startup and select the Windows drive directly. You can also change the default boot OS and countdown timer later using the grub-customizer app in Ubuntu.
+
+</section>
+
+<hr>
+
+<section class="idea-section">
+
+## Phase 4 — Post-Install Ubuntu Setup
+
+### Update the system
+
+```bash
+sudo apt update && sudo apt upgrade -y
+```
+
+### Fix dual-boot clock conflict
+
+```bash
+timedatectl set-local-rtc 1
+```
+
+### Install AMD GPU Drivers and ROCm
+
+ROCm enables your RX 9070 XT to accelerate AI inference on Linux — this is the main advantage of dual booting.
+
+```bash
+# Download and install the amdgpu-install tool for Ubuntu 24.04.4 (Noble)
+# ROCm 7.2.1 — current stable with confirmed RX 9070 XT Noble support (March 2026)
+# Note: 7.2.0 had a missing Noble repository; 7.2.1 resolves this.
+# To check for newer releases: https://repo.radeon.com/amdgpu-install/
+sudo apt update
+wget https://repo.radeon.com/amdgpu-install/7.2.1/ubuntu/noble/amdgpu-install_7.2.1.70201-1_all.deb
+sudo apt install -y ./amdgpu-install_7.2.1.70201-1_all.deb
+
+# Install ROCm and graphics usecase
+# --usecase=graphics,rocm is current AMD-recommended syntax for desktop Radeon installs
+# --no-dkms removed: no longer recommended for desktop systems with a connected display
+sudo amdgpu-install -y --usecase=graphics,rocm
+
+# Add your user to the required groups
+sudo usermod -a -G render,video $USER
+sudo reboot
+```
+
+> Note: The installer script pins version 7.2.1 for reliability. Using the version-pinned .deb avoids picking up untested newer releases from the apt repo. ROCm 7.2.0 had a missing Noble repository — 7.2.1 (March 2026) resolves this and is the current recommended version for the RX 9070 XT on Ubuntu 24.04.4.
+
+After reboot, verify GPU is detected:
+
+```bash
+rocminfo | grep gfx
+```
+
+> **Optional but recommended:** Install the HWE kernel for the best RX 9070 XT hardware support (kernel 6.17 adds RDNA4 fan speed reporting and additional hardware features):
+> ```bash
+> sudo apt install linux-generic-hwe-24.04
+> sudo reboot
+> ```
+
+### Install essential tools
+
+```bash
+sudo apt install -y curl git wget gnupg ca-certificates \
+    python3 python3-pip ffmpeg build-essential \
+    nodejs npm openssl lsb-release \
+    apt-transport-https software-properties-common
+```
+
+</section>
+
+<hr>
+
+<section class="idea-section">
+
+## Phase 5 — Install Docker
+
+All AI services in this guide run as Docker containers on Ubuntu. Install Docker Engine (not Docker Desktop):
+
+```bash
+sudo apt install -y ca-certificates curl gnupg
+sudo install -m 0755 -d /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg \
+    | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] \
+    https://download.docker.com/linux/ubuntu \
+    $(. /etc/os-release && echo $VERSION_CODENAME) stable" \
+    | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+sudo apt update && sudo apt install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
+sudo usermod -aG docker $USER
+newgrp docker
+docker --version
+```
+
+> Note: Adding your user to the docker group means you can run docker commands without sudo. The newgrp command applies this immediately without needing to log out. A full reboot is still recommended.
+
+</section>
+
+<hr>
+
+<section class="idea-section">
+
+## Phase 6 — Install Ollama
+
+Ollama runs natively on Ubuntu and automatically uses your RX 9070 XT via ROCm for GPU-accelerated inference — significantly faster than CPU-only operation.
+
+```bash
+curl -fsSL https://ollama.com/install.sh | sh
+ollama --version
+systemctl status ollama
+```
+
+- Verify Ollama is running by visiting **http://localhost:11434** in a browser — you should see: *Ollama is running*
+
+> Note: Ollama installs as a systemd service and starts automatically on boot. If ROCm was set up correctly in Phase 4, Ollama will detect and use the RX 9070 XT automatically.
+
+</section>
+
+<hr>
+
+<section class="idea-section">
+
+## Phase 7 — Install Open WebUI
+
+Open WebUI runs as a Docker container and provides the browser-based chat interface for all your local models.
+
+```bash
+docker run -d -p 3000:8080 \
+    --add-host=host.docker.internal:host-gateway \
+    -v open-webui:/app/backend/data \
+    --name open-webui --restart always \
+    ghcr.io/open-webui/open-webui:main
+```
+
+- Wait for Docker to pull and start the image — this takes a few minutes on first run
+- Open a browser and go to **http://localhost:3000**
+- Create your admin account on first launch — this stays fully local
+- Go to **Settings → Connections** and confirm Ollama URL shows `http://host.docker.internal:11434`
+
+</section>
+
+<hr>
+
+<section class="idea-section">
+
+## Phase 8 — Pull Gemma 4 Model
+
+Gemma 4 is Google DeepMind's latest open model family. All variants support text and image input and include configurable reasoning/thinking modes. Choose based on your VRAM:
+
+| Model | VRAM | Context | Architecture | Notes |
+|-------|------|---------|-------------|-------|
+| `gemma4:e2b` | ~7 GB | 128K | Dense (edge) | Fast, good for testing |
+| `gemma4:e4b` | ~10 GB | 128K | Dense (edge) | **Recommended** — best balance |
+| `gemma4:26b` | ~16 GB | 256K | MoE (3.8B active/token) | Near-max quality — tight on 16GB cards |
+
+### Recommended — e4b model
+
+```bash
+ollama pull gemma4:e4b
+```
+
+### Alternative — e2b model (faster, lighter)
+
+```bash
+ollama pull gemma4:e2b
+```
+
+### Large — 26b model (near-maximum quality)
+
+```bash
+ollama pull gemma4:26b
+```
+
+> **Warning:** The 26b model needs ~16GB VRAM — your RX 9070 XT's full capacity. Long conversations build up a KV cache that can spill to system RAM and slow inference. Monitor VRAM usage with: `rocm-smi`
+
+### Pull the embedding model (required for OpenBrain and Obsidian)
+
+```bash
+# nomic-embed-text is used by OpenBrain and Obsidian Smart Connections
+ollama pull nomic-embed-text
+```
+
+### Test the model is working
+
+```bash
+ollama run gemma4:e4b
+```
+
+> Note: The model will appear automatically in the Open WebUI model selector.
+
+</section>
+
+<hr>
+
+<section class="idea-section">
+
+## Phase 9 — Install SearXNG (Private Web Search)
+
+SearXNG is a self-hosted private search engine that connects to Open WebUI to give your AI real-time web search capability without using external search APIs.
+
+```bash
+docker run -d --name searxng -p 8080:8080 \
+    -v searxng-data:/etc/searxng \
+    --restart always searxng/searxng
+```
+
+- Verify it is running by opening **http://localhost:8080** in your browser
+
+### Connect to Open WebUI
+
+| Setting | Value |
+|---------|-------|
+| Enable Web Search | On |
+| Search Engine | SearXNG |
+| SearXNG URL | `http://host.docker.internal:8080` |
+
+</section>
+
+<hr>
+
+<section class="idea-section">
+
+## Phase 10 — Install Whisper (Video/Audio Transcription)
+
+Whisper runs as a Docker container providing a local speech-to-text API. It transcribes video and audio files into text that can be added to your knowledge bases.
+
+```bash
+docker run -d --name whisper -p 9000:9000 \
+    -v whisper-cache:/root/.cache/whisper \
+    -e ASR_MODEL=medium \
+    --restart always \
+    onerahmet/openai-whisper-asr-webservice:latest
+```
+
+| Model | Size | Speed | Best for |
+|-------|------|-------|---------|
+| tiny | 75 MB | Very fast | Short clips, quick notes |
+| base | 145 MB | Fast | General use |
+| **medium** | 1.5 GB | Good | **Recommended** — best balance |
+| large-v3 | 3 GB | Slower | Maximum accuracy, lectures |
+
+### Connect Whisper to Open WebUI
+
+| Setting | Value |
+|---------|-------|
+| Speech to Text Engine | OpenAI |
+| API Base URL | `http://host.docker.internal:9000/v1` |
+| API Key | `none` (type the word none — not checked locally) |
+
+### Transcribe a video or audio file
+
+```bash
+curl -X POST http://localhost:9000/asr \
+    -F "audio_file=@/path/to/video.mp4" \
+    -F "output=txt" \
+    -o transcript.txt
+```
+
+Then upload the resulting `transcript.txt` into an Open WebUI knowledge base via **Workspace → Knowledge**.
+
+</section>
+
+<hr>
+
+<section class="idea-section">
+
+## Phase 11 — Install yt-dlp (YouTube & Web Video)
+
+yt-dlp downloads audio from YouTube and other video platforms for transcription with Whisper. It can also pull existing subtitles and transcripts directly without downloading the full video.
+
+### Install on Ubuntu
+
+```bash
+sudo pip install yt-dlp --break-system-packages
+yt-dlp --version
+```
+
+### Download audio only (send to Whisper)
+
+```bash
+yt-dlp -x --audio-format mp3 -o "%(title)s.%(ext)s" "https://youtube.com/watch?v=VIDEO_ID"
+```
+
+### Download transcript directly (no audio needed)
+
+```bash
+yt-dlp --write-auto-sub --skip-download --sub-format txt -o "%(title)s" "https://youtube.com/watch?v=VIDEO_ID"
+```
+
+> Note: The direct transcript option only works if YouTube has auto-generated subtitles. If not, download the audio and use Whisper instead.
+
+### Batch process a playlist
+
+```bash
+yt-dlp -x --audio-format mp3 -o "%(playlist_index)s - %(title)s.%(ext)s" "https://youtube.com/playlist?list=PLAYLIST_ID"
+```
+
+</section>
+
+<hr>
+
+<section class="idea-section">
+
+## Phase 12 — Install Apache Tika (Extended File Ingestion)
+
+Apache Tika dramatically expands the file types Open WebUI can ingest into knowledge bases. It adds OCR for scanned PDFs and images, and improves extraction quality for complex documents.
+
+| Category | File Types | Notes |
+|----------|-----------|-------|
+| Scanned PDFs | `.pdf` (image-based) | OCR extracts text from scanned documents |
+| Images with text | `.jpg .png .tiff .bmp` | OCR reads embedded text in photos and screenshots |
+| Spreadsheets | `.xlsx .xls .csv .ods` | Improved table and cell extraction |
+| Documents | `.docx .doc .odt .rtf` | Better handling of complex formatting |
+| Presentations | `.pptx .ppt .odp` | Extracts slide text and speaker notes |
+| Email formats | `.eml .msg` | Extracts email body and attachments |
+| eBooks | `.epub .mobi` | Chapter and section extraction |
+| Web formats | `.html .xml .rst` | Cleans markup, extracts readable content |
+| Archives | `.zip .tar` | Extracts and indexes contained files |
+
+### Deploy Tika container
+
+```bash
+docker run -d --name tika -p 9998:9998 --restart always apache/tika:latest
+```
+
+- Verify it is running: open **http://localhost:9998** in your browser — you should see the Apache Tika welcome page
+
+### Connect Tika to Open WebUI
+
+In Open WebUI: go to **Admin Panel → Settings → Documents**
+
+| Setting | Value |
+|---------|-------|
+| Content Extraction Engine | Tika |
+| Tika URL | `http://host.docker.internal:9998` |
+
+> Note: Once Tika is connected, all future file uploads to knowledge bases will use Tika for extraction. Existing files are not re-processed — delete and re-upload them if needed.
+
+### Best practices for knowledge base ingestion
+
+- Scanned PDFs — upload directly, Tika will OCR them automatically
+- Spreadsheets — for large datasets, export as CSV first for better RAG retrieval
+- Ensure spreadsheet column headers are clear and descriptive — the AI uses these for context
+- Upload files individually for large batches — prevents timeout errors during processing
+- After upload, check for a green tick on each file confirming successful processing
+
+</section>
+
+<hr>
+
+<section class="idea-section">
+
+## Phase 13 — Connect Everything in Open WebUI
+
+With all services running, apply these settings to connect all components:
+
+| Setting location | Field | Value |
+|-----------------|-------|-------|
+| Settings → Connections | Ollama URL | `http://host.docker.internal:11434` |
+| Settings → Web Search | Enable Web Search | On |
+| Settings → Web Search | Search Engine | SearXNG |
+| Settings → Web Search | SearXNG URL | `http://host.docker.internal:8080` |
+| Settings → Audio | STT Engine | OpenAI |
+| Settings → Audio | API Base URL | `http://host.docker.internal:9000/v1` |
+| Settings → Audio | API Key | `none` |
+| Admin Panel → Settings → Documents | Content Extraction Engine | Tika |
+| Admin Panel → Settings → Documents | Tika URL | `http://host.docker.internal:9998` |
+| Admin Panel → Settings → Tools | MCP Server URL | `http://host.docker.internal:8088/sse?key=YOUR_MCP_KEY` |
+
+> Note: The MCP Server URL for OpenBrain uses port 8088 (not 8080). Port 8080 is used by SearXNG. Your MCP key is saved to `~/ai-stack/openbrain_mcp_key.txt` after running the installer.
+
+### Adding video content to a knowledge base
+
+- Transcribe video with Whisper (see Phase 10) or download YouTube transcript with yt-dlp (see Phase 11)
+- In Open WebUI: go to **Workspace → Knowledge → New Knowledge Base**
+- Give it a descriptive name (e.g. Linux Tutorials, Project Research)
+- Upload transcript .txt files or documents directly
+- In any chat, use the **#** symbol to reference a knowledge base
+
+</section>
+
+<hr>
+
+<section class="idea-section">
+
+## Phase 14 — Remote Collaboration with Tailscale
+
+Tailscale creates a private encrypted VPN between your machine and your colleague's machine. They can access your Open WebUI as if they were on your local network — without exposing anything to the public internet. Free for up to 6 users with unlimited devices.
+
+| Without Tailscale | With Tailscale |
+|-------------------|----------------|
+| Open WebUI only accessible at localhost:3000 | Colleague accesses via a private URL from anywhere |
+| Sharing requires opening your router to the internet | Nothing exposed to the internet — fully private VPN |
+| No authentication on the network level | WireGuard encryption, Tailscale account required to join |
+| Colleague needs to be on your local network | Works from anywhere — home, office, cafe |
+
+**Step 1 — Create a Tailscale account**
+Go to **https://tailscale.com** and sign up for a free account. The free plan supports up to 6 users with unlimited devices.
+
+**Step 2 — Install Tailscale on Ubuntu**
+
+```bash
+curl -fsSL https://tailscale.com/install.sh | sh
+sudo tailscale up
+```
+
+A URL will appear in the terminal — open it in a browser to authenticate your machine.
+
+**Step 3 — Enable HTTPS certificates**
+
+Go to **https://login.tailscale.com/admin/dns** → Under HTTPS Certificates, click **Enable HTTPS**, then run:
+
+```bash
+sudo tailscale cert your-machine-name.tail1234.ts.net
+```
+
+**Step 4 — Invite your colleague**
+Go to **https://login.tailscale.com/admin/users** → click **Invite users** and enter your colleague's email address.
+
+**Step 5 — Share your machine**
+In the Tailscale admin console, go to **Machines** → find your Ubuntu machine → click the three dots menu → **Share** → enter your colleague's Tailscale email.
+
+**Step 6 — Create your colleague's Open WebUI account**
+In Open WebUI: **Admin Panel → Users → New User**. Set their role to **User** — you remain the admin.
+
+**Step 7 — Your colleague connects**
+
+```
+http://your-machine-name.tail1234.ts.net:3000
+# Or with HTTPS enabled:
+https://your-machine-name.tail1234.ts.net:3000
+```
+
+### Keeping your machine accessible
+
+```bash
+# Check Tailscale is running
+sudo systemctl status tailscaled
+
+# Check your tailnet connection status
+tailscale status
+
+# See your machine's Tailscale IP and hostname
+tailscale ip
+```
+
+</section>
+
+<hr>
+
+<section class="idea-section">
+
+## Phase 15 — Install OpenBrain (Persistent AI Memory)
+
+OpenBrain creates a single persistent memory database that any AI tool can read from and write to — so your context travels with you across sessions and across different AI tools. Everything stays on your Ubuntu machine.
+
+| Without OpenBrain | With OpenBrain |
+|-------------------|----------------|
+| Every conversation starts blank | AI recalls your projects, preferences, and past decisions automatically |
+| Re-explain context every session | Context is written once and retrieved by meaning across all sessions |
+| Memory locked to one AI platform | One shared database — Claude, Open WebUI, ChatGPT all read the same memory |
+| Data stored in company servers | Fully local — all data stays on your Ubuntu machine |
+| Keyword-only search | Semantic search — 'career change' finds 'Sarah is leaving her job' |
+
+### Architecture
+
+- **PostgreSQL + pgvector** — stores memories as both raw text and vector embeddings for semantic search
+- **MCP server** — bridges the database to any MCP-compatible AI tool
+- **Ollama embeddings** — your local Ollama instance generates vector embeddings, keeping everything on-device
+- **REST API** — lets you capture memories from scripts, Slack, or any other source
+
+### Step 1 — Clone the OpenBrain repository
+
+```bash
+cd ~
+git clone https://github.com/srnichols/OpenBrain.git
+cd OpenBrain
+```
+
+### Step 2 — Configure environment
+
+```bash
+cp .env.example .env
+nano .env
+```
+
+| Variable | Value | Notes |
+|----------|-------|-------|
+| `EMBEDDING_MODEL` | `nomic-embed-text` | Ollama embedding model |
+| `EMBEDDING_DIMENSIONS` | `768` | Matches nomic-embed-text output |
+| `OLLAMA_URL` | `http://localhost:11434` | Your local Ollama instance |
+| `MCP_ACCESS_KEY` | `your-secret-key-here` | Generate: `openssl rand -hex 32` |
+| `DATABASE_URL` | `postgresql://postgres:password@localhost:5432/openbrain` | Your Postgres instance |
+
+### Step 3 — Start OpenBrain with Docker Compose
+
+```bash
+docker compose up -d
+
+# Verify everything is running
+docker ps | grep openbrain
+curl http://localhost:8000/health
+# Expected: {"status":"healthy","service":"open-brain-api"}
+```
+
+### Step 4 — Connect OpenBrain to Open WebUI via MCP
+
+In Open WebUI: go to **Admin Panel → Settings → Tools**. Add a new tool server with URL:
+
+```
+http://host.docker.internal:8088/sse?key=YOUR_MCP_ACCESS_KEY
+```
+
+> **Warning:** OpenBrain MCP uses port 8088 (not 8080). Port 8080 is reserved for SearXNG. Your MCP key is saved to `~/ai-stack/openbrain_mcp_key.txt` by the installer script.
+
+### Step 5 — Available memory tools
+
+| Tool | What it does |
+|------|-------------|
+| `capture_thought` | Saves a memory to your database |
+| `search_thoughts` | Searches memory by meaning using semantic similarity |
+| `browse_recent` | Returns your most recent memories |
+| `thought_stats` | Shows database statistics |
+| `update_thought` | Updates or corrects an existing memory |
+| `delete_thought` | Removes a memory from the database |
+| `list_thoughts` | Lists memories filtered by project, category, or date |
+
+### Step 6 — Start building your memory
+
+- Saving a memory: tell the AI — *remember that we decided to use nomic-embed-text for all embedding tasks*
+- Recalling context: ask — *what do you remember about my local AI setup?*
+- Project context: ask — *what were we working on last session?*
+
+### Managing OpenBrain containers
+
+```bash
+docker compose -f ~/OpenBrain/docker-compose.yml up -d    # Start
+docker compose -f ~/OpenBrain/docker-compose.yml down     # Stop
+docker compose -f ~/OpenBrain/docker-compose.yml logs -f  # View logs
+```
+
+</section>
+
+<hr>
+
+<section class="idea-section">
+
+## Phase 16 — Install Obsidian (Knowledge Base + Local AI)
+
+Obsidian is a local-first Markdown note-taking app that stores everything as plain text files on your machine — no cloud sync required. Combined with your local Ollama stack, it becomes a private knowledge base where your AI can chat with your notes.
+
+| Without Obsidian + AI | With Obsidian + AI |
+|----------------------|-------------------|
+| Notes are static — searchable by keyword only | Semantic search finds notes by meaning, not just words |
+| AI has no access to your personal knowledge base | AI answers questions grounded in your actual notes |
+| Context lost between AI sessions | Your vault is persistent — knowledge accumulates over time |
+| Notes may sync to the cloud | Everything stays local — plain Markdown files you own |
+
+### Step 1 — Install Obsidian via official .deb
+
+```bash
+# Download the latest Obsidian .deb from GitHub releases
+OBSIDIAN_VER=$(curl -s https://api.github.com/repos/obsidianmd/obsidian-releases/releases/latest \
+    | grep '"tag_name"' | cut -d'"' -f4 | sed 's/v//')
+
+wget -O /tmp/obsidian.deb \
+    "https://github.com/obsidianmd/obsidian-releases/releases/latest/download/obsidian_${OBSIDIAN_VER}_amd64.deb"
+
+sudo apt install -y /tmp/obsidian.deb
+rm /tmp/obsidian.deb
+```
+
+- Launch Obsidian from the application menu or run: `obsidian`
+- On first launch, create a new vault — choose a folder on your Linux drive (e.g. `~/ObsidianVault`)
+
+> Note: Obsidian requires a graphical desktop session — it cannot run headlessly.
+
+### Step 2 — Enable Community Plugins
+
+- Open Obsidian → **Settings** (gear icon, bottom left)
+- Go to **Community plugins**
+- Click **Turn on community plugins** → confirm
+- Click **Browse** to open the plugin marketplace
+
+### Step 3 — Install Smart Connections (semantic vault search)
+
+Smart Connections embeds every note in your vault using `nomic-embed-text` — the same embedding model already running in your Ollama stack.
+
+- Search for **Smart Connections** → Install → Enable
+- Go to **Settings → Smart Connections**
+- Set **Embedding Model** to: `Ollama`
+- Set **Ollama URL** to: `http://localhost:11434`
+- Set **Embedding model name** to: `nomic-embed-text`
+- Set **Chat model** to: `gemma4:e4b`
+- Click **Force Refresh** — Smart Connections will now embed your entire vault
+
+### Step 4 — Install Copilot (conversational AI in Obsidian)
+
+- Search for **Copilot** → Install → Enable
+- Go to **Settings → Copilot**
+- Under **Default AI Provider**, select **Ollama**
+- Set **Ollama Base URL** to: `http://localhost:11434`
+- Set **Default model** to: `gemma4:e4b`
+- Open Copilot via the ribbon icon or command palette: **Copilot: Open chat**
+
+### Recommended vault structure for your AI stack
+
+```
+~/ObsidianVault/
+├── Daily/          # Daily notes — date-stamped, linked to projects
+├── Projects/       # One folder per project, with a MOC (map of content) note
+├── AI-Sessions/    # Saved outputs and summaries from Open WebUI chats
+├── Transcripts/    # Whisper/yt-dlp transcripts imported from your AI stack
+├── Reference/      # Technical notes, config details, decision logs
+└── Templates/      # Note templates for consistent structure
+```
+
+> Note: Store your vault on your Ubuntu drive (not Windows) so Smart Connections and Copilot can always reach Ollama at localhost:11434.
+
+</section>
+
+<hr>
+
+<section class="idea-section">
+
+## Phase 17 — Install context-mode (Context Window Optimiser)
+
+context-mode is an MCP server that sits between Claude and its tools. When a tool call would dump large output into the conversation, context-mode intercepts it and runs it in a sandboxed subprocess instead — the raw data never touches the context window.
+
+| Without context-mode | With context-mode |
+|---------------------|------------------|
+| A Playwright snapshot costs 56 KB of context | Same snapshot costs 299 bytes — 99% reduction |
+| Context window exhausted after ~30 minutes | Sessions run for ~3 hours before degradation |
+| After compaction, Claude forgets files, tasks, decisions | Full session state recovered — continues from your last prompt |
+| Reading 50 files = 50 tool calls, 700 KB of context | One script analyses all 50 files, logs only the result — 3.6 KB |
+
+> **Important:** context-mode works with Claude Code, claude.ai, VS Code Copilot, Cursor, and similar AI coding agents. It has no effect on Open WebUI or local Gemma 4 sessions.
+
+### How it fits alongside OpenBrain and Obsidian
+
+| Tool | What it handles | Scope |
+|------|----------------|-------|
+| **context-mode** | Raw tool output — keeps code execution, file reads, and API responses out of context | Within a session |
+| **OpenBrain** | Decisions, preferences, project context that persists between conversations | Across sessions |
+| **Obsidian** | Structured notes, project documentation, session summaries | Permanent knowledge base |
+
+### Step 1 — Install context-mode globally
+
+```bash
+npm install -g context-mode
+
+# Verify installation
+context-mode --version
+context-mode doctor
+```
+
+### Step 2 — Copy AGENTS.md routing instructions
+
+```bash
+cp $(npm root -g)/context-mode/configs/claude-code/CLAUDE.md ~/AGENTS.md
+```
+
+> Note: OpenCode now prioritises `AGENTS.md` over `CLAUDE.md` — if both exist, only `AGENTS.md` is used. The file is copied from the same source but saved as `AGENTS.md`. Claude Code continues to use `CLAUDE.md`.
+
+### Step 3 — Add to Claude Code
+
+```bash
+# MCP-only install (simplest — all 11 tools, no automatic hook routing)
+claude mcp add context-mode -- npx -y context-mode
+```
+
+### Claude Code — the missing piece
+
+Claude Code is a command-line tool that gives you a terminal interface to Claude with full filesystem and code execution access:
+
+```bash
+# Install Claude Code
+npm install -g @anthropic-ai/claude-code
+
+# Use from any project folder
+cd ~/my-project
+claude
+```
+
+### When to use which AI interface
+
+| Situation | Use | Why |
+|-----------|-----|-----|
+| Chatting, brainstorming, general questions | Open WebUI — localhost:3000 | Local Gemma 4, fully private, no internet needed, no API cost |
+| Building, coding, file work, complex reasoning | Claude Code — terminal | Full Claude with filesystem access, context-mode, OpenBrain all working together |
+| Coding without leaving VS Code or Cursor | OpenCode IDE extension | Same OpenCode agent embedded in your editor — works with local Gemma 4 or Claude |
+| Either, from anywhere | Both via Tailscale | Open WebUI and Claude Code both accessible remotely on your tailnet |
+
+> **Warning:** Claude Code uses Anthropic API credits billed separately from your claude.ai subscription. Check **anthropic.com/pricing** before heavy use. For cost-free coding, use Open WebUI with local Gemma 4 instead.
+
+### Benchmark results
+
+| Scenario | Raw size | With context-mode | Saved |
+|----------|---------|-------------------|-------|
+| Playwright snapshot | 56.2 KB | 299 B | 99% |
+| GitHub Issues (20) | 58.9 KB | 1.1 KB | 98% |
+| Access log (500 requests) | 45.1 KB | 155 B | 100% |
+| Git log (153 commits) | 11.6 KB | 107 B | 99% |
+| **Full session total** | **315 KB** | **5.4 KB** | **98%** |
+
+</section>
+
+<hr>
+
+<section class="idea-section">
+
+## Phase 18 — Install OpenCode (Terminal Coding Agent)
+
+OpenCode is a free, open source AI coding agent available as a terminal TUI, IDE extension for VS Code and Cursor, and desktop app — similar to Claude Code but not tied to any single provider. It can run against your local Gemma 4 via Ollama at zero cost and with full privacy.
+
+| Claude Code | OpenCode |
+|------------|---------|
+| Anthropic API only — always costs API credits | Works with local Gemma 4 via Ollama — free and private |
+| Closed source | Open source — MIT licensed |
+| Single provider lock-in | Multiple providers — Anthropic, OpenAI, Gemini, Ollama, and more |
+| Terminal only | Terminal TUI, IDE extension (VS Code, Cursor, Windsurf), desktop app |
+| context-mode: full hooks | context-mode: full hooks (pre-wired during install) |
+
+### When to use which tool
+
+| Tool | Model | Cost | Best for |
+|------|-------|------|---------|
+| Open WebUI | Gemma 4 (local) | Free | Chat, brainstorming, private queries |
+| OpenCode + Ollama | Gemma 4 (local) | Free | Coding work — private, no API cost |
+| OpenCode + Claude | Claude (API) | API credits | Complex coding when you need more than Gemma 4 |
+| Claude Code | Claude (API) | API credits | Hardest problems — best reasoning |
+
+### Step 1 — Install OpenCode
+
+The recommended install method is the official script:
+
+```bash
+curl -fsSL https://opencode.ai/install | bash
+opencode --version
+```
+
+Alternatively, install via npm:
+
+```bash
+npm install -g opencode-ai@latest
+opencode --version
+```
+
+### Step 2 — Configure local Gemma 4 as default model
+
+```bash
+# Add to ~/.bashrc to make permanent
+echo 'export LOCAL_ENDPOINT=http://localhost:11434' >> ~/.bashrc
+source ~/.bashrc
+```
+
+### Step 3 — context-mode is pre-wired
+
+The installer writes OpenCode's global config with context-mode already registered:
+
+```json
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "context-mode": {
+      "type": "local",
+      "command": ["context-mode"],
+      "enabled": true
+    }
+  }
+}
+```
+
+> Note: The `"plugin"` key has been removed from the OpenCode config schema. MCP servers are now activated via `"enabled": true` within the `"mcp"` block.
+
+### Step 4 — Copy AGENTS.md to each new project
+
+```bash
+# Template saved by the installer — copy to each project root
+cp ~/ai-stack/opencode_AGENTS.md.template ~/your-project/AGENTS.md
+
+# Or let OpenCode generate it automatically on first run
+cd ~/your-project
+opencode
+# Then type: /init
+```
+
+### Step 5 — Start coding
+
+```bash
+cd ~/MarketSimulator
+opencode
+
+# Verify context-mode is working — type this in the OpenCode session
+ctx stats
+```
+
+OpenCode has two modes you switch between with **Tab**:
+- **Plan mode** — OpenCode drafts what it intends to do before touching any files. Review the plan, give feedback.
+- **Build mode** — OpenCode executes the plan, edits files, runs commands, checks results.
+
+> **Note:** The recommended way to authenticate is `opencode auth login` — select Anthropic and sign in with your Claude Pro or Max subscription. This is the most cost-effective approach. If you use a raw Anthropic API key instead, every session uses API credits — check **anthropic.com/pricing** before heavy sessions. For completely cost-free coding, use local Gemma 4 via `LOCAL_ENDPOINT`.
+
+</section>
+
+<hr>
+
+<section class="idea-section">
+
+## Quick Reference — Useful Commands
+
+### Tailscale
+
+| Task | Command |
+|------|---------|
+| Check Tailscale service status | `sudo systemctl status tailscaled` |
+| Check tailnet connection | `tailscale status` |
+| Show your machine hostname & IP | `tailscale ip` |
+| Connect / reconnect to tailnet | `sudo tailscale up` |
+| Colleague's access URL | `http://your-machine-name.tail1234.ts.net:3000` |
+
+### Docker management
+
+| Task | Command |
+|------|---------|
+| List running containers | `docker ps` |
+| Stop a container | `docker stop open-webui` |
+| Start a container | `docker start open-webui` |
+| View container logs | `docker logs open-webui` |
+
+### Ollama model management
+
+| Task | Command |
+|------|---------|
+| List installed models | `ollama list` |
+| Pull a new model | `ollama pull gemma4:e4b` |
+| Remove a model | `ollama rm gemma4:e4b` |
+| Run model in terminal | `ollama run gemma4:e4b` |
+
+### OpenCode
+
+| Task | Command |
+|------|---------|
+| Start in a project folder | `cd ~/your-project && opencode` |
+| Check context-mode is working | Type `ctx stats` inside session |
+| Log in with Claude Pro/Max | `opencode auth login` |
+| Config file location | `~/.config/opencode/opencode.json` |
+
+### Ubuntu / Linux
+
+| Task | Command |
+|------|---------|
+| Update all packages | `sudo apt update && sudo apt upgrade -y` |
+| Check ROCm GPU detection | `rocminfo | grep gfx` |
+| Monitor VRAM usage | `rocm-smi` |
+| Check Ollama service | `systemctl status ollama` |
+| Restart Ollama service | `sudo systemctl restart ollama` |
+
+</section>
+
+<hr>
+
+<div class="tags">
+  <span class="tag">#technology</span>
+  <span class="tag">#automation</span>
+  <span class="tag">#local-ai</span>
+  <span class="tag">#linux</span>
+  <span class="tag">#rocm</span>
+  <span class="tag">#session-claude</span>
+  <span class="tag">#idea-original</span>
+</div>
+
+<hr>
+
+<div class="collab-note">
+  <div class="collab-note-header">🤝 Collaboration Note</div>
+  <div class="collab-note-body">
+
+<p>This guide was not written by Cameron Loudon alone, and it was not produced by Claude alone. It is the record of a genuine collaboration — the kind that only happens when one person knows what they want to build and another can help them build it in real time.</p>
+
+<p>Cameron came into this session with a clear vision: a fully private, GPU-accelerated local AI stack on his own hardware, running on a second M.2 drive alongside Windows 11. No cloud. No API bills. No data leaving the network. He had the hardware already chosen, the goals already formed, and a head full of ideas he needed to get out before they were lost.</p>
+
+<p>What emerged over the course of this conversation was substantially more than either party started with. The 18-phase structure, the automated installer script, the self-test suite, the port conflict resolution between SearXNG and OpenBrain MCP, the Gemma 4 model selection and VRAM analysis, the decision to add Obsidian as a knowledge layer, the context-mode integration for session continuity, the OpenCode discovery and its fit alongside Claude Code — all of this was built iteratively, each decision informing the next.</p>
+
+<p>Claude audited its own work mid-conversation, found a Gemma 3 reference that had survived a model upgrade, found Obsidian missing from the installer scripts despite being in the documentation, and fixed both without being asked. Cameron caught a WSL2/ROCm detail that Claude had understated, challenged Claude to be honest about its confidence levels, and the conversation produced a better framework for how to prompt AI for hardware-sensitive technical work.</p>
+
+<p>The master prompt Cameron now carries into every future session — designed to give any AI instance enough context to pick up exactly where we left off — was also produced here. As was the prompt engineering discussion that produced it. And the observation that Cameron's brain works like a context window with a limit, and that AI is what helps him get things out before they're gone.</p>
+
+<p>This is what Radical Collaboration Transparency means in practice. Not a disclaimer. Attribution.</p>
+
+<p><strong>Model:</strong> Claude Sonnet 4.6 (claude-sonnet-4-6)<br>
+<strong>Platform:</strong> Claude.ai<br>
+<strong>Session date:</strong> May 2026<br>
+<strong>Reviewed and approved by:</strong> Cameron Loudon</p>
+
+  </div>
+</div>
+
+</article>
+
+<style>
+.idea-page .page-header {
+  padding: 2rem 0 2.5rem;
+}
+
+.page-header .eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.page-header .intro {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  max-width: 580px;
+  margin-top: 1rem;
+}
+
+.idea-section {
+  padding: 1rem 0 2rem;
+}
+
+.idea-section h2 {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+}
+
+.idea-section h3 {
+  margin-top: 1.75rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.05rem;
+}
+
+.idea-section table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+}
+
+.idea-section th {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 2px solid var(--border);
+}
+
+.idea-section td {
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  vertical-align: top;
+}
+
+.idea-section tr:last-child td {
+  border-bottom: none;
+}
+
+.idea-section ul,
+.idea-section ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.idea-section li {
+  margin-bottom: 0.35rem;
+  font-size: 0.95rem;
+}
+
+[data-theme="terminal"] .idea-section table {
+  border: 1px solid var(--border);
+}
+
+[data-theme="terminal"] .idea-section th {
+  background: var(--bg-secondary);
+  color: var(--accent);
+}
+
+[data-theme="tree"] .idea-section table {
+  border: 1px solid var(--border);
+}
+
+[data-theme="tree"] .idea-section th {
+  background: var(--bg-secondary);
+  color: var(--accent);
+}
+</style>
