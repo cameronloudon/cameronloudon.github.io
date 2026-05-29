@@ -714,6 +714,88 @@ hr {
 }
 
 /* ============================================
+   SIGNALS — INDEX & INDIVIDUAL PAGES
+   ============================================ */
+.signal-page .page-header,
+.signals-index .page-header {
+  padding: 2rem 0 2.5rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 2.5rem;
+}
+
+.page-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.signal-back {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  display: inline-block;
+  padding-bottom: 0.6rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+  width: 100%;
+}
+
+.signal-back:hover {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.signal-body {
+  max-width: 640px;
+  margin-bottom: 2rem;
+}
+
+.signal-body p {
+  font-size: 1rem;
+  line-height: 1.85;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.signal-body p:last-child {
+  margin-bottom: 0;
+}
+
+.signal-ref {
+  margin: 1.5rem 0 2rem;
+  padding: 0.875rem 1rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.signal-ref-label {
+  margin-right: 0.5rem;
+}
+
+.signal-collabs {
+  margin-top: 3rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.signals-intro {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  max-width: 580px;
+  margin-bottom: 3rem;
+}
+
+/* ============================================
    RESPONSIVE
    ============================================ */
 @media (max-width: 600px) {
