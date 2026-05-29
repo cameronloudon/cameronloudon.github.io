@@ -1,0 +1,141 @@
+---
+layout: default
+title: "Now"
+permalink: /now/
+description: What Cameron Loudon is working on and thinking about right now.
+---
+
+<article class="now-page">
+
+  <header class="page-header">
+    <span class="eyebrow">Where my attention is</span>
+    <h1>Now</h1>
+    <p class="intro">This is what I am working on and thinking about right now. Not a portfolio. Not a highlight reel. Just an honest account of where my attention is.</p>
+  </header>
+
+  <hr>
+
+  <section class="now-projects">
+
+    <div class="now-project">
+      <div class="now-project-label">Project &middot; Started December 2025</div>
+      <h2>Building a Local AI Stack</h2>
+      <p>I'm attempting to build a fully private, GPU-accelerated AI stack on my own hardware. No cloud. No API bills. No data leaving the network.</p>
+      <p>The stack runs on a dedicated Ubuntu drive alongside Windows 11, using an AMD RX 9070 XT for local inference via Ollama, Open WebUI, and a set of supporting services for search, transcription, memory, and file ingestion.</p>
+      <p>I've documented the full installation process across 18 phases. Whether it all works remains to be seen — I'll update this page as it progresses.</p>
+      <a href="/local-ai-stack/" class="now-link">Read the full installation guide &rarr;</a>
+    </div>
+
+    <div class="now-project">
+      <div class="now-project-label">Project &middot; In development since 2004</div>
+      <h2>The Enrolment Pipeline Problem</h2>
+      <p>Every university course operates on a pipeline. New students enter at commencement, progress through year levels, and graduate. The total revenue and funding picture at any point is a product of how many students are in each stage of that pipeline.</p>
+      <p>There are two standard levers for growth: recruit more commencing students, or retain more of the students you already have. Both are well understood, heavily resourced, and intensely competitive. What is almost never systematically pursued is a third lever — and it's the one I've been thinking about since 2004.</p>
+      <p>In recent months, working through this with AI as a genuine thinking partner has helped me rethink and sharpen everything. The model is in development. I'll say more when I'm in a position to share my proposal.</p>
+    </div>
+
+  </section>
+
+  <div class="collab-note">
+    <div class="collab-note-header">🤝 Collaboration note — page design</div>
+    <div class="collab-note-body">
+      <p>This page was developed in a thinking session with Claude (Anthropic).</p>
+      <p>Model: claude-sonnet-4-6 &nbsp;·&nbsp; Session date: May 2026</p>
+      <p>Output reviewed and approved by Cameron Loudon.</p>
+      <p>Part of the Radical Collaboration Transparency framework — <a href="/approach">cameronloudon.com/approach</a></p>
+    </div>
+  </div>
+
+  <div class="collab-note">
+    <div class="collab-note-header">🤝 Collaboration note — repository</div>
+    <div class="collab-note-body">
+      <p>This page was built and committed to the GitHub repository by Claude Code (Anthropic).</p>
+      <p>Model: claude-sonnet-4-6 &nbsp;·&nbsp; Session date: May 2026</p>
+      <p>Reviewed and merged by Cameron Loudon.</p>
+    </div>
+  </div>
+
+</article>
+
+<style>
+.page-header {
+  padding: 2rem 0 2.5rem;
+}
+
+.page-header .eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.page-header .intro {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  max-width: 580px;
+  margin-top: 1rem;
+}
+
+.now-projects {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.now-project {
+  padding: 2.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.now-project:last-child {
+  border-bottom: none;
+}
+
+.now-project-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.75rem;
+}
+
+.now-project h2 {
+  margin-bottom: 1.25rem;
+}
+
+.now-project p {
+  max-width: 580px;
+  font-size: 0.975rem;
+  line-height: 1.8;
+}
+
+.now-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1px;
+  transition: color var(--transition), border-color var(--transition);
+}
+
+.now-link:hover {
+  color: var(--accent-hover);
+  border-bottom-color: var(--accent);
+  text-decoration: none;
+}
+
+[data-theme="terminal"] .now-link:hover {
+  text-shadow: 0 0 8px rgba(0, 255, 65, 0.5);
+}
+
+[data-theme="tree"] .now-link:hover {
+  text-shadow: 0 0 8px rgba(255, 176, 0, 0.4);
+}
+</style>
