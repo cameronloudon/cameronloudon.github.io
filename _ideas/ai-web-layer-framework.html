@@ -1,0 +1,363 @@
+---
+layout: default
+title: AI-Readable Web Layer Framework
+description: A framework for building a controlled, AI-readable layer for any university website — structured as a static subdomain, governed by the Marketing OS.
+permalink: /ideas/ai-web-layer-framework/
+---
+
+<article class="idea-page">
+
+  <header class="page-header">
+    <span class="eyebrow">My Ideas · Framework · In Progress</span>
+    <h1>AI-Readable Web Layer Framework</h1>
+    <p class="intro">A framework for giving AI systems a controlled, sanctioned path into a university website — rather than leaving them to scrape, guess, or go without.</p>
+  </header>
+
+  <div class="idea-meta-bar">
+    <div class="idea-meta-item">
+      <span class="meta-label">Status</span>
+      <span class="meta-value status-progress">First Draft Complete</span>
+    </div>
+    <div class="idea-meta-item">
+      <span class="meta-label">First built</span>
+      <span class="meta-value">June 2026</span>
+    </div>
+    <div class="idea-meta-item">
+      <span class="meta-label">Sector</span>
+      <span class="meta-value">Higher Education</span>
+    </div>
+    <div class="idea-meta-item">
+      <span class="meta-label">Collaborator</span>
+      <span class="meta-value">Claude (Anthropic)</span>
+    </div>
+  </div>
+
+  <hr>
+
+  <section class="idea-section">
+    <h2>The Problem This Solves</h2>
+    <p>Most university websites block AI crawlers — for entirely legitimate reasons. Bot traffic inflates analytics, consumes bandwidth, risks licensed content exposure, and creates denial-of-service vulnerability. So IT teams block it, often by default.</p>
+    <p>The consequence is that when a prospective student asks an AI system about a university, the AI either can't answer accurately, pulls outdated scraped data, or fabricates details. The institution loses control of its narrative at exactly the moment a student is making a decision.</p>
+    <p>The argument to an IT or web team is not "let AI in." It is: give AI a designated, controlled path — so you can keep blocking everything else, preserve clean analytics, and control exactly how your institution is represented.</p>
+  </section>
+
+  <section class="idea-section">
+    <h2>The Three-Tier Architecture</h2>
+    <p>This framework is the second tier of a three-tier system. Each tier serves a distinct purpose:</p>
+
+    <div class="architecture-tree">
+      <div class="tree-root">Tier 1 — Marketing OS <span class="tree-status complete">internal · university-agnostic</span></div>
+      <div class="tree-line" style="padding-left:1rem;">Source of truth for positioning, personas, value proposition.</div>
+      <div class="tree-line" style="padding-left:1rem; margin-bottom: 0.75rem;">Same intellectual work, facing inward — toward teams.</div>
+
+      <div class="tree-root">Tier 2 — AI-Readable Web Layer Framework <span class="tree-status complete">this framework</span></div>
+      <div class="tree-line" style="padding-left:1rem;">De-identified methodology. Templates any university can implement.</div>
+      <div class="tree-line" style="padding-left:1rem; margin-bottom: 0.75rem;">Shows how to surface the Marketing OS externally, toward AI systems.</div>
+
+      <div class="tree-root">Tier 3 — Reference Implementation <span class="tree-status pending">UNE · worked example</span></div>
+      <div class="tree-line" style="padding-left:1rem;">UNE prototype: 17 files, both layers fully populated.</div>
+      <div class="tree-line" style="padding-left:1rem;">Demonstrates the framework working in practice.</div>
+    </div>
+
+    <p>The connective logic: Marketing OS generates the strategy → Framework shows how to surface it externally → Reference implementation demonstrates it done. The same intellectual work faces two directions — inward to internal teams, outward to AI systems.</p>
+  </section>
+
+  <section class="idea-section">
+    <h2>The Two-Layer Architecture</h2>
+    <p>The AI layer itself is structured in two distinct layers with different purposes, different update frequencies, and different governance requirements:</p>
+
+    <div class="architecture-tree">
+      <div class="tree-root">ai.[youruniversity].edu.au/</div>
+      <div class="tree-line">├── <span class="tree-folder">llms.txt</span> <span class="tree-status complete">← AI entry point</span></div>
+      <div class="tree-line">├── <span class="tree-folder">content/</span> <span class="tree-status complete">← what the institution is</span></div>
+      <div class="tree-line tree-indent">├── about/</div>
+      <div class="tree-line tree-indent">├── study/courses/</div>
+      <div class="tree-line tree-indent">├── research/</div>
+      <div class="tree-line tree-indent">├── campus-life/</div>
+      <div class="tree-line tree-indent">├── international/</div>
+      <div class="tree-line tree-indent">└── current-students/</div>
+      <div class="tree-line">└── <span class="tree-folder">skills/</span> <span class="tree-status complete">← how AI should talk about the institution</span></div>
+      <div class="tree-line tree-indent">├── positioning.md</div>
+      <div class="tree-line tree-indent">├── personas.md</div>
+      <div class="tree-line tree-indent">├── usps.md</div>
+      <div class="tree-line tree-indent">├── competitors.md</div>
+      <div class="tree-line tree-indent">├── tone-of-voice.md</div>
+      <div class="tree-line tree-indent">├── objections.md</div>
+      <div class="tree-line tree-indent">└── faq.md</div>
+    </div>
+
+    <p>The content layer is the library. The skills layer is the librarian who knows how to use it. Without the skills layer, AI systems can answer factual questions accurately. With it, they can give genuinely useful guidance — acknowledging trade-offs, matching students to the right offering, and communicating in the institution's voice.</p>
+  </section>
+
+  <section class="idea-section">
+    <h2>Audio Overview</h2>
+    <p>A way into the framework before diving into the detail.</p>
+
+    <div class="audio-disclaimer">
+      <span class="disclaimer-label">Note</span>
+      <p>This audio was generated by Google NotebookLM as an accessible way to traverse otherwise dense content. Listen to it as a guide and a starting point — AI narration makes interpretive choices and occasional translation errors, which we openly acknowledge. The University of New England has not implemented this proposal. UNE appears in this work as a reference implementation only.</p>
+    </div>
+
+    <div class="audio-player">
+      <div class="audio-label">
+        <span class="audio-icon">▶</span>
+        <div>
+          <div class="audio-title">A Ghost Web for AI Bots — Framework Overview</div>
+          <div class="audio-meta">Generated by Google NotebookLM · June 2026</div>
+        </div>
+      </div>
+      <audio controls preload="none" style="width:100%; margin-top: 1rem;">
+        <source src="/assets/audio/A_ghost_web_for_AI_bots.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+  </section>
+
+  <section class="idea-section">
+    <h2>Hosting Architecture</h2>
+    <p>The AI layer is hosted as a static subdomain — separate from the main website entirely. This is deliberate.</p>
+    <p>A subdomain like <code>ai.youruniversity.edu.au</code> is fully decoupled from the main site's infrastructure and security settings. It can be stood up as a plain static site (GitHub Pages, Netlify, Cloudflare Pages) without touching the CMS, without reconfiguring Cloudflare, and without impacting main site analytics. The main site's <code>llms.txt</code> points AI systems to the subdomain — everything else stays blocked.</p>
+    <p>The domain authority matters too: AI systems can verify that <code>ai.youruniversity.edu.au</code> is official institutional content, not a third-party interpretation.</p>
+  </section>
+
+  <section class="idea-section">
+    <h2>Maintenance Model</h2>
+    <p>The two layers have fundamentally different update profiles and should not be maintained the same way.</p>
+
+    <div class="architecture-tree">
+      <div class="tree-root" style="margin-bottom:0.5rem;">Content layer — operational</div>
+      <div class="tree-line" style="padding-left:1rem; margin-bottom:0.75rem;">Updated each trimester or on page publish. Automated script or CMS export. No sign-off required.</div>
+      <div class="tree-root" style="margin-bottom:0.5rem;">Skills layer — strategic</div>
+      <div class="tree-line" style="padding-left:1rem;">Updated when strategy changes. Ideally an authorised agent drawing instruction from the Marketing OS.</div>
+      <div class="tree-line" style="padding-left:1rem;">Human sign-off required before deployment.</div>
+    </div>
+
+    <p>The Marketing OS is the upstream source of truth for the skills layer. When positioning or personas are updated in the Marketing OS, those changes propagate to the skills layer — not the other way around.</p>
+  </section>
+
+  <section class="idea-section">
+    <h2>Connection to the llms.txt Standard</h2>
+    <p>This framework aligns with the emerging <code>llms.txt</code> standard — a real convention proposed in 2024 and adopted by a growing number of websites as an AI-readable equivalent of <code>robots.txt</code>. The framework extends that concept with a full content and intelligence architecture rather than a single index file.</p>
+    <p>Implementing this positions a university as a genuine early adopter — and one of very few Australian universities with a deliberate, governed AI access layer.</p>
+  </section>
+
+  <section class="idea-section">
+    <h2>Who This Is For</h2>
+    <p>Any university that wants to control how AI systems represent it to prospective students — rather than leaving that representation to whatever an AI can scrape, infer, or hallucinate from outdated sources.</p>
+    <p>The framework is sector-specific to higher education, but the architecture — a controlled static subdomain, a content layer, a skills/intelligence layer, and an upstream strategy source — is transferable to any organisation that needs to govern its AI representation.</p>
+  </section>
+
+  <div class="tags">
+    <span class="tag">#idea-original</span>
+    <span class="tag">#marketing</span>
+    <span class="tag">#strategy</span>
+    <span class="tag">#ai-infrastructure</span>
+    <span class="tag">#framework</span>
+    <span class="tag">#in-progress</span>
+    <span class="tag">#session-claude</span>
+  </div>
+
+  <hr>
+
+  <div class="collab-note">
+    <div class="collab-note-header">🤝 Collaboration Note</div>
+    <div class="collab-note-body">
+      <p>This framework was developed across two structured sessions with Claude (Anthropic).</p>
+      <p><strong>Session 1:</strong> claude-sonnet-4-6 &nbsp;·&nbsp; 7 June 2026 &nbsp;·&nbsp; Claude.ai — UNE reference implementation (17 files: content + skills layers, proposal document).</p>
+      <p><strong>Session 2:</strong> claude-sonnet-4-6 &nbsp;·&nbsp; 7 June 2026 &nbsp;·&nbsp; Claude Cowork — Three-tier architecture, de-identified framework templates, subdomain hosting model, hybrid maintenance model, GitHub architecture.</p>
+      <p>Cameron identified the connection between the Marketing OS and the AI web layer — that the same intellectual work faces two directions. The articulation of "the Marketing OS is the brain, the AI web layer is the voice" emerged from that observation in dialogue. The three-tier structure, the subdomain hosting rationale, and the split maintenance model were developed collaboratively.</p>
+      <p>Reviewed and approved by Cameron Loudon.</p>
+    </div>
+  </div>
+
+</article>
+
+<style>
+.idea-page .page-header {
+  padding: 2rem 0 2rem;
+}
+
+.idea-page .page-header .eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.idea-page .page-header .intro {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  max-width: 580px;
+  margin-top: 1rem;
+  line-height: 1.8;
+}
+
+.idea-meta-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin: 1.5rem 0;
+}
+
+.idea-meta-item {
+  flex: 1;
+  min-width: 140px;
+  padding: 1rem 1.25rem;
+  border-right: 1px solid var(--border);
+}
+
+.idea-meta-item:last-child {
+  border-right: none;
+}
+
+.meta-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.meta-value {
+  font-size: 0.875rem;
+  color: var(--text);
+  font-family: var(--font-mono);
+}
+
+.status-progress {
+  color: var(--accent);
+}
+
+.idea-section {
+  padding: 2rem 0;
+}
+
+.idea-section h2 {
+  margin-bottom: 1rem;
+}
+
+.idea-section p {
+  max-width: 640px;
+}
+
+.architecture-tree {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  line-height: 2;
+  color: var(--text-muted);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  margin: 1.25rem 0;
+  overflow-x: auto;
+}
+
+.tree-root {
+  color: var(--text);
+  margin-bottom: 0.25rem;
+}
+
+.tree-folder {
+  color: var(--text);
+}
+
+.tree-indent {
+  padding-left: 1.5rem;
+  color: var(--text-muted);
+}
+
+.tree-status {
+  font-size: 0.72rem;
+  margin-left: 0.75rem;
+}
+
+.tree-status.complete {
+  color: var(--accent);
+}
+
+.tree-status.pending {
+  color: var(--text-muted);
+  opacity: 0.6;
+}
+
+.audio-disclaimer {
+  border-left: 2px solid var(--border);
+  padding: 0.9rem 1.1rem;
+  margin: 1.25rem 0;
+  max-width: 580px;
+  background: var(--bg-secondary);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.disclaimer-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.audio-disclaimer p {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.audio-player {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  background: var(--bg-secondary);
+  margin-top: 1rem;
+  max-width: 560px;
+}
+
+.audio-label {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.audio-icon {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+}
+
+.audio-title {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--text);
+  margin-bottom: 0.2rem;
+}
+
+.audio-meta {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+@media (max-width: 600px) {
+  .idea-meta-bar {
+    flex-direction: column;
+  }
+  .idea-meta-item {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+  .idea-meta-item:last-child {
+    border-bottom: none;
+  }
+}
+</style>
