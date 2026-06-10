@@ -44,6 +44,11 @@ defaults:
       type: "skills"
     values:
       layout: "skill"
+  - scope:
+      path: ""
+      type: "session-logs"
+    values:
+      layout: "default"
 
 markdown: kramdown
 highlighter: rouge
