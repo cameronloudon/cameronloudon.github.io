@@ -60,6 +60,7 @@ Four visual modes in a single main.css file:
 - Tree: [data-theme="tree"] — amber phosphor
 
 Always use CSS variables — never hardcode colours.
+Page-level <style> blocks are permitted for layout scaffolding only (structural positioning: grid, flex, spacing). Colour and typography overrides in page-level blocks are not permitted — use CSS variables in main.css.
 Key variables: --bg, --bg-secondary, --text, --text-muted, --accent, --border, --font-mono, --font-display, --font-body, --radius, --transition
 
 ## Design System

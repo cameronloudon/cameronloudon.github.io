@@ -24,6 +24,8 @@ draft → self-review → validate → commit → update PROJECT_STATE.md → wr
 
 Produce the content or changes in your working context. If you have file write access to a drafting space equivalent to AI-Working, use it. If not, hold the draft in your context window until you are ready to commit.
 
+Apply the content conventions in `_ai-context/ai-content-creation-spec.md` during drafting.
+
 ### Step 2 — Self-review
 
 Before validating, review your own output. The purpose of self-review is to catch problems before the checklist — errors in structure, logic, attribution, or convention that are easier to fix now than after a checklist pass.
