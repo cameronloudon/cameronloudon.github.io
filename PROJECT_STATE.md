@@ -1,24 +1,24 @@
 # PROJECT_STATE.md
 **Single source of current project state. Read this before every session. Update this at every session close.**
 **Last updated:** 2026-06-21
-**Updated by:** Claude Code (Publish Agent) — corrections to Phase 3 draft (session log count, collections table, collab-note inventory)
+**Updated by:** Claude Code (Publish Agent) — Phase 6 close: settings.json added, cowork-conventions.md/cowork-memory-backup.md reviewed
 
 ---
 
 ## Active Branch
 
 `session-2`
-Last commit: `f20d068` — feat: add AI onboarding layer and _ai-context/ directory
-Cameron merges to main. Do not commit directly to main.
+Last commit: `6b1e644` — feat: Phase 5 — collab-note consolidation, founding document update, directory removal
+Not yet merged to main — main is still at `fec3394`, unrelated to this work. Cameron merges to main. Do not commit directly to main.
 
 ---
 
 ## Next Session Log ID
 
-`NEXT_SESSION_LOG_ID: 2026-06-21-002`
+`NEXT_SESSION_LOG_ID: 2026-06-21-003`
 
 The four existing session logs are: `session-2026-06-10-001`, `session-2026-06-11-001`, `session-2026-06-11-002`, `session-2026-06-21-001`.
-The next session that produces published output or repo changes must write `session-2026-06-21-002.md` to `_session-logs/` and increment this value.
+`session-2026-06-21-002` is allocated to this session's (Phase 6) session log — not yet written or committed. The next session after that must write `session-2026-06-21-003.md` to `_session-logs/` and increment this value.
 
 ---
 
@@ -102,9 +102,9 @@ Empty. Declared in `_config.yml` (output: true, permalink: /about/skills/:name/)
 | 4 | master-synthesis-prompt.html: strip Section 8, founding-document note, label "Living" → "Founding", Section 9 update | 5 | Publish Agent | None |
 | 5 | about.html: merge two collab-notes, confirm LinkedIn link | 5 | Publish Agent | None |
 | 6 | Delete AI-Web-Layer-Framework/ directory | 5 | Publish Agent | None |
-| 7 | cowork-conventions.md — draft and promote | 6 | Draft Agent | Claude Code reviews via session log mechanism |
-| 8 | Memory backup files as plain onboarding documents | 6 | Draft Agent | None |
-| 9 | settings.json — verify and implement (.claude/settings.json, POSIX path syntax) | Open | Publish Agent | Verify implementation |
+| 7 | cowork-conventions.md — draft and promote | 6 | ✓ Drafted and reviewed by Publish Agent — no issues found | Promotion decision (AI-Working-only vs. elsewhere) still Cameron's call |
+| 8 | Memory backup files as plain onboarding documents | 6 | ✓ Drafted; reviewed by Publish Agent | 2 issues flagged — "session-2 has been merged" is factually wrong (not merged), "health sector" bio claim unsubstantiated. Cowork to correct before reliance or promotion |
+| 9 | settings.json — verify and implement (.claude/settings.json, POSIX path syntax) | 6 | ✓ Done | `.claude/settings.json` created — grants Read access to `AI-Working/**` |
 | 10 | AI-Prod mirror sync — Claude Code made edits (stripped dangling refs, CLAUDE.md) that are in the repo but not in AI-Prod | Immediate | Cameron | Copy from repo after push |
 | 11 | now.html and signals.html each carry two collab-notes with distinct headers ("page design" / "repository"). RCT spec says one per page. Cameron to decide: add a scoped-note exception to the spec, or consolidate to one note per page (same as about.html pending work). | 5 | Cameron | Cameron's call |
 
