@@ -116,7 +116,7 @@ Restaurants and brewing.
 - Skills section: honest Markdown files, no progress bars or percentages
 
 ## Session Workflow
-1. Read master-synthesis-prompt.md
+1. Read master-synthesis-prompt.html
 2. Confirm task with Cameron before starting
 3. Create session branch: git checkout -b session-N
 4. Do all work on that branch
