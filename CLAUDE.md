@@ -2,8 +2,7 @@
 
 ## Project Overview
 Personal brand website and ideas repository. Jekyll site hosted on GitHub Pages.
-The complete project specification is in master-synthesis-prompt.md in this repo root.
-Read that file fully before starting any session.
+The complete project specification is in master-synthesis-prompt.html in this repo root — the founding document. Read it once for historical context when first onboarding; PROJECT_STATE.md is the current-state reference for every session after that.
 
 ## Branch Workflow — CRITICAL
 NEVER commit directly to main.
@@ -116,8 +115,8 @@ Restaurants and brewing.
 - Skills section: honest Markdown files, no progress bars or percentages
 
 ## Session Workflow
-1. Read master-synthesis-prompt.html
-2. Confirm task with Cameron before starting
+1. Read PROJECT_STATE.md (master-synthesis-prompt.html is the founding document — read once on first onboarding, not every session)
+2. Confirm task with Cameron before starting; also confirm with Cameron before any structural decision made mid-session
 3. Create session branch: git checkout -b session-N
 4. Do all work on that branch
 5. At end of session: produce summary, commit, push branch
