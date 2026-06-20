@@ -23,6 +23,12 @@ Cameron's long-term goal is to run a local AI setup. This project is designed to
 
 ---
 
+## How content moves from draft to published
+
+Content moves through three locations before it's live. `AI-Working` (`C:\Users\camer\Documents\AI\AI-Working\`) is the Draft Agent's workspace — drafts are written and revised here, and nothing is published directly from this folder. `AI-Prod` (`C:\Users\camer\Documents\AI\AI-Prod\`) is a mirror of the live repo — read it to see what's currently published without leaving your drafting environment. The repo itself (`C:\Users\camer\Documents\GitHub\cameronloudon.github.io`) is where the Publish Agent actually commits changes. GitHub Pages then builds and publishes the site automatically from the `main` branch — no manual deploy step.
+
+---
+
 ## Which files are Claude-specific
 
 **`CLAUDE.md`** is Claude Code's native instruction file. It auto-loads when Claude Code starts a session in this repo. It contains the same conventions as `AI_INSTRUCTIONS.md` but with Claude-specific detail and formatting. If you are not Claude Code, `CLAUDE.md` will not auto-load — read `AI_INSTRUCTIONS.md` instead. If you are Claude Code, read both: CLAUDE.md loads automatically; cross-check it against AI_INSTRUCTIONS.md if they appear to conflict (AI_INSTRUCTIONS.md is authoritative on intent).
