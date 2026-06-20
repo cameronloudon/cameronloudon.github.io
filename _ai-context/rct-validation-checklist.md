@@ -34,7 +34,7 @@ If any item fails: do not commit. Flag the issue to Cameron.
 
 - [ ] Frontmatter is valid: opening `---` has no blank line before it
 - [ ] All collection-specific frontmatter fields declared (not just `layout` and `title`) — missing fields cause Jekyll to silently drop the page from its collection
-- [ ] Tags use consistent format across the page's collection
+- [ ] Tags use consistent format (see `ai-content-creation-spec.md` for tag taxonomy)
 - [ ] No page-level `@import` of fonts (Google Fonts or any other service) — fonts are managed in `main.css` only
 - [ ] No hardcoded colour values anywhere — CSS variables only
 - [ ] Page-level `<style>` blocks (if present) contain layout scaffolding only — structural positioning is permitted; colour and typography overrides are not
