@@ -40,6 +40,18 @@ permalink: /path/to/page/
 Files in _ideas/ are processed as a Jekyll collection.
 Files without frontmatter are served as static files — CSS will not apply.
 
+## Ideas Folder Pattern
+
+New `_ideas/` entries use the folder pattern: a named folder containing an `index.html` plus any sub-pages.
+Reference implementation: `_ideas/man-with-two-brains/`
+`marketing-os-foundation.html` is a legacy flat file — do not use it as a pattern for new entries.
+
+## _skills/ Collection — Layout Note
+
+The `_skills/` collection has no default layout set in `_config.yml`.
+Every new skills entry must declare `layout:` explicitly in its frontmatter.
+Omitting it will cause the page to silently fail to render as a collection page.
+
 ## CSS Architecture
 Four visual modes in a single main.css file:
 - Light (default): :root variables
@@ -121,3 +133,20 @@ Restaurants and brewing.
 4. Do all work on that branch
 5. At end of session: produce summary, commit, push branch
 6. Cameron reviews on GitHub and merges to main
+
+## Session-Close Protocol
+
+At the end of every session that changes the repo:
+
+1. Update `PROJECT_STATE.md`:
+   - Set `Last updated` to today's date
+   - Set `Updated by` to your tool name and role
+   - Increment `NEXT_SESSION_LOG_ID`
+   - Update page inventory if any pages were added, changed, or removed
+   - Update Open Decisions if any were resolved or newly raised
+2. Write a session log to `_session-logs/` using the format in `_ai-context/rct-session-primer.md`
+   - Filename: `session-YYYY-MM-DD-NNN.md` where NNN is the ID you read from PROJECT_STATE.md *before* incrementing
+3. If content was published in this session, confirm the validation checklist in `_ai-context/rct-validation-checklist.md` was run
+4. Sync check: if you made changes that affect AI_INSTRUCTIONS.md or CLAUDE.md conventions, flag it to Cameron — do not let the two files drift
+
+Commit PROJECT_STATE.md and the session log in the same commit or immediately after the content commit.
