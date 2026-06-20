@@ -1,0 +1,98 @@
+---
+layout: default
+title: "The Bug, the Audit, the Blueprint"
+permalink: /ideas/the-bug-the-audit-the-blueprint/
+description: How a collab-note class bug became a six-phase project to make a personal website AI-independent — built by four collaborators across three weeks.
+---
+
+<article class="idea-page">
+
+  <header class="page-header">
+    <span class="eyebrow">My Ideas · Project Retrospective · June 2026</span>
+    <h1>The Bug, the Audit, the Blueprint</h1>
+    <p class="intro">It started with a wrong CSS class name. It ended with an instruction layer that any AI can walk into cold. Here is how four collaborators — one human, two Claude instances, and an external AI reviewer — built something none of them could have built alone.</p>
+  </header>
+
+  <hr>
+
+  <section class="idea-section">
+
+    <h2>What this was</h2>
+
+    <p>In June 2026 I asked for an audit of cameronloudon.github.io — my personal brand site built on Jekyll and GitHub Pages. The immediate trigger was a bug: a CSS class name used in the site's collaboration notes was wrong in one session log. I wanted to know what else was wrong.</p>
+
+    <p>The audit found more than a bug. It found a workflow that worked well as long as the same AI was always in the room — but had no documented path for a different AI to pick up the project. My site attributed AI collaboration openly, under the Radical Collaboration Transparency framework, but the AI infrastructure itself was neither transparent nor transferable.</p>
+
+    <p>Three weeks and six phases later, the site has an instruction layer: a set of plain-text files at the repo root that any capable AI can read, cold, and use to orient itself — without asking me to explain anything, without access to session history, without knowing what Claude or Cowork are.</p>
+
+    <p>This is the full account of how that happened.</p>
+
+  </section>
+
+  <hr>
+
+  <section class="idea-section">
+
+    <h2>The four collaborators</h2>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 1.5rem 0;">
+
+      <div style="border: 1px solid var(--border); padding: 1.25rem; border-radius: var(--radius);">
+        <p style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); margin: 0 0 0.5rem;">PROJECT OWNER</p>
+        <p style="font-family: var(--font-display); font-size: 1.1rem; margin: 0 0 0.5rem;">Cameron Loudon</p>
+        <p style="font-size: 0.875rem; color: var(--text-muted); margin: 0;">Held the goal. Made the calls. Not technical — navigated the work with help from all three AIs.</p>
+      </div>
+
+      <div style="border: 1px solid var(--border); padding: 1.25rem; border-radius: var(--radius);">
+        <p style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); margin: 0 0 0.5rem;">DRAFT AGENT</p>
+        <p style="font-family: var(--font-display); font-size: 1.1rem; margin: 0 0 0.5rem;">Cowork (Claude, Anthropic)</p>
+        <p style="font-size: 0.875rem; color: var(--text-muted); margin: 0;">Drafted every plan and file. Synthesised three independent reviews. Held the thread across weeks of sessions.</p>
+      </div>
+
+      <div style="border: 1px solid var(--border); padding: 1.25rem; border-radius: var(--radius);">
+        <p style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); margin: 0 0 0.5rem;">PUBLISH AGENT</p>
+        <p style="font-family: var(--font-display); font-size: 1.1rem; margin: 0 0 0.5rem;">Claude Code (Claude, Anthropic)</p>
+        <p style="font-size: 0.875rem; color: var(--text-muted); margin: 0;">Verified everything against the actual repo. Caught state drift no one else could see. Committed all changes.</p>
+      </div>
+
+      <div style="border: 1px solid var(--border); padding: 1.25rem; border-radius: var(--radius);">
+        <p style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); margin: 0 0 0.5rem;">EXTERNAL REVIEWER</p>
+        <p style="font-family: var(--font-display); font-size: 1.1rem; margin: 0 0 0.5rem;">DeepSeek (independent AI)</p>
+        <p style="font-size: 0.875rem; color: var(--text-muted); margin: 0;">Arrived cold both times. Saw what the Claude instances couldn't. Named the patterns they'd been building toward without naming.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <hr>
+
+  <section class="idea-section">
+    <h2>Read the full retrospective</h2>
+    <p>The complete account — the bug, the three independent reviews, the six-phase implementation, the collaboration dynamics, the post-implementation audit, and what was actually built — is in the full retrospective, including collaboration notes from all four participants.</p>
+    <p><a href="/ideas/the-bug-the-audit-the-blueprint/retrospective/">Read the full retrospective →</a></p>
+  </section>
+
+  <hr>
+
+  <div class="tags">
+    <span class="tag">#rct</span>
+    <span class="tag">#ai-collaboration</span>
+    <span class="tag">#infrastructure</span>
+    <span class="tag">#session-claude</span>
+    <span class="tag">#idea-original</span>
+  </div>
+
+  <hr>
+
+  <div class="collab-note">
+    <div class="collab-note-header">🤝 Collaboration Note</div>
+    <div class="collab-note-body">
+      <p>This page was drafted by Cowork (Claude, Anthropic) and reviewed by Claude Code (Claude, Anthropic) before publication.</p>
+      <p>Model: claude-sonnet-4-6 · Session: 2026-06-21-002 · Platform: Cowork · Date: 2026-06-21</p>
+      <p>Cameron defined the scope, approved the structure, and confirmed all four collaborator descriptions. Cowork drafted the HTML. Claude Code validated the frontmatter and collection conventions before committing.</p>
+      <p>Reviewed and approved by Cameron Loudon. Part of the Radical Collaboration Transparency framework.</p>
+    </div>
+  </div>
+
+</article>

@@ -1,15 +1,15 @@
 # PROJECT_STATE.md
 **Single source of current project state. Read this before every session. Update this at every session close.**
 **Last updated:** 2026-06-21
-**Updated by:** Claude Code (Publish Agent) — Phase 6 close: settings.json added, cowork-conventions.md/cowork-memory-backup.md reviewed
+**Updated by:** Cowork (Draft Agent) — Retrospective "The Bug, the Audit, the Blueprint" drafted and promoted; session-2026-06-21-002 written
 
 ---
 
 ## Active Branch
 
-`session-2`
-Last commit: `6b1e644` — feat: Phase 5 — collab-note consolidation, founding document update, directory removal
-Not yet merged to main — main is still at `fec3394`, unrelated to this work. Cameron merges to main. Do not commit directly to main.
+`main` (session-2 merged)
+Last commit: `ae15152` — feat: CLAUDE.md Phase 4 additions (session-close protocol, ideas folder pattern, _skills/ layout note)
+Cameron merges to main. Do not commit directly to main.
 
 ---
 
@@ -17,8 +17,8 @@ Not yet merged to main — main is still at `fec3394`, unrelated to this work. C
 
 `NEXT_SESSION_LOG_ID: 2026-06-21-003`
 
-The four existing session logs are: `session-2026-06-10-001`, `session-2026-06-11-001`, `session-2026-06-11-002`, `session-2026-06-21-001`.
-`session-2026-06-21-002` is allocated to this session's (Phase 6) session log — not yet written or committed. The next session after that must write `session-2026-06-21-003.md` to `_session-logs/` and increment this value.
+The five existing session logs are: `session-2026-06-10-001`, `session-2026-06-11-001`, `session-2026-06-11-002`, `session-2026-06-21-001`, `session-2026-06-21-002`.
+The next session that produces published output or repo changes must write `session-2026-06-21-003.md` to `_session-logs/` and increment this value.
 
 ---
 
@@ -44,13 +44,13 @@ The four existing session logs are: `session-2026-06-10-001`, `session-2026-06-1
 | File | Title | Status | Collab note |
 |---|---|---|---|
 | `index.html` | Home | Published | 0 |
-| `about.html` | About | Published | Has two collab-notes (known issue — merge pending, Phase 5) |
+| `about.html` | About | Published | 1 |
 | `approach.html` | Approach | Published | 1 |
 | `contact.html` | Contact | Published | 0 |
-| `now.html` | Now | Published | 2 |
-| `signals.html` | Signals | Published | 2 |
+| `now.html` | Now | Published | 1 |
+| `signals.html` | Signals | Published | 1 |
 | `local-ai-stack.html` | Local AI Stack | Published | 1 |
-| `master-synthesis-prompt.html` | Founding Document | Published | Founding document — historical. Section 8 strip, label change "Living" → "Founding", Section 9 update pending (Phase 5) |
+| `master-synthesis-prompt.html` | Founding Document | Published | 1 — Founding document, historical |
 
 ### _ideas/ collection
 
@@ -61,6 +61,7 @@ The four existing session logs are: `session-2026-06-10-001`, `session-2026-06-1
 | `_ideas/marketing-os-foundation.html` | Marketing OS Foundation | Published | Legacy flat file — do not use as pattern for new entries |
 | `_ideas/marketing-os.html` | Marketing OS | Published | |
 | `_ideas/ai-web-layer-framework.html` | AI Web Layer Framework | Published | |
+| `_ideas/the-bug-the-audit-the-blueprint/` | The Bug, the Audit, the Blueprint | Pending commit | Folder pattern — index.html + retrospective.html; session-2026-06-21-002 |
 
 ### _signals/ collection
 
@@ -83,12 +84,11 @@ Empty. Declared in `_config.yml` (output: true, permalink: /about/skills/:name/)
 | `session-2026-06-11-001.md` | Published |
 | `session-2026-06-11-002.md` | Published |
 | `session-2026-06-21-001.md` | Published |
+| `session-2026-06-21-002.md` | Pending commit |
 
 ### Directories pending action
 
-| Directory | Action |
-|---|---|
-| `AI-Web-Layer-Framework/` | Delete — Phase 5 |
+None.
 
 ---
 
@@ -96,17 +96,17 @@ Empty. Declared in `_config.yml` (output: true, permalink: /about/skills/:name/)
 
 | # | Item | Phase | Owner | Gate |
 |---|---|---|---|---|
-| 1 | ai-content-creation-spec.md reconciliation | 4 | Joint (Draft + Publish) | Hard gate — reconciliation required before promotion |
-| 2 | Remaining CLAUDE.md additions: session-close protocol, ideas folder pattern, _skills/ layout note | 4 | Publish Agent | None |
+| 1 | ai-content-creation-spec.md reconciliation | 4 | ✓ Done — merged to main | — |
+| 2 | Remaining CLAUDE.md additions: session-close protocol, ideas folder pattern, _skills/ layout note | 4 | ✓ Done in ae15152 | — |
 | 3 | Promote rct-session-primer.md to _ai-context/ | 4 | ✓ Done in f20d068 | — |
-| 4 | master-synthesis-prompt.html: strip Section 8, founding-document note, label "Living" → "Founding", Section 9 update | 5 | Publish Agent | None |
-| 5 | about.html: merge two collab-notes, confirm LinkedIn link | 5 | Publish Agent | None |
-| 6 | Delete AI-Web-Layer-Framework/ directory | 5 | Publish Agent | None |
-| 7 | cowork-conventions.md — draft and promote | 6 | ✓ Drafted and reviewed by Publish Agent — no issues found | Promotion decision (AI-Working-only vs. elsewhere) still Cameron's call |
-| 8 | Memory backup files as plain onboarding documents | 6 | ✓ Drafted; reviewed by Publish Agent | 2 issues flagged — "session-2 has been merged" is factually wrong (not merged), "health sector" bio claim unsubstantiated. Cowork to correct before reliance or promotion |
-| 9 | settings.json — verify and implement (.claude/settings.json, POSIX path syntax) | 6 | ✓ Done | `.claude/settings.json` created — grants Read access to `AI-Working/**` |
-| 10 | AI-Prod mirror sync — Claude Code made edits (stripped dangling refs, CLAUDE.md) that are in the repo but not in AI-Prod | Immediate | Cameron | Copy from repo after push |
-| 11 | now.html and signals.html each carry two collab-notes with distinct headers ("page design" / "repository"). RCT spec says one per page. Cameron to decide: add a scoped-note exception to the spec, or consolidate to one note per page (same as about.html pending work). | 5 | Cameron | Cameron's call |
+| 4 | master-synthesis-prompt.html: strip Section 8, founding-document note, label "Living" → "Founding", Section 9 update | 5 | ✓ Done — merged to main | — |
+| 5 | about.html, now.html, signals.html: merge collab-notes to one per page | 5 | ✓ Done — merged to main | — |
+| 6 | Delete AI-Web-Layer-Framework/ directory | 5 | ✓ Done — merged to main | — |
+| 7 | cowork-conventions.md — draft and promote | 6 | ✓ Done 2026-06-21 | — |
+| 8 | Memory backup files as plain onboarding documents | 6 | ✓ Done 2026-06-21 | — |
+| 9 | settings.json — verify and implement (.claude/settings.json, POSIX path syntax) | 6 | ✓ Done — merged to main | — |
+| 10 | AI-Prod mirror sync | Immediate | ✓ Done 2026-06-21 | — |
+| 11 | now.html and signals.html two collab-notes | 5 | ✓ Done — consolidated to one per page | — |
 
 ---
 

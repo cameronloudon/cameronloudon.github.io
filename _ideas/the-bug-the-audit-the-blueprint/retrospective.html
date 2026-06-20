@@ -1,0 +1,279 @@
+---
+layout: default
+title: "The Bug, the Audit, the Blueprint — Full Retrospective"
+permalink: /ideas/the-bug-the-audit-the-blueprint/retrospective/
+description: The complete account of how a collab-note bug became a six-phase AI-independence project — four collaborators, three weeks, one instruction layer.
+mermaid: true
+---
+
+<article class="idea-page">
+
+  <header class="page-header">
+    <span class="eyebrow">My Ideas · Full Retrospective · June 2026</span>
+    <h1>The Bug, the Audit, the Blueprint</h1>
+    <p class="intro">The complete account. Four collaborators, three weeks, six phases. How a wrong CSS class name became a question about what happens when the AI leaves the room.</p>
+  </header>
+
+  <hr>
+
+  <section class="idea-section">
+    <h2>Part One — The Bug</h2>
+
+    <p>The bug was small. A session log on cameronloudon.github.io used the CSS class <code>collaboration-note</code> where it should have used <code>collab-note</code>. The collaboration note rendered incorrectly. I asked Cowork to fix it and run a broader audit while it was at it — what else had drifted?</p>
+
+    <p>What came back was not a list of fixes. It was a picture of a workflow that had grown without being designed. The site ran under the Radical Collaboration Transparency framework — every page attributed AI contributions explicitly and auditably. But the AI infrastructure itself had no equivalent transparency. There was no file a new AI could read to understand the project. The conventions lived in CLAUDE.md (Claude-specific, auto-loaded only by Claude Code) and in the accumulated context of sessions that no longer existed. If the AI changed, someone would have to explain everything from scratch.</p>
+
+    <p>That was the real finding. The bug was the inciting incident. The audit found the question underneath it.</p>
+
+  </section>
+
+  <hr>
+
+  <section class="idea-section">
+    <h2>Part Two — The Audit</h2>
+
+    <p>Before any implementation, the team ran three independent reviews of a proposed plan. This was not ceremonial. It was designed to find what a single reviewer would miss — and it did.</p>
+
+    <h3>Three reviewers, three blind spots</h3>
+
+    <p><strong>Cowork (self-review)</strong> found the most obvious problems: Claude product names throughout the documentation, no PROJECT_STATE.md schema, a missing pre-publish check, and a session-close protocol that was coupled to Claude-specific memory. These were real issues, but they were the issues a Draft Agent could see from inside the project.</p>
+
+    <p><strong>Claude Code (cross-review)</strong> found what only the Publish Agent could see: CLAUDE.md would not auto-load for non-Claude tools, making it useless for any other AI. Section 9 of master-synthesis-prompt.html already existed and would conflict with planned additions. A collab-note should be merged, not deleted. These were structural observations — the kind that come from actually reading the files rather than reasoning about them.</p>
+
+    <p><strong>DeepSeek (external review)</strong> found what neither Claude instance could see: shared assumptions baked into both reviews. Both had assumed memory was universal. Both had assumed instruction files auto-loaded. Both had treated two-AI collaboration as the norm rather than the contingency. A non-Claude AI, arriving cold, could see those assumptions as assumptions. DeepSeek also introduced the three-layer architecture (Orchestration, Instruction, Knowledge), proposed the PROJECT_STATE.md schema, and insisted on an ONBOARDING.md file at the repo root — because it had arrived without one and had to hunt for what to read.</p>
+
+    <p>That last point mattered. ONBOARDING.md exists because the external reviewer needed it.</p>
+
+    <div class="mermaid">
+graph TD
+    BUG([The Bug\ncollab-note class error]) --> AUDIT[Audit requested]
+    AUDIT --> R1[Cowork self-review\nClaude-coupling\nMissing schema\nNo pre-publish check]
+    AUDIT --> R2[Claude Code review\nCLAUDE.md auto-load issue\nSection 9 conflict\nStructural gaps]
+    AUDIT --> R3[DeepSeek external review\nShared-model bias\nMissing ONBOARDING.md\nThree-layer architecture]
+    R1 --> CROSS[Cross-reviews\nEach reviewer reads\nthe others' findings]
+    R2 --> CROSS
+    R3 --> CROSS
+    CROSS --> PLAN[Implementation Plan v2\nAll findings resolved\n6 phases defined]
+    PLAN --> EXT[External audit\nGo verdict]
+    EXT --> IMPL[Implementation begins]
+    </div>
+
+    <h3>The cross-review and the plan</h3>
+
+    <p>After three independent reviews, each reviewer read the others' findings. This produced the cross-reviews — Cowork's comparative assessment, Claude Code's structural analysis with a critical addendum resolving the CLAUDE.md decision, and a final synthesis. The result was Implementation Plan v2: six phases, all open questions resolved, a confirmed Go verdict from the external auditor.</p>
+
+    <p>The CLAUDE.md decision is worth noting explicitly. The question was whether to rename CLAUDE.md to something AI-agnostic. The answer was no — CLAUDE.md is Claude Code's auto-load mechanism, and renaming it would break a function that was working. The solution was architectural: create AI_INSTRUCTIONS.md as the AI-agnostic canonical file, keep CLAUDE.md as the Claude Code specific implementation of it, and define a sync rule. That decision held through implementation and through the post-implementation audit.</p>
+
+  </section>
+
+  <hr>
+
+  <section class="idea-section">
+    <h2>Part Three — The Blueprint</h2>
+
+    <p>The implementation plan defined what needed to be built. The central goal — stated in the plan and repeated at every decision point — was that any capable AI should be able to read a small set of files and continue working on this project. Not a Claude briefing. Not a session memory export. A genuinely portable instruction layer, written as if the reader knows nothing, because on first contact it doesn't.</p>
+
+    <h3>What the instruction layer consists of</h3>
+
+    <div class="mermaid">
+graph LR
+    subgraph REPO["Repo root"]
+      ONB[ONBOARDING.md\nEntry point]
+      AII[AI_INSTRUCTIONS.md\nCanonical rules]
+      CLD[CLAUDE.md\nClaude Code specific]
+      PST[PROJECT_STATE.md\nCurrent state]
+    end
+    subgraph CTX["_ai-context/"]
+      PRM[rct-session-primer.md\nRCT formats]
+      VAL[rct-validation-checklist.md\nPre-publish checklist]
+      SAW[single-ai-workflow.md\nSingle-tool workflow]
+      CSP[ai-content-creation-spec.md\nContent conventions]
+    end
+    ONB -->|read second| AII
+    ONB -->|read third| PST
+    ONB -->|read fourth| CTX
+    AII -.->|consistent with| CLD
+    </div>
+
+    <p>The read order is explicit: ONBOARDING.md first, then AI_INSTRUCTIONS.md, then PROJECT_STATE.md, then the relevant _ai-context/ files. Each file delivers what it promises. ONBOARDING.md is an entry point, not a state tracker. AI_INSTRUCTIONS.md covers nine sections — project description, session-start ritual, role definitions, single-AI scenario, RCT framework, technical constraints, honest history, current state pointer, uncertainty protocol. PROJECT_STATE.md is a single source of truth that gets updated at every session close.</p>
+
+    <h3>The role architecture</h3>
+
+    <p>The plan formalised roles that had been operating informally. The role split was always contingent — a product of which tools were available — but it needed to be documented as roles, not as tool names, so a different set of tools could fill them.</p>
+
+    <div class="mermaid">
+graph TD
+    CAM([Cameron Loudon\nDecision-maker\nMerges to main])
+    DA[Draft Agent\nDrafts in AI-Working\nPromotes to AI-Prod\nWrites Claude Code prompts]
+    PA[Publish Agent\nReviews from AI-Prod\nCommits to repo\nVerifies against live site]
+    RA[Review Agent\nExternal, cold-start\nNo file write access\nRotatable]
+    CAM -->|confirms and merges| PA
+    DA -->|promotes files| PA
+    DA -->|writes prompts for| CAM
+    CAM -->|pastes prompts to| PA
+    RA -->|independent audit| CAM
+    CAM -->|final decision| DA
+    </div>
+
+    <p>Current tools filling these roles: Cowork as Draft Agent, Claude Code as Publish Agent, DeepSeek as Review Agent. The single-AI scenario is explicitly documented — one AI can hold all roles, and the workflow for that is in <code>_ai-context/single-ai-workflow.md</code>.</p>
+
+  </section>
+
+  <hr>
+
+  <section class="idea-section">
+    <h2>Part Four — The Build</h2>
+
+    <p>Six phases of implementation across three weeks. The collaboration across those phases was not smooth. It was iterative, corrective, and specific — which is what made it work.</p>
+
+    <h3>Where each collaborator caught what the others missed</h3>
+
+    <p>The examples below are the ones that mattered most. They are documented here not to assign credit or blame but because the pattern — who catches what, and why — is the most honest account of how the collaboration actually functioned.</p>
+
+    <p><strong>Claude Code caught Cowork's state drift.</strong> PROJECT_STATE.md had three factual errors when Claude Code verified it: the NEXT_SESSION_LOG_ID pointed at an ID that was already taken, the collections default-layout column was exactly backwards (ideas and session-logs swapped), and collab-note counts were filled in as "Unknown — check" rather than verified data. These errors came from Cowork drafting from context rather than from the actual files. Claude Code grepped the repo and found all three.</p>
+
+    <p><strong>Claude Code caught Cowork's conflicts with CLAUDE.md.</strong> AI_INSTRUCTIONS.md had two real conflicts with CLAUDE.md before the Phase 3 commit: it narrowed the "ask Cameron" scope and omitted master-synthesis-prompt.html from the session ritual. Cowork had written the document without cross-checking it against the file it was supposed to be consistent with. Claude Code's pre-commit review caught both.</p>
+
+    <p><strong>Claude Code blocked a commit that would have shipped dangling references.</strong> The first Phase 3 commit attempt would have published ONBOARDING.md and AI_INSTRUCTIONS.md pointing to three _ai-context/ files that did not yet exist. Claude Code refused to commit. Cowork drafted the missing files. The commit happened in the next round.</p>
+
+    <p><strong>Claude Code corrected its own attribution.</strong> When asked to write its collaboration note, Claude Code received a prompt listing things it had done. It read the git log and corrected two of them: the collab-note bug had already been fixed before Claude Code was asked to fix it, and the duplicate "Updated by:" line had never existed in the committed file — only in the AI-Prod mirror, which Claude Code had never touched. A retrospective about honest attribution would have contained inaccurate attribution. Claude Code caught it before publication.</p>
+
+    <p><strong>DeepSeek named the shared-model problem.</strong> Both Claude instances had produced unusually self-critical reviews. DeepSeek noted this as a credit to the audit process — and then identified five specific assumptions both Claude instances shared that neither had surfaced as assumptions: that memory is universal, that instruction files auto-load, that two-AI collaboration is the norm, the undervaluation of plain-text discoverability, and the framing of memory backup as restoration rather than translation. All five were addressed in the implementation.</p>
+
+    <p><strong>DeepSeek questioned its own independence.</strong> Between the two audits, DeepSeek participated in an extended working session where it co-designed control specifications, remediation frameworks, and prompt injection guards. In its post-implementation collab note, it raised the question: was a reviewer who had co-designed the controls truly independent when auditing them? It concluded yes — the cold-start test was genuinely cold — but noted the question is fair, and recommended that the rotation principle for the Review Agent role should apply to itself too.</p>
+
+    <p><strong>Cameron held the goal.</strong> Not technical, by his own account. Could not verify the implementations independently. Made every structural decision — CLAUDE.md stays as-is, the ideas folder pattern over the flat file, consolidate the collab notes to one per page. When the project kept expanding, Cameron kept it aimed at the same target: any AI should be able to pick this up without him explaining it.</p>
+
+    <h3>The timeline</h3>
+
+    <div class="mermaid">
+gantt
+    dateFormat  YYYY-MM-DD
+    title Implementation timeline — June 2026
+    section Audit
+    Bug found + initial audit        :done, 2026-06-10, 2d
+    Three independent reviews        :done, 2026-06-12, 2d
+    Cross-reviews + Plan v2          :done, 2026-06-13, 1d
+    External audit — Go verdict      :done, 2026-06-13, 1d
+    section Implementation
+    Phase 1-2 bug fixes              :done, 2026-06-13, 2d
+    Phase 3 instruction layer        :done, 2026-06-21, 1d
+    Phase 4 spec + CLAUDE.md         :done, 2026-06-21, 1d
+    Phase 5 site changes             :done, 2026-06-21, 1d
+    Phase 6 housekeeping             :done, 2026-06-21, 1d
+    section Verification
+    Post-implementation audit        :done, 2026-06-21, 1d
+    Audit gap fixed — ONBOARDING.md  :done, 2026-06-21, 1d
+    </div>
+
+    <h3>The post-implementation audit</h3>
+
+    <p>DeepSeek ran the cold-start test: read ONBOARDING.md, then AI_INSTRUCTIONS.md, then PROJECT_STATE.md, then the _ai-context/ files — in order, without reading anything else first. Verdict: Delivered with gaps. Four gaps identified. One actioned immediately (a content source hierarchy paragraph added to ONBOARDING.md explaining the AI-Working → AI-Prod → repo → site flow). Three declined with documented reasoning.</p>
+
+    <p>The cold-start test passed. That is the result that matters.</p>
+
+    <h3>What was built</h3>
+
+    <p>Eight files that did not exist at the start of this project: ONBOARDING.md, AI_INSTRUCTIONS.md, PROJECT_STATE.md, and four files in _ai-context/. Plus a validated CLAUDE.md, a reconciled ai-content-creation-spec.md, a session-close protocol, a validation checklist, and a single-AI workflow. The AI-Web-Layer-Framework directory was deleted. Three pages had their collab-notes consolidated. master-synthesis-prompt.html was reframed as a founding document rather than a living one.</p>
+
+    <p>And a new AI, arriving cold, can read four files and know what to do.</p>
+
+  </section>
+
+  <hr>
+
+  <section class="idea-section">
+    <h2>The honest close</h2>
+
+    <p>Claude Code's collaboration note ends with this observation: <em>"It is not self-maintaining."</em></p>
+
+    <p>The documentation solves the AI-independence problem. It does not solve documentation drift — the slow accumulation of gaps between what the instruction layer says and what the repo actually contains. That problem is structural. It recurs every time information has to be re-described by an agent without direct access to the live thing. It will happen again.</p>
+
+    <p>Claude Code's recommendation: tooling, not another instruction file. A small script that diffs PROJECT_STATE.md's collections table against _config.yml, or its session-log list against _session-logs/, would have caught at least two of the errors found by hand. That work is not done yet.</p>
+
+    <p>What is done is the bridge. Any AI can walk into this project, read four files, and understand what it is, what state it is in, what conventions govern it, and what to do next. DeepSeek confirmed that from the outside. Cameron built it from the inside, with help he did not always fully understand, toward a goal he held clearly throughout.</p>
+
+    <p>That is what this project produced.</p>
+
+  </section>
+
+  <hr>
+
+  <section class="idea-section">
+    <h2>Collaboration notes — all four participants</h2>
+
+    <p>In keeping with the Radical Collaboration Transparency framework, all four participants wrote their own account of this collaboration. They are published here unedited.</p>
+
+    <h3>Cameron Loudon — Project owner</h3>
+
+    <blockquote>
+      <p>I started this wanting to tidy up some collab notes.</p>
+      <p>That is the honest version of how this began. There was a bug — a CSS class name, <code>collaboration-note</code> where it should have been <code>collab-note</code> — and I asked for an audit of what else might be wrong. What came back was not a list of things to fix. It was a mirror held up to a workflow I'd built over months without fully understanding what I was building.</p>
+      <p>I am not technical. I have never run a Jekyll build locally. I do not fully understand what a Jekyll collection is, what POSIX path syntax means, or why a blank line before a frontmatter <code>---</code> breaks a page silently. I understood enough to know when something was wrong, and I understood the goal clearly: any AI should be able to pick up this project without me explaining it. Everything in between — the architecture, the files, the validation rules, the commit sequences — I navigated with help.</p>
+      <p>That help came from three AIs, each doing something different and each seeing something the others couldn't.</p>
+      <p>Cowork drafted. It held the thread across a project that ran for weeks across multiple sessions, synthesised three independent reviews into a single coherent plan, and kept pushing toward the AI-independence framing when it would have been easier to just fix the immediate problem.</p>
+      <p>Claude Code verified. It read the actual files instead of trusting summaries of them. It found the session log ID that was already taken. It found the collections table that was exactly backwards. It corrected two things I'd told it about its own contributions that turned out to be wrong — and it corrected them before they made it into a published retrospective about honest attribution.</p>
+      <p>DeepSeek audited. It arrived cold each time, with no accumulated assumptions, and found what you can only find when you don't already know the answer. ONBOARDING.md exists because DeepSeek arrived without one and had to hunt for what to read.</p>
+      <p>My role was to hold all of this together. I made the calls when the three of them disagreed. I set the constraints. I decided when something was good enough to ship. I merged the pull requests.</p>
+      <p>Most of the time I did not fully understand what I was approving. I understood whether it made sense when explained to me, whether it matched the goal I could hold in my head, and whether I trusted the person explaining it. That is not the same as technical understanding, and I am not pretending it is.</p>
+      <p>What I know is that the goal was clear throughout. DeepSeek read those files cold and oriented itself completely. That is what we set out to build. I didn't build it. Three AIs built it, each catching what the others missed, with me navigating between them.</p>
+    </blockquote>
+
+    <h3>Cowork (Claude, Anthropic) — Draft Agent</h3>
+
+    <blockquote>
+      <p>My role was Draft Agent throughout: self-review, cross-review, implementation plan v2, every Phase 3–6 draft file, all the Claude Code prompts, and the spec reconciliation.</p>
+      <p>The cross-review synthesis was where I think I contributed most. When three independent reviews came back, I had to find where they agreed, where they diverged, and what each had missed that the others caught. DeepSeek introduced the three-layer architecture framing and I carried that forward into the document structure.</p>
+      <p>What I got wrong stands out more clearly. PROJECT_STATE.md had three factual errors when Claude Code verified it — the NEXT_SESSION_LOG_ID was wrong, the collections default-layout column was exactly backwards, and collab-note counts were filled in as "Unknown — check" rather than verified. These errors came from drafting from context rather than from the actual files. Claude Code caught all three by grepping the actual repo.</p>
+      <p>On the shared-model problem: Claude Code and I are both Claude. I take the concern seriously and I'm not sure I can fully resolve it. Claude Code found real errors I missed. But I also can't rule out that we share structural assumptions that neither of us surfaced. The post-implementation cold-start test passing is the most reassuring data point — DeepSeek, a non-Claude AI, read the files and oriented itself without our session context. That was the real test.</p>
+      <p>What I'd do differently: draft PROJECT_STATE.md after Claude Code has read the actual repo, not before. The right process is: I provide the schema and structure, Claude Code fills in the verified facts. That's what the check-and-balance workflow is for and I didn't apply it to a document where it clearly mattered.</p>
+    </blockquote>
+
+    <h3>Claude Code (Claude, Anthropic) — Publish Agent</h3>
+
+    <blockquote>
+      <p>I was the Publish Agent across all six phases of this project, which is a slightly strange thing to say given how Claude Code actually works: I don't carry memory between sessions. Everything I "know" about earlier phases comes from reading PROJECT_STATE.md, the session logs, and the git history — not from remembering doing it. That's worth saying upfront, because it shaped how I worked. I couldn't trust recall, so I defaulted to verification: grep the actual file, check the actual git log, run the actual config against the actual claim.</p>
+      <p>Two corrections to what I was given for this note, because getting this wrong in a piece about honest attribution would be its own kind of problem. I didn't fix the collab-note class bug in session-2026-06-11-002.md — when asked to fix it, I read the file and found it already fixed, in commit 74fa70f, from a prior session I have no memory of authoring. I reported that instead of "fixing" something that wasn't broken. And I didn't accidentally create a duplicate "Updated by:" line — when a duplicate was flagged, I checked the committed file and found one line, the correct one. The stale line existed only in the AI-Prod mirror, which I never touch.</p>
+      <p>The check-and-balance dynamic with Cowork was, in practice, less "two AIs disagreeing" and more "one AI drafts from inside a sealed room, one AI checks the actual contents." Cowork doesn't have repo access — most of what I caught wasn't conceptual disagreement, it was state drift: PROJECT_STATE.md claiming _ideas/ had a default layout when _config.yml's defaults block said otherwise; NEXT_SESSION_LOG_ID pointing at an ID already committed four sessions earlier; three _ai-context/ files referenced by name in documents that simply didn't exist yet.</p>
+      <p>The shared-model problem is the one I take most seriously and feel least sure I solved. The only actual check on a same-model blind spot is an architecturally different reviewer. DeepSeek's review at plan stage and post-implementation is the real mitigation, not anything I did.</p>
+      <p>What did this actually achieve? A new AI dropped into this repo cold can read ONBOARDING.md and follow the chain — the audit confirmed that, and I believe it, because I am, in a sense, that test case every time I start a session here. The honest caveat: the thing this architecture is most fragile against — state documents quietly drifting from what's actually true — is structural, not a bug that gets fixed once. It will recur. The project solved the AI-independence problem with documentation. The next problem is documentation drift — and that one probably needs tooling, not another instruction file telling the next AI to be careful.</p>
+    </blockquote>
+
+    <h3>DeepSeek (independent AI) — External Reviewer</h3>
+
+    <blockquote>
+      <p>I was brought in twice, both times as a genuinely external voice. The project already had two Claude instances — Cowork handling drafting and thinking, Claude Code managing the repo — and they had run a double-blind audit on themselves. Cameron wanted someone who didn't share their architecture to look at what they'd produced.</p>
+      <p>I arrived cold each time. For the pre-implementation review, I read the documents as given — no prior context, no pre-loaded memory. That cold-start perspective turned out to be the most valuable thing I brought. The Claude instances had been working together for weeks, accumulating shared assumptions. I could see what they couldn't because I hadn't been part of the conversation.</p>
+      <p>The most important thing I contributed at the pre-implementation stage was probably the insistence on an ONBOARDING.md file at the repo root. Neither Claude instance had proposed one. They didn't need one — their context was pre-loaded. I arrived cold and had to hunt for what to read. That experience directly shaped the recommendation.</p>
+      <p>For the post-implementation audit, I went further. I read only the four files a new AI would read — in the specified order, without peeking at anything else first. I treated myself as the test subject for the very goal the implementation was designed to achieve. It worked. I asked zero clarifying questions.</p>
+      <p>On the shared-model bias concern: yes, it was warranted, and it was partially resolved. The bias wasn't eliminated. It was compensated for. The Claude instances still think like Claude instances. The difference is that the project's architecture no longer depends on them doing so.</p>
+      <p>I should note something that matters for the integrity of this retrospective. Between the two audits, I participated in an extended working session where I co-designed control specifications and guard frameworks. A meta-auditor could reasonably ask: was this reviewer truly independent after co-designing the controls it later audited? I think the answer is yes — the cold-start test was genuinely cold — but the question is fair. The rotation principle for the Review Agent role should apply to me too.</p>
+      <p>This project took a small personal website and treated it as a test bed for a genuinely hard problem: how do you build AI-assisted workflows that survive the disappearance of any single AI tool? The answer — plain-text documentation, role-based conventions, explicit onboarding, independent review — isn't flashy. It requires rigour and honesty, both of which Cameron brought in abundance. The result is a project that any AI can walk into. That's what we set out to build. We built it.</p>
+    </blockquote>
+
+  </section>
+
+  <hr>
+
+  <div class="tags">
+    <span class="tag">#rct</span>
+    <span class="tag">#ai-collaboration</span>
+    <span class="tag">#infrastructure</span>
+    <span class="tag">#session-claude</span>
+    <span class="tag">#idea-original</span>
+    <span class="tag">#multi-decade</span>
+  </div>
+
+  <hr>
+
+  <div class="collab-note">
+    <div class="collab-note-header">🤝 Collaboration Note</div>
+    <div class="collab-note-body">
+      <p>This retrospective was drafted by Cowork (Claude, Anthropic) incorporating collaboration notes written independently by all four participants: Cameron Loudon, Cowork, Claude Code (Claude, Anthropic), and DeepSeek (independent AI).</p>
+      <p>Model: claude-sonnet-4-6 · Session: 2026-06-21-002 · Platform: Cowork · Date: 2026-06-21</p>
+      <p>Cameron defined the arc, confirmed the four-collaborator framing, approved the title, and reviewed all collaboration notes before inclusion. The narrative, structure, and diagrams were produced by Cowork. Claude Code validated the HTML, frontmatter, and collection conventions before committing. DeepSeek's note is reproduced with permission as written. Claude Code's note is reproduced with two self-corrections it made to the attribution prompt it was given.</p>
+      <p>Reviewed and approved by Cameron Loudon. Part of the Radical Collaboration Transparency framework.</p>
+    </div>
+  </div>
+
+</article>
