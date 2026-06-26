@@ -1,0 +1,18 @@
+# OpenCode local config
+opencode.json
+
+# Jekyll build artifacts
+_site/
+.sass-cache/
+.jekyll-cache/
+.bundle/
+vendor/
+
+# Secrets and credentials
+.env
+.env.*
+_config.secrets.yml
+*.pem
+*.key
+*.p12
+secrets.*

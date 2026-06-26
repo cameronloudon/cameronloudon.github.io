@@ -51,6 +51,14 @@ Read `PROJECT_STATE.md` for the live picture. Do not rely on this file for curre
 
 ---
 
+## Tool-specific setup
+
+**Claude Code** loads `CLAUDE.md` automatically. No additional setup required.
+
+**OpenCode** requires a local `opencode.json` in the repo root. This file is gitignored and is not committed to the repo — you must create it before starting a session. The template and configuration details are documented in the AI Independence Verification runbook (held in AI-Working). The file loads onboarding documents automatically, configures Ollama as the model provider, and sets permission rules for confirmations on destructive actions.
+
+---
+
 ## If something is unclear
 
 Ask Cameron before acting on structural decisions. Cameron's email: cameronloudon@gmail.com

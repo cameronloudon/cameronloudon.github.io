@@ -32,8 +32,7 @@ The next session that produces published output or repo changes must write `sess
 | `_ai-context/rct-session-primer.md` | RCT framework, collab-note and session log formats | Read before any publishing task |
 | `_ai-context/rct-validation-checklist.md` | Pre-publish checklist | Run before every commit that adds or changes published content |
 | `_ai-context/single-ai-workflow.md` | Single-tool workflow | Read if one AI is handling both Draft and Publish roles |
-
-**Note:** `_ai-context/ai-content-creation-spec.md` is not yet in the repo. It is in `AI-Working/` and has a hard gate on promotion (reconciliation required before it can be promoted). References to it have been stripped from the current _ai-context/ files pending that gate.
+| `_ai-context/ai-content-creation-spec.md` | Full technical and design specification for content creation | Read before drafting new content; covers frontmatter, CSS, collab-note format, tag taxonomy |
 
 ---
 
