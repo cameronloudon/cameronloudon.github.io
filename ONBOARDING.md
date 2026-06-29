@@ -25,7 +25,17 @@ Cameron's long-term goal is to run a local AI setup. This project is designed to
 
 ## How content moves from draft to published
 
-Content moves through three locations before it's live. `AI-Working` (`C:\Users\camer\Documents\AI\AI-Working\`) is the Draft Agent's workspace — drafts are written and revised here, and nothing is published directly from this folder. `AI-Prod` (`C:\Users\camer\Documents\AI\AI-Prod\`) is a mirror of the live repo — read it to see what's currently published without leaving your drafting environment. The repo itself (`C:\Users\camer\Documents\GitHub\cameronloudon.github.io`) is where the Publish Agent actually commits changes. GitHub Pages then builds and publishes the site automatically from the `main` branch — no manual deploy step.
+**AI-Working** (`C:\Users\camer\Documents\AI\AI-Working\`) is the Draft Agent's workspace. It has three subfolders that signal content status:
+
+- `Drafts/` — work in progress, not yet approved
+- `Ready/` — approved by Cameron, waiting for the Publish Agent to commit. Should be empty most of the time — a file here means something is in flight.
+- `Completed/` — published, verified live in AI-Prod, closed out
+
+Content flows: Draft Agent writes to Drafts/, moves approved content to Ready/, then Cameron passes the handoff prompt to the Publish Agent. The Publish Agent reads from Ready/ and commits directly to the repo. AI-Prod is not a waypoint in this flow.
+
+**AI-Prod** (`C:\Users\camer\Documents\AI\AI-Prod\`) is a read-only mirror of the live repo. It is updated by the Publish Agent after Cameron merges to main — never before. The Draft Agent has read-only access to AI-Prod to see what is currently published. It is not a staging area and nothing is written to it until content is live.
+
+**The repo** (`C:\Users\camer\Documents\GitHub\cameronloudon.github.io`) is where the Publish Agent commits changes. GitHub Pages builds and publishes the site automatically from the `main` branch — no manual deploy step.
 
 ---
 
@@ -56,6 +66,8 @@ Read `PROJECT_STATE.md` for the live picture. Do not rely on this file for curre
 **Claude Code** loads `CLAUDE.md` automatically. No additional setup required.
 
 **OpenCode** requires a local `opencode.json` in the repo root. This file is gitignored and is not committed to the repo — you must create it before starting a session. The template and configuration details are documented in the AI Independence Verification runbook (held in AI-Working). The file loads onboarding documents automatically, configures Ollama as the model provider, and sets permission rules for confirmations on destructive actions.
+
+**Config file ownership:** `.claude/settings.json` covers Claude Code permissions. `opencode.json` covers OpenCode permissions. These are separate files with separate permission models — a permission in one does not apply to the other.
 
 ---
 

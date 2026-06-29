@@ -4,6 +4,9 @@
 Personal brand website and ideas repository. Jekyll site hosted on GitHub Pages.
 The complete project specification is in master-synthesis-prompt.html in this repo root — the founding document. Read it once for historical context when first onboarding; PROJECT_STATE.md is the current-state reference for every session after that.
 
+## Two-Agent System
+This project uses a two-agent workflow. Claude Code is the Publish Agent. The Draft Agent (Cowork) handles all content creation. The workflow, roles, and permissions are documented in `AI_INSTRUCTIONS.md` — read it before executing any publish task.
+
 ## Branch Workflow — CRITICAL
 NEVER commit directly to main.
 Always create a session branch first: git checkout -b session-N
@@ -151,3 +154,17 @@ At the end of every session that changes the repo:
 4. Sync check: if you made changes that affect AI_INSTRUCTIONS.md or CLAUDE.md conventions, flag it to Cameron — do not let the two files drift
 
 Commit PROJECT_STATE.md and the session log in the same commit or immediately after the content commit.
+
+### Phase 2 — AI-Prod Sync
+
+**Triggered by Cameron confirming the PR has been merged to main.** Open a new session and run:
+
+```
+git checkout main
+git pull origin main
+robocopy "C:\Users\camer\Documents\GitHub\cameronloudon.github.io" "C:\Users\camer\Documents\AI\AI-Prod" /MIR /XD ".git" /XF "opencode.json"
+```
+
+Confirm sync to Cameron. Cowork will then verify content is visible in AI-Prod and move the file from `AI-Working/Ready/` to `AI-Working/Completed/`.
+
+Note: The robocopy Bash permission is pre-authorised in `.claude/settings.json`. For OpenCode as Publish Agent, the robocopy step uses `permission.ask` — Cameron confirms at runtime.
