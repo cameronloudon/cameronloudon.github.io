@@ -157,7 +157,7 @@ Commit PROJECT_STATE.md and the session log in the same commit or immediately af
 
 ### Phase 2 — AI-Prod Sync
 
-**Triggered by Cameron confirming the PR has been merged to main.** Open a new session and run:
+**Triggered by Cameron pasting: `Pull request successfully merged and closed` (the GitHub merge confirmation message).** Open a new session and run:
 
 ```
 git checkout main
