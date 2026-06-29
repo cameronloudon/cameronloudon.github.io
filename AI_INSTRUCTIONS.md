@@ -30,8 +30,8 @@ This project was built with two AI tools in separate roles. Those roles are defi
 
 | Role | Responsibilities | Requires |
 |---|---|---|
-| **Draft Agent** | Drafts content in AI-Working; promotes to AI-Prod when ready; updates PROJECT_STATE.md block; generates commit prompts for Publish Agent | Read/write: `C:\Users\camer\Documents\AI\AI-Working\`; Read-only: repo |
-| **Publish Agent** | Reviews promoted content; makes all repo changes; commits and pushes; runs pre-publish validation checklist; updates PROJECT_STATE.md at session close | Read/write: repo (`C:\Users\camer\Documents\GitHub\cameronloudon.github.io`); Read-only: specific named files in AI-Working |
+| **Draft Agent** | Drafts content in AI-Working/Drafts/; moves approved file to AI-Working/Ready/ and writes handoff prompt; does not write PROJECT_STATE.md | Read/write: `C:\Users\camer\Documents\AI\AI-Working\`; Read-only: AI-Prod; No access: repo, GitHub |
+| **Publish Agent** | Reads approved draft from AI-Working/Ready/; makes all repo changes; commits and pushes; runs pre-publish validation checklist; updates PROJECT_STATE.md at session close; syncs AI-Prod after merge | Read/write: repo (`C:\Users\camer\Documents\GitHub\cameronloudon.github.io`); Read-only: AI-Working/Ready/; Write: AI-Prod (sync only, post-merge); No access: AI-Working/Drafts/, AI-Working/Completed/ |
 | **Review Agent** | Independent review of plans, implementation, and output; cold-start context; no file write access | Read access to documents provided by Cameron |
 
 **Current tools filling these roles:**
@@ -97,7 +97,7 @@ This project was built with Claude (Anthropic) as both Draft Agent (via Cowork) 
 
 Read `PROJECT_STATE.md` before every session. It contains: active branch, session ID, page inventory with status, open decisions, capability baseline, external tools, and instruction file index.
 
-Update `PROJECT_STATE.md` at session close. If you are the Publish Agent, commit the update. If you are the Draft Agent, write your update block to AI-Working for the Publish Agent to commit.
+Update `PROJECT_STATE.md` at session close. The Publish Agent owns all PROJECT_STATE.md updates and commits them at session close. The Draft Agent does not write a PROJECT_STATE.md block.
 
 ---
 

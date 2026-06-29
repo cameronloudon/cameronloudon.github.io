@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Read(//c/Users/camer/Documents/AI/AI-Working/**)"
+      "Read(//c/Users/camer/Documents/AI/AI-Working/**)",
+      "Bash(robocopy C:\\Users\\camer\\Documents\\GitHub\\cameronloudon.github.io C:\\Users\\camer\\Documents\\AI\\AI-Prod*)"
     ]
   }
 }
