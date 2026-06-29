@@ -1,24 +1,24 @@
 # PROJECT_STATE.md
 **Single source of current project state. Read this before every session. Update this at every session close.**
-**Last updated:** 2026-06-21
-**Updated by:** Cowork (Draft Agent) — Retrospective "The Bug, the Audit, the Blueprint" drafted and promoted; session-2026-06-21-002 written
+**Last updated:** 2026-06-29
+**Updated by:** Claude Code (Publish Agent) — Two-agent workflow implementation, AI Independence Verification pre-test fixes, session close
 
 ---
 
 ## Active Branch
 
-`main` (session-2 merged)
-Last commit: `ae15152` — feat: CLAUDE.md Phase 4 additions (session-close protocol, ideas folder pattern, _skills/ layout note)
+`main` (session-3b merged 2026-06-29)
+Last commit: `5ec3ac6` — Merge pull request #27 from cameronloudon/session-3b
 Cameron merges to main. Do not commit directly to main.
 
 ---
 
 ## Next Session Log ID
 
-`NEXT_SESSION_LOG_ID: 2026-06-21-003`
+`NEXT_SESSION_LOG_ID: 2026-06-29-002`
 
-The five existing session logs are: `session-2026-06-10-001`, `session-2026-06-11-001`, `session-2026-06-11-002`, `session-2026-06-21-001`, `session-2026-06-21-002`.
-The next session that produces published output or repo changes must write `session-2026-06-21-003.md` to `_session-logs/` and increment this value.
+The six existing session logs are: `session-2026-06-10-001`, `session-2026-06-11-001`, `session-2026-06-11-002`, `session-2026-06-21-001`, `session-2026-06-21-002`, `session-2026-06-29-001`.
+Note: `session-2026-06-21-003` was never written (anticipated but session did not recur that day). Session on 2026-06-26 (pre-test repo prep, session-3b) was also not logged — both are acknowledged gaps.
 
 ---
 
@@ -28,7 +28,7 @@ The next session that produces published output or repo changes must write `sess
 |---|---|---|
 | `ONBOARDING.md` | Entry point for any new AI | Read first, once per onboarding |
 | `AI_INSTRUCTIONS.md` | Canonical AI-agnostic rules | Authoritative on intent; read if AI_INSTRUCTIONS.md and CLAUDE.md conflict, this wins |
-| `CLAUDE.md` | Claude Code specific | Auto-loads for Claude Code; consistent with AI_INSTRUCTIONS.md as of f20d068 |
+| `CLAUDE.md` | Claude Code specific | Auto-loads for Claude Code; consistent with AI_INSTRUCTIONS.md as of 2026-06-29 |
 | `_ai-context/rct-session-primer.md` | RCT framework, collab-note and session log formats | Read before any publishing task |
 | `_ai-context/rct-validation-checklist.md` | Pre-publish checklist | Run before every commit that adds or changes published content |
 | `_ai-context/single-ai-workflow.md` | Single-tool workflow | Read if one AI is handling both Draft and Publish roles |
@@ -60,7 +60,7 @@ The next session that produces published output or repo changes must write `sess
 | `_ideas/marketing-os-foundation.html` | Marketing OS Foundation | Published | Legacy flat file — do not use as pattern for new entries |
 | `_ideas/marketing-os.html` | Marketing OS | Published | |
 | `_ideas/ai-web-layer-framework.html` | AI Web Layer Framework | Published | |
-| `_ideas/the-bug-the-audit-the-blueprint/` | The Bug, the Audit, the Blueprint | Pending commit | Folder pattern — index.html + retrospective.html; session-2026-06-21-002 |
+| `_ideas/the-bug-the-audit-the-blueprint/` | The Bug, the Audit, the Blueprint | Published | Folder pattern — index.html + retrospective.html; session-2026-06-21-002 |
 
 ### _signals/ collection
 
@@ -83,7 +83,8 @@ Empty. Declared in `_config.yml` (output: true, permalink: /about/skills/:name/)
 | `session-2026-06-11-001.md` | Published |
 | `session-2026-06-11-002.md` | Published |
 | `session-2026-06-21-001.md` | Published |
-| `session-2026-06-21-002.md` | Pending commit |
+| `session-2026-06-21-002.md` | Published |
+| `session-2026-06-29-001.md` | Published |
 
 ### Directories pending action
 
@@ -106,6 +107,11 @@ None.
 | 9 | settings.json — verify and implement (.claude/settings.json, POSIX path syntax) | 6 | ✓ Done — merged to main | — |
 | 10 | AI-Prod mirror sync | Immediate | ✓ Done 2026-06-21 | — |
 | 11 | now.html and signals.html two collab-notes | 5 | ✓ Done — consolidated to one per page | — |
+| 12 | Two-agent workflow — permissions, roles, Phase 2 sync, AI-Working subfolder structure | 6 | ✓ Done 2026-06-29 (session-3b) | — |
+| 13 | AI Independence Verification pre-test fixes — all 8 test-blockers resolved | 6 | ✓ Done 2026-06-29 | — |
+| 14 | AI-agnostic design principle — structural discussion re: cowork-memory-backup.md and proprietary orientation files | 7 | Open — decision pending Cameron | Before live test debrief |
+| 15 | Survivable audit findings (9–22 from combined verification report) — 14 non-blocking issues documented | 7 | Open — address after live verification test | Post-test |
+| 16 | AI Independence Verification live test — AnythingLLM + OpenCode + Ollama end-to-end workflow | 7 | Ready to run — all pre-test blockers resolved | Cameron decides when |
 
 ---
 
@@ -113,8 +119,8 @@ None.
 
 | Role | Current Tool | Access |
 |---|---|---|
-| Draft Agent | Cowork (Claude Sonnet, Anthropic) | Read/write: `C:\Users\camer\Documents\AI\AI-Working\`; Read: repo files by name |
-| Publish Agent | Claude Code (Claude, Anthropic) | Read/write: `C:\Users\camer\Documents\GitHub\cameronloudon.github.io` |
+| Draft Agent | Cowork (Claude, Anthropic) via AnythingLLM + Ollama (gemma4:e4b) for AI independence verification | Read/write: `C:\Users\camer\Documents\AI\AI-Working\`; Read-only: AI-Prod; No access: repo, GitHub |
+| Publish Agent | Claude Code (Claude, Anthropic) primary; OpenCode (Ollama/gemma4:e4b) alternative — `opencode.json` configured, gitignored | Read/write: repo; Read-only: AI-Working/Ready/; Write: AI-Prod (sync only, post-merge) |
 | Review Agent | External (rotating; most recent: DeepSeek) | Read: documents provided by Cameron |
 
 ---
