@@ -236,6 +236,8 @@ These are the standard components available across the site. Use them consistent
 
 ## 6. Content Templates
 
+This section is the single template library referenced by both agent roles: the Draft Agent's `content_type` field (see `AI_INSTRUCTIONS.md` §3) maps to the required fields and sections below, and the Publish Agent builds HTML directly from these templates. Do not duplicate this list elsewhere.
+
 ### Ideas entry page — folder pattern (standard)
 
 New ideas entries use the **folder pattern**: create a named folder inside `_ideas/` containing an `index.html` (the entry point) plus any sub-pages. Reference implementation: `_ideas/man-with-two-brains/`.

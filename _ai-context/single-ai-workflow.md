@@ -26,6 +26,8 @@ Produce the content or changes in your working context. If you have file write a
 
 Apply the content conventions in `_ai-context/ai-content-creation-spec.md` during drafting.
 
+In the two-AI workflow, Draft Agent output is structured content only and Publish Agent authors the HTML separately (see `AI_INSTRUCTIONS.md` §3). That split exists to solve a cross-model handoff problem — it is not a requirement of the work itself. As a single AI holding both roles, you may draft directly in HTML using the templates in `_ai-context/ai-content-creation-spec.md` §6; there is no cross-model handoff to protect against, so the intermediate content-only step is optional.
+
 ### Step 2 — Self-review
 
 Before validating, review your own output. The purpose of self-review is to catch problems before the checklist — errors in structure, logic, attribution, or convention that are easier to fix now than after a checklist pass.

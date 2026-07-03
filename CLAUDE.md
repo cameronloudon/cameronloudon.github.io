@@ -7,6 +7,8 @@ The complete project specification is in master-synthesis-prompt.html in this re
 ## Two-Agent System
 This project uses a two-agent workflow. Claude Code is the Publish Agent. The Draft Agent (Cowork) handles all content creation. The workflow, roles, and permissions are documented in `AI_INSTRUCTIONS.md` — read it before executing any publish task.
 
+**Content/HTML boundary:** The Draft Agent produces structured content only (Markdown, no HTML or frontmatter). All HTML authorship and Jekyll frontmatter for Draft-Agent-sourced content is Claude Code's responsibility, built from that structured content using the template library in `_ai-context/ai-content-creation-spec.md` §6 — not a pass-through or light edit of agent-authored markup. Adopted 2026-07-03; see `_session-logs/session-2026-07-03-001.md`.
+
 ## Branch Workflow — CRITICAL
 NEVER commit directly to main.
 Always create a session branch first: git checkout -b session-N

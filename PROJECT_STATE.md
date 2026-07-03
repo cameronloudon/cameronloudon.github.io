@@ -1,24 +1,26 @@
 # PROJECT_STATE.md
 **Single source of current project state. Read this before every session. Update this at every session close.**
-**Last updated:** 2026-06-29
-**Updated by:** Claude Code (Publish Agent) — Two-agent workflow implementation, AI Independence Verification pre-test fixes, session close
+**Last updated:** 2026-07-03
+**Updated by:** Claude Code (Publish Agent) — content/HTML boundary adoption, session close
 
 ---
 
 ## Active Branch
 
-`main` (session-3b merged 2026-06-29)
-Last commit: `5ec3ac6` — Merge pull request #27 from cameronloudon/session-3b
+`session-5` (not yet merged)
+Branched from `main` at `9bea227` — Merge pull request #28 from cameronloudon/session-4
 Cameron merges to main. Do not commit directly to main.
 
 ---
 
 ## Next Session Log ID
 
-`NEXT_SESSION_LOG_ID: 2026-06-29-002`
+`NEXT_SESSION_LOG_ID: 2026-07-03-002`
 
-The six existing session logs are: `session-2026-06-10-001`, `session-2026-06-11-001`, `session-2026-06-11-002`, `session-2026-06-21-001`, `session-2026-06-21-002`, `session-2026-06-29-001`.
-Note: `session-2026-06-21-003` was never written (anticipated but session did not recur that day). Session on 2026-06-26 (pre-test repo prep, session-3b) was also not logged — both are acknowledged gaps.
+Correction: this field previously read `2026-06-29-002`, left over from the 2026-06-29 session close and never updated despite no session recurring that day. This session log used `2026-07-03-001` (date-based, per `_ai-context/rct-session-primer.md` — session IDs encode the date the log was actually written, not a carried-forward counter).
+
+The seven existing session logs are: `session-2026-06-10-001`, `session-2026-06-11-001`, `session-2026-06-11-002`, `session-2026-06-21-001`, `session-2026-06-21-002`, `session-2026-06-29-001`, `session-2026-07-03-001`.
+Note: `session-2026-06-21-003` was never written (anticipated but session did not recur that day). Session on 2026-06-26 (pre-test repo prep, session-3b) and the session-4 branch (2026-06-29 branch-workflow correction, folded into `session-2026-06-29-001`'s log) were also not separately logged — acknowledged gaps.
 
 ---
 
@@ -85,6 +87,7 @@ Empty. Declared in `_config.yml` (output: true, permalink: /about/skills/:name/)
 | `session-2026-06-21-001.md` | Published |
 | `session-2026-06-21-002.md` | Published |
 | `session-2026-06-29-001.md` | Published |
+| `session-2026-07-03-001.md` | Published |
 
 ### Directories pending action
 
@@ -112,6 +115,8 @@ None.
 | 14 | AI-agnostic design principle — structural discussion re: cowork-memory-backup.md and proprietary orientation files | 7 | Open — decision pending Cameron | Before live test debrief |
 | 15 | Survivable audit findings (9–22 from combined verification report) — 14 non-blocking issues documented | 7 | Open — address after live verification test | Post-test |
 | 16 | AI Independence Verification live test — AnythingLLM + OpenCode + Ollama end-to-end workflow | 7 | Ready to run — all pre-test blockers resolved | Cameron decides when |
+| 17 | Content/HTML boundary — Draft Agent produces structured content only, Publish Agent authors all HTML/frontmatter | 8 | ✓ Done 2026-07-03 (session-5) — `AI_INSTRUCTIONS.md`, `CLAUDE.md`, `_ai-context/single-ai-workflow.md`, `_ai-context/ai-content-creation-spec.md` updated; `draft-agent-config.md` and `publish-handoff-template.md` owned by Cowork per the same decision | — |
+| 18 | `.claude/settings.json` scoped Messages/Ready permissions — left uncommitted after the 2026-06-29 session-3b close | 8 | ✓ Committed 2026-07-03 (session-5) — matches the permissions already documented in `project-messages-folder-workflow` decision, no behaviour change from what was already active | — |
 
 ---
 
