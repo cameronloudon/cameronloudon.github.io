@@ -11,6 +11,7 @@ This project uses a two-agent workflow. Claude Code is the Publish Agent. The Dr
 
 ## Branch Workflow — CRITICAL
 NEVER commit directly to main.
+Before creating a session branch, verify PROJECT_STATE.md's Active Branch claim against actual git state (`git status`, `git branch --show-current`, `git log`) — if it names a branch that's already merged, correct PROJECT_STATE.md first (see AI_INSTRUCTIONS.md §2, session-start ritual).
 Always create a session branch first: git checkout -b session-N
 All work happens on the session branch.
 Cameron reviews the diff on GitHub, then merges to main.

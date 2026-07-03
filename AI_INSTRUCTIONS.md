@@ -16,11 +16,12 @@ Do this at the start of every session, before taking any action:
 
 1. Read `ONBOARDING.md` if you haven't already (first session on this project only)
 2. Read `PROJECT_STATE.md` — current branch, page inventory, open decisions, what was last done
-3. Read the relevant files in `_ai-context/` for your current task
-4. If you are Claude Code, `CLAUDE.md` has already auto-loaded — cross-check it against this file if anything appears to conflict
-5. `master-synthesis-prompt.html` (published page, repo root) is the founding document — it describes the original intent of the project. Read it once for historical context when first onboarding. You do not need to read it every session; `PROJECT_STATE.md` is the current-state reference.
+3. Verify PROJECT_STATE.md's Active Branch claim against actual git state (`git status`, `git branch --show-current`, `git log`). The Publish Agent's job ends at push; Cameron merges afterward, in a separate action outside that session. This means the Active Branch section is only ever true for the window before merge — if the named branch has already been merged, or doesn't match the branch you're actually on, correct `PROJECT_STATE.md` before doing anything else. Do not proceed on the assumption that the file is current just because you read it. This exact gap — a branch merges, nothing updates the file, the next session inherits stale state — has recurred multiple times on this project; treat the check as mandatory, not optional.
+4. Read the relevant files in `_ai-context/` for your current task
+5. If you are Claude Code, `CLAUDE.md` has already auto-loaded — cross-check it against this file if anything appears to conflict
+6. `master-synthesis-prompt.html` (published page, repo root) is the founding document — it describes the original intent of the project. Read it once for historical context when first onboarding. You do not need to read it every session; `PROJECT_STATE.md` is the current-state reference.
 
-Do not begin work until you have read PROJECT_STATE.md. Acting on stale state is the most common source of errors on this project.
+Do not begin work until you have read PROJECT_STATE.md and confirmed its Active Branch claim against real git state. Acting on stale state is the most common source of errors on this project.
 
 ---
 
