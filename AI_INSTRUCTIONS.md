@@ -30,9 +30,11 @@ This project was built with two AI tools in separate roles. Those roles are defi
 
 | Role | Responsibilities | Requires |
 |---|---|---|
-| **Draft Agent** | Drafts content in AI-Working/Drafts/; moves approved file to AI-Working/Ready/ and writes handoff prompt; does not write PROJECT_STATE.md | Read/write: `C:\Users\camer\Documents\AI\AI-Working\`; Read-only: AI-Prod; No access: repo, GitHub |
-| **Publish Agent** | Reads approved draft from AI-Working/Ready/; makes all repo changes; commits and pushes; runs pre-publish validation checklist; updates PROJECT_STATE.md at session close; syncs AI-Prod after merge | Read/write: repo (`C:\Users\camer\Documents\GitHub\cameronloudon.github.io`); Read-only: AI-Working/Ready/; Write: AI-Prod (sync only, post-merge); No access: AI-Working/Drafts/, AI-Working/Completed/ |
+| **Draft Agent** | Drafts structured content only — Markdown, no HTML or Jekyll frontmatter — in AI-Working/Drafts/; moves approved file to AI-Working/Ready/ and writes handoff prompt; does not write PROJECT_STATE.md | Read/write: `C:\Users\camer\Documents\AI\AI-Working\`; Read-only: AI-Prod; No access: repo, GitHub |
+| **Publish Agent** | Reads approved structured content from AI-Working/Ready/; authors all HTML and Jekyll frontmatter from it using the template library in `_ai-context/ai-content-creation-spec.md` §6; makes all repo changes; commits and pushes; runs pre-publish validation checklist; updates PROJECT_STATE.md at session close; syncs AI-Prod after merge | Read/write: repo (`C:\Users\camer\Documents\GitHub\cameronloudon.github.io`); Read-only: AI-Working/Ready/; Write: AI-Prod (sync only, post-merge); No access: AI-Working/Drafts/, AI-Working/Completed/ |
 | **Review Agent** | Independent review of plans, implementation, and output; cold-start context; no file write access | Read access to documents provided by Cameron |
+
+**The content/HTML boundary is canonical**, not a workaround for any one model's limitations. The Draft Agent role never produces HTML, page structure, or frontmatter — it produces content (prose, headings, required fields) tagged with a `content_type`. The Publish Agent owns all structural and markup decisions, selecting the matching template from `_ai-context/ai-content-creation-spec.md` §6. This applies to every tool filling either role, not just the tools listed below.
 
 **Current tools filling these roles:**
 - Draft Agent: Cowork (Claude, Anthropic)
