@@ -383,7 +383,7 @@ All content on cameronloudon.com is written in Cameron Loudon's voice. When prod
 Use these tags consistently across Ideas, Signals, and Skills.
 
 ### Thematic tags
-`#crm` `#marketing` `#automation` `#strategy` `#hospitality` `#entrepreneurship` `#technology` `#internet-history`
+`#crm` `#marketing` `#automation` `#strategy` `#hospitality` `#entrepreneurship` `#technology` `#internet-history` `#ai-collaboration`
 
 ### Nature of content
 `#idea-original` `#signal-reference` `#signal-influence` `#skill` `#in-progress` `#long-forming`

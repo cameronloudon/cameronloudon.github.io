@@ -1,0 +1,126 @@
+---
+layout: default
+title: The Four-Agent Collaboration Test
+permalink: /ideas/four-agent-collaboration-test/
+description: How we built, tested, and redesigned a four-agent AI collaboration system over two days — and what it taught us about where the boundaries between AI roles actually belong.
+---
+
+<article class="idea-page">
+
+  <header class="page-header">
+    <span class="eyebrow">My Ideas · AI Collaboration · In Progress</span>
+    <h1>The Four-Agent Collaboration Test</h1>
+    <p class="intro">How we built, tested, and redesigned a four-agent AI collaboration system over two days — and what it taught us about where the boundaries between AI roles actually belong.</p>
+  </header>
+
+  <div class="idea-meta-bar">
+    <div class="idea-meta-item">
+      <span class="meta-label">Status</span>
+      <span class="meta-value status-progress">First Draft Complete</span>
+    </div>
+    <div class="idea-meta-item">
+      <span class="meta-label">First built</span>
+      <span class="meta-value">July 2026</span>
+    </div>
+    <div class="idea-meta-item">
+      <span class="meta-label">Domain</span>
+      <span class="meta-value">AI Collaboration, System Design</span>
+    </div>
+    <div class="idea-meta-item">
+      <span class="meta-label">Collaborator</span>
+      <span class="meta-value">Gemma 4 12B (Google) via Ollama in Open WebUI</span>
+    </div>
+  </div>
+
+  <hr>
+
+  <section class="idea-section">
+    <h2>The Experiment</h2>
+    <p>On July 2nd, I put a four-agent system to the test. The goal was simple but foundational: see if we could build a collaborative pipeline where AI agents interacted with each other autonomously, mediated by a shared "Messages" folder as their primary communication channel.</p>
+    <p>We were testing several core capabilities:</p>
+    <ol>
+      <li>Could each agent read from and write to the <code>Messages/</code> directory using specific naming conventions?</li>
+      <li>Did they understand their own boundaries (Draft vs. Publish)?</li>
+      <li>Did they grasp the full workflow, including the handoff logic for subsequent deployment?</li>
+      <li>Most importantly, could they pass a "baton" to one another without me manually intervening as a bridge?</li>
+    </ol>
+  </section>
+
+  <hr>
+
+  <section class="idea-section">
+    <h2>The Four Collaborators</h2>
+    <p>The team consisted of four distinct agents, each fulfilling specific roles in the loop:</p>
+    <ul>
+      <li><strong>Cowork</strong>: (Claude via the Cowork app) serving as a Draft Agent.</li>
+      <li><strong>Claude Code</strong>: (Claude via CLI) serving as our Publish Agent and technical reviewer.</li>
+      <li><strong>AnythingLLM</strong>: (Gemma 4 12B locally) acting as an alternative Draft Agent.</li>
+      <li><strong>OpenCode</strong>: (a local model) serving as an alternative Publish Agent and independent auditor for check-and-balance verification.</li>
+    </ul>
+  </section>
+
+  <hr>
+
+  <section class="idea-section">
+    <h2>What Passed</h2>
+    <p>The core architecture held up remarkably well. Every agent successfully interacted with the <code>Messages/</code> folder, following the required naming conventions to ensure a persistent, auditable record of every exchange.</p>
+    <p>Additionally, the "check-and-balance" process proved highly effective; when Cowork and Claude Code double-checked one another's work, they caught errors in system prompt design and architectural decisions that other agents had overlooked. The <code>Messages/</code> folder successfully functioned as a robust inter-agent bus.</p>
+  </section>
+
+  <hr>
+
+  <section class="idea-section">
+    <h2>What Failed</h2>
+    <p>Two specific requirements were flagged during the verification:</p>
+    <ol>
+      <li><strong>Connectivity Gap</strong>: AnythingLLM produced responses that looked correct but were hallucinated from training data because the actual file system tools weren't connected to its workspace. It didn't "know" it couldn't see the files; it just wasn't told it had a chance.</li>
+      <li><strong>The HTML Ceiling</strong>: Even when switched to Open WebUI, Gemma 4 hit a hard wall with HTML generation. Despite multiple prompt variations and explicit instructions, it consistently failed to maintain div scope for multi-card layouts — wrapping every card individually rather than wrapping the group.</li>
+    </ol>
+  </section>
+
+  <hr>
+
+  <section class="idea-section">
+    <h2>The Diagnosis</h2>
+    <p>These weren't just "bad prompts." They were two different types of problems:</p>
+    <ol>
+      <li><strong>Configuration Issue</strong>: AnythingLLM's failure was purely environmental. The tools weren't connected to the workspace, so it defaulted to its internal weights.</li>
+      <li><strong>Model Capability Limit</strong>: Gemma 4's failure with HTML was a structural ceiling. No amount of instruction-tuning solved the problem of maintaining complex nested structures in large blocks of code.</li>
+    </ol>
+  </section>
+
+  <hr>
+
+  <section class="idea-section">
+    <h2>The Fix</h2>
+    <p>The solution was architectural, not instructional. We redefined the boundary between roles:</p>
+    <p><strong>The Draft Agent</strong> is now restricted to producing structured Markdown only — no HTML, no CSS, and no frontmatter. It provides a "clean" content file with a standardized header.</p>
+    <p><strong>The Publish Agent</strong> (specifically Claude Code) takes that Markdown and handles the conversion to valid HTML using our established production specs.</p>
+    <p>By decoupling <em>content</em> from <em>presentation</em>, we removed the requirement for any single model to be an expert in both, effectively bypassing the technical limitations of smaller or less-consistent models while maintaining a high standard for the final output.</p>
+  </section>
+
+  <hr>
+
+  <section class="idea-section">
+    <h2>Why This Matters</h2>
+    <p>This evolution confirms that AI-agnostic collaboration is possible when you design for where the boundaries naturally lie.</p>
+    <p>By using the <code>Messages/</code> folder as a shared record, every interaction remains auditable and transparent. By separating content from markup, we ensure that the Draft Agent role is genuinely portable — any model capable of writing in my voice can fulfill its purpose regardless of its ability to manage complex CSS nesting. The failures on July 2nd weren't wasted time; they revealed the ceiling of instruction-based "fixes" and led us to a more robust, scalable architecture.</p>
+  </section>
+
+  <hr>
+
+  <p class="idea-tags">#idea-original #ai-collaboration #session-other-ai</p>
+
+  <hr>
+
+  <div class="collab-note">
+    <div class="collab-note-header">🤝 Collaboration Note</div>
+    <div class="collab-note-body">
+      <p>This page was developed in a session with Gemma 4 12B (Google) via Ollama in Open WebUI.</p>
+      <p>Model: gemma4:12b · Session: 2026-07-03-002 · Platform: AnythingLLM (Draft) + OpenCode (Publish) · Date: 2026-07-03</p>
+      <p>Cameron designed the four-agent experiment, defined the test criteria, and identified the critical distinction between configuration failures and model capability ceilings. The draft structure and written content were produced by allm (Gemma 4 12B) via AnythingLLM. HTML conversion and publication were handled by OpenCode (big-pickle) acting as Publish Agent.</p>
+      <p>Reviewed and approved by Cameron Loudon. Part of the Radical Collaboration Transparency framework.</p>
+    </div>
+  </div>
+
+</article>

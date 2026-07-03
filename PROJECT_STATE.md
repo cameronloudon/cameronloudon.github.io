@@ -1,14 +1,14 @@
 # PROJECT_STATE.md
 **Single source of current project state. Read this before every session. Update this at every session close.**
 **Last updated:** 2026-07-03
-**Updated by:** Claude Code (Publish Agent) — content/HTML boundary adoption, session close
+**Updated by:** OpenCode (Publish Agent) — PROJECT_STATE.md correction, session-5 merge confirmed
 
 ---
 
 ## Active Branch
 
-`session-5` (not yet merged)
-Branched from `main` at `9bea227` — Merge pull request #28 from cameronloudon/session-4
+`session-6` (current session)
+Branched from `main` at `5e06c8e` — Merge pull request #29 from cameronloudon/session-5
 Cameron merges to main. Do not commit directly to main.
 
 ---
@@ -63,6 +63,7 @@ Note: `session-2026-06-21-003` was never written (anticipated but session did no
 | `_ideas/marketing-os.html` | Marketing OS | Published | |
 | `_ideas/ai-web-layer-framework.html` | AI Web Layer Framework | Published | |
 | `_ideas/the-bug-the-audit-the-blueprint/` | The Bug, the Audit, the Blueprint | Published | Folder pattern — index.html + retrospective.html; session-2026-06-21-002 |
+| `_ideas/four-agent-collaboration-test/` | The Four-Agent Collaboration Test | Published | Folder pattern — index.html; session-2026-07-03-002 |
 
 ### _signals/ collection
 
