@@ -1,25 +1,25 @@
 # PROJECT_STATE.md
 **Single source of current project state. Read this before every session. Update this at every session close.**
 **Last updated:** 2026-07-03
-**Updated by:** OpenCode (Publish Agent) — PROJECT_STATE.md correction, session-5 merge confirmed
+**Updated by:** OpenCode (Publish Agent) — PROJECT_STATE.md correction, session-5 merge confirmed, session-6 log written retroactively
 
 ---
 
 ## Active Branch
 
-`session-6` (current session)
-Branched from `main` at `5e06c8e` — Merge pull request #29 from cameronloudon/session-5
+`session-7` (current session)
+Branched from `main` at `cd9bce9` — Merge pull request #30 from cameronloudon/session-6
 Cameron merges to main. Do not commit directly to main.
 
 ---
 
 ## Next Session Log ID
 
-`NEXT_SESSION_LOG_ID: 2026-07-03-002`
+`NEXT_SESSION_LOG_ID: 2026-07-03-003`
 
 Correction: this field previously read `2026-06-29-002`, left over from the 2026-06-29 session close and never updated despite no session recurring that day. This session log used `2026-07-03-001` (date-based, per `_ai-context/rct-session-primer.md` — session IDs encode the date the log was actually written, not a carried-forward counter).
 
-The seven existing session logs are: `session-2026-06-10-001`, `session-2026-06-11-001`, `session-2026-06-11-002`, `session-2026-06-21-001`, `session-2026-06-21-002`, `session-2026-06-29-001`, `session-2026-07-03-001`.
+The eight existing session logs are: `session-2026-06-10-001`, `session-2026-06-11-001`, `session-2026-06-11-002`, `session-2026-06-21-001`, `session-2026-06-21-002`, `session-2026-06-29-001`, `session-2026-07-03-001`, `session-2026-07-03-002`.
 Note: `session-2026-06-21-003` was never written (anticipated but session did not recur that day). Session on 2026-06-26 (pre-test repo prep, session-3b) and the session-4 branch (2026-06-29 branch-workflow correction, folded into `session-2026-06-29-001`'s log) were also not separately logged — acknowledged gaps.
 
 ---
@@ -89,6 +89,7 @@ Empty. Declared in `_config.yml` (output: true, permalink: /about/skills/:name/)
 | `session-2026-06-21-002.md` | Published |
 | `session-2026-06-29-001.md` | Published |
 | `session-2026-07-03-001.md` | Published |
+| `session-2026-07-03-002.md` | Published |
 
 ### Directories pending action
 
