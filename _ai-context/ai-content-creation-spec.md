@@ -289,6 +289,8 @@ description: One sentence description.
 
 **Note:** `marketing-os-foundation.html` and `marketing-os.html` in `_ideas/` are legacy flat files. Do not use them as templates for new entries.
 
+**Index page update — required, easy to miss:** `_ideas/index.html` is a hand-written static list of `<li>` entries, not a Jekyll loop over `site.ideas`. Publishing a new entry to `_ideas/` does not make it appear on `/ideas/` automatically — the collection permalink makes the page itself reachable, but the index page needs a new `<li>` block added by hand (date, type, status, title/link, excerpt, tags), matching the pattern of existing entries. The same applies to `signals.html` (repo root) for the Signals collection — it is also a static hand-written list, not a generated loop. Do this in the same commit as the new entry — a page that publishes successfully but never appears on its own index is easy to miss and was a real, confirmed failure mode (2026-07-03).
+
 ### Signals entry page (`_signals/signal-name.html`)
 
 ```html
