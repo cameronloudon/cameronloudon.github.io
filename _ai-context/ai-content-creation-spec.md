@@ -48,7 +48,8 @@ description: One sentence description for SEO.
 | Ideas | `_ideas/` | `/ideas/my-idea/` |
 | Signals | `_signals/` | `/signals/signal-name/` |
 | Skills | `_skills/` | `/about/skills/skill-name/` |
-| Standalone pages | root | `/now/`, `/contact/` |
+| Now | `_now/` | `/now/entry-name/` |
+| Standalone pages | root | `/now/` (index only), `/contact/` |
 
 ---
 
@@ -333,6 +334,56 @@ description: One sentence description.
 
 </article>
 ```
+
+### Now entry page — flat-file pattern (`_now/entry-name.html`)
+
+New Now entries use a **flat file** in `_now/`, not the Ideas folder pattern — these are short project updates, not multi-page write-ups. Reference implementation: `_now/local-ai-stack.html`.
+
+Template is a lighter shape than Ideas or Signals: `.page-header`/`.eyebrow`/`.intro` (copied local `<style>` block, same convention as other pages) plus plain prose under an `<hr>` — no `.idea-section` wrapper, no `.signal-meta` key-value block (Now entries don't have a "Source" the way Signals do).
+
+```html
+---
+layout: default
+title: "Entry Title"
+permalink: /now/entry-name/
+description: One sentence description.
+---
+
+<article class="now-entry">
+
+  <header class="page-header">
+    <span class="eyebrow">Now · Project · [Status/date]</span>
+    <h1>Entry Title</h1>
+    <p class="intro">One or two sentence introduction.</p>
+  </header>
+
+  <hr>
+
+  <p>Body prose.</p>
+
+  <hr>
+
+  <div class="collab-note">
+    <div class="collab-note-header">🤝 Collaboration Note</div>
+    <div class="collab-note-body">
+      <p>This page was developed in a session with Claude (Anthropic).</p>
+      <p>Model: [model string] · Session: [YYYY-MM-DD-NNN] · Platform: [platform] · Date: [YYYY-MM-DD]</p>
+      <p>[What Cameron contributed vs what the AI contributed — be specific.]</p>
+      <p>Reviewed and approved by Cameron Loudon. Part of the Radical Collaboration Transparency framework.</p>
+    </div>
+  </div>
+
+</article>
+
+<style>
+.page-header { padding: 2rem 0 2.5rem; }
+.page-header .eyebrow { font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1rem; display: block; }
+.page-header .intro { font-size: 1.1rem; color: var(--text-muted); max-width: 580px; margin-top: 1rem; }
+.now-entry p { max-width: 580px; font-size: 0.975rem; line-height: 1.8; margin-bottom: 1.5rem; }
+</style>
+```
+
+**Index page update — required, same rule as Ideas and Signals:** `now.html` (repo root) is a hand-written static list of `<li>` entries using `.entry-list`/`.entry-meta`/`.entry-title`/`.entry-excerpt`, not a Jekyll loop over `site.now`. Publishing a new entry to `_now/` does not make it appear on `/now/` automatically — add a new `<li>` block by hand in the same commit.
 
 ### Skills entry (`_skills/skill-name.md`)
 

@@ -1,0 +1,92 @@
+---
+layout: default
+title: "Building a Local AI Stack"
+permalink: /now/building-a-local-ai-stack/
+description: A fully private, GPU-accelerated local AI stack — no cloud, no API bills, no data leaving the network.
+---
+
+<article class="now-entry">
+
+  <header class="page-header">
+    <span class="eyebrow">Now · Project · Started December 2025</span>
+    <h1>Building a Local AI Stack</h1>
+    <p class="intro">I'm attempting to build a fully private, GPU-accelerated AI stack on my own hardware. No cloud. No API bills. No data leaving the network.</p>
+  </header>
+
+  <hr>
+
+  <p>The stack runs on a dedicated Ubuntu drive alongside Windows 11, using an AMD RX 9070 XT for local inference via Ollama, Open WebUI, and a set of supporting services for search, transcription, memory, and file ingestion.</p>
+
+  <p>I've documented the full installation process across 18 phases. Whether it all works remains to be seen — I'll update this page as it progresses.</p>
+
+  <a href="/local-ai-stack/" class="now-link">Read the full installation guide &rarr;</a>
+
+  <hr>
+
+  <div class="collab-note">
+    <div class="collab-note-header">🤝 Collaboration Note</div>
+    <div class="collab-note-body">
+      <p>This project update was originally developed in a thinking session with Claude (Anthropic) on the Now page in May 2026. It was split into its own addressable page by Claude Code (Anthropic) as part of restructuring Now from a single flat page into a collection.</p>
+      <p>Model: claude-sonnet-5 · Session: 2026-07-05-002 · Platform: Claude Code · Date: 2026-07-05</p>
+      <p>The project itself and its original prose are Cameron's, unchanged from the source Now page. Claude Code authored the new frontmatter, permalink, and page structure needed to make this entry individually addressable.</p>
+      <p>Reviewed and approved by Cameron Loudon. Part of the Radical Collaboration Transparency framework.</p>
+    </div>
+  </div>
+
+</article>
+
+<style>
+.page-header {
+  padding: 2rem 0 2.5rem;
+}
+
+.page-header .eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.page-header .intro {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  max-width: 580px;
+  margin-top: 1rem;
+}
+
+.now-entry p {
+  max-width: 580px;
+  font-size: 0.975rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.now-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1px;
+  transition: color var(--transition), border-color var(--transition);
+}
+
+.now-link:hover {
+  color: var(--accent-hover);
+  border-bottom-color: var(--accent);
+  text-decoration: none;
+}
+
+[data-theme="terminal"] .now-link:hover {
+  text-shadow: 0 0 8px rgba(0, 255, 65, 0.5);
+}
+
+[data-theme="tree"] .now-link:hover {
+  text-shadow: 0 0 8px rgba(255, 176, 0, 0.4);
+}
+</style>

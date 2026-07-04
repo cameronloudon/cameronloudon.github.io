@@ -41,7 +41,7 @@ If any item fails: do not commit. Flag the issue to Cameron.
 - [ ] Page follows the declared template pattern for its content type
 - [ ] All internal links resolve (no broken references to files that don't exist)
 - [ ] If an ideas entry: uses folder pattern (named folder with index file + sub-pages), not flat file
-- [ ] If an ideas or signals entry: the collection's index page (`_ideas/index.html` or `signals.html`) has a new `<li>` entry added — these are static hand-written lists, not generated from the collection, so a new page will not appear there automatically
+- [ ] If an ideas, signals, or now entry: the collection's index page (`_ideas/index.html`, `signals.html`, or `now.html`) has a new `<li>` entry added — these are static hand-written lists, not generated from the collection, so a new page will not appear there automatically
 
 ---
 
@@ -87,7 +87,7 @@ Complete this block and include it in the session log:
 
 **On the folder pattern (checklist item 2.9):** The reference implementation is `_ideas/man-with-two-brains/`. New ideas entries must follow this pattern. `marketing-os-foundation.html` is a legacy flat file — do not use it as a pattern for new entries.
 
-**On the index page update (checklist item 2.10):** `_ideas/index.html` and `signals.html` are static, hand-written entry lists — Jekyll's collection permalink makes a new page reachable at its own URL, but nothing adds it to these index pages automatically. A page can pass every other checklist item, publish successfully, and still be invisible from the site's own navigation because this step was skipped. Confirmed as a real failure mode on 2026-07-03.
+**On the index page update (checklist item 2.10):** `_ideas/index.html`, `signals.html`, and `now.html` are static, hand-written entry lists — Jekyll's collection permalink makes a new page reachable at its own URL, but nothing adds it to these index pages automatically. A page can pass every other checklist item, publish successfully, and still be invisible from the site's own navigation because this step was skipped. Confirmed as a real failure mode on 2026-07-03.
 
 ---
 

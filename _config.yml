@@ -23,6 +23,9 @@ collections:
   skills:
     output: true
     permalink: /about/skills/:name/
+  now:
+    output: true
+    permalink: /now/:name/
   session-logs:
     output: true
     permalink: /session-logs/:name/

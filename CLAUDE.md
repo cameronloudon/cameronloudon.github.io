@@ -25,6 +25,7 @@ Cameron reviews the diff on GitHub, then merges to main.
 
 ## File Structure
 _ideas/          → Ideas content pages (Jekyll collection)
+_now/            → Now project updates (Jekyll collection, flat-file pattern) — now.html (root) is the hand-written index
 _layouts/        → default.html layout only
 assets/css/      → main.css (single file, four theme modes)
 assets/js/       → theme.js (theme toggle logic)
