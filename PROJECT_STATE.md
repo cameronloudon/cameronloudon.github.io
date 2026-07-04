@@ -1,14 +1,14 @@
 # PROJECT_STATE.md
 **Single source of current project state. Read this before every session. Update this at every session close.**
 **Last updated:** 2026-07-05
-**Updated by:** Claude Code (Publish Agent) — implemented the Now → `_now/` collection restructure (Cowork proposal, consensus, final brief)
+**Updated by:** Claude Code (Publish Agent) — Phase 2 state correction: session-11 merged as PR #35, branch opened and named here immediately per the merge-confirmation procedure (Open Decision #21); no task started on it yet
 
 ---
 
 ## Active Branch
 
-`session-11` (current session)
-Branched from `main` at `55cf4fc` — Merge pull request #34 from cameronloudon/session-10
+`session-12` (current session — opened immediately by Phase 2 on merge confirmation; no task started on it yet)
+Branched from `main` at `14b26af` — Merge pull request #35 from cameronloudon/session-11
 Cameron merges to main. Do not commit directly to main.
 
 ---
