@@ -23,6 +23,8 @@ Do this at the start of every session, before taking any action:
 
 Do not begin work until you have read PROJECT_STATE.md and confirmed its Active Branch claim against real git state. Acting on stale state is the most common source of errors on this project.
 
+This check is a safety net, not the primary defence — see §6's Git note for the fix that closes the gap at the source (correcting PROJECT_STATE.md at merge-confirmation time, not waiting for this check to catch it later).
+
 ---
 
 ## 3. Role definitions
@@ -69,6 +71,8 @@ Radical Collaboration Transparency (RCT) is Cameron's framework for attributing 
 ## 6. Key technical constraints
 
 **Git:** Never commit directly to `main`. All work happens on a named branch (current: see PROJECT_STATE.md). Cameron confirms and merges.
+
+**When Cameron confirms a merge** (e.g. pasting a GitHub merge-confirmation message), correct `PROJECT_STATE.md`'s Active Branch section immediately, as the first action of a newly-opened branch created for that purpose — do not wait for the next session's start-of-session verification (§2) to catch the staleness. That check is a safety net for when this step gets missed, not the primary mechanism; relying on it alone is what let the same staleness bug recur (see `PROJECT_STATE.md` Open Decisions #19 and #21). The correction itself still follows normal branch-and-push discipline — it is not an exception to the no-direct-commit rule above, just triggered at merge time instead of whenever the next task happens to start.
 
 **Jekyll frontmatter:** No blank line before the opening `---`. Missing or malformed frontmatter causes Jekyll to silently drop the page from its collection.
 

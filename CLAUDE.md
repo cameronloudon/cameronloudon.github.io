@@ -158,13 +158,25 @@ At the end of every session that changes the repo:
 
 Commit PROJECT_STATE.md and the session log in the same commit or immediately after the content commit.
 
-### Phase 2 — AI-Prod Sync
+### Phase 2 — AI-Prod Sync and State Correction
 
-**Triggered by Cameron pasting: `Pull request successfully merged and closed` (the GitHub merge confirmation message).** Open a new session and run:
+**Triggered by Cameron pasting: `Pull request successfully merged and closed` (the GitHub merge confirmation message).** Open a new session and do both steps below — the state correction is not optional, even if you were only asked for the sync.
+
+**Step 1 — Correct `PROJECT_STATE.md` immediately, before anything else:**
+
+The merge that just happened is exactly the event that invalidates `PROJECT_STATE.md`'s Active Branch section, and Cameron's paste is the first reliable moment any AI session knows it occurred. Fix it now, not whenever the next session happens to start — the session-start verification ritual (§2 above) is a safety net for when this step gets missed, not the primary mechanism. Relying on it alone is what let the Active Branch staleness bug (Open Decision #19) recur.
 
 ```
 git checkout main
 git pull origin main
+git checkout -b session-N        # N = next unused session number
+```
+
+Edit `PROJECT_STATE.md`'s Active Branch section to name `session-N`, branched from `main` at the current commit hash, noting no work has started on it yet. Commit and push `session-N`. This branch becomes the starting point for whatever the next real task is — no separate branch-creation step is needed when that task begins. Do not commit this correction directly to `main`; it follows the normal branch-and-push workflow, just triggered immediately instead of waiting for a task to justify the branch.
+
+**Step 2 — Sync AI-Prod:**
+
+```
 robocopy "C:\Users\camer\Documents\GitHub\cameronloudon.github.io" "C:\Users\camer\Documents\AI\AI-Prod" /MIR /XD ".git" /XF "opencode.json"
 ```
 
