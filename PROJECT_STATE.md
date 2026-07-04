@@ -1,25 +1,25 @@
 # PROJECT_STATE.md
 **Single source of current project state. Read this before every session. Update this at every session close.**
 **Last updated:** 2026-07-05
-**Updated by:** Claude Code (Publish Agent) — corrected stale Active Branch (session-9 had merged as PR #33 but this file still named it current); closed the recurrence at the source by adding a PROJECT_STATE.md correction step to Phase 2 — AI-Prod Sync (`CLAUDE.md`) and a general version in `AI_INSTRUCTIONS.md` §6
+**Updated by:** Claude Code (Publish Agent) — implemented the Now → `_now/` collection restructure (Cowork proposal, consensus, final brief)
 
 ---
 
 ## Active Branch
 
-`session-10` (current session)
-Branched from `main` at `65cc2ef` — Merge pull request #33 from cameronloudon/session-9
+`session-11` (current session)
+Branched from `main` at `55cf4fc` — Merge pull request #34 from cameronloudon/session-10
 Cameron merges to main. Do not commit directly to main.
 
 ---
 
 ## Next Session Log ID
 
-`NEXT_SESSION_LOG_ID: 2026-07-05-002`
+`NEXT_SESSION_LOG_ID: 2026-07-05-003`
 
-This session used `session-2026-07-05-001`.
+This session used `session-2026-07-05-002`.
 
-The eleven existing session logs are: `session-2026-06-10-001`, `session-2026-06-11-001`, `session-2026-06-11-002`, `session-2026-06-21-001`, `session-2026-06-21-002`, `session-2026-06-29-001`, `session-2026-07-03-001`, `session-2026-07-03-002`, `session-2026-07-03-003`, `session-2026-07-03-004`, `session-2026-07-05-001`.
+The twelve existing session logs are: `session-2026-06-10-001`, `session-2026-06-11-001`, `session-2026-06-11-002`, `session-2026-06-21-001`, `session-2026-06-21-002`, `session-2026-06-29-001`, `session-2026-07-03-001`, `session-2026-07-03-002`, `session-2026-07-03-003`, `session-2026-07-03-004`, `session-2026-07-05-001`, `session-2026-07-05-002`.
 Note: `session-2026-06-21-003` was never written (anticipated but session did not recur that day). Session on 2026-06-26 (pre-test repo prep, session-3b) and the session-4 branch (2026-06-29 branch-workflow correction, folded into `session-2026-06-29-001`'s log) were also not separately logged — acknowledged gaps.
 
 ---
@@ -48,7 +48,7 @@ Note: `session-2026-06-21-003` was never written (anticipated but session did no
 | `about.html` | About | Published | 1 |
 | `approach.html` | Approach | Published | 1 |
 | `contact.html` | Contact | Published | 0 |
-| `now.html` | Now | Published | 1 |
+| `now.html` | Now | Published | 0 — now an index page, see `_now/` collection below |
 | `signals.html` | Signals | Published | 1 |
 | `local-ai-stack.html` | Local AI Stack | Published | 1 |
 | `master-synthesis-prompt.html` | Founding Document | Published | 1 — Founding document, historical |
@@ -78,6 +78,15 @@ Note: `session-2026-06-21-003` was never written (anticipated but session did no
 
 Empty. Declared in `_config.yml` (output: true, permalink: /about/skills/:name/). No default layout set in _config.yml — any new skills entry must declare `layout:` explicitly in frontmatter or it will not render.
 
+### _now/ collection
+
+| File | Title | Status | Notes |
+|---|---|---|---|
+| `_now/local-ai-stack.html` | Building a Local AI Stack | Published | Flat-file pattern; permalink `/now/building-a-local-ai-stack/` (kept clear of the existing `/local-ai-stack/` guide); session-2026-07-05-002 |
+| `_now/enrolment-pipeline-problem.html` | The Enrolment Pipeline Problem | Published | Flat-file pattern; session-2026-07-05-002 |
+
+Split from the single flat `now.html` page (Open Decision #22). `now.html` (root) is now the hand-written index for this collection, same pattern as `_ideas/index.html` and `signals.html`.
+
 ### _session-logs/ collection
 
 | File | Status |
@@ -92,6 +101,8 @@ Empty. Declared in `_config.yml` (output: true, permalink: /about/skills/:name/)
 | `session-2026-07-03-002.md` | Published |
 | `session-2026-07-03-003.md` | Published |
 | `session-2026-07-03-004.md` | Published |
+| `session-2026-07-05-001.md` | Published |
+| `session-2026-07-05-002.md` | Published |
 
 ### Directories pending action
 
@@ -124,6 +135,7 @@ None.
 | 19 | Recurring `PROJECT_STATE.md` branch-staleness bug — found 3x during the four-agent-collaboration-test live run (sessions 5–7): Active Branch section named an already-merged branch because nothing required verifying git state at session start | 8 | Partially fixed 2026-07-03 (session-8) — the session-start verification check was added, but the bug recurred a 4th time (found 2026-07-05, session-9 had merged as PR #33 with nothing catching it): the check is reactive and only runs if a session happens to start. Structural fix in #21 | — |
 | 20 | `_ideas/index.html` (and `signals.html`) are static hand-written lists, not generated from the collection — publishing a new entry doesn't make it appear on its own index. Missing entry for `four-agent-collaboration-test` found live on production 2026-07-03 | 8 | ✓ Done 2026-07-03 (session-9) — entry added to `_ideas/index.html`; documented as a required step in `ai-content-creation-spec.md` §6 and a new checklist item in `rct-validation-checklist.md` §2 | — |
 | 21 | Open Decision #19's fix was reactive only — the session-start check catches staleness whenever a session happens to start, but nothing runs at the actual moment of merge, since merges happen on GitHub with no AI session present. Root cause: Phase 2 — AI-Prod Sync already fires at exactly that moment (Cameron's merge-confirmation paste) but never touched `PROJECT_STATE.md` | 9 | ✓ Done 2026-07-05 (session-10) — Phase 2 (`CLAUDE.md`) now corrects Active Branch immediately via an immediately-created next session branch, before the AI-Prod sync; general AI-agnostic version added to `AI_INSTRUCTIONS.md` §6. Correction follows normal branch-and-push discipline, not a direct-to-main exception | — |
+| 22 | Now page → `_now/` collection — `now.html` held two hardcoded blocks with no individual permalinks; converted to a collection matching `_ideas/`/`_signals/` so entries are individually addressable, per Cowork proposal + Cameron's decision on collab-note session citation | 9 | ✓ Done 2026-07-05 (session-11) — `_config.yml`, `_now/local-ai-stack.html`, `_now/enrolment-pipeline-problem.html`, `now.html` rewritten as index; `ai-content-creation-spec.md`, `AI_INSTRUCTIONS.md`, `CLAUDE.md`, `rct-validation-checklist.md` updated | — |
 
 ---
 
@@ -144,6 +156,7 @@ None.
 | ideas | true | /ideas/:name/ | none set — must declare in frontmatter |
 | signals | true | /signals/:name/ | none set — must declare in frontmatter |
 | skills | true | /about/skills/:name/ | none set — must declare in frontmatter |
+| now | true | /now/:name/ | none set — must declare in frontmatter |
 | session-logs | true | /session-logs/:name/ | default (set in _config.yml defaults block) |
 
 ---

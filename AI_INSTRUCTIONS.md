@@ -76,7 +76,7 @@ Radical Collaboration Transparency (RCT) is Cameron's framework for attributing 
 
 **Jekyll frontmatter:** No blank line before the opening `---`. Missing or malformed frontmatter causes Jekyll to silently drop the page from its collection.
 
-**Collection fields:** Files in `_ideas/`, `_session-logs/`, and `_skills/` must declare all collection-specific frontmatter fields, not just `layout` and `title`. Missing fields cause Jekyll to silently drop pages from collections.
+**Collection fields:** Files in `_ideas/`, `_session-logs/`, `_skills/`, and `_now/` must declare all collection-specific frontmatter fields, not just `layout` and `title`. Missing fields cause Jekyll to silently drop pages from collections.
 
 **CSS — global rule:** All colours use CSS variables defined in `main.css`. Never hardcode colour values anywhere.
 
