@@ -1,14 +1,14 @@
 # PROJECT_STATE.md
 **Single source of current project state. Read this before every session. Update this at every session close.**
 **Last updated:** 2026-07-05
-**Updated by:** Claude Code (Publish Agent) — corrected stale Active Branch (session-9 had merged as PR #33 but this file still named it current); closed the recurrence at the source by adding a PROJECT_STATE.md correction step to Phase 2 — AI-Prod Sync (`CLAUDE.md`) and a general version in `AI_INSTRUCTIONS.md` §6
+**Updated by:** Claude Code (Publish Agent) — Phase 2 state correction: session-10 merged as PR #34, branch opened and named here immediately per the new procedure (Open Decision #21), before any new task has started on it
 
 ---
 
 ## Active Branch
 
-`session-10` (current session)
-Branched from `main` at `65cc2ef` — Merge pull request #33 from cameronloudon/session-9
+`session-11` (current session — opened immediately by Phase 2 on merge confirmation; no task started on it yet)
+Branched from `main` at `55cf4fc` — Merge pull request #34 from cameronloudon/session-10
 Cameron merges to main. Do not commit directly to main.
 
 ---
