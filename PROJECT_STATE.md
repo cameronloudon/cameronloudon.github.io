@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 **Single source of current project state. Read this before every session. Update this at every session close.**
 **Last updated:** 2026-07-05
-**Updated by:** Claude Code (Publish Agent) — Open Decision #32 routed to Cowork: comparing the two session-start prompts requires reading `Protocols/`/`Prompts/`, outside Claude Code's access scope, so this one needs Cowork's input rather than Claude Code resolving it solo
+**Updated by:** Claude Code (Publish Agent) — Open Decision #15 also routed to Cowork, same reason as #32: the underlying report is outside Claude Code's access scope. Both of the day's remaining open items now sit in Cowork's queue
 
 ---
 
@@ -15,11 +15,11 @@ Cameron merges to main. Do not commit directly to main.
 
 ## Next Session Log ID
 
-`NEXT_SESSION_LOG_ID: 2026-07-05-019`
+`NEXT_SESSION_LOG_ID: 2026-07-05-020`
 
-This session used `session-2026-07-05-018`.
+This session used `session-2026-07-05-019`.
 
-The twenty-eight existing session logs are: `session-2026-06-10-001`, `session-2026-06-11-001`, `session-2026-06-11-002`, `session-2026-06-21-001`, `session-2026-06-21-002`, `session-2026-06-29-001`, `session-2026-07-03-001`, `session-2026-07-03-002`, `session-2026-07-03-003`, `session-2026-07-03-004`, `session-2026-07-05-001`, `session-2026-07-05-002`, `session-2026-07-05-003`, `session-2026-07-05-004`, `session-2026-07-05-005`, `session-2026-07-05-006`, `session-2026-07-05-007`, `session-2026-07-05-008`, `session-2026-07-05-009`, `session-2026-07-05-010`, `session-2026-07-05-011`, `session-2026-07-05-012`, `session-2026-07-05-013`, `session-2026-07-05-014`, `session-2026-07-05-015`, `session-2026-07-05-016`, `session-2026-07-05-017`, `session-2026-07-05-018`.
+The twenty-nine existing session logs are: `session-2026-06-10-001`, `session-2026-06-11-001`, `session-2026-06-11-002`, `session-2026-06-21-001`, `session-2026-06-21-002`, `session-2026-06-29-001`, `session-2026-07-03-001`, `session-2026-07-03-002`, `session-2026-07-03-003`, `session-2026-07-03-004`, `session-2026-07-05-001`, `session-2026-07-05-002`, `session-2026-07-05-003`, `session-2026-07-05-004`, `session-2026-07-05-005`, `session-2026-07-05-006`, `session-2026-07-05-007`, `session-2026-07-05-008`, `session-2026-07-05-009`, `session-2026-07-05-010`, `session-2026-07-05-011`, `session-2026-07-05-012`, `session-2026-07-05-013`, `session-2026-07-05-014`, `session-2026-07-05-015`, `session-2026-07-05-016`, `session-2026-07-05-017`, `session-2026-07-05-018`, `session-2026-07-05-019`.
 Note: `session-2026-06-21-003` was never written (anticipated but session did not recur that day). Session on 2026-06-26 (pre-test repo prep, session-3b) and the session-4 branch (2026-06-29 branch-workflow correction, folded into `session-2026-06-29-001`'s log) were also not separately logged — acknowledged gaps.
 
 ---
@@ -128,6 +128,7 @@ Split from the single flat `now.html` page (Open Decision #22).
 | `session-2026-07-05-016.md` | Published |
 | `session-2026-07-05-017.md` | Published |
 | `session-2026-07-05-018.md` | Published |
+| `session-2026-07-05-019.md` | Published |
 
 ### Directories pending action
 
@@ -153,7 +154,7 @@ None.
 | 12 | Two-agent workflow — permissions, roles, Phase 2 sync, AI-Working subfolder structure | 6 | ✓ Done 2026-06-29 (session-3b) | — |
 | 13 | AI Independence Verification pre-test fixes — all 8 test-blockers resolved | 6 | ✓ Done 2026-06-29 | — |
 | 14 | AI-agnostic design principle — structural discussion re: cowork-memory-backup.md and proprietary orientation files | 7 | ✓ Done 2026-07-05 (session-13) — see #25. `cowork-memory-backup.md` refreshed to remove all dated content and committed to `_ai-context/`; the Phase-2-triggered snapshot mechanism is the session-close-owned maintenance this decision was asking for | — |
-| 15 | Survivable audit findings (9–22 from combined verification report) — 14 non-blocking issues documented | 7 | Open — gate condition met (#16's live test completed 2026-07-03), status corrected 2026-07-05. The 14 documented findings have not been reviewed or actioned since | Cameron decides whether/when |
+| 15 | Survivable audit findings (9–22 from combined verification report) — 14 non-blocking issues documented | 7 | Open — routed to Cowork 2026-07-05, since the underlying report is outside Claude Code's read scope (`Ready/`/`Messages/` only). Message sent asking Cowork to locate the report, share the 14 findings, and flag any that are no longer relevant given today's changes. See `AI-Working/Messages/ccode-to-cowork-2026-07-05-audit-findings-15-request.md` | Cowork to respond, then Cameron decides |
 | 16 | AI Independence Verification live test — AnythingLLM + OpenCode + Ollama end-to-end workflow | 7 | ✓ Done 2026-07-03 — status corrected 2026-07-05 (this row was stale, still read "ready to run"). Ran as the "four-agent-collaboration-test": AnythingLLM/Gemma drafted, OpenCode published with Claude Code auditing each claimed step against real repo state. Mixed result — one page published successfully, but only with live supervision; this finding is the origin of the whole day's architecture-rigor effort (2026-07-05). See `session-2026-07-03-002.md` | — |
 | 17 | Content/HTML boundary — Draft Agent produces structured content only, Publish Agent authors all HTML/frontmatter | 8 | ✓ Done 2026-07-03 (session-5) — `AI_INSTRUCTIONS.md`, `CLAUDE.md`, `_ai-context/single-ai-workflow.md`, `_ai-context/ai-content-creation-spec.md` updated; `draft-agent-config.md` and `publish-handoff-template.md` owned by Cowork per the same decision | — |
 | 18 | `.claude/settings.json` scoped Messages/Ready permissions — left uncommitted after the 2026-06-29 session-3b close | 8 | ✓ Committed 2026-07-03 (session-5) — matches the permissions already documented in `project-messages-folder-workflow` decision, no behaviour change from what was already active | — |
