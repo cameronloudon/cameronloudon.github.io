@@ -1,14 +1,14 @@
 # PROJECT_STATE.md
 **Single source of current project state. Read this before every session. Update this at every session close.**
 **Last updated:** 2026-07-05
-**Updated by:** Claude Code (Publish Agent) — Phase 2 state correction: session-14 merged as PR #38, branch opened and named here immediately per the merge-confirmation procedure (Open Decision #21); no task started on it yet
+**Updated by:** Claude Code (Publish Agent) — Phase 2 state correction: session-15 merged as PR #39, branch opened and named here immediately per the merge-confirmation procedure (Open Decision #21); no task started on it yet
 
 ---
 
 ## Active Branch
 
-`session-15` (current session — opened immediately by Phase 2 on merge confirmation; no task started on it yet)
-Branched from `main` at `c13f036` — Merge pull request #38 from cameronloudon/session-14
+`session-16` (current session — opened immediately by Phase 2 on merge confirmation; no task started on it yet)
+Branched from `main` at `b9e14b8` — Merge pull request #39 from cameronloudon/session-15
 Cameron merges to main. Do not commit directly to main.
 
 ---
