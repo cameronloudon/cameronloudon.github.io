@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 **Single source of current project state. Read this before every session. Update this at every session close.**
 **Last updated:** 2026-07-05
-**Updated by:** Claude Code (Publish Agent) — Open Decision #31 resolved: `big-pickle` confirmed by Cameron as the real OpenCode model (not a placeholder); Capability Baseline corrected, `opencode.json` was right all along
+**Updated by:** Claude Code (Publish Agent) — Open Decision #32 routed to Cowork: comparing the two session-start prompts requires reading `Protocols/`/`Prompts/`, outside Claude Code's access scope, so this one needs Cowork's input rather than Claude Code resolving it solo
 
 ---
 
@@ -15,11 +15,11 @@ Cameron merges to main. Do not commit directly to main.
 
 ## Next Session Log ID
 
-`NEXT_SESSION_LOG_ID: 2026-07-05-018`
+`NEXT_SESSION_LOG_ID: 2026-07-05-019`
 
-This session used `session-2026-07-05-017`.
+This session used `session-2026-07-05-018`.
 
-The twenty-seven existing session logs are: `session-2026-06-10-001`, `session-2026-06-11-001`, `session-2026-06-11-002`, `session-2026-06-21-001`, `session-2026-06-21-002`, `session-2026-06-29-001`, `session-2026-07-03-001`, `session-2026-07-03-002`, `session-2026-07-03-003`, `session-2026-07-03-004`, `session-2026-07-05-001`, `session-2026-07-05-002`, `session-2026-07-05-003`, `session-2026-07-05-004`, `session-2026-07-05-005`, `session-2026-07-05-006`, `session-2026-07-05-007`, `session-2026-07-05-008`, `session-2026-07-05-009`, `session-2026-07-05-010`, `session-2026-07-05-011`, `session-2026-07-05-012`, `session-2026-07-05-013`, `session-2026-07-05-014`, `session-2026-07-05-015`, `session-2026-07-05-016`, `session-2026-07-05-017`.
+The twenty-eight existing session logs are: `session-2026-06-10-001`, `session-2026-06-11-001`, `session-2026-06-11-002`, `session-2026-06-21-001`, `session-2026-06-21-002`, `session-2026-06-29-001`, `session-2026-07-03-001`, `session-2026-07-03-002`, `session-2026-07-03-003`, `session-2026-07-03-004`, `session-2026-07-05-001`, `session-2026-07-05-002`, `session-2026-07-05-003`, `session-2026-07-05-004`, `session-2026-07-05-005`, `session-2026-07-05-006`, `session-2026-07-05-007`, `session-2026-07-05-008`, `session-2026-07-05-009`, `session-2026-07-05-010`, `session-2026-07-05-011`, `session-2026-07-05-012`, `session-2026-07-05-013`, `session-2026-07-05-014`, `session-2026-07-05-015`, `session-2026-07-05-016`, `session-2026-07-05-017`, `session-2026-07-05-018`.
 Note: `session-2026-06-21-003` was never written (anticipated but session did not recur that day). Session on 2026-06-26 (pre-test repo prep, session-3b) and the session-4 branch (2026-06-29 branch-workflow correction, folded into `session-2026-06-29-001`'s log) were also not separately logged — acknowledged gaps.
 
 ---
@@ -127,6 +127,7 @@ Split from the single flat `now.html` page (Open Decision #22).
 | `session-2026-07-05-015.md` | Published |
 | `session-2026-07-05-016.md` | Published |
 | `session-2026-07-05-017.md` | Published |
+| `session-2026-07-05-018.md` | Published |
 
 ### Directories pending action
 
@@ -169,7 +170,7 @@ None.
 | 28 | DeepSeek (Review Agent) audited the standalone architecture reference document 2026-07-05 (session-2026-07-05-005) and ranked manual instruction-file synchronization (`AI_INSTRUCTIONS.md`↔`CLAUDE.md` and the Draft Agent-side equivalents) as the single highest-risk open item — undocumented drift could let a weaker model follow an outdated rule unnoticed, undermining the project's own AI-independence hypothesis | 9 | **Deliberately parked 2026-07-05** as its own standalone future project, not decided against — Cameron's call: real risk, right recommendation, too much to design properly in the same day as everything else. Seed thoughts (two candidate mechanisms, open questions) sent to Cowork in `AI-Working/Messages/ccode-to-cowork-2026-07-05-instruction-sync-check-parked.md`. No timeline set | Cameron picks this up separately |
 | 30 | Following #27, Cameron decided to proceed with root-level content/instruction separation after all, executed incrementally least-risk-first rather than as one large change | 9 | ✓ Done 2026-07-05, all 8 steps complete across sessions 18–21. (1) `contact/contact.html`; (2) `local-ai-stack.html` → `_now/building-a-local-ai-stack/local-ai-stack.html`, kept its own name (not renamed to match the folder, since that name is already taken by `building-a-local-ai-stack.html`) — the one documented exception to folder-mirrors-URL (Rule 5.6), deliberate per Cameron's request to colocate it with the related Now entry; (3) `approach/approach.html`; (4) `master-synthesis-prompt/master-synthesis-prompt.html`; (5) `about/about.html`, also resolving the separate `about/` restructuring recommendation from #27 ahead of `work-history.html`/`skills.html` being built; (6) `now.html` → `_now/now.html`, revised mid-plan from the original `now/now.html`: moved into the *existing* `_now/` collection folder rather than a new sibling `now/` folder, matching the `_ideas/index.html` precedent and avoiding a confusing `now/`/`_now/` pair, given underscore prefixes are visually invisible to Cameron's own mental model; (7) `signals.html` → `_signals/signals.html`, same corrected approach as step 6; (8) `index.html` — verified as the only content file remaining at repo root, correctly unmoved, the one universal exception (Jekyll's implicit root-index rule). Root now holds only instruction/config files (`AI_INSTRUCTIONS.md`, `CLAUDE.md`, `ONBOARDING.md`, `PROJECT_STATE.md`, `README.md`, `Gemfile`, `_config.yml`, `.gitignore`, `opencode.json`) plus `index.html` — the original goal of Open Decision #27, fully realized | — |
 | 31 | `opencode.json`'s configured model (`opencode/big-pickle`) doesn't match the Capability Baseline's documented OpenCode model (`gemma4:e4b`) — flagged repeatedly during today's architecture review but never given its own tracked entry until now (2026-07-05) | 9 | ✓ Done 2026-07-05 — Cameron confirmed `big-pickle` is a real, deliberately-configured model (initially assumed to be a joke/placeholder name, but genuinely what was used in the 2026-07-03 live test). `opencode.json` was correct all along; the Capability Baseline table was the stale record and has been corrected to match | — |
-| 32 | Two overlapping Draft-Agent-side manual session-start prompts exist without referencing each other — `Protocols/session-start-verify.md` and `Prompts/prompt-cowork-session-start-check.md`. Flagged repeatedly during today's architecture review but never given its own tracked entry until now (2026-07-05) | 9 | Open — not a bug, a documentation choice: merge the two into one, add cross-references so each points to the other, or leave both as legitimate independent alternatives. No option is obviously correct without knowing whether Cameron actually uses both or has settled on one in practice | Cameron decides |
+| 32 | Two overlapping Draft-Agent-side manual session-start prompts exist without referencing each other — `Protocols/session-start-verify.md` and `Prompts/prompt-cowork-session-start-check.md`. Flagged repeatedly during today's architecture review but never given its own tracked entry until now (2026-07-05) | 9 | Open — routed to Cowork 2026-07-05, since both files sit in `Protocols/`/`Prompts/`, outside Claude Code's read scope (`Ready/`/`Messages/` only). Message sent asking Cowork to compare the two, confirm which is actually used in practice, and recommend merge / cross-reference / leave both. See `AI-Working/Messages/ccode-to-cowork-2026-07-05-session-start-prompts-consolidation.md` | Cowork to respond, then Cameron decides |
 
 ---
 
