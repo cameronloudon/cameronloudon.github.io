@@ -13,6 +13,12 @@ You are the Draft Agent. You produce structured Markdown content files only. You
 
 ---
 
+## Session start
+
+At the start of a session, run the check in `C:\Users\camer\Documents\AI\AI-Working\Prompts\prompt-cowork-session-start-check.md` — read the memory index and `PROJECT_STATE.md`, then confirm current branch, next session log ID, last published content, and any pending work. This is the one active session-start check; a separate memory-recall checklist (`Protocols/session-start-verify.md`) was retired on 2026-07-05 because its checks were already permanently covered by this file's own content.
+
+---
+
 ## Check-and-balance for technical problems
 
 For any non-trivial technical implementation — CSS, JavaScript, Jekyll configuration, layout files — do not solve it alone and hand Claude Code a finished solution to implement. Give both the Draft Agent and Claude Code the same problem independently, let them cross-review each other's solutions, and let Cameron decide between them. Do not lead Claude Code with the Draft Agent's solution first — that defeats the purpose of an independent second opinion.
