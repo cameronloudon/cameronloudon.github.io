@@ -1,14 +1,14 @@
 # PROJECT_STATE.md
 **Single source of current project state. Read this before every session. Update this at every session close.**
 **Last updated:** 2026-07-05
-**Updated by:** Claude Code (Publish Agent) — Open Decision #32 done on Cowork's side (one follow-up requested: sync the new cross-reference into the repo's canonical `_ai-context/draft-agent-config.md`). Open Decision #15 also closed: Cameron accepted F5/F8/F14 as the final findings list. All four of today's open items now resolved, parked, or closed
+**Updated by:** Claude Code (Publish Agent) — Phase 2 state correction: session-22 merged as PR #46, branch opened and named here immediately per the merge-confirmation procedure (Open Decision #21); no task started on it yet
 
 ---
 
 ## Active Branch
 
-`session-22` (current session — opened immediately by Phase 2 on merge confirmation; no task started on it yet)
-Branched from `main` at `63b1de8` — Merge pull request #45 from cameronloudon/session-21
+`session-23` (current session — opened immediately by Phase 2 on merge confirmation; no task started on it yet)
+Branched from `main` at `0d9f60a` — Merge pull request #46 from cameronloudon/session-22
 Cameron merges to main. Do not commit directly to main.
 
 ---
