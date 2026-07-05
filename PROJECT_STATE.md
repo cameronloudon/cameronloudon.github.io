@@ -1,25 +1,25 @@
 # PROJECT_STATE.md
 **Single source of current project state. Read this before every session. Update this at every session close.**
 **Last updated:** 2026-07-05
-**Updated by:** Claude Code (Publish Agent) — began incremental root-level content/instruction separation (Open Decision #30): step 1, `contact.html` migrated to `contact/contact.html`. Full eight-step ordered plan recorded, least risk to highest
+**Updated by:** Claude Code (Publish Agent) — root-separation step 2 (Open Decision #30): `local-ai-stack.html` moved into `_now/building-a-local-ai-stack/`, colocated with the related Now entry per Cameron's request
 
 ---
 
 ## Active Branch
 
-`session-18` (current session — opened immediately by Phase 2 on merge confirmation; no task started on it yet)
-Branched from `main` at `7719394` — Merge pull request #41 from cameronloudon/session-17
+`session-19` (current session — opened immediately by Phase 2 on merge confirmation; no task started on it yet)
+Branched from `main` at `296a35e` — Merge pull request #42 from cameronloudon/session-18
 Cameron merges to main. Do not commit directly to main.
 
 ---
 
 ## Next Session Log ID
 
-`NEXT_SESSION_LOG_ID: 2026-07-05-008`
+`NEXT_SESSION_LOG_ID: 2026-07-05-009`
 
-This session used `session-2026-07-05-007`.
+This session used `session-2026-07-05-008`.
 
-The seventeen existing session logs are: `session-2026-06-10-001`, `session-2026-06-11-001`, `session-2026-06-11-002`, `session-2026-06-21-001`, `session-2026-06-21-002`, `session-2026-06-29-001`, `session-2026-07-03-001`, `session-2026-07-03-002`, `session-2026-07-03-003`, `session-2026-07-03-004`, `session-2026-07-05-001`, `session-2026-07-05-002`, `session-2026-07-05-003`, `session-2026-07-05-004`, `session-2026-07-05-005`, `session-2026-07-05-006`, `session-2026-07-05-007`.
+The eighteen existing session logs are: `session-2026-06-10-001`, `session-2026-06-11-001`, `session-2026-06-11-002`, `session-2026-06-21-001`, `session-2026-06-21-002`, `session-2026-06-29-001`, `session-2026-07-03-001`, `session-2026-07-03-002`, `session-2026-07-03-003`, `session-2026-07-03-004`, `session-2026-07-05-001`, `session-2026-07-05-002`, `session-2026-07-05-003`, `session-2026-07-05-004`, `session-2026-07-05-005`, `session-2026-07-05-006`, `session-2026-07-05-007`, `session-2026-07-05-008`.
 Note: `session-2026-06-21-003` was never written (anticipated but session did not recur that day). Session on 2026-06-26 (pre-test repo prep, session-3b) and the session-4 branch (2026-06-29 branch-workflow correction, folded into `session-2026-06-29-001`'s log) were also not separately logged — acknowledged gaps.
 
 ---
@@ -52,8 +52,9 @@ Note: `session-2026-06-21-003` was never written (anticipated but session did no
 | `contact/contact.html` | Contact | Published | 0 — migrated to folder pattern in session-18, step 1 of 8 in the root-separation plan (Open Decision #30) |
 | `now.html` | Now | Published | 0 — now an index page, see `_now/` collection below |
 | `signals.html` | Signals | Published | 1 |
-| `local-ai-stack.html` | Local AI Stack | Published | 1 |
 | `master-synthesis-prompt.html` | Founding Document | Published | 1 — Founding document, historical |
+
+`local-ai-stack.html` moved out of root pages in session-19, step 2 of 8 in the root-separation plan (Open Decision #30) — now `_now/building-a-local-ai-stack/local-ai-stack.html`, see the `_now/` collection section below.
 
 ### _ideas/ collection
 
@@ -84,7 +85,7 @@ Empty. Declared in `_config.yml` (output: true, permalink: /about/skills/:name/)
 
 | File/Folder | Title | Status | Notes |
 |---|---|---|---|
-| `_now/building-a-local-ai-stack/` | Building a Local AI Stack | Published | Migrated to folder pattern in session-16; folder and file (`building-a-local-ai-stack.html`) both renamed from `local-ai-stack` to match the permalink slug, fully resolving the original naming collision with the root `/local-ai-stack/` guide |
+| `_now/building-a-local-ai-stack/` | Building a Local AI Stack | Published | Migrated to folder pattern in session-16; folder and file (`building-a-local-ai-stack.html`) both renamed from `local-ai-stack` to match the permalink slug, fully resolving the original naming collision with the root `/local-ai-stack/` guide. **Now also holds `local-ai-stack.html`** (the full 18-phase guide, permalink `/local-ai-stack/`, moved here session-19 as step 2 of the root-separation plan) — a deliberate exception to folder-mirrors-URL, per Cameron's request to colocate the two related pages; documented in Open Decision #30 |
 | `_now/enrolment-pipeline-problem/` | The Enrolment Pipeline Problem | Published | Migrated to folder pattern in session-16; file inside named `enrolment-pipeline-problem.html`, not `index.html` |
 
 Split from the single flat `now.html` page (Open Decision #22). `now.html` (root) is now the hand-written index for this collection, same pattern as `_ideas/index.html` and `signals.html`.
@@ -110,6 +111,7 @@ Split from the single flat `now.html` page (Open Decision #22). `now.html` (root
 | `session-2026-07-05-005.md` | Published |
 | `session-2026-07-05-006.md` | Published |
 | `session-2026-07-05-007.md` | Published |
+| `session-2026-07-05-008.md` | Published |
 
 ### Directories pending action
 
@@ -150,7 +152,7 @@ None.
 | 29 | Following #26, Cameron decided `_signals/` and `_now/` should be migrated to the folder pattern after all, overriding Cowork's narrower Rule 1 recommendation | 9 | ✓ Done 2026-07-05 (session-16) — all four `_signals/` entries and both `_now/` entries migrated; each file inside named after its own folder, not `index.html`. `_now/local-ai-stack.html` also renamed to `building-a-local-ai-stack.html` in the process, fully resolving the original naming collision with the root `/local-ai-stack/` guide (both folder and filename now match the permalink slug). Permalinks unchanged throughout, no content changes. Cameron is the decision authority in the propose→review→consensus process Rule 1 came out of; Cowork to be notified for record consistency | — |
 | 27 | Root-level content/instruction separation and the `about/` restructuring — statuses needed locking before the auditor version could be finalized | 9 | Statuses confirmed 2026-07-05 (session-13), neither implemented at the time: root-level separation was **proposed, not decided** — highest blast-radius item, no forcing function. Cameron subsequently decided to proceed — see #30 for the execution plan and order | — |
 | 28 | DeepSeek (Review Agent) audited the standalone architecture reference document 2026-07-05 (session-2026-07-05-005) and ranked manual instruction-file synchronization (`AI_INSTRUCTIONS.md`↔`CLAUDE.md` and the Draft Agent-side equivalents) as the single highest-risk open item — undocumented drift could let a weaker model follow an outdated rule unnoticed, undermining the project's own AI-independence hypothesis | 9 | Open — recommendation: a lightweight automated check (pre-commit hook or session-start verification script) that alerts on divergence between canonical and derivative instruction files. Not yet built; Cameron decides whether/when | Post-audit |
-| 30 | Following #27, Cameron decided to proceed with root-level content/instruction separation after all, executed incrementally least-risk-first rather than as one large change | 9 | In progress, started 2026-07-05 (session-18). Order agreed: (1) `contact/contact.html` — ✓ done this session; (2) `local-ai-stack.html` → `_now/building-a-local-ai-stack/local-ai-stack.html` — **not** `_now/building-a-local-ai-stack/local-ai-stack/`, per Cameron's explicit request to colocate it with the related Now entry. Documented exception to the folder-mirrors-URL principle (Rule 5.6): this is the one file in the whole restructuring whose permalink (`/local-ai-stack/`) does not nest under the folder it physically sits in — deliberate, not an oversight; (3) `approach/approach.html`; (4) `master-synthesis-prompt/master-synthesis-prompt.html`; (5) `about/about.html` — also resolves the separate `about/` restructuring recommendation from #27, done ahead of `work-history.html`/`skills.html` being built; (6) `now/now.html`; (7) `signals/signals.html`; (8) `index.html` — stays at true root, unmoved, keeps its name; verification only, not a migration — the one deliberate, universal exception (Jekyll's implicit root-index rule) | Cameron reviewing incrementally, one merge per step |
+| 30 | Following #27, Cameron decided to proceed with root-level content/instruction separation after all, executed incrementally least-risk-first rather than as one large change | 9 | In progress, started 2026-07-05 (session-18). Order agreed: (1) `contact/contact.html` — ✓ done session-18; (2) `local-ai-stack.html` → `_now/building-a-local-ai-stack/local-ai-stack.html` — ✓ done session-19. File kept its own name (not renamed to match the folder, since that name is already taken by `building-a-local-ai-stack.html`); zero links/assets in the file, pure relocation. Documented exception to the folder-mirrors-URL principle (Rule 5.6) stands: this is the one file in the whole restructuring whose permalink (`/local-ai-stack/`) does not nest under the folder it physically sits in — deliberate, not an oversight; (3) `approach/approach.html`; (4) `master-synthesis-prompt/master-synthesis-prompt.html`; (5) `about/about.html` — also resolves the separate `about/` restructuring recommendation from #27, done ahead of `work-history.html`/`skills.html` being built; (6) `now/now.html`; (7) `signals/signals.html`; (8) `index.html` — stays at true root, unmoved, keeps its name; verification only, not a migration — the one deliberate, universal exception (Jekyll's implicit root-index rule) | Cameron reviewing incrementally, one merge per step |
 
 ---
 
