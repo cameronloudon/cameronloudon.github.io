@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 **Single source of current project state. Read this before every session. Update this at every session close.**
 **Last updated:** 2026-07-05
-**Updated by:** Claude Code (Publish Agent) — Phase 2 state correction: session-11 merged as PR #35, branch opened and named here immediately per the merge-confirmation procedure (Open Decision #21); no task started on it yet
+**Updated by:** Claude Code (Publish Agent) — migrated `_ideas/marketing-os.html` and `_ideas/ai-web-layer-framework.html` to the folder pattern, resolving Open Decision #23
 
 ---
 
@@ -15,11 +15,11 @@ Cameron merges to main. Do not commit directly to main.
 
 ## Next Session Log ID
 
-`NEXT_SESSION_LOG_ID: 2026-07-05-003`
+`NEXT_SESSION_LOG_ID: 2026-07-05-004`
 
-This session used `session-2026-07-05-002`.
+This session used `session-2026-07-05-003`.
 
-The twelve existing session logs are: `session-2026-06-10-001`, `session-2026-06-11-001`, `session-2026-06-11-002`, `session-2026-06-21-001`, `session-2026-06-21-002`, `session-2026-06-29-001`, `session-2026-07-03-001`, `session-2026-07-03-002`, `session-2026-07-03-003`, `session-2026-07-03-004`, `session-2026-07-05-001`, `session-2026-07-05-002`.
+The thirteen existing session logs are: `session-2026-06-10-001`, `session-2026-06-11-001`, `session-2026-06-11-002`, `session-2026-06-21-001`, `session-2026-06-21-002`, `session-2026-06-29-001`, `session-2026-07-03-001`, `session-2026-07-03-002`, `session-2026-07-03-003`, `session-2026-07-03-004`, `session-2026-07-05-001`, `session-2026-07-05-002`, `session-2026-07-05-003`.
 Note: `session-2026-06-21-003` was never written (anticipated but session did not recur that day). Session on 2026-06-26 (pre-test repo prep, session-3b) and the session-4 branch (2026-06-29 branch-workflow correction, folded into `session-2026-06-29-001`'s log) were also not separately logged — acknowledged gaps.
 
 ---
@@ -60,8 +60,8 @@ Note: `session-2026-06-21-003` was never written (anticipated but session did no
 | `_ideas/index.html` | Ideas | Published | Index page |
 | `_ideas/man-with-two-brains/` | Man With Two Brains | Published | Folder pattern — reference implementation |
 | `_ideas/marketing-os-foundation.html` | Marketing OS Foundation | Published | Legacy flat file — do not use as pattern for new entries |
-| `_ideas/marketing-os.html` | Marketing OS | Published | |
-| `_ideas/ai-web-layer-framework.html` | AI Web Layer Framework | Published | |
+| `_ideas/marketing-os/` | Marketing OS | Published | Migrated to folder pattern in session-12 (was an undocumented flat-file deviation); file inside is named after the folder (`marketing-os.html`), not `index.html` |
+| `_ideas/ai-web-layer-framework/` | AI Web Layer Framework | Published | Migrated to folder pattern in session-12 (was an undocumented flat-file deviation); file inside is named after the folder (`ai-web-layer-framework.html`), not `index.html` |
 | `_ideas/the-bug-the-audit-the-blueprint/` | The Bug, the Audit, the Blueprint | Published | Folder pattern — index.html + retrospective.html; session-2026-06-21-002 |
 | `_ideas/four-agent-collaboration-test/` | The Four-Agent Collaboration Test | Published | Folder pattern — index.html; session-2026-07-03-002; added to _ideas/index.html entry list in session-9 (was missing) |
 
@@ -103,6 +103,7 @@ Split from the single flat `now.html` page (Open Decision #22). `now.html` (root
 | `session-2026-07-03-004.md` | Published |
 | `session-2026-07-05-001.md` | Published |
 | `session-2026-07-05-002.md` | Published |
+| `session-2026-07-05-003.md` | Published |
 
 ### Directories pending action
 
@@ -136,6 +137,7 @@ None.
 | 20 | `_ideas/index.html` (and `signals.html`) are static hand-written lists, not generated from the collection — publishing a new entry doesn't make it appear on its own index. Missing entry for `four-agent-collaboration-test` found live on production 2026-07-03 | 8 | ✓ Done 2026-07-03 (session-9) — entry added to `_ideas/index.html`; documented as a required step in `ai-content-creation-spec.md` §6 and a new checklist item in `rct-validation-checklist.md` §2 | — |
 | 21 | Open Decision #19's fix was reactive only — the session-start check catches staleness whenever a session happens to start, but nothing runs at the actual moment of merge, since merges happen on GitHub with no AI session present. Root cause: Phase 2 — AI-Prod Sync already fires at exactly that moment (Cameron's merge-confirmation paste) but never touched `PROJECT_STATE.md` | 9 | ✓ Done 2026-07-05 (session-10) — Phase 2 (`CLAUDE.md`) now corrects Active Branch immediately via an immediately-created next session branch, before the AI-Prod sync; general AI-agnostic version added to `AI_INSTRUCTIONS.md` §6. Correction follows normal branch-and-push discipline, not a direct-to-main exception | — |
 | 22 | Now page → `_now/` collection — `now.html` held two hardcoded blocks with no individual permalinks; converted to a collection matching `_ideas/`/`_signals/` so entries are individually addressable, per Cowork proposal + Cameron's decision on collab-note session citation | 9 | ✓ Done 2026-07-05 (session-11) — `_config.yml`, `_now/local-ai-stack.html`, `_now/enrolment-pipeline-problem.html`, `now.html` rewritten as index; `ai-content-creation-spec.md`, `AI_INSTRUCTIONS.md`, `CLAUDE.md`, `rct-validation-checklist.md` updated | — |
+| 23 | `_ideas/marketing-os.html` and `_ideas/ai-web-layer-framework.html` were undocumented flat-file deviations from the folder pattern — unlike `marketing-os-foundation.html`, neither had a legacy note explaining why. Found during the repo-architecture-mapping discussion with Cowork | 9 | ✓ Done 2026-07-05 (session-12) — both migrated to `_ideas/marketing-os/` and `_ideas/ai-web-layer-framework/`; the file inside each folder is named after the folder itself, not `index.html`, per the naming convention agreed the same session. Permalinks unchanged (both already declared explicitly), no content changes | — |
 
 ---
 
