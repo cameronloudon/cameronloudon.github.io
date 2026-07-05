@@ -1,25 +1,25 @@
 # PROJECT_STATE.md
 **Single source of current project state. Read this before every session. Update this at every session close.**
 **Last updated:** 2026-07-05
-**Updated by:** Claude Code (Publish Agent) — migrated `_ideas/marketing-os.html` and `_ideas/ai-web-layer-framework.html` to the folder pattern, resolving Open Decision #23
+**Updated by:** Claude Code (Publish Agent) — closed out the remaining architecture-map open items with Cowork: fixed two missing permalinks, committed `draft-agent-config.md` and a refreshed `cowork-memory-backup.md` to `_ai-context/` (resolves Open Decision #14), narrowed the folder-per-entry rule after Cowork's review, locked statuses for `about/` and root-separation ahead of the auditor version
 
 ---
 
 ## Active Branch
 
-`session-12` (current session — opened immediately by Phase 2 on merge confirmation; no task started on it yet)
-Branched from `main` at `14b26af` — Merge pull request #35 from cameronloudon/session-11
+`session-13` (current session — opened immediately by Phase 2 on merge confirmation; no task started on it yet)
+Branched from `main` at `99f9466` — Merge pull request #36 from cameronloudon/session-12
 Cameron merges to main. Do not commit directly to main.
 
 ---
 
 ## Next Session Log ID
 
-`NEXT_SESSION_LOG_ID: 2026-07-05-004`
+`NEXT_SESSION_LOG_ID: 2026-07-05-005`
 
-This session used `session-2026-07-05-003`.
+This session used `session-2026-07-05-004`.
 
-The thirteen existing session logs are: `session-2026-06-10-001`, `session-2026-06-11-001`, `session-2026-06-11-002`, `session-2026-06-21-001`, `session-2026-06-21-002`, `session-2026-06-29-001`, `session-2026-07-03-001`, `session-2026-07-03-002`, `session-2026-07-03-003`, `session-2026-07-03-004`, `session-2026-07-05-001`, `session-2026-07-05-002`, `session-2026-07-05-003`.
+The fourteen existing session logs are: `session-2026-06-10-001`, `session-2026-06-11-001`, `session-2026-06-11-002`, `session-2026-06-21-001`, `session-2026-06-21-002`, `session-2026-06-29-001`, `session-2026-07-03-001`, `session-2026-07-03-002`, `session-2026-07-03-003`, `session-2026-07-03-004`, `session-2026-07-05-001`, `session-2026-07-05-002`, `session-2026-07-05-003`, `session-2026-07-05-004`.
 Note: `session-2026-06-21-003` was never written (anticipated but session did not recur that day). Session on 2026-06-26 (pre-test repo prep, session-3b) and the session-4 branch (2026-06-29 branch-workflow correction, folded into `session-2026-06-29-001`'s log) were also not separately logged — acknowledged gaps.
 
 ---
@@ -35,6 +35,8 @@ Note: `session-2026-06-21-003` was never written (anticipated but session did no
 | `_ai-context/rct-validation-checklist.md` | Pre-publish checklist | Run before every commit that adds or changes published content |
 | `_ai-context/single-ai-workflow.md` | Single-tool workflow | Read if one AI is handling both Draft and Publish roles |
 | `_ai-context/ai-content-creation-spec.md` | Full technical and design specification for content creation | Read before drafting new content; covers frontmatter, CSS, collab-note format, tag taxonomy |
+| `_ai-context/draft-agent-config.md` | Draft Agent's operational rulebook — output format, required fields, self-check, check-and-balance workflow, PowerShell prompt convention | The Draft Agent (currently AnythingLLM) | Before any draft is written | Moved here 2026-07-05 (session-13) from `AI-Working/Protocols/`, an agreed-but-unexecuted intention since 2026-07-03. Two sections added on commit (check-and-balance, PowerShell convention) that were missing from the working copy — Findings #14/#15 from Cowork's 2026-06-29 self-audit |
+| `_ai-context/cowork-memory-backup.md` | Plain-language export of Cowork's memory context, for portability to a replacement Draft Agent | Any AI taking over the Draft Agent role, cold-start | Once, at onboarding | Committed 2026-07-05 (session-13), refreshed by Cowork first — removed all dated "current state" content (had gone stale twice) in favour of pointers to `PROJECT_STATE.md` and `_session-logs/`. First instance of the Phase-2-triggered maintenance pattern; resolves Open Decision #14 |
 
 ---
 
@@ -104,6 +106,7 @@ Split from the single flat `now.html` page (Open Decision #22). `now.html` (root
 | `session-2026-07-05-001.md` | Published |
 | `session-2026-07-05-002.md` | Published |
 | `session-2026-07-05-003.md` | Published |
+| `session-2026-07-05-004.md` | Published |
 
 ### Directories pending action
 
@@ -128,7 +131,7 @@ None.
 | 11 | now.html and signals.html two collab-notes | 5 | ✓ Done — consolidated to one per page | — |
 | 12 | Two-agent workflow — permissions, roles, Phase 2 sync, AI-Working subfolder structure | 6 | ✓ Done 2026-06-29 (session-3b) | — |
 | 13 | AI Independence Verification pre-test fixes — all 8 test-blockers resolved | 6 | ✓ Done 2026-06-29 | — |
-| 14 | AI-agnostic design principle — structural discussion re: cowork-memory-backup.md and proprietary orientation files | 7 | Open — decision pending Cameron | Before live test debrief |
+| 14 | AI-agnostic design principle — structural discussion re: cowork-memory-backup.md and proprietary orientation files | 7 | ✓ Done 2026-07-05 (session-13) — see #25. `cowork-memory-backup.md` refreshed to remove all dated content and committed to `_ai-context/`; the Phase-2-triggered snapshot mechanism is the session-close-owned maintenance this decision was asking for | — |
 | 15 | Survivable audit findings (9–22 from combined verification report) — 14 non-blocking issues documented | 7 | Open — address after live verification test | Post-test |
 | 16 | AI Independence Verification live test — AnythingLLM + OpenCode + Ollama end-to-end workflow | 7 | Ready to run — all pre-test blockers resolved | Cameron decides when |
 | 17 | Content/HTML boundary — Draft Agent produces structured content only, Publish Agent authors all HTML/frontmatter | 8 | ✓ Done 2026-07-03 (session-5) — `AI_INSTRUCTIONS.md`, `CLAUDE.md`, `_ai-context/single-ai-workflow.md`, `_ai-context/ai-content-creation-spec.md` updated; `draft-agent-config.md` and `publish-handoff-template.md` owned by Cowork per the same decision | — |
@@ -138,6 +141,10 @@ None.
 | 21 | Open Decision #19's fix was reactive only — the session-start check catches staleness whenever a session happens to start, but nothing runs at the actual moment of merge, since merges happen on GitHub with no AI session present. Root cause: Phase 2 — AI-Prod Sync already fires at exactly that moment (Cameron's merge-confirmation paste) but never touched `PROJECT_STATE.md` | 9 | ✓ Done 2026-07-05 (session-10) — Phase 2 (`CLAUDE.md`) now corrects Active Branch immediately via an immediately-created next session branch, before the AI-Prod sync; general AI-agnostic version added to `AI_INSTRUCTIONS.md` §6. Correction follows normal branch-and-push discipline, not a direct-to-main exception | — |
 | 22 | Now page → `_now/` collection — `now.html` held two hardcoded blocks with no individual permalinks; converted to a collection matching `_ideas/`/`_signals/` so entries are individually addressable, per Cowork proposal + Cameron's decision on collab-note session citation | 9 | ✓ Done 2026-07-05 (session-11) — `_config.yml`, `_now/local-ai-stack.html`, `_now/enrolment-pipeline-problem.html`, `now.html` rewritten as index; `ai-content-creation-spec.md`, `AI_INSTRUCTIONS.md`, `CLAUDE.md`, `rct-validation-checklist.md` updated | — |
 | 23 | `_ideas/marketing-os.html` and `_ideas/ai-web-layer-framework.html` were undocumented flat-file deviations from the folder pattern — unlike `marketing-os-foundation.html`, neither had a legacy note explaining why. Found during the repo-architecture-mapping discussion with Cowork | 9 | ✓ Done 2026-07-05 (session-12) — both migrated to `_ideas/marketing-os/` and `_ideas/ai-web-layer-framework/`; the file inside each folder is named after the folder itself, not `index.html`, per the naming convention agreed the same session. Permalinks unchanged (both already declared explicitly), no content changes | — |
+| 24 | `approach.html` and `master-synthesis-prompt.html` had no `permalink:` declared, unlike every other page — likely serving at unclean, extension-bearing URLs. Found during the repo-architecture-mapping discussion | 9 | ✓ Done 2026-07-05 (session-13) — `permalink: /approach/` and `permalink: /master-synthesis-prompt/` added to both; the one internal link to the latter (in `approach.html`) updated to match | — |
+| 25 | `draft-agent-config.md`'s move to `_ai-context/` was agreed 2026-07-03 but never executed. Separately, `cowork-memory-backup.md` had gone stale twice (8 days, then 14 days) because it held a dated "project state" section nothing forced anyone to revisit | 9 | ✓ Done 2026-07-05 (session-13) — both committed to `_ai-context/`. `draft-agent-config.md` gained two sections it was missing (check-and-balance workflow, PowerShell prompt convention — Findings #14/#15 from Cowork's 2026-06-29 audit) before becoming the permanent copy. `cowork-memory-backup.md` was structurally fixed by Cowork, not just refreshed — the dated section was removed entirely in favour of pointers to `PROJECT_STATE.md`. Cowork committed to sending updates on change, picked up at the next Phase 2 run — resolves #14 | — |
+| 26 | Merged architecture map's proposed Rule 1 ("folder-per-entry, universally, regardless of content length") was in tension with the same-day, carefully-reached decision to build `_now/`'s two entries as flat files | 9 | ✓ Done 2026-07-05 (session-13) — Rule 1 narrowed per Cowork's review: folder-per-entry when an entry has or is likely to need sub-pages; flat-file remains valid for single-page entries with none in view. `_signals/`'s four entries and `_now/`'s two entries are correctly flat under the narrowed rule — not migrated | — |
+| 27 | Root-level content/instruction separation and the `about/` restructuring — statuses needed locking before the auditor version could be finalized | 9 | ✓ Statuses confirmed 2026-07-05 (session-13), neither implemented: root-level separation remains **proposed, not decided** — highest blast-radius item, no forcing function, Cowork explicitly recommended not rushing it for the auditor deadline. `about/` restructuring is **recommended, not yet actioned** — has a real forcing function (`work-history.html`/`skills.html` already documented as planned), lower risk to do ahead of those sub-pages existing; timing is Cameron's call | — |
 
 ---
 
