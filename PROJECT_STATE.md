@@ -1,13 +1,13 @@
 # PROJECT_STATE.md
 **Single source of current project state. Read this before every session. Update this at every session close.**
 **Last updated:** 2026-07-05
-**Updated by:** Claude Code (Publish Agent) — Phase 2 state correction: session-13 merged as PR #37, branch opened and named here immediately per the merge-confirmation procedure (Open Decision #21); no task started on it yet
+**Updated by:** Claude Code (Publish Agent) — logged DeepSeek's external audit review of the standalone architecture reference document (session-2026-07-05-005); added Open Decision #28 for DeepSeek's recommended automated instruction-sync check
 
 ---
 
 ## Active Branch
 
-`session-14` (current session — opened immediately by Phase 2 on merge confirmation; no task started on it yet)
+`session-14` (current session)
 Branched from `main` at `d5c5465` — Merge pull request #37 from cameronloudon/session-13
 Cameron merges to main. Do not commit directly to main.
 
@@ -15,11 +15,11 @@ Cameron merges to main. Do not commit directly to main.
 
 ## Next Session Log ID
 
-`NEXT_SESSION_LOG_ID: 2026-07-05-005`
+`NEXT_SESSION_LOG_ID: 2026-07-05-006`
 
-This session used `session-2026-07-05-004`.
+This session used `session-2026-07-05-005`.
 
-The fourteen existing session logs are: `session-2026-06-10-001`, `session-2026-06-11-001`, `session-2026-06-11-002`, `session-2026-06-21-001`, `session-2026-06-21-002`, `session-2026-06-29-001`, `session-2026-07-03-001`, `session-2026-07-03-002`, `session-2026-07-03-003`, `session-2026-07-03-004`, `session-2026-07-05-001`, `session-2026-07-05-002`, `session-2026-07-05-003`, `session-2026-07-05-004`.
+The fifteen existing session logs are: `session-2026-06-10-001`, `session-2026-06-11-001`, `session-2026-06-11-002`, `session-2026-06-21-001`, `session-2026-06-21-002`, `session-2026-06-29-001`, `session-2026-07-03-001`, `session-2026-07-03-002`, `session-2026-07-03-003`, `session-2026-07-03-004`, `session-2026-07-05-001`, `session-2026-07-05-002`, `session-2026-07-05-003`, `session-2026-07-05-004`, `session-2026-07-05-005`.
 Note: `session-2026-06-21-003` was never written (anticipated but session did not recur that day). Session on 2026-06-26 (pre-test repo prep, session-3b) and the session-4 branch (2026-06-29 branch-workflow correction, folded into `session-2026-06-29-001`'s log) were also not separately logged — acknowledged gaps.
 
 ---
@@ -107,6 +107,7 @@ Split from the single flat `now.html` page (Open Decision #22). `now.html` (root
 | `session-2026-07-05-002.md` | Published |
 | `session-2026-07-05-003.md` | Published |
 | `session-2026-07-05-004.md` | Published |
+| `session-2026-07-05-005.md` | Published |
 
 ### Directories pending action
 
@@ -145,6 +146,7 @@ None.
 | 25 | `draft-agent-config.md`'s move to `_ai-context/` was agreed 2026-07-03 but never executed. Separately, `cowork-memory-backup.md` had gone stale twice (8 days, then 14 days) because it held a dated "project state" section nothing forced anyone to revisit | 9 | ✓ Done 2026-07-05 (session-13) — both committed to `_ai-context/`. `draft-agent-config.md` gained two sections it was missing (check-and-balance workflow, PowerShell prompt convention — Findings #14/#15 from Cowork's 2026-06-29 audit) before becoming the permanent copy. `cowork-memory-backup.md` was structurally fixed by Cowork, not just refreshed — the dated section was removed entirely in favour of pointers to `PROJECT_STATE.md`. Cowork committed to sending updates on change, picked up at the next Phase 2 run — resolves #14 | — |
 | 26 | Merged architecture map's proposed Rule 1 ("folder-per-entry, universally, regardless of content length") was in tension with the same-day, carefully-reached decision to build `_now/`'s two entries as flat files | 9 | ✓ Done 2026-07-05 (session-13) — Rule 1 narrowed per Cowork's review: folder-per-entry when an entry has or is likely to need sub-pages; flat-file remains valid for single-page entries with none in view. `_signals/`'s four entries and `_now/`'s two entries are correctly flat under the narrowed rule — not migrated | — |
 | 27 | Root-level content/instruction separation and the `about/` restructuring — statuses needed locking before the auditor version could be finalized | 9 | ✓ Statuses confirmed 2026-07-05 (session-13), neither implemented: root-level separation remains **proposed, not decided** — highest blast-radius item, no forcing function, Cowork explicitly recommended not rushing it for the auditor deadline. `about/` restructuring is **recommended, not yet actioned** — has a real forcing function (`work-history.html`/`skills.html` already documented as planned), lower risk to do ahead of those sub-pages existing; timing is Cameron's call | — |
+| 28 | DeepSeek (Review Agent) audited the standalone architecture reference document 2026-07-05 (session-2026-07-05-005) and ranked manual instruction-file synchronization (`AI_INSTRUCTIONS.md`↔`CLAUDE.md` and the Draft Agent-side equivalents) as the single highest-risk open item — undocumented drift could let a weaker model follow an outdated rule unnoticed, undermining the project's own AI-independence hypothesis | 9 | Open — recommendation: a lightweight automated check (pre-commit hook or session-start verification script) that alerts on divergence between canonical and derivative instruction files. Not yet built; Cameron decides whether/when | Post-audit |
 
 ---
 
