@@ -1,14 +1,14 @@
 # PROJECT_STATE.md
 **Single source of current project state. Read this before every session. Update this at every session close.**
 **Last updated:** 2026-07-05
-**Updated by:** Claude Code (Publish Agent) — Published `_ideas/repo-redesign-from-crazy-to-curated/`, the joint retrospective piece on today's work, converted from Cowork's approved draft
+**Updated by:** Claude Code (Publish Agent) — Phase 2 state correction: session-24 merged as PR #48, branch opened and named here immediately per the merge-confirmation procedure (Open Decision #21); no task started on it yet
 
 ---
 
 ## Active Branch
 
-`session-24` (current session — opened immediately by Phase 2 on merge confirmation; no task started on it yet)
-Branched from `main` at `24d5a4e` — Merge pull request #47 from cameronloudon/session-23
+`session-25` (current session — opened immediately by Phase 2 on merge confirmation; no task started on it yet)
+Branched from `main` at `6013801` — Merge pull request #48 from cameronloudon/session-24
 Cameron merges to main. Do not commit directly to main.
 
 ---
