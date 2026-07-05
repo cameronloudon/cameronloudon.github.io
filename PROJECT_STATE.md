@@ -1,14 +1,14 @@
 # PROJECT_STATE.md
 **Single source of current project state. Read this before every session. Update this at every session close.**
 **Last updated:** 2026-07-05
-**Updated by:** Claude Code (Publish Agent) — root-separation step 8, final (Open Decision #30): verified `index.html` is the only content file remaining at repo root, correctly unmoved. Plan complete — root now holds only instruction/config files plus `index.html`, the one universal exception
+**Updated by:** Claude Code (Publish Agent) — Phase 2 state correction: session-21 merged as PR #45, branch opened and named here immediately per the merge-confirmation procedure (Open Decision #21); no task started on it yet
 
 ---
 
 ## Active Branch
 
-`session-21` (current session — opened immediately by Phase 2 on merge confirmation; no task started on it yet)
-Branched from `main` at `52c1a53` — Merge pull request #44 from cameronloudon/session-20
+`session-22` (current session — opened immediately by Phase 2 on merge confirmation; no task started on it yet)
+Branched from `main` at `63b1de8` — Merge pull request #45 from cameronloudon/session-21
 Cameron merges to main. Do not commit directly to main.
 
 ---
