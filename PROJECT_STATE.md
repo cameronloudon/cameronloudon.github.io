@@ -1,14 +1,14 @@
 # PROJECT_STATE.md
 **Single source of current project state. Read this before every session. Update this at every session close.**
 **Last updated:** 2026-07-05
-**Updated by:** Claude Code (Publish Agent) — root-separation step 4 (Open Decision #30): `master-synthesis-prompt.html` migrated to `master-synthesis-prompt/master-synthesis-prompt.html`
+**Updated by:** Claude Code (Publish Agent) — Phase 2 state correction: session-20 merged as PR #44, branch opened and named here immediately per the merge-confirmation procedure (Open Decision #21); no task started on it yet
 
 ---
 
 ## Active Branch
 
-`session-20` (current session — opened immediately by Phase 2 on merge confirmation; no task started on it yet)
-Branched from `main` at `fa24736` — Merge pull request #43 from cameronloudon/session-19
+`session-21` (current session — opened immediately by Phase 2 on merge confirmation; no task started on it yet)
+Branched from `main` at `52c1a53` — Merge pull request #44 from cameronloudon/session-20
 Cameron merges to main. Do not commit directly to main.
 
 ---
