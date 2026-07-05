@@ -1,14 +1,14 @@
 # PROJECT_STATE.md
 **Single source of current project state. Read this before every session. Update this at every session close.**
 **Last updated:** 2026-07-05
-**Updated by:** Claude Code (Publish Agent) — migrated `_ideas/marketing-os.html` and `_ideas/ai-web-layer-framework.html` to the folder pattern, resolving Open Decision #23
+**Updated by:** Claude Code (Publish Agent) — Phase 2 state correction: session-12 merged as PR #36, branch opened and named here immediately per the merge-confirmation procedure (Open Decision #21); no task started on it yet
 
 ---
 
 ## Active Branch
 
-`session-12` (current session — opened immediately by Phase 2 on merge confirmation; no task started on it yet)
-Branched from `main` at `14b26af` — Merge pull request #35 from cameronloudon/session-11
+`session-13` (current session — opened immediately by Phase 2 on merge confirmation; no task started on it yet)
+Branched from `main` at `99f9466` — Merge pull request #36 from cameronloudon/session-12
 Cameron merges to main. Do not commit directly to main.
 
 ---
