@@ -1,14 +1,14 @@
 # PROJECT_STATE.md
 **Single source of current project state. Read this before every session. Update this at every session close.**
 **Last updated:** 2026-07-05
-**Updated by:** Claude Code (Publish Agent) — root-separation step 2 (Open Decision #30): `local-ai-stack.html` moved into `_now/building-a-local-ai-stack/`, colocated with the related Now entry per Cameron's request
+**Updated by:** Claude Code (Publish Agent) — Phase 2 state correction: session-19 merged as PR #43, branch opened and named here immediately per the merge-confirmation procedure (Open Decision #21); no task started on it yet
 
 ---
 
 ## Active Branch
 
-`session-19` (current session — opened immediately by Phase 2 on merge confirmation; no task started on it yet)
-Branched from `main` at `296a35e` — Merge pull request #42 from cameronloudon/session-18
+`session-20` (current session — opened immediately by Phase 2 on merge confirmation; no task started on it yet)
+Branched from `main` at `fa24736` — Merge pull request #43 from cameronloudon/session-19
 Cameron merges to main. Do not commit directly to main.
 
 ---
