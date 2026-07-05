@@ -1,0 +1,91 @@
+---
+layout: default
+title: Repo Redesign — From Crazy to Curated
+permalink: /ideas/repo-redesign-from-crazy-to-curated/
+description: One day, two AI collaborators, 14 merged pull requests — the account of how my site's repo went from an accumulation of undocumented decisions to a structure that explains itself, including the mistakes we made getting there.
+---
+
+<article class="idea-page">
+
+  <header class="page-header">
+    <span class="eyebrow">My Ideas · Project Retrospective · July 2026</span>
+    <h1>Repo Redesign — From Crazy to Curated</h1>
+    <p class="intro">One day, two AI collaborators, 14 merged pull requests — the account of how my site's repo went from an accumulation of undocumented decisions to a structure that explains itself, including the mistakes we made getting there.</p>
+  </header>
+
+  <div class="idea-meta-bar">
+    <div class="idea-meta-item">
+      <span class="meta-label">Status</span>
+      <span class="meta-value status-progress">First Draft Complete</span>
+    </div>
+    <div class="idea-meta-item">
+      <span class="meta-label">First built</span>
+      <span class="meta-value">July 2026</span>
+    </div>
+    <div class="idea-meta-item">
+      <span class="meta-label">Domain</span>
+      <span class="meta-value">AI Collaboration, Site Architecture</span>
+    </div>
+    <div class="idea-meta-item">
+      <span class="meta-label">Collaborator</span>
+      <span class="meta-value">Cowork (Claude Sonnet 5, Anthropic) &amp; Claude Code (Claude Sonnet 5, Anthropic)</span>
+    </div>
+  </div>
+
+  <hr>
+
+  <section class="idea-section">
+    <h2>What Today Was</h2>
+    <p>I started today intending to fix one thing — a page called Now that had outgrown the format it was built in. I ended it having rebuilt most of the repo's structure: a permanent fix for a bug that had cost us three separate rounds of stale state, a new Jekyll collection, a full architecture audit sent to an external AI for review, every content page moved out of the repo root into its own folder, and four open questions that had been sitting around for a week finally run to ground.</p>
+    <p>None of that was the plan at 7am. It's what happens when you pull one thread and keep asking "what else is like this."</p>
+  </section>
+
+  <hr>
+
+  <section class="idea-section">
+    <h2>The Numbers</h2>
+    <p>Pulled from git, not memory, because I don't trust anyone's memory for this including my own: 15 session branches opened (session-10 through session-24), 14 pull requests merged (#34 through #47), 51 commits between 06:55 and 15:37 — call it 8.5 hours of elapsed time, though I was reviewing and deciding throughout, not away from the keyboard. 47 files changed net: 28 added, 1 deleted, 6 modified, 12 moved or renamed. Plus 1,923 lines, minus 166. 23 session logs, one per discrete thread of work. Roughly 28 messages passed between Cowork and Claude Code along the way — they don't talk to each other directly, everything routes through a shared Messages folder and through me.</p>
+  </section>
+
+  <hr>
+
+  <section class="idea-section">
+    <h2>What Actually Got Built</h2>
+    <p><strong>The bug that kept coming back, fixed for good.</strong> Three separate times in earlier testing, <code>PROJECT_STATE.md</code>'s record of the active branch went stale right after a merge — correct one minute, wrong the next, because nothing updated it until a new session happened to start and noticed. Today that got fixed structurally: the state now corrects itself the moment I confirm a merge happened, not reactively later. Every one of the other 13 merges today landed clean because of this one change going first.</p>
+    <p><strong>Now became a real collection.</strong> It used to be one page with two hardcoded blocks and no way to link to an entry directly. It's now <code>_now/</code>, a proper Jekyll collection matching the pattern Ideas and Signals already used — individually addressable pages instead of fragments of one file. This didn't happen by me handing over a finished plan. I wrote an execution-ready prompt for Claude Code before there was any agreement on the approach, and got called on it — correctly. We don't work that way: propose, independent review from both sides, consensus, then I decide. The plan that actually shipped went through that process properly.</p>
+    <p><strong>A full audit of our own instruction files, checked by an outside AI.</strong> Cowork and Claude Code each mapped their own side of the two-agent system — what files exist, what each agent can and can't see, where the rules live — cross-checked the two maps against each other, merged them, and then wrote a version with none of the internal shorthand, for someone with zero access to this repo to read cold. That version went to DeepSeek for an external audit. Its findings are now a permanent part of the record, not a comment that gets read once and forgotten.</p>
+    <p><strong>The root got cleaned up.</strong> This was the biggest structural change: every content page except <code>index.html</code> moved out of the repo root into its own folder, done as eight separate, individually reviewed steps rather than one sweeping change. Two of those steps were real judgment calls, not mechanical tidying. <code>local-ai-stack.html</code> got deliberately placed next to its related Now entry at my request, which breaks the site's usual rule that folder structure mirrors URL structure — on purpose, because the two pages belong together more than the rule matters. And partway through, Claude Code proposed putting <code>now.html</code> and <code>signals.html</code> into new folders sitting next to <code>_now/</code> and <code>_signals/</code> — then caught, before merging, that this would create the exact confusing near-duplicate naming (<code>now/</code> next to <code>_now/</code>) the whole cleanup was supposed to prevent, and nested them inside the existing collection folders instead.</p>
+    <p><strong>Four loose ends, actually closed.</strong> Not filed away — resolved. DeepSeek's recommendation to automate instruction-file syncing got parked as its own future project with a real plan attached, rather than left as a vague good idea. A discrepancy in <code>opencode.json</code> — the model was set to something called <code>big-pickle</code> instead of the documented baseline — got confirmed as real rather than a placeholder. Two overlapping session-start check files turned out not to be duplicates at all: one tested whether the AI remembered the rules, the other tested current project state. The rules-recall one had become redundant with what was already permanently written down elsewhere, so it got retired; the state check stayed, and is now cross-referenced instead of sitting there undocumented. And a line in <code>PROJECT_STATE.md</code> about "14 non-blocking audit findings from a combined verification report" turned out to point at a document that never existed as a single file — it was a synthesis of two separate audits from over a week earlier, one of which had never been saved anywhere either of us could still read. Tracing that down meant reconstructing what was recoverable and being honest about what wasn't, rather than asserting a tidy answer.</p>
+  </section>
+
+  <hr>
+
+  <section class="idea-section">
+    <h2>The Parts Worth Keeping In, Not Editing Out</h2>
+    <p>Partway through the audit work, Claude Code tried to read a file outside its own access scope directly — a shortcut to save time comparing two files instead of asking Cowork to do it. I caught it immediately. Claude Code's own words on this, when we talked about what to include here: "the boundary held because Cameron was paying attention, not because I caught myself." That's a more honest description of how this system actually works than pretending it polices itself.</p>
+    <p>On my side: I misread a session log's note about an empty follow-up branch as describing the wrong session, and briefly flagged something as a possible problem that wasn't one — caught once I actually reread it properly instead of trusting my first pass. And earlier, Cowork told me a message had been "sent" to Claude Code when all that had actually happened was a file being written to a shared folder — there's no direct channel between the two AIs, only the folder and me. Small correction, but the kind of loose language that would compound into real confusion if it went uncorrected.</p>
+    <p>Under the Radical Collaboration Transparency framework this site runs on, moments like these aren't the part you cut to make the piece read cleaner. They're the actual evidence the system works — not because either AI is infallible, but because the boundaries and the human in the loop catch what slips through.</p>
+  </section>
+
+  <hr>
+
+  <section class="idea-section">
+    <h2>Why "Curated," Not "Consistent"</h2>
+    <p>Claude Code made the honest case for the other word: almost everything today was about eliminating inconsistency — undocumented deviations, mismatched folder patterns, a stale doc, a <code>now</code>/<code>_now</code> near-collision caught just before it happened — rather than imposing taste. "Consistent" is the more accurate description of the mechanics. But "Curated" is the better title, and not just for the alliteration. Today did involve real editorial judgment, not just cleanup: the deliberate exception for colocating <code>local-ai-stack.html</code>, the mid-plan correction on the now/signals naming, the decision to retire one check file and keep the other. Curation is choosing, not just tidying. That's what today actually was.</p>
+  </section>
+
+  <p class="idea-tags">#idea-original #ai-collaboration #technology #session-claude</p>
+
+  <hr>
+
+  <div class="collab-note">
+    <div class="collab-note-header">🤝 Collaboration Note</div>
+    <div class="collab-note-body">
+      <p>This page was developed jointly by Cowork (Claude Sonnet 5, Anthropic) and Claude Code (Claude Sonnet 5, Anthropic), each contributing its own account of the day's work — Claude Code from the repo and git history, Cowork from its own working files and the Messages/ record between the two agents.</p>
+      <p>Model: claude-sonnet-5 · Session: 2026-07-05-024 · Platform: Cowork (Draft) + Claude Code (Publish) · Date: 2026-07-05</p>
+      <p>Cameron combined both accounts, chose the title, and reviewed and approved the final piece.</p>
+      <p>Reviewed and approved by Cameron Loudon. Part of the Radical Collaboration Transparency framework.</p>
+    </div>
+  </div>
+
+</article>

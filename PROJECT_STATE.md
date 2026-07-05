@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 **Single source of current project state. Read this before every session. Update this at every session close.**
 **Last updated:** 2026-07-05
-**Updated by:** Claude Code (Publish Agent) — Wrote a full project plan for Open Decision #28 (DeepSeek's instruction-sync recommendation), sent to Cowork for independent review per the check-and-balance process; still parked, not yet decided
+**Updated by:** Claude Code (Publish Agent) — Published `_ideas/repo-redesign-from-crazy-to-curated/`, the joint retrospective piece on today's work, converted from Cowork's approved draft
 
 ---
 
@@ -15,11 +15,11 @@ Cameron merges to main. Do not commit directly to main.
 
 ## Next Session Log ID
 
-`NEXT_SESSION_LOG_ID: 2026-07-05-024`
+`NEXT_SESSION_LOG_ID: 2026-07-05-025`
 
-This session used `session-2026-07-05-023`.
+This session used `session-2026-07-05-024`.
 
-The thirty-three existing session logs are: `session-2026-06-10-001`, `session-2026-06-11-001`, `session-2026-06-11-002`, `session-2026-06-21-001`, `session-2026-06-21-002`, `session-2026-06-29-001`, `session-2026-07-03-001`, `session-2026-07-03-002`, `session-2026-07-03-003`, `session-2026-07-03-004`, `session-2026-07-05-001`, `session-2026-07-05-002`, `session-2026-07-05-003`, `session-2026-07-05-004`, `session-2026-07-05-005`, `session-2026-07-05-006`, `session-2026-07-05-007`, `session-2026-07-05-008`, `session-2026-07-05-009`, `session-2026-07-05-010`, `session-2026-07-05-011`, `session-2026-07-05-012`, `session-2026-07-05-013`, `session-2026-07-05-014`, `session-2026-07-05-015`, `session-2026-07-05-016`, `session-2026-07-05-017`, `session-2026-07-05-018`, `session-2026-07-05-019`, `session-2026-07-05-020`, `session-2026-07-05-021`, `session-2026-07-05-022`, `session-2026-07-05-023`.
+The thirty-four existing session logs are: `session-2026-06-10-001`, `session-2026-06-11-001`, `session-2026-06-11-002`, `session-2026-06-21-001`, `session-2026-06-21-002`, `session-2026-06-29-001`, `session-2026-07-03-001`, `session-2026-07-03-002`, `session-2026-07-03-003`, `session-2026-07-03-004`, `session-2026-07-05-001`, `session-2026-07-05-002`, `session-2026-07-05-003`, `session-2026-07-05-004`, `session-2026-07-05-005`, `session-2026-07-05-006`, `session-2026-07-05-007`, `session-2026-07-05-008`, `session-2026-07-05-009`, `session-2026-07-05-010`, `session-2026-07-05-011`, `session-2026-07-05-012`, `session-2026-07-05-013`, `session-2026-07-05-014`, `session-2026-07-05-015`, `session-2026-07-05-016`, `session-2026-07-05-017`, `session-2026-07-05-018`, `session-2026-07-05-019`, `session-2026-07-05-020`, `session-2026-07-05-021`, `session-2026-07-05-022`, `session-2026-07-05-023`, `session-2026-07-05-024`.
 Note: `session-2026-06-21-003` was never written (anticipated but session did not recur that day). Session on 2026-06-26 (pre-test repo prep, session-3b) and the session-4 branch (2026-06-29 branch-workflow correction, folded into `session-2026-06-29-001`'s log) were also not separately logged — acknowledged gaps.
 
 ---
@@ -71,6 +71,7 @@ Only `index.html` remains at root — the one deliberate, universal exception (s
 | `_ideas/ai-web-layer-framework/` | AI Web Layer Framework | Published | Migrated to folder pattern in session-12 (was an undocumented flat-file deviation); file inside is named after the folder (`ai-web-layer-framework.html`), not `index.html` |
 | `_ideas/the-bug-the-audit-the-blueprint/` | The Bug, the Audit, the Blueprint | Published | Folder pattern — index.html + retrospective.html; session-2026-06-21-002 |
 | `_ideas/four-agent-collaboration-test/` | The Four-Agent Collaboration Test | Published | Folder pattern — index.html; session-2026-07-03-002; added to _ideas/index.html entry list in session-9 (was missing) |
+| `_ideas/repo-redesign-from-crazy-to-curated/` | Repo Redesign — From Crazy to Curated | Published | Folder pattern — file named after its own folder, not `index.html`, per the current naming convention; session-2026-07-05-024. Joint retrospective on the day's architecture/audit work — drafted by Cowork, converted to HTML by Claude Code; added to `_ideas/index.html` entry list in the same commit |
 
 ### _signals/ collection
 
@@ -133,6 +134,7 @@ Split from the single flat `now.html` page (Open Decision #22).
 | `session-2026-07-05-021.md` | Published |
 | `session-2026-07-05-022.md` | Published |
 | `session-2026-07-05-023.md` | Published |
+| `session-2026-07-05-024.md` | Published |
 
 ### Directories pending action
 
