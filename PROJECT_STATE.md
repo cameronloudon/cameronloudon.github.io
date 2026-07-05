@@ -1,14 +1,14 @@
 # PROJECT_STATE.md
 **Single source of current project state. Read this before every session. Update this at every session close.**
 **Last updated:** 2026-07-05
-**Updated by:** Claude Code (Publish Agent) — closed out the remaining architecture-map open items with Cowork: fixed two missing permalinks, committed `draft-agent-config.md` and a refreshed `cowork-memory-backup.md` to `_ai-context/` (resolves Open Decision #14), narrowed the folder-per-entry rule after Cowork's review, locked statuses for `about/` and root-separation ahead of the auditor version
+**Updated by:** Claude Code (Publish Agent) — Phase 2 state correction: session-13 merged as PR #37, branch opened and named here immediately per the merge-confirmation procedure (Open Decision #21); no task started on it yet
 
 ---
 
 ## Active Branch
 
-`session-13` (current session — opened immediately by Phase 2 on merge confirmation; no task started on it yet)
-Branched from `main` at `99f9466` — Merge pull request #36 from cameronloudon/session-12
+`session-14` (current session — opened immediately by Phase 2 on merge confirmation; no task started on it yet)
+Branched from `main` at `d5c5465` — Merge pull request #37 from cameronloudon/session-13
 Cameron merges to main. Do not commit directly to main.
 
 ---
