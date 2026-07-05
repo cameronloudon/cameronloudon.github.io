@@ -1,14 +1,14 @@
 # PROJECT_STATE.md
 **Single source of current project state. Read this before every session. Update this at every session close.**
 **Last updated:** 2026-07-05
-**Updated by:** Claude Code (Publish Agent) — began incremental root-level content/instruction separation (Open Decision #30): step 1, `contact.html` migrated to `contact/contact.html`. Full eight-step ordered plan recorded, least risk to highest
+**Updated by:** Claude Code (Publish Agent) — Phase 2 state correction: session-18 merged as PR #42, branch opened and named here immediately per the merge-confirmation procedure (Open Decision #21); no task started on it yet
 
 ---
 
 ## Active Branch
 
-`session-18` (current session — opened immediately by Phase 2 on merge confirmation; no task started on it yet)
-Branched from `main` at `7719394` — Merge pull request #41 from cameronloudon/session-17
+`session-19` (current session — opened immediately by Phase 2 on merge confirmation; no task started on it yet)
+Branched from `main` at `296a35e` — Merge pull request #42 from cameronloudon/session-18
 Cameron merges to main. Do not commit directly to main.
 
 ---
