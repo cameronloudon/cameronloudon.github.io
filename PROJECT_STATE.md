@@ -1,14 +1,14 @@
 # PROJECT_STATE.md
 **Single source of current project state. Read this before every session. Update this at every session close.**
 **Last updated:** 2026-07-05
-**Updated by:** Claude Code (Publish Agent) — logged DeepSeek's external audit review of the standalone architecture reference document (session-2026-07-05-005); added Open Decision #28 for DeepSeek's recommended automated instruction-sync check
+**Updated by:** Claude Code (Publish Agent) — Phase 2 state correction: session-14 merged as PR #38, branch opened and named here immediately per the merge-confirmation procedure (Open Decision #21); no task started on it yet
 
 ---
 
 ## Active Branch
 
-`session-14` (current session)
-Branched from `main` at `d5c5465` — Merge pull request #37 from cameronloudon/session-13
+`session-15` (current session — opened immediately by Phase 2 on merge confirmation; no task started on it yet)
+Branched from `main` at `c13f036` — Merge pull request #38 from cameronloudon/session-14
 Cameron merges to main. Do not commit directly to main.
 
 ---
