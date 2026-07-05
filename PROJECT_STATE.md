@@ -1,14 +1,14 @@
 # PROJECT_STATE.md
 **Single source of current project state. Read this before every session. Update this at every session close.**
 **Last updated:** 2026-07-05
-**Updated by:** Claude Code (Publish Agent) — Open Decision #32 fully closed: mirrored Cowork's "Session start" cross-reference section into the repo's canonical `_ai-context/draft-agent-config.md`, using the exact text Cowork quoted verbatim
+**Updated by:** Claude Code (Publish Agent) — Phase 2 state correction: session-23 merged as PR #47, branch opened and named here immediately per the merge-confirmation procedure (Open Decision #21); no task started on it yet
 
 ---
 
 ## Active Branch
 
-`session-23` (current session — opened immediately by Phase 2 on merge confirmation; no task started on it yet)
-Branched from `main` at `0d9f60a` — Merge pull request #46 from cameronloudon/session-22
+`session-24` (current session — opened immediately by Phase 2 on merge confirmation; no task started on it yet)
+Branched from `main` at `24d5a4e` — Merge pull request #47 from cameronloudon/session-23
 Cameron merges to main. Do not commit directly to main.
 
 ---
