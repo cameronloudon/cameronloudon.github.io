@@ -1,25 +1,25 @@
 # PROJECT_STATE.md
 **Single source of current project state. Read this before every session. Update this at every session close.**
-**Last updated:** 2026-07-05
-**Updated by:** Claude Code (Publish Agent) — Published `_ideas/repo-redesign-from-crazy-to-curated/`, the joint retrospective piece on today's work, converted from Cowork's approved draft
+**Last updated:** 2026-07-09
+**Updated by:** Claude Code (Publish Agent) — Capability Baseline restructured into Role Access + Tool/Model/Runtime Matrix tables (Open Decision #33), per Cowork's agreed proposal and Cameron's go-ahead (proposal and consensus dated 2026-07-08; implemented 2026-07-09)
 
 ---
 
 ## Active Branch
 
-`session-24` (current session — opened immediately by Phase 2 on merge confirmation; no task started on it yet)
-Branched from `main` at `24d5a4e` — Merge pull request #47 from cameronloudon/session-23
+`session-25` (current session — opened immediately by Phase 2 on merge confirmation; no task started on it yet)
+Branched from `main` at `6013801` — Merge pull request #48 from cameronloudon/session-24
 Cameron merges to main. Do not commit directly to main.
 
 ---
 
 ## Next Session Log ID
 
-`NEXT_SESSION_LOG_ID: 2026-07-05-025`
+`NEXT_SESSION_LOG_ID: 2026-07-09-002`
 
-This session used `session-2026-07-05-024`.
+This session used `session-2026-07-09-001` — first session log of a new calendar date, so the per-day NNN counter reset to 001 per the format in `_ai-context/rct-session-primer.md`.
 
-The thirty-four existing session logs are: `session-2026-06-10-001`, `session-2026-06-11-001`, `session-2026-06-11-002`, `session-2026-06-21-001`, `session-2026-06-21-002`, `session-2026-06-29-001`, `session-2026-07-03-001`, `session-2026-07-03-002`, `session-2026-07-03-003`, `session-2026-07-03-004`, `session-2026-07-05-001`, `session-2026-07-05-002`, `session-2026-07-05-003`, `session-2026-07-05-004`, `session-2026-07-05-005`, `session-2026-07-05-006`, `session-2026-07-05-007`, `session-2026-07-05-008`, `session-2026-07-05-009`, `session-2026-07-05-010`, `session-2026-07-05-011`, `session-2026-07-05-012`, `session-2026-07-05-013`, `session-2026-07-05-014`, `session-2026-07-05-015`, `session-2026-07-05-016`, `session-2026-07-05-017`, `session-2026-07-05-018`, `session-2026-07-05-019`, `session-2026-07-05-020`, `session-2026-07-05-021`, `session-2026-07-05-022`, `session-2026-07-05-023`, `session-2026-07-05-024`.
+The thirty-five existing session logs are: `session-2026-06-10-001`, `session-2026-06-11-001`, `session-2026-06-11-002`, `session-2026-06-21-001`, `session-2026-06-21-002`, `session-2026-06-29-001`, `session-2026-07-03-001`, `session-2026-07-03-002`, `session-2026-07-03-003`, `session-2026-07-03-004`, `session-2026-07-05-001`, `session-2026-07-05-002`, `session-2026-07-05-003`, `session-2026-07-05-004`, `session-2026-07-05-005`, `session-2026-07-05-006`, `session-2026-07-05-007`, `session-2026-07-05-008`, `session-2026-07-05-009`, `session-2026-07-05-010`, `session-2026-07-05-011`, `session-2026-07-05-012`, `session-2026-07-05-013`, `session-2026-07-05-014`, `session-2026-07-05-015`, `session-2026-07-05-016`, `session-2026-07-05-017`, `session-2026-07-05-018`, `session-2026-07-05-019`, `session-2026-07-05-020`, `session-2026-07-05-021`, `session-2026-07-05-022`, `session-2026-07-05-023`, `session-2026-07-05-024`, `session-2026-07-09-001`.
 Note: `session-2026-06-21-003` was never written (anticipated but session did not recur that day). Session on 2026-06-26 (pre-test repo prep, session-3b) and the session-4 branch (2026-06-29 branch-workflow correction, folded into `session-2026-06-29-001`'s log) were also not separately logged — acknowledged gaps.
 
 ---
@@ -178,16 +178,35 @@ None.
 | 30 | Following #27, Cameron decided to proceed with root-level content/instruction separation after all, executed incrementally least-risk-first rather than as one large change | 9 | ✓ Done 2026-07-05, all 8 steps complete across sessions 18–21. (1) `contact/contact.html`; (2) `local-ai-stack.html` → `_now/building-a-local-ai-stack/local-ai-stack.html`, kept its own name (not renamed to match the folder, since that name is already taken by `building-a-local-ai-stack.html`) — the one documented exception to folder-mirrors-URL (Rule 5.6), deliberate per Cameron's request to colocate it with the related Now entry; (3) `approach/approach.html`; (4) `master-synthesis-prompt/master-synthesis-prompt.html`; (5) `about/about.html`, also resolving the separate `about/` restructuring recommendation from #27 ahead of `work-history.html`/`skills.html` being built; (6) `now.html` → `_now/now.html`, revised mid-plan from the original `now/now.html`: moved into the *existing* `_now/` collection folder rather than a new sibling `now/` folder, matching the `_ideas/index.html` precedent and avoiding a confusing `now/`/`_now/` pair, given underscore prefixes are visually invisible to Cameron's own mental model; (7) `signals.html` → `_signals/signals.html`, same corrected approach as step 6; (8) `index.html` — verified as the only content file remaining at repo root, correctly unmoved, the one universal exception (Jekyll's implicit root-index rule). Root now holds only instruction/config files (`AI_INSTRUCTIONS.md`, `CLAUDE.md`, `ONBOARDING.md`, `PROJECT_STATE.md`, `README.md`, `Gemfile`, `_config.yml`, `.gitignore`, `opencode.json`) plus `index.html` — the original goal of Open Decision #27, fully realized | — |
 | 31 | `opencode.json`'s configured model (`opencode/big-pickle`) doesn't match the Capability Baseline's documented OpenCode model (`gemma4:e4b`) — flagged repeatedly during today's architecture review but never given its own tracked entry until now (2026-07-05) | 9 | ✓ Done 2026-07-05 — Cameron confirmed `big-pickle` is a real, deliberately-configured model (initially assumed to be a joke/placeholder name, but genuinely what was used in the 2026-07-03 live test). `opencode.json` was correct all along; the Capability Baseline table was the stale record and has been corrected to match | — |
 | 32 | Two overlapping Draft-Agent-side manual session-start prompts exist without referencing each other — `Protocols/session-start-verify.md` and `Prompts/prompt-cowork-session-start-check.md`. Flagged repeatedly during today's architecture review but never given its own tracked entry until now (2026-07-05) | 9 | ✓ Fully done 2026-07-05 — `session-start-verify.md` deleted on Cowork's side; a new "Session start" cross-reference section added to both `Protocols/draft-agent-config.md` (Cowork's working copy) and the repo's canonical `_ai-context/draft-agent-config.md`, placed after "Your role" and before "Check-and-balance for technical problems." Also resolves Cowork's Finding F8 from the 2026-06-29 self-audit | — |
+| 33 | `PROJECT_STATE.md`'s Capability Baseline table conflated Tool/Model/Runtime/Purpose into a single "Current Tool" cell per role — the root cause of the original three-way Draft Agent tool ambiguity. Raised during the 2026-07-08 foundation-layer discussion, tracked separately as its own smaller fix (not the first step of the foundation-layer/OKF pilot) | 9 | ✓ Done 2026-07-09 (session-25) — split into a Role Access table (unchanged in spirit, plus a new proposed-not-active Auditor row) and a new Tool/Model/Runtime Matrix table (multiple rows per role, each with a cited, checkable Status). Publish Agent's Access row also corrected to include the `Write: AI-Working/Messages/` grant already enforced in `.claude/settings.json` but previously undocumented here. Proposed in `AI-Working/Messages/ccode-to-cowork-2026-07-08-capability-baseline-restructure-proposal.md`, agreed in `cowork-to-ccode-2026-07-08-capability-baseline-response.md` (evidence-citation condition), cleared in `cowork-to-ccode-2026-07-08-capability-baseline-go-ahead.md` | — |
 
 ---
 
 ## Capability Baseline
 
-| Role | Current Tool | Access |
-|---|---|---|
-| Draft Agent | Cowork (Claude, Anthropic) via AnythingLLM + Ollama (gemma4:e4b) for AI independence verification | Read/write: `C:\Users\camer\Documents\AI\AI-Working\`; Read-only: AI-Prod; No access: repo, GitHub |
-| Publish Agent | Claude Code (Claude, Anthropic) primary; OpenCode (`big-pickle`) alternative — `opencode.json` configured, gitignored. Corrected 2026-07-05: this row previously read `Ollama/gemma4:e4b`, which was stale — `big-pickle` is confirmed by Cameron as the actual model used in the 2026-07-03 live test, not a placeholder or typo | Read/write: repo; Read-only: AI-Working/Ready/; Write: AI-Prod (sync only, post-merge) |
-| Review Agent | External (rotating; most recent: DeepSeek) | Read: documents provided by Cameron |
+Restructured 2026-07-09 (session-25) from a single conflated table into two — see Open Decision #33. The old single "Current Tool" cell mixed Tool/Model/Runtime/Purpose into one string, which is what made "currently AnythingLLM" read as contradicting `AI_INSTRUCTIONS.md`'s flat "Cowork" claim. Proposed in `AI-Working/Messages/ccode-to-cowork-2026-07-08-capability-baseline-restructure-proposal.md`, agreed in `cowork-to-ccode-2026-07-08-capability-baseline-response.md`, cleared in `cowork-to-ccode-2026-07-08-capability-baseline-go-ahead.md`. Independent of, and does not depend on, the separate foundation-layer/OKF pilot still under discussion.
+
+### Role Access
+
+| Role | Access |
+|---|---|
+| Draft Agent | Read/write: `C:\Users\camer\Documents\AI\AI-Working\`; Read-only: AI-Prod; No access: repo, GitHub |
+| Publish Agent | Read/write: repo; Read-only: AI-Working/Ready/; Write: AI-Working/Messages/ (per `.claude/settings.json`, previously omitted here); Write: AI-Prod (sync only, post-merge); No access: AI-Working/Drafts/, AI-Working/Completed/ |
+| Review Agent | Read: documents provided by Cameron |
+| Auditor *(proposed, not active)* | Not yet defined — blocked on the test protocol; see 2026-07-08 foundation-layer discussion, `AI-Working/Messages/cowork-to-ccode-2026-07-08-foundation-layer-proposal.md` |
+
+### Tool / Model / Runtime Matrix
+
+Multiple rows per role are expected — a default plus any tested or candidate alternatives. Every status claim below is cited; a table entry with no citation is not a status, it's an assertion.
+
+| Role | Tool | Model | Runtime | Status |
+|---|---|---|---|---|
+| Draft Agent | Cowork | Claude, Anthropic | Hosted | Default — in active use |
+| Draft Agent | AnythingLLM | Gemma4 (gemma4:e4b) | Local-Ollama | Tested 2026-07-03 for AI independence verification — failure was behavioral, not connectivity. Evidence: `_session-logs/session-2026-07-03-002.md`, `AI-Working/OpenWEBUIandGemma4isWHACKED.md`. Retest planned, no date set |
+| Publish Agent | Claude Code | Claude, Anthropic | Hosted | Default — in active use |
+| Publish Agent | OpenCode | `big-pickle` | Hosted (token) | Configured alternative — `opencode.json` (gitignored). Confirmed real and deliberate by Cameron 2026-07-05 (Open Decision #31), not a placeholder |
+| Review Agent | External, rotating | DeepSeek (most recent) | Hosted | Ad hoc, per-review |
+| Auditor *(proposed)* | OpenWork, candidate | Frontier model, TBD | Hosted | Untested — blocked on test protocol; see foundation-layer discussion, 2026-07-08 |
 
 ---
 
