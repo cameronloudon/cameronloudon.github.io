@@ -1,14 +1,14 @@
 # PROJECT_STATE.md
 **Single source of current project state. Read this before every session. Update this at every session close.**
 **Last updated:** 2026-07-09
-**Updated by:** Claude Code (Publish Agent) — Capability Baseline restructured into Role Access + Tool/Model/Runtime Matrix tables (Open Decision #33), per Cowork's agreed proposal and Cameron's go-ahead (proposal and consensus dated 2026-07-08; implemented 2026-07-09)
+**Updated by:** Claude Code (Publish Agent) — Phase 2 state correction: session-25 merged as PR #49, branch opened and named here immediately per the merge-confirmation procedure (Open Decision #21); no task started on it yet
 
 ---
 
 ## Active Branch
 
-`session-25` (current session — opened immediately by Phase 2 on merge confirmation; no task started on it yet)
-Branched from `main` at `6013801` — Merge pull request #48 from cameronloudon/session-24
+`session-26` (current session — opened immediately by Phase 2 on merge confirmation; no task started on it yet)
+Branched from `main` at `ce42cea` — Merge pull request #49 from cameronloudon/session-25
 Cameron merges to main. Do not commit directly to main.
 
 ---
