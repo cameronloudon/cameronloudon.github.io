@@ -1,14 +1,14 @@
 # PROJECT_STATE.md
 **Single source of current project state. Read this before every session. Update this at every session close.**
 **Last updated:** 2026-07-09
-**Updated by:** Claude Code (Publish Agent) — session-26: piloted the `_messages/` OKF bundle (foundation-layer location decision), tested against real files, core pilot question called closed with `audit-finding`/Auditor deferred (Open Decision #34)
+**Updated by:** Claude Code (Publish Agent) — Phase 2 state correction: session-26 merged as PR #50, branch opened and named here immediately per the merge-confirmation procedure (Open Decision #21); no task started on it yet
 
 ---
 
 ## Active Branch
 
-`session-26` (current session — opened immediately by Phase 2 on merge confirmation; no task started on it yet)
-Branched from `main` at `ce42cea` — Merge pull request #49 from cameronloudon/session-25
+`session-27` (current session — opened immediately by Phase 2 on merge confirmation; no task started on it yet)
+Branched from `main` at `ff8f110` — Merge pull request #50 from cameronloudon/session-26
 Cameron merges to main. Do not commit directly to main.
 
 ---
