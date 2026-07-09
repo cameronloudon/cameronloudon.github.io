@@ -47,3 +47,4 @@ exclude:
   - node_modules
   - vendor
   - _ai-context
+  - _messages

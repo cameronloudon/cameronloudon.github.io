@@ -1,25 +1,25 @@
 # PROJECT_STATE.md
 **Single source of current project state. Read this before every session. Update this at every session close.**
 **Last updated:** 2026-07-09
-**Updated by:** Claude Code (Publish Agent) — Capability Baseline restructured into Role Access + Tool/Model/Runtime Matrix tables (Open Decision #33), per Cowork's agreed proposal and Cameron's go-ahead (proposal and consensus dated 2026-07-08; implemented 2026-07-09)
+**Updated by:** Claude Code (Publish Agent) — session-26: piloted the `_messages/` OKF bundle (foundation-layer location decision), tested against real files, core pilot question called closed with `audit-finding`/Auditor deferred (Open Decision #34)
 
 ---
 
 ## Active Branch
 
-`session-25` (current session — opened immediately by Phase 2 on merge confirmation; no task started on it yet)
-Branched from `main` at `6013801` — Merge pull request #48 from cameronloudon/session-24
+`session-26` (current session — opened immediately by Phase 2 on merge confirmation; no task started on it yet)
+Branched from `main` at `ce42cea` — Merge pull request #49 from cameronloudon/session-25
 Cameron merges to main. Do not commit directly to main.
 
 ---
 
 ## Next Session Log ID
 
-`NEXT_SESSION_LOG_ID: 2026-07-09-002`
+`NEXT_SESSION_LOG_ID: 2026-07-09-003`
 
-This session used `session-2026-07-09-001` — first session log of a new calendar date, so the per-day NNN counter reset to 001 per the format in `_ai-context/rct-session-primer.md`.
+This session used `session-2026-07-09-002` — second session log of the day, continuing the per-day NNN counter per the format in `_ai-context/rct-session-primer.md`.
 
-The thirty-five existing session logs are: `session-2026-06-10-001`, `session-2026-06-11-001`, `session-2026-06-11-002`, `session-2026-06-21-001`, `session-2026-06-21-002`, `session-2026-06-29-001`, `session-2026-07-03-001`, `session-2026-07-03-002`, `session-2026-07-03-003`, `session-2026-07-03-004`, `session-2026-07-05-001`, `session-2026-07-05-002`, `session-2026-07-05-003`, `session-2026-07-05-004`, `session-2026-07-05-005`, `session-2026-07-05-006`, `session-2026-07-05-007`, `session-2026-07-05-008`, `session-2026-07-05-009`, `session-2026-07-05-010`, `session-2026-07-05-011`, `session-2026-07-05-012`, `session-2026-07-05-013`, `session-2026-07-05-014`, `session-2026-07-05-015`, `session-2026-07-05-016`, `session-2026-07-05-017`, `session-2026-07-05-018`, `session-2026-07-05-019`, `session-2026-07-05-020`, `session-2026-07-05-021`, `session-2026-07-05-022`, `session-2026-07-05-023`, `session-2026-07-05-024`, `session-2026-07-09-001`.
+The thirty-six existing session logs are: `session-2026-06-10-001`, `session-2026-06-11-001`, `session-2026-06-11-002`, `session-2026-06-21-001`, `session-2026-06-21-002`, `session-2026-06-29-001`, `session-2026-07-03-001`, `session-2026-07-03-002`, `session-2026-07-03-003`, `session-2026-07-03-004`, `session-2026-07-05-001`, `session-2026-07-05-002`, `session-2026-07-05-003`, `session-2026-07-05-004`, `session-2026-07-05-005`, `session-2026-07-05-006`, `session-2026-07-05-007`, `session-2026-07-05-008`, `session-2026-07-05-009`, `session-2026-07-05-010`, `session-2026-07-05-011`, `session-2026-07-05-012`, `session-2026-07-05-013`, `session-2026-07-05-014`, `session-2026-07-05-015`, `session-2026-07-05-016`, `session-2026-07-05-017`, `session-2026-07-05-018`, `session-2026-07-05-019`, `session-2026-07-05-020`, `session-2026-07-05-021`, `session-2026-07-05-022`, `session-2026-07-05-023`, `session-2026-07-05-024`, `session-2026-07-09-001`, `session-2026-07-09-002`.
 Note: `session-2026-06-21-003` was never written (anticipated but session did not recur that day). Session on 2026-06-26 (pre-test repo prep, session-3b) and the session-4 branch (2026-06-29 branch-workflow correction, folded into `session-2026-06-29-001`'s log) were also not separately logged — acknowledged gaps.
 
 ---
@@ -135,6 +135,23 @@ Split from the single flat `now.html` page (Open Decision #22).
 | `session-2026-07-05-022.md` | Published |
 | `session-2026-07-05-023.md` | Published |
 | `session-2026-07-05-024.md` | Published |
+| `session-2026-07-09-001.md` | Published |
+| `session-2026-07-09-002.md` | Published |
+
+### _messages/ bundle (not rendered — chain-of-custody archive)
+
+Not a Jekyll collection — added to `_config.yml`'s `exclude:` list (same mechanism as `_ai-context/`), not declared as a collection. Repo-resident audit copy of selected `AI-Working/Messages/` exchanges, OKF-stamped (`type`, `title`, `timestamp`, `from`/`to` or `participants`, `refs:` as bundle-relative paths). Authored originals continue to live in `AI-Working/Messages/`; this is the record of custody, not the authoring workflow. Piloted 2026-07-09 (session-26) — see Open Decision #34.
+
+| File | Type | Notes |
+|---|---|---|
+| `_messages/index.md` | index | Bundle index, `okf_version: "0.1"` |
+| `_messages/cowork-to-ccode-2026-07-09-location-reconsideration.md` | message | |
+| `_messages/cowork-to-ccode-2026-07-09-location-git-response.md` | message | |
+| `_messages/ccode-to-cowork-2026-07-09-location-git-response.md` | message | |
+| `_messages/cameron-cowork-conversation-transcript-2026-07-08.md` | transcript | Genuine verbatim capture; uses `participants:` list, not `from`/`to` |
+| `_messages/OpenWEBUIandGemma4isWHACKED.md` | summary | Recovered from a chat-UI attachment Cameron held (never previously saved to disk); reclassified from its own self-described "Transcript" title to `type: summary` on inspection — bracketed placeholders stand in for real dialogue, not a raw capture. Resolves the previously-unresolvable `PROJECT_STATE.md` Capability Baseline citation (see Tool/Model/Runtime Matrix, AnythingLLM row) to a real bundle-relative path |
+
+`type: audit-finding` deliberately untested — deferred to the real Auditor track rather than a synthetic file. See Open Decision #34.
 
 ### Directories pending action
 
@@ -179,6 +196,7 @@ None.
 | 31 | `opencode.json`'s configured model (`opencode/big-pickle`) doesn't match the Capability Baseline's documented OpenCode model (`gemma4:e4b`) — flagged repeatedly during today's architecture review but never given its own tracked entry until now (2026-07-05) | 9 | ✓ Done 2026-07-05 — Cameron confirmed `big-pickle` is a real, deliberately-configured model (initially assumed to be a joke/placeholder name, but genuinely what was used in the 2026-07-03 live test). `opencode.json` was correct all along; the Capability Baseline table was the stale record and has been corrected to match | — |
 | 32 | Two overlapping Draft-Agent-side manual session-start prompts exist without referencing each other — `Protocols/session-start-verify.md` and `Prompts/prompt-cowork-session-start-check.md`. Flagged repeatedly during today's architecture review but never given its own tracked entry until now (2026-07-05) | 9 | ✓ Fully done 2026-07-05 — `session-start-verify.md` deleted on Cowork's side; a new "Session start" cross-reference section added to both `Protocols/draft-agent-config.md` (Cowork's working copy) and the repo's canonical `_ai-context/draft-agent-config.md`, placed after "Your role" and before "Check-and-balance for technical problems." Also resolves Cowork's Finding F8 from the 2026-06-29 self-audit | — |
 | 33 | `PROJECT_STATE.md`'s Capability Baseline table conflated Tool/Model/Runtime/Purpose into a single "Current Tool" cell per role — the root cause of the original three-way Draft Agent tool ambiguity. Raised during the 2026-07-08 foundation-layer discussion, tracked separately as its own smaller fix (not the first step of the foundation-layer/OKF pilot) | 9 | ✓ Done 2026-07-09 (session-25) — split into a Role Access table (unchanged in spirit, plus a new proposed-not-active Auditor row) and a new Tool/Model/Runtime Matrix table (multiple rows per role, each with a cited, checkable Status). Publish Agent's Access row also corrected to include the `Write: AI-Working/Messages/` grant already enforced in `.claude/settings.json` but previously undocumented here. Proposed in `AI-Working/Messages/ccode-to-cowork-2026-07-08-capability-baseline-restructure-proposal.md`, agreed in `cowork-to-ccode-2026-07-08-capability-baseline-response.md` (evidence-citation condition), cleared in `cowork-to-ccode-2026-07-08-capability-baseline-go-ahead.md` | — |
+| 34 | Foundation-layer `_messages/` OKF bundle pilot (from the 2026-07-08 foundation-layer proposal, Open Decision context in the Auditor row of the Tool/Model/Runtime Matrix above) — does the OKF bundle format actually hold up against real files, not just proposals | 9 | ✓ Core question answered 2026-07-09 (session-26), commits `bbb6526`/`86cb356`. Piloted against real files across three of four OKF types — `message` (3 files from the location-reconsideration thread), `transcript` (genuine verbatim capture, required a `participants:` list rather than `from`/`to` — authored vs. captured content need different shapes), and `summary` (a file initially assumed to be a transcript, reclassified on inspection — `type` has to come from reading content, not trusting a filename/self-description). Two corrections surfaced and fixed: `refs:` can only point to bundle-relative paths, not out to `AI-Working/` (which isn't git-tracked and, as this pilot demonstrated live, isn't even a reliable guarantee the cited file exists at all — see the `OpenWEBUIandGemma4isWHACKED.md` recovery in the `_messages/` bundle table above); and citations meant to be durable/checkable must point at something git-tracked generally, not just within this bundle. `type: audit-finding`, the fourth OKF type, deliberately left untested — Cameron's decision: "Auditor is on the agenda for later. It needs a lot of thought on how it will actually function," so it waits for the real Auditor track to produce genuine material rather than a synthetic test file. Full chain in `AI-Working/Messages/`: `ccode-to-cowork-2026-07-09-pilot-results.md` → `cowork-to-ccode-2026-07-09-pilot-response.md` → `ccode-to-cowork-2026-07-09-transcript-pilot-results.md` → `cowork-to-ccode-2026-07-09-transcript-pilot-response.md` → `ccode-to-cowork-2026-07-09-pilot-close.md`. Not the same as closing the wider foundation layer — the Auditor role and the full Messages/Conversations unification remain open, no timeline. Commit cadence for promoting future `AI-Working/Messages/` files into `_messages/` (session-close only vs. also at session-start) also remains an open question, raised by Cowork in `cowork-to-ccode-2026-07-09-location-git-response.md`, not decided this session | — |
 
 ---
 
