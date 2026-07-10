@@ -1,4 +1,4 @@
-<#
+﻿<#
 Extracts a readable Cameron/Claude-Code transcript from a raw Claude Code
 session log (.claude/projects/<project-hash>/<session-id>.jsonl).
 
