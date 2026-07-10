@@ -1,26 +1,26 @@
 # PROJECT_STATE.md
 **Single source of current project state. Read this before every session. Update this at every session close.**
-**Last updated:** 2026-07-10
-**Updated by:** Claude Code (Publish Agent) — Phase 2 state correction on merge confirmation. session-28 merged (PR #52): remaining 27-file backlog slice promoted, index rebuilt, record-to-instruction traceability demoed, Obsidian graph view tested and diagnosed, Cowork's independent verification and the cold-question success test both passed, Open Decision #37 logged. session-29 opened immediately, no work started yet
+**Last updated:** 2026-07-11
+**Updated by:** Claude Code (Publish Agent) — session-29's substantive work, closing out session log `session-2026-07-11-001`. Handled the 2026-07-11 AI-Auditor proposals package (5 files + cover note) end to end: independent charter review, consensus process with Cowork (including her disclosed unauthorized rescue, Open Decision #38), Claude Code's own authorized JSONL rescue and the encoding bug it surfaced in `extract-session-transcript.ps1` (Open Decision #39), the long-deferred `.obsidian` robocopy exclude fix, the Auditor Charter's ratification (Open Decision #40), and the audit-finding home decision and implementation (Open Decision #41). Session-29 not yet merged
 
 ---
 
 ## Active Branch
 
-`session-29` (current session — just opened via Phase 2, no work started yet)
+`session-29` (current session)
 Branched from `main` at `39f5849` — Merge pull request #52 from cameronloudon/session-28
-Not yet merged. No commits yet.
+Not yet merged. 7 commits so far, up to and including this session-close commit.
 Cameron merges to main. Do not commit directly to main.
 
 ---
 
 ## Next Session Log ID
 
-`NEXT_SESSION_LOG_ID: 2026-07-10-002`
+`NEXT_SESSION_LOG_ID: 2026-07-11-002`
 
-This session used `session-2026-07-09-003` — third session log of the day, continuing the per-day NNN counter per the format in `_ai-context/rct-session-primer.md`. Written mid-session (Cameron stopping for the night) rather than at a session close in the usual sense — `session-27` is still open and will resume tomorrow, same branch, same session log continuing to apply until it actually closes.
+**Correction made at this close:** the field read `2026-07-10-002` going into this session — seeded during the Phase 2 branch-open commit and never revisited, so it still carried the prior day's date even though every commit in session-29 (`git log`, checked at close) is timestamped 2026-07-11. Using it as-is would have dated this session log a day wrong. Corrected here rather than propagated — the same "don't act on stale state without checking" principle this file already applies to the Active Branch section. This session used `session-2026-07-11-001`, the first log of the day.
 
-The thirty-seven existing session logs are: `session-2026-06-10-001`, `session-2026-06-11-001`, `session-2026-06-11-002`, `session-2026-06-21-001`, `session-2026-06-21-002`, `session-2026-06-29-001`, `session-2026-07-03-001`, `session-2026-07-03-002`, `session-2026-07-03-003`, `session-2026-07-03-004`, `session-2026-07-05-001`, `session-2026-07-05-002`, `session-2026-07-05-003`, `session-2026-07-05-004`, `session-2026-07-05-005`, `session-2026-07-05-006`, `session-2026-07-05-007`, `session-2026-07-05-008`, `session-2026-07-05-009`, `session-2026-07-05-010`, `session-2026-07-05-011`, `session-2026-07-05-012`, `session-2026-07-05-013`, `session-2026-07-05-014`, `session-2026-07-05-015`, `session-2026-07-05-016`, `session-2026-07-05-017`, `session-2026-07-05-018`, `session-2026-07-05-019`, `session-2026-07-05-020`, `session-2026-07-05-021`, `session-2026-07-05-022`, `session-2026-07-05-023`, `session-2026-07-05-024`, `session-2026-07-09-001`, `session-2026-07-09-002`, `session-2026-07-09-003`.
+The thirty-eight existing session logs are: `session-2026-06-10-001`, `session-2026-06-11-001`, `session-2026-06-11-002`, `session-2026-06-21-001`, `session-2026-06-21-002`, `session-2026-06-29-001`, `session-2026-07-03-001`, `session-2026-07-03-002`, `session-2026-07-03-003`, `session-2026-07-03-004`, `session-2026-07-05-001`, `session-2026-07-05-002`, `session-2026-07-05-003`, `session-2026-07-05-004`, `session-2026-07-05-005`, `session-2026-07-05-006`, `session-2026-07-05-007`, `session-2026-07-05-008`, `session-2026-07-05-009`, `session-2026-07-05-010`, `session-2026-07-05-011`, `session-2026-07-05-012`, `session-2026-07-05-013`, `session-2026-07-05-014`, `session-2026-07-05-015`, `session-2026-07-05-016`, `session-2026-07-05-017`, `session-2026-07-05-018`, `session-2026-07-05-019`, `session-2026-07-05-020`, `session-2026-07-05-021`, `session-2026-07-05-022`, `session-2026-07-05-023`, `session-2026-07-05-024`, `session-2026-07-09-001`, `session-2026-07-09-002`, `session-2026-07-09-003`, `session-2026-07-11-001`.
 Note: `session-2026-06-21-003` was never written (anticipated but session did not recur that day). Session on 2026-06-26 (pre-test repo prep, session-3b) and the session-4 branch (2026-06-29 branch-workflow correction, folded into `session-2026-06-29-001`'s log) were also not separately logged — acknowledged gaps.
 
 ---
