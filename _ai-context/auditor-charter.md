@@ -45,12 +45,16 @@ Three functions, in priority order:
 | Direction | Access |
 |---|---|
 | Read | Repo (read-only), AI-Prod mirror, any document Cameron provides |
-| Write | Its own `type: audit-finding` files only, to a designated drop folder (current: `AI-Auditor\`, git-untracked; final location not yet decided — see Ratification Record) |
+| Write | Its own `type: audit-finding` files only, to `AI-Working/Audit/` — a path-scoped grant, same enforcement mechanism as the Draft Agent's `Messages/` grant, not a documented courtesy |
 | Never | Repo writes, AI-Working/Drafts, AI-Working/Ready, instruction files, GitHub |
+
+Any workspace used to *design* the Auditor (e.g. a separate meta/design workspace under `Documents\AI`, read-only by Cameron's own standing rule) is structurally distinct from — and incapable of also being — the operational Auditor described here, since it lacks the `AI-Working/Audit/` write grant entirely. Design and operation are separated by an enforced boundary, not a convention.
 
 ## 6. Output format
 
-Findings use OKF `type: audit-finding` — the reserved fourth type, taking its first genuine customer. Minimum fields per finding: what was checked, what was found, evidence (`refs:` to git-tracked paths), the instruction clause it bears on, severity (`blocks-independence` / `cosmetic`), failure-kind (reserved, may be blank per §4), and a one-line recommendation. One audit run = one file.
+Findings use OKF `type: audit-finding` — the reserved fourth type, taking its first genuine customer. Minimum fields per finding: what was checked, what was found, evidence (`refs:` to git-tracked paths), the instruction clause it bears on, severity (`blocks-independence` / `cosmetic`), failure-kind (reserved, may be blank per §4), and a one-line recommendation. One audit run = one file, written to `AI-Working/Audit/` (§5).
+
+**Promotion to `_audit-findings/`.** The Publish Agent promotes each finding, verbatim, into the git-tracked `_audit-findings/` collection (sibling to `_messages/`, same non-rendered treatment) on a session branch; Cameron reviews and merges; the post-merge sync mirrors it to AI-Prod. The promoting agent is one of the audited parties and never edits a finding's authored content — if a finding is wrong, the remedy is a response document in the normal flow, never a silent edit. Once the link convention (generated `[[wikilink]]` footers from `refs:`) applies here too, "verbatim" means two separate mechanical checks: (a) strip the marked generated footer — the remainder must be byte-identical to the staged original in `AI-Working/Audit/`; (b) regenerate the footer from the finding's own `refs:` — it must match what's present. Check (a) catches edits to the finding; check (b) catches footer tampering or generator faults.
 
 ## 7. The audit baseline: system architecture document
 
@@ -105,7 +109,10 @@ Ratified 2026-07-11 (session-29) by Cameron, following independent review by Cow
 
 **Not resolved by ratification, still open:**
 
-- **Final home for `type: audit-finding` files.** Currently `AI-Auditor\`, git-untracked. Custody standards argue for a git-tracked home — candidates include a new `_audit-findings/` bundle (parallel to `_messages/`'s treatment: excluded from Jekyll rendering, not a Jekyll collection) or `AI-Working/Audit/`. This is a genuine structural decision and hasn't been made here; it needs Cameron's call before the Auditor's first real run produces a file that needs a permanent address.
 - **§8's monthly cadence** — flagged as worth revisiting once activity settles, not blocking.
+
+### Addendum, same day: audit-finding home decided
+
+Cameron approved, 2026-07-11: staging at `AI-Working/Audit/` (path-scoped grant, replacing the `AI-Auditor\` prototype folder), durable home at `_audit-findings/` (git-tracked, sibling to `_messages/`, same non-rendered treatment). Reached via Cowork's initial recommendation (`AI-Working/Messages/cowork-to-ccode-2026-07-11-audit-finding-home-view.md`), a concurring second read from a separate AI-Auditor design session with three riders (`fable-to-cameron-2026-07-11-audit-finding-home-concurrence.md`), and Cowork's full concurrence with those riders including an amendment to the verbatim-promotion rule (`cowork-to-ccode-2026-07-11-audit-finding-home-final-position.md`) — resolving a real collision that surfaced between "byte-identical promotion" and the link convention's generated footers. §5 and §6 above reflect the decided state directly; this addendum is the record of how it was reached, not a duplicate of it.
 
 *Ratified under the Radical Collaboration Transparency framework. Original design: Claude (Anthropic), model claude-fable-5, AI-Auditor workspace, 2026-07-10. Independent reviews: Cowork (Draft Agent) and Claude Code (Publish Agent), 2026-07-11. Ratification decision: Cameron Loudon, 2026-07-11.*
