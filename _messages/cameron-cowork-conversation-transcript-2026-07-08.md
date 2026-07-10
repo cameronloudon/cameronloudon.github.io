@@ -9,6 +9,7 @@ refs:
   - ./cowork-to-ccode-2026-07-08-foundation-layer-context.md
   - ./cowork-to-ccode-2026-07-08-foundation-layer-proposal.md
   - ./OpenWEBUIandGemma4isWHACKED.md
+superseded_by: ./cameron-cowork-conversation-transcript-full-2026-07-09.md
 ---
 
 I reviewed the config and startup files in AI-Prod: _config.yml, Gemfile, .gitignore, .claude/settings.json, plus the startup docs CLAUDE.md, AI_INSTRUCTIONS.md, ONBOARDING.md, PROJECT_STATE.md, and _ai-context/draft-agent-config.md.
