@@ -1,15 +1,15 @@
 # PROJECT_STATE.md
 **Single source of current project state. Read this before every session. Update this at every session close.**
-**Last updated:** 2026-07-09
-**Updated by:** Claude Code (Publish Agent) — session-27: extended thinking session with Cameron on the living-knowledgebase goal (distinct from the chain-of-custody goal Open Decision #34 actually answered); proved closed-session transcript extraction works on both Claude Code's and Cowork's platforms; plan drafted and under Cowork's review; paused mid-plan, pending Cameron's call on backlog-promotion scope (Open Decision #35)
+**Last updated:** 2026-07-10
+**Updated by:** Claude Code (Publish Agent) — Phase 2 state correction on merge confirmation. session-27 merged (PR #51): curated 28-file backlog slice promoted into `_messages/`, index rebuilt, Cowork's review findings fixed (duplicate transcript superseded, Open Decision #36 opened for the four-agent-test diagnosis correction). session-28 opened immediately, no work started yet
 
 ---
 
 ## Active Branch
 
-`session-27` (current session — in progress, paused mid-plan pending Cameron's decision on Open Decision #35's backlog-promotion scope; resume here tomorrow)
-Branched from `main` at `ff8f110` — Merge pull request #50 from cameronloudon/session-26
-Not yet merged. Commits so far: `bae742a` (Phase 2 correction), `4490eb5` (2026-07-09 live transcript), `039caf6` (2026-07-08 extracted transcript + extraction script).
+`session-28` (current session — just opened via Phase 2, no work started yet)
+Branched from `main` at `7d7c367` — Merge pull request #51 from cameronloudon/session-27
+Not yet merged. No commits yet.
 Cameron merges to main. Do not commit directly to main.
 
 ---
