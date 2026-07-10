@@ -178,7 +178,7 @@ Edit `PROJECT_STATE.md`'s Active Branch section to name `session-N`, branched fr
 **Step 2 — Sync AI-Prod:**
 
 ```
-robocopy "C:\Users\camer\Documents\GitHub\cameronloudon.github.io" "C:\Users\camer\Documents\AI\AI-Prod" /MIR /XD ".git" /XF "opencode.json"
+robocopy "C:\Users\camer\Documents\GitHub\cameronloudon.github.io" "C:\Users\camer\Documents\AI\AI-Prod" /MIR /XD ".git" ".obsidian" /XF "opencode.json"
 ```
 
 Confirm sync to Cameron. Cowork will then verify content is visible in AI-Prod and move the file from `AI-Working/Ready/` to `AI-Working/Completed/`.

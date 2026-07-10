@@ -2,6 +2,7 @@
   "permissions": {
     "allow": [
       "Read(//c/Users/camer/Documents/AI/AI-Working/Ready/**)",
+      "Read(//c/Users/camer/Documents/AI/AI-Working/Audit/**)",
       "Read(//c/Users/camer/Documents/AI/AI-Working/Messages/**)",
       "Write(//c/Users/camer/Documents/AI/AI-Working/Messages/**)",
       "Edit(//c/Users/camer/Documents/AI/AI-Working/Messages/**)",
