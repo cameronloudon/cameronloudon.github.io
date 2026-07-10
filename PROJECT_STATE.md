@@ -1,22 +1,22 @@
 # PROJECT_STATE.md
 **Single source of current project state. Read this before every session. Update this at every session close.**
 **Last updated:** 2026-07-10
-**Updated by:** Claude Code (Publish Agent) — Phase 2 state correction on merge confirmation. session-27 merged (PR #51): curated 28-file backlog slice promoted into `_messages/`, index rebuilt, Cowork's review findings fixed (duplicate transcript superseded, Open Decision #36 opened for the four-agent-test diagnosis correction). session-28 opened immediately, no work started yet
+**Updated by:** Claude Code (Publish Agent) — session-28 close: remaining 27-file backlog slice promoted into `_messages/` (36 files total), index rebuilt into a real cross-linked view, record-to-instruction traceability demoed (Open Decision #35 capability 4), Obsidian graph view tested live and its limitations diagnosed, Cowork independently re-verified the link structure, the actual cold-question success test run and passed, and the corpus-discoverability gap it surfaced logged as Open Decision #37. Session log: `session-2026-07-10-001.md`
 
 ---
 
 ## Active Branch
 
-`session-28` (current session — just opened via Phase 2, no work started yet)
+`session-28` (current session — six commits, working tree clean, not yet merged)
 Branched from `main` at `7d7c367` — Merge pull request #51 from cameronloudon/session-27
-Not yet merged. No commits yet.
+Commits: `33703af` (Phase 2 correction), `0a31f21` (stale note fix), `0ddf723` (record-to-instruction demo), `bc13486` (logged Cowork's graph verification), `35a9cfd` (logged the success test result), `c028fa2` (logged Open Decision #37).
 Cameron merges to main. Do not commit directly to main.
 
 ---
 
 ## Next Session Log ID
 
-`NEXT_SESSION_LOG_ID: 2026-07-09-004`
+`NEXT_SESSION_LOG_ID: 2026-07-10-002`
 
 This session used `session-2026-07-09-003` — third session log of the day, continuing the per-day NNN counter per the format in `_ai-context/rct-session-primer.md`. Written mid-session (Cameron stopping for the night) rather than at a session close in the usual sense — `session-27` is still open and will resume tomorrow, same branch, same session log continuing to apply until it actually closes.
 
