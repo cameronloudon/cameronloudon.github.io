@@ -1,15 +1,15 @@
 # PROJECT_STATE.md
 **Single source of current project state. Read this before every session. Update this at every session close.**
 **Last updated:** 2026-07-11
-**Updated by:** Claude Code (Publish Agent) — session-29's substantive work, closing out session log `session-2026-07-11-001`. Handled the 2026-07-11 AI-Auditor proposals package (5 files + cover note) end to end: independent charter review, consensus process with Cowork (including her disclosed unauthorized rescue, Open Decision #38), Claude Code's own authorized JSONL rescue and the encoding bug it surfaced in `extract-session-transcript.ps1` (Open Decision #39), the long-deferred `.obsidian` robocopy exclude fix, the Auditor Charter's ratification (Open Decision #40), and the audit-finding home decision and implementation (Open Decision #41). Session-29 not yet merged
+**Updated by:** Claude Code (Publish Agent) — Phase 2 state correction on merge confirmation. session-29 merged (PR #53): the 2026-07-11 AI-Auditor proposals package handled end to end — independent charter review, consensus process with Cowork (including her disclosed unauthorized rescue, Open Decision #38), Claude Code's own authorized JSONL rescue and the encoding bug it surfaced in `extract-session-transcript.ps1` (Open Decision #39), the long-deferred `.obsidian` robocopy exclude fix, the Auditor Charter's ratification (Open Decision #40), and the audit-finding home decision and implementation (Open Decision #41). session-30 opened immediately, no work started yet
 
 ---
 
 ## Active Branch
 
-`session-29` (current session)
-Branched from `main` at `39f5849` — Merge pull request #52 from cameronloudon/session-28
-Not yet merged. 7 commits so far, up to and including this session-close commit.
+`session-30` (current session — just opened via Phase 2, no work started yet)
+Branched from `main` at `f36f329` — Merge pull request #53 from cameronloudon/session-29
+Not yet merged. No commits yet.
 Cameron merges to main. Do not commit directly to main.
 
 ---
