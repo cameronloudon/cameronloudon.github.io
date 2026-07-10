@@ -86,8 +86,14 @@ The day the OKF format was piloted for real (Open Decision #34), the location-in
 
 ---
 
+## Thread 5 — Record-to-Instruction Traceability Demo (2026-07-10)
+
+- [Record-to-Instruction Traceability — Demo](./ccode-to-cowork-2026-07-10-refs-to-instruction-demo.md) — `message` → refs the full 2026-07-09 transcript above (Thread 4) **and `../AI_INSTRUCTIONS.md` directly** — the first `refs:` link in this bundle pointing outside `_messages/` to a root instruction file. Proves Open Decision #35's capability #4 (record-to-instruction traceability) using the real Open Decision #36 finding, not a synthetic test case.
+
+---
+
 ## Gaps this index doesn't close (yet)
 
-- **Record-to-instruction traceability** — no file here `refs:`s out to an instruction file (`CLAUDE.md`, `AI_INSTRUCTIONS.md`, etc.) yet. Proves the mechanism works today, per Open Decision #35 step 3, still to be built.
+- **Record-to-instruction traceability, the other direction** — Thread 5 proves a record can point *at* an instruction file; instruction files still can't point *back* — none carry OKF frontmatter or their own `refs:`. Separate, larger, still-deferred question raised 2026-07-09.
 - **Obsidian graph compatibility** — every `refs:` above is a relative markdown link (`./file.md`), not an Obsidian `[[wikilink]]`. Confirmed 2026-07-10 that the Karpathy LLM Wiki plugin's retrieval-time PageRank only walks native `[[wikilink]]` connections — this index's links won't feed that specific mechanism without a separate conversion step.
 - **The wider backlog** (Jun 21–Jul 5, ~80 files) and all pre-`_messages/` history (DeepSeek, ChatGPT, old AnythingLLM/Gemma sessions) — deliberately out of scope for this pass. See Open Decision #35.
