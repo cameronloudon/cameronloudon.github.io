@@ -1,15 +1,15 @@
 # PROJECT_STATE.md
 **Single source of current project state. Read this before every session. Update this at every session close.**
 **Last updated:** 2026-07-10
-**Updated by:** Claude Code (Publish Agent) — session-28 close: remaining 27-file backlog slice promoted into `_messages/` (36 files total), index rebuilt into a real cross-linked view, record-to-instruction traceability demoed (Open Decision #35 capability 4), Obsidian graph view tested live and its limitations diagnosed, Cowork independently re-verified the link structure, the actual cold-question success test run and passed, and the corpus-discoverability gap it surfaced logged as Open Decision #37. Session log: `session-2026-07-10-001.md`
+**Updated by:** Claude Code (Publish Agent) — Phase 2 state correction on merge confirmation. session-28 merged (PR #52): remaining 27-file backlog slice promoted, index rebuilt, record-to-instruction traceability demoed, Obsidian graph view tested and diagnosed, Cowork's independent verification and the cold-question success test both passed, Open Decision #37 logged. session-29 opened immediately, no work started yet
 
 ---
 
 ## Active Branch
 
-`session-28` (current session — six commits, working tree clean, not yet merged)
-Branched from `main` at `7d7c367` — Merge pull request #51 from cameronloudon/session-27
-Commits: `33703af` (Phase 2 correction), `0a31f21` (stale note fix), `0ddf723` (record-to-instruction demo), `bc13486` (logged Cowork's graph verification), `35a9cfd` (logged the success test result), `c028fa2` (logged Open Decision #37).
+`session-29` (current session — just opened via Phase 2, no work started yet)
+Branched from `main` at `39f5849` — Merge pull request #52 from cameronloudon/session-28
+Not yet merged. No commits yet.
 Cameron merges to main. Do not commit directly to main.
 
 ---
