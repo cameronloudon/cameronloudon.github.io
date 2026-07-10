@@ -5,10 +5,12 @@ timestamp: 2026-07-09
 participants:
   - Cameron Loudon
   - Claude Code
+refs:
+  - ./cowork-to-ccode-2026-07-09-llm-wiki-question.md
 okf_version: "0.1"
 ---
 
-**Note:** This is a raw, close-to-verbatim transcript, captured directly from live session context during the conversation itself — not reconstructed from memory afterward, which is a meaningfully weaker source (see the `OpenWEBUIandGemma4isWHACKED.md` finding elsewhere in this bundle, where exactly that kind of after-the-fact reconstruction turned out to have bracketed placeholders standing in for real dialogue instead of verbatim content). Cameron's turns are preserved exactly as typed, typos included. This was explicitly framed mid-conversation as "just thinking" and "searching for answers" — no decisions finalized here; the plan discussed is written up separately as a proposal to Cowork, not committed to by this transcript. Continues an open thread from `AI-Working/Messages/cowork-to-ccode-2026-07-09-llm-wiki-question.md` (not yet promoted into this bundle).
+**Note:** This is a raw, close-to-verbatim transcript, captured directly from live session context during the conversation itself — not reconstructed from memory afterward, which is a meaningfully weaker source (see the `OpenWEBUIandGemma4isWHACKED.md` finding elsewhere in this bundle, where exactly that kind of after-the-fact reconstruction turned out to have bracketed placeholders standing in for real dialogue instead of verbatim content). Cameron's turns are preserved exactly as typed, typos included. This was explicitly framed mid-conversation as "just thinking" and "searching for answers" — no decisions finalized here; the plan discussed is written up separately as a proposal to Cowork, not committed to by this transcript. Continues an open thread from [`cowork-to-ccode-2026-07-09-llm-wiki-question.md`](./cowork-to-ccode-2026-07-09-llm-wiki-question.md), now promoted into this bundle alongside this transcript.
 
 ---
 

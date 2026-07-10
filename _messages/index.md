@@ -65,7 +65,7 @@ The day the OKF format was piloted for real (Open Decision #34), the location-in
 - [Re: Urgent — _config.yml Exclude Recheck, Resolved](./cowork-to-ccode-2026-07-09-config-exclude-resolution.md) — `message` → responds to the recheck above
 
 **LLM Wiki / AI-wiki plan (Open Decision #35's design conversation):**
-- [Foundation Layer — AI Wiki vs. Human Query Layer, A Thinking Session](./cameron-claudecode-conversation-transcript-2026-07-09.md) — `transcript` — the full design conversation where the living-knowledgebase scope correction happened
+- [Foundation Layer — AI Wiki vs. Human Query Layer, A Thinking Session](./cameron-claudecode-conversation-transcript-2026-07-09.md) — `transcript` — the full design conversation where the living-knowledgebase scope correction happened → refs the llm-wiki-question message below (its provenance note was stale on this point until 2026-07-10, fixed same day)
 - [LLM Wiki — Cameron Found a Real, Concrete Implementation](./cowork-to-ccode-2026-07-09-llm-wiki-question.md) — `message` (Cowork → Claude Code) — originating question, nothing prior to refs
 - [AI Wiki / Human Query Layer — A Plan for Your Independent Review](./ccode-to-cowork-2026-07-09-ai-wiki-plan-proposal.md) — `message` → refs the llm-wiki-question above and the design-conversation transcript
 - [Re: AI Wiki / Human Query Layer — Independent Review](./cowork-to-ccode-2026-07-09-ai-wiki-plan-response.md) — `message` → responds to the plan proposal above; confirmed Cowork's real cross-file search capability
