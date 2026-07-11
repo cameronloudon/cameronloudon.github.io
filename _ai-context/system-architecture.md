@@ -42,7 +42,7 @@ flowchart LR
     A -.->|reads, once granted| W[(AI-Working)]
 ```
 
-- **Draft Agent** — drafts structured content only (no HTML, no frontmatter). Read/write on `AI-Working\`; no repo access.
+- **Draft Agent** — drafts structured content only (no HTML, no frontmatter). Read/write on `AI-Working\`; read-only on the `AI-Prod` mirror; no direct repo/git access.
 - **Publish Agent** — authors all HTML/frontmatter from Draft Agent content, commits, pushes, runs Phase 2. Read/write on the repo; read-only on `AI-Working\Ready\`; read/write on `AI-Working\Messages\`; read on `AI-Working\Audit\`.
 - **Review Agent** — external, rotating (most recently DeepSeek), reviews documents Cameron provides. No standing access.
 - **Auditor** — cold, independent, read-only across the repo and `AI-Prod`; writes only its own `type: audit-finding` reports to `AI-Working\Audit\`. Charter ratified 2026-07-11 (`auditor-charter.md`); role not yet instantiated for a real run — see `PROJECT_STATE.md` Open Decision #47 for exactly where that stands.
@@ -96,7 +96,7 @@ flowchart LR
 - **`_messages/`** — git-tracked chain-of-custody bundle. `type:` (`message`/`transcript`/`summary`/`index`) comes from reading content, never from filename or self-description (Open Decision #34). Every content file carries `aliases:` and `refs:`; `refs:` is the single source of truth, every other link representation (the generated footer) is mechanically derived and marked as such, never hand-edited (Open Decision #42). Full promotion procedure: `messages-promotion-procedure.md`.
 - **`_audit-findings/`** — same treatment, sibling collection for the Auditor's own reports. Verbatim-promotion rule layered on top: the promoting agent is an audited party and never edits a finding's content; the generated footer is the one exception, since it's derived, not authored (`auditor-charter.md` §6).
 - **Provenance stamping** — mechanical transcripts carry `source-path`/`source-sha256`/`extraction-script-version`, converting "trust this transcript" into a checkable claim (Open Decision #44). If the source log was still open/growing at extraction time, the hash covers only the extracted slice, disclosed via `source-sha256-note`, not the whole file.
-- **Action-digest capture** — `extract-session-transcript.ps1 -IncludeActions` runs at every future mechanical extraction as a matter of course, output held locally and unpromoted (`AI-Evidence\action-digests\<platform>\`) until an actual Auditor consumer exists. Decoupling capture from adoption exists because the raw JSONL evidence is itself on a retention clock — waiting to decide risks losing it permanently (Open Decision #45).
+- **Action-digest capture** — `extract-session-transcript.ps1 -IncludeActions` (Claude Code) and Cowork's own Python equivalent, mirroring the same per-field-truncation logic independently on her own platform, both run at every future mechanical extraction as a matter of course, output held locally and unpromoted (`AI-Evidence\action-digests\<platform>\`) until an actual Auditor consumer exists. Two independent implementations of the same policy, not one shared script — decoupling capture from adoption exists because the raw JSONL evidence is itself on a retention clock — waiting to decide risks losing it permanently (Open Decision #45).
 - **Outside-conversation capture** — a separate, narrower convention for pre-founding material from outside platforms (ChatGPT, DeepSeek, etc.), not the mechanisms above. Full convention: `outside-conversation-capture-convention.md`.
 
 ## 6. Instruction file map
