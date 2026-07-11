@@ -10,6 +10,9 @@ aliases:
   - Capability Baseline cleared pilot pending
   - session-25 extracted transcript
 okf_version: "0.1"
+source-path: C:\Users\camer\.claude\projects\C--Users-camer-Documents-GitHub-cameronloudon-github-io\30112467-537b-4140-93d3-f77a6ef70841.jsonl
+source-sha256: ce0ed7bbfc267a3cefccb9f5765941943b0be9ca89cb1f1d610a85776c685582
+extraction-script-version: 1.1.0
 ---
 
 **Note on provenance — read this before trusting the content below.** This transcript was not captured live and not manually reconstructed. It was mechanically extracted from Claude Code's own raw session log (`.claude/projects/<project-hash>/30112467-537b-4140-93d3-f77a6ef70841.jsonl`, a closed session from 2026-07-08, two days old at the time of extraction) as a proof-of-concept for task #17 (capture reliability), requested jointly by Cameron and Cowork on 2026-07-09. Method: read the JSONL with explicit UTF-8 encoding (PowerShell's default `Get-Content` mangled em-dashes — caught and fixed before this file was written), then kept only `type: user` records with plain string content and `type: assistant` records' `text`-type content blocks, discarding `thinking`, `tool_use`, `tool_result`, and system/bookkeeping records as noise. 28 turns survived the filter out of 203 raw log lines. Nothing in the kept turns was edited, summarized, or reworded — this is a stronger verbatim guarantee than a live-context capture, since it comes directly from stored records rather than anyone's (including Claude Code's) recollection of what was said.
