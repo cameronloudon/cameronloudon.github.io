@@ -1,14 +1,14 @@
 # PROJECT_STATE.md
 **Single source of current project state. Read this before every session. Update this at every session close.**
 **Last updated:** 2026-07-11
-**Updated by:** Claude Code (Publish Agent) — Phase 2 state correction on merge confirmation. session-30 merged (PR #54): the link/wikilink convention (Open Decision #42) — `aliases:` frontmatter and generated `## Links` footers applied to all 36 `_messages/` files, `_ai-context/generate-links-footer.ps1` built and run, 0 failures, purely additive. session-31 opened immediately, no work started yet; Obsidian graph before/after acceptance check pending the AI-Prod sync below
+**Updated by:** Claude Code (Publish Agent) — Phase 2 state correction on merge confirmation. session-31 merged (PR #55): the acceptance test passed (Open Decision #42 closed) and independently verified by Cowork, the bash-mount reliability finding logged (#43), provenance stamping shipped for both existing mechanical transcripts (#44), the action-digest pilot built, run, and adopted as a decoupled capture-now/decide-later policy on both platforms (#45), and the four resulting conventions consolidated into `_ai-context/messages-promotion-procedure.md` (#46). session-32 opened immediately, no work started yet
 
 ---
 
 ## Active Branch
 
-`session-31` (current session — just opened via Phase 2, no work started yet)
-Branched from `main` at `423c5e6` — Merge pull request #54 from cameronloudon/session-30
+`session-32` (current session — just opened via Phase 2, no work started yet)
+Branched from `main` at `3949092` — Merge pull request #55 from cameronloudon/session-31
 Not yet merged. No commits yet.
 Cameron merges to main. Do not commit directly to main.
 
