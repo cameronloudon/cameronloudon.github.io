@@ -33,12 +33,31 @@ alongside the conversation turns. Truncation is per-field, not per-blob
 flat whole-input truncation was rejected during design review because it
 would exhaust its budget on a multi-field tool's first field (e.g. Edit's
 old_string) and never show the rest (new_string), making that record
-useless for checking a claim against what was actually done. This mode is
-an explicit pilot: content-blind and mechanical, not tool-specialized, and
-not yet decided as a standing mechanism - judge from real output before
-relying on it. Tool inputs/outputs can contain full file paths and command
-text; digest output is not for the public repo without a separate,
-deliberate decision to promote it.
+useless for checking a claim against what was actually done. Piloted
+successfully against a real closed session (Open Decision #45) - both real
+Edit calls in that session showed both fields correctly, a rejected tool
+use correctly surfaced as status=error.
+
+Adopted policy (2026-07-11, decided by Cameron on Cowork's proposal,
+decoupling capture from adoption): run WITH -IncludeActions at every future
+mechanical extraction, as a matter of course - not optional, not judged
+case by case. Save the digest output to a local, git-untracked evidence
+store (current convention: AI-Evidence\action-digests\<platform>\), never
+committed to the repo or _messages/ without a separate, deliberate
+promotion decision later. Rationale, not just habit: action digests can
+only be generated from a session's raw JSONL, which is on the same
+retention clock that made the original rescue (Open Decision #39) urgent -
+if a mechanical transcript is extracted without also generating its
+digest, and the raw log later ages out under cleanupPeriodDays, that
+session's action-evidence is gone permanently regardless of whether the
+mechanism is later turned on for future sessions. Generating it now is
+cheap and forecloses nothing; not generating it is the one choice that
+can't be undone later. The digest remaining unreviewed/unpromoted is a
+separate, later decision - there is no consumer for it yet (the Auditor
+hasn't run once), and building review/promotion machinery ahead of that
+would repeat the supply-before-demand mistake this project has
+deliberately avoided elsewhere (type taxonomy before the pilot, OpenWork
+before the test protocol).
 
 Usage:
   .\extract-session-transcript.ps1 -LogPath "C:\path\to\<session-id>.jsonl" -OutPath "C:\path\to\output.txt"
