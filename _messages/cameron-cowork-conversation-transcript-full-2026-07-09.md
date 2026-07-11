@@ -12,6 +12,10 @@ aliases:
 refs:
   - ./cameron-cowork-conversation-transcript-2026-07-08.md
 okf_version: "0.1"
+source-path: Cowork's own session log equivalent (.claude/projects/<project-hash>/329e904e-...jsonl), path partially redacted by Cowork in her own report — not independently resolvable by Claude Code
+source-sha256: 726e8bd5f762187e4005876a6d6b774dab0f306b7b3c08138119db565fb8ad68
+source-sha256-note: "computed retroactively from an append-only log; hash covers the first 786 lines, matching the line count at extraction time; append-only behavior assumed, not independently verified"
+extraction-script-version: Cowork's own extraction method, not extract-session-transcript.ps1 — no version tag assigned
 ---
 
 **Provenance:** Extracted programmatically from Cowork's raw session log (`.claude/projects/<project-hash>/329e904e-...jsonl`, 786 raw records) by filtering for user-string content and assistant text-content-blocks, discarding thinking/tool_use/tool_result/queue-operation/attachment/last-prompt/mode records as noise — same filtering principle Claude Code used on its own JSONL format, applied to Cowork's own record schema. 137 turns survived. First and last turns spot-checked against known conversation content; not every middle turn individually re-verified. Tool-call context (what was checked, which files were read) is not reconstructed here — only what was actually said. This transcript does not include anything from the point of extraction onward, since the session was still open when this was generated.

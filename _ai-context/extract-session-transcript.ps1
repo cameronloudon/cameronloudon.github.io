@@ -16,6 +16,15 @@ output this script produced. Untested against sessions containing sidechain
 turns, multiple assistant text blocks per turn beyond simple cases, or very
 large files.
 
+Provenance stamping (v1.1, 2026-07-11, Observation 2 Option A): computes and
+prints source-path/source-sha256/extraction-script-version for the operator
+to paste into the promoted file's frontmatter — this script does not write
+frontmatter itself, only the plain turn-by-turn body. If LogPath points at a
+session that is still open (still being appended to), the hash describes
+only a snapshot at extraction time, not a stable file — check the log isn't
+still growing before treating the hash as durable, same caution that applies
+on any platform, not just this one.
+
 Usage:
   .\extract-session-transcript.ps1 -LogPath "C:\path\to\<session-id>.jsonl" -OutPath "C:\path\to\output.txt"
 #>
@@ -26,6 +35,9 @@ param(
     [string]$HumanLabel = "CAMERON",
     [string]$AssistantLabel = "CLAUDE_CODE"
 )
+
+$ScriptVersion = "1.1.0"
+$sourceHash = (Get-FileHash -Path $LogPath -Algorithm SHA256).Hash.ToLower()
 
 $raw = [System.IO.File]::ReadAllText($LogPath, [System.Text.Encoding]::UTF8)
 $lines = $raw -split "`r?`n" | Where-Object { $_.Trim().Length -gt 0 }
@@ -51,3 +63,8 @@ $turns -join "`n`n" | Out-File -FilePath $OutPath -Encoding UTF8
 
 Write-Output "Extracted $($turns.Count) turns from $($records.Count) raw records -> $OutPath"
 Write-Output "Review before treating as a genuine transcript: this pulls text verbatim but doesn't reconstruct tool-call context — represent significant actions manually as brief italic notes when writing up the final file, per the transcript-capture convention in _messages/."
+Write-Output ""
+Write-Output "Provenance fields for the promoted file's frontmatter:"
+Write-Output "source-path: $LogPath"
+Write-Output "source-sha256: $sourceHash"
+Write-Output "extraction-script-version: $ScriptVersion"
