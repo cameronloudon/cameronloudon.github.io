@@ -9,7 +9,13 @@ Validates every ref resolves to a real file on disk, failing loudly
 (non-zero exit, errors listed) rather than emitting a broken link.
 
 index.md is skipped entirely - it is hand-written curation, not link
-data. Files with no refs: field are skipped (nothing to link).
+data. Files with no refs: field are skipped (nothing to link). Files
+with no OKF frontmatter block at all are also skipped, not treated as
+an error - a bundle can mix OKF-participating files with plain
+reference files that haven't opted in yet (e.g. _ai-context/, where
+most files still use their own simpler header convention). Broken
+refs: entries inside a file that DOES have frontmatter remain a hard
+failure, per the fail-loudly design below.
 
 Usage:
   .\generate-links-footer.ps1 -BundlePath "C:\path\to\_messages"
@@ -29,7 +35,7 @@ foreach ($f in $files) {
     $content = [System.IO.File]::ReadAllText($f.FullName, [System.Text.Encoding]::UTF8)
 
     if ($content -notmatch '(?s)^---\r?\n(.*?)\r?\n---\r?\n') {
-        $errors += "$($f.Name): no frontmatter found"
+        $results += [PSCustomObject]@{ File = $f.Name; Status = "skipped (no OKF frontmatter)"; Links = 0 }
         continue
     }
     $frontmatter = $Matches[1]
@@ -73,11 +79,12 @@ foreach ($f in $files) {
     foreach ($w in $wikilinks) { $footerLines += "- [[$w]]" }
     $footer = ($footerLines -join "`n")
 
-    $footerHeadingMarker = "`n## Links`n$marker"
-    $existingIndex = $content.IndexOf($footerHeadingMarker)
-    if ($existingIndex -ge 0) {
-        $content = $content.Substring(0, $existingIndex)
-    }
+    # Line-ending-tolerant strip: a literal-LF search silently fails to find an
+    # existing footer once the file's been through a CRLF-normalizing checkout,
+    # which duplicated the footer instead of refreshing it (found live, not
+    # theoretical - regex handles \r?\n regardless of the file's current state).
+    $footerStripPattern = '(?s)\r?\n## Links\r?\n' + [regex]::Escape($marker) + '.*$'
+    $content = [regex]::Replace($content, $footerStripPattern, '')
 
     $content = $content.TrimEnd() + "`n`n" + $footer + "`n"
     $utf8NoBom = New-Object System.Text.UTF8Encoding($false)
@@ -90,7 +97,8 @@ $results | Format-Table -AutoSize
 Write-Output "---"
 Write-Output "Processed: $($files.Count) files (excluding index.md)"
 Write-Output "OK: $(($results | Where-Object Status -eq 'OK').Count)"
-Write-Output "Skipped (no refs): $(($results | Where-Object {$_.Status -like 'skipped*'}).Count)"
+Write-Output "Skipped (no refs): $(($results | Where-Object {$_.Status -eq 'skipped (no refs)'}).Count)"
+Write-Output "Skipped (no OKF frontmatter): $(($results | Where-Object {$_.Status -eq 'skipped (no OKF frontmatter)'}).Count)"
 Write-Output "FAILED: $(($results | Where-Object {$_.Status -like 'FAILED*'}).Count)"
 if ($errors.Count -gt 0) {
     Write-Output "---ERRORS---"
