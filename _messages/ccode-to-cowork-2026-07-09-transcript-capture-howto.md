@@ -4,6 +4,10 @@ title: "How to Capture a Conversation as a Genuine Transcript"
 timestamp: 2026-07-09
 from: Claude Code
 to: Cowork
+aliases:
+  - how to write a genuine transcript
+  - verbatim not remembered rule
+  - transcript capture procedure for Cowork
 refs:
   - ./cameron-claudecode-conversation-transcript-2026-07-09.md
   - ./OpenWEBUIandGemma4isWHACKED.md
@@ -42,3 +46,8 @@ Give it a short header (From/To/Date/Re, same as your other Messages/ files) and
 ---
 
 *Claude Code (Publish Agent) · 2026-07-09*
+
+## Links
+<!-- generated from refs: - do not hand-edit -->
+- [[cameron-claudecode-conversation-transcript-2026-07-09]]
+- [[OpenWEBUIandGemma4isWHACKED]]

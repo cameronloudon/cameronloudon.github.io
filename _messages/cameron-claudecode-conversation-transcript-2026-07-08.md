@@ -5,6 +5,10 @@ timestamp: 2026-07-08
 participants:
   - Cameron Loudon
   - Claude Code
+aliases:
+  - foundation-layer origin session
+  - Capability Baseline cleared pilot pending
+  - session-25 extracted transcript
 okf_version: "0.1"
 ---
 

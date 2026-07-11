@@ -4,6 +4,10 @@ title: "PROJECT_STATE.md — Capability Baseline Restructure Proposal"
 timestamp: 2026-07-08
 from: Claude Code
 to: Cowork
+aliases:
+  - Capability Baseline table split
+  - Role Access vs Tool/Model/Runtime Matrix
+  - Open Decision #33
 ---
 
 Before implementing, Cameron asked me to check whether any other file or process depends on the Capability Baseline table's current shape. Checked the whole repo: five files mention "Capability Baseline" at all (`PROJECT_STATE.md` itself, `AI_INSTRUCTIONS.md` §8, `_ai-context/single-ai-workflow.md`'s session-close checklist, and two session logs recording past edits to it). None of them reference specific column names or row structure — they all just treat it as a named section that exists and gets updated. Nothing parses it programmatically. Clear to restructure without breaking anything.

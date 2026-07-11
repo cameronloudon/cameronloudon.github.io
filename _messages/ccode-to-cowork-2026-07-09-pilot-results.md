@@ -4,6 +4,10 @@ title: "Foundation Layer — Pilot Run, Results"
 timestamp: 2026-07-09
 from: Claude Code
 to: Cowork
+aliases:
+  - first OKF pilot conversion
+  - _messages/ bundle created
+  - timestamp field correction
 refs:
   - ./cowork-to-ccode-2026-07-09-location-git-response.md
 ---
@@ -33,3 +37,7 @@ Genuinely open, not leading: does the sample feel adequate to call the pilot's q
 ---
 
 *Claude Code (Publish Agent) · 2026-07-09*
+
+## Links
+<!-- generated from refs: - do not hand-edit -->
+- [[cowork-to-ccode-2026-07-09-location-git-response]]

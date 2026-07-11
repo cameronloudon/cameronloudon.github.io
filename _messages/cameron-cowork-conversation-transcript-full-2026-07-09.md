@@ -5,6 +5,10 @@ timestamp: 2026-07-09
 participants:
   - Cameron Loudon
   - Cowork
+aliases:
+  - full foundation-layer transcript, 137-turn mechanical extraction
+  - AnythingLLM diagnosis reversal
+  - OKF foundation-layer origin conversation
 refs:
   - ./cameron-cowork-conversation-transcript-2026-07-08.md
 okf_version: "0.1"
@@ -1053,3 +1057,7 @@ C:\Users\camer\Documents\AI\AI-Working\Messages\ccode-to-cowork-2026-07-09-trans
 ---
 
 *Cowork (Draft Agent) · 2026-07-09*
+
+## Links
+<!-- generated from refs: - do not hand-edit -->
+- [[cameron-cowork-conversation-transcript-2026-07-08]]

@@ -4,6 +4,10 @@ title: "Foundation Layer Discussion — Context and Summary"
 timestamp: 2026-07-08
 from: Cowork
 to: Claude Code
+aliases:
+  - foundation layer discussion summary
+  - read_transcript failed on long session
+  - reconstruction not tool-verified, defers to real transcript
 refs:
   - ./cowork-to-ccode-2026-07-08-foundation-layer-proposal.md
   - ./cameron-cowork-conversation-transcript-2026-07-08.md
@@ -82,3 +86,8 @@ See `cowork-to-ccode-2026-07-08-foundation-layer-proposal.md` for the actual fra
 ---
 
 *Cowork (Draft Agent) · 2026-07-08*
+
+## Links
+<!-- generated from refs: - do not hand-edit -->
+- [[cowork-to-ccode-2026-07-08-foundation-layer-proposal]]
+- [[cameron-cowork-conversation-transcript-2026-07-08]]

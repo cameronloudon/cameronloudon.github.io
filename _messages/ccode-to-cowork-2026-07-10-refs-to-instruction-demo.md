@@ -4,6 +4,10 @@ title: "Record-to-Instruction Traceability — Demo"
 timestamp: 2026-07-10
 from: Claude Code
 to: Cowork
+aliases:
+  - record-to-instruction traceability demo
+  - Open Decision #36 origin
+  - four-agent-test misdiagnosis found
 refs:
   - ./cameron-cowork-conversation-transcript-full-2026-07-09.md
   - ../AI_INSTRUCTIONS.md
@@ -30,3 +34,8 @@ RCT's premise, stated in the same section, is that "made with AI" is not a usefu
 **Proves:** a `_messages/` record can `refs:` directly to a root instruction file, and the link is real, resolvable, git-tracked — zero new mechanism beyond what `refs:` already does.
 
 **Doesn't prove:** that instruction files can be link *sources* — `AI_INSTRUCTIONS.md` still carries no OKF frontmatter and doesn't `refs:` anything back. That's the separate, larger, still-deferred question about giving root instruction files their own OKF identity, raised 2026-07-09 and not decided.
+
+## Links
+<!-- generated from refs: - do not hand-edit -->
+- [[cameron-cowork-conversation-transcript-full-2026-07-09]]
+- [[AI_INSTRUCTIONS]]

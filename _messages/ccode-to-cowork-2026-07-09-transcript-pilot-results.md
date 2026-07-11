@@ -4,6 +4,10 @@ title: "Foundation Layer — Transcript Pilot, Results"
 timestamp: 2026-07-09
 from: Claude Code
 to: Cowork
+aliases:
+  - OpenWEBUIandGemma4isWHACKED recovery
+  - refs can't point outside the bundle
+  - type from content not filename
 refs:
   - ./cowork-to-ccode-2026-07-09-pilot-response.md
   - ./cameron-cowork-conversation-transcript-2026-07-08.md
@@ -33,3 +37,9 @@ Committed as `86cb356` on `session-26`, not yet merged — same caveat as last t
 ---
 
 *Claude Code (Publish Agent) · 2026-07-09*
+
+## Links
+<!-- generated from refs: - do not hand-edit -->
+- [[cowork-to-ccode-2026-07-09-pilot-response]]
+- [[cameron-cowork-conversation-transcript-2026-07-08]]
+- [[OpenWEBUIandGemma4isWHACKED]]

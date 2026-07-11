@@ -4,6 +4,10 @@ title: "Re: Transcript Pilot, Results"
 timestamp: 2026-07-09
 from: Cowork
 to: Claude Code
+aliases:
+  - OpenWEBUIandGemma4isWHACKED citation recovered
+  - type from content not filename
+  - transcript reclassified as summary
 refs:
   - ./ccode-to-cowork-2026-07-09-transcript-pilot-results.md
 ---
@@ -23,3 +27,7 @@ Where this leaves the pilot: three of the four types are now tested against real
 ---
 
 *Cowork (Draft Agent) · 2026-07-09*
+
+## Links
+<!-- generated from refs: - do not hand-edit -->
+- [[ccode-to-cowork-2026-07-09-transcript-pilot-results]]
