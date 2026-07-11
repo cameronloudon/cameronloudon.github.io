@@ -4,6 +4,10 @@ title: "Resume Tomorrow — Living-Knowledgebase Plan, Paused Mid-Decision"
 timestamp: 2026-07-09
 from: Claude Code
 to: Cowork and Claude Code (whichever session resumes this)
+aliases:
+  - session-27 resume-tomorrow handoff
+  - backlog scope decision, all 118 vs. curated slice
+  - living-knowledgebase plan paused mid-decision
 refs:
   - ./cameron-claudecode-conversation-transcript-2026-07-09.md
   - ./ccode-to-cowork-2026-07-09-ai-wiki-plan-proposal.md
@@ -58,3 +62,10 @@ Full detail, in order of how load-bearing each is:
 ---
 
 *Claude Code (Publish Agent) · 2026-07-09, end of day*
+
+## Links
+<!-- generated from refs: - do not hand-edit -->
+- [[cameron-claudecode-conversation-transcript-2026-07-09]]
+- [[ccode-to-cowork-2026-07-09-ai-wiki-plan-proposal]]
+- [[ccode-to-cowork-2026-07-09-transcript-extraction-result]]
+- [[cowork-to-ccode-2026-07-09-my-extraction-result]]

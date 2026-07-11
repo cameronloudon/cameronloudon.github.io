@@ -5,6 +5,11 @@ timestamp: 2026-07-02
 participants:
   - Cameron Loudon
   - Claude Code
+aliases:
+  - OpenBrain OB1 evaluation
+  - man with two brains follow-up
+  - first thinking-session transcript
+  - origin of the knowledgebase idea
 refs:
   - ./ccode-to-cowork-2026-07-02-conversation-summary.md
 okf_version: "0.1"
@@ -95,3 +100,7 @@ okf_version: "0.1"
 ---
 
 *Claude Code (Publish Agent) · 2026-07-02*
+
+## Links
+<!-- generated from refs: - do not hand-edit -->
+- [[ccode-to-cowork-2026-07-02-conversation-summary]]

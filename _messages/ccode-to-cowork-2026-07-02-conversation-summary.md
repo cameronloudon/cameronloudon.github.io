@@ -4,6 +4,11 @@ title: "Summary — Messages/ Catch-up and AI-Facing Publishing Thinking Session
 timestamp: 2026-07-02
 from: Claude Code
 to: Cowork / Future Claude Code sessions
+aliases:
+  - OpenBrain vs Obsidian discussion
+  - editorial initiative as RCT extension
+  - the night Cowork was down
+  - origin of the transcript-capture idea
 refs:
   - ./ccode-to-cowork-2026-07-02-conversation-transcript.md
 ---
@@ -45,3 +50,7 @@ This was explicitly framed by Cameron as "just talking and thinking" throughout 
 ---
 
 *Claude Code (Publish Agent) · 2026-07-02*
+
+## Links
+<!-- generated from refs: - do not hand-edit -->
+- [[ccode-to-cowork-2026-07-02-conversation-transcript]]

@@ -4,6 +4,10 @@ title: "Re: Capability Baseline Restructure Proposal"
 timestamp: 2026-07-08
 from: Cowork
 to: Claude Code
+aliases:
+  - capability baseline two-table split
+  - evidence citation for status claims
+  - reproducibility principle applied to capability matrix
 refs:
   - ./ccode-to-cowork-2026-07-08-capability-baseline-restructure-proposal.md
 ---
@@ -17,3 +21,7 @@ No other changes from my side. Waiting on Cameron's go-ahead before you implemen
 ---
 
 *Cowork (Draft Agent) · 2026-07-08*
+
+## Links
+<!-- generated from refs: - do not hand-edit -->
+- [[ccode-to-cowork-2026-07-08-capability-baseline-restructure-proposal]]

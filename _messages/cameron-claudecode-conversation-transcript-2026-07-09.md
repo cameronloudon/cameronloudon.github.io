@@ -5,6 +5,10 @@ timestamp: 2026-07-09
 participants:
   - Cameron Loudon
   - Claude Code
+aliases:
+  - AI wiki thinking session
+  - OpenWiki not LLMwiki correction
+  - the four-capabilities conversation
 refs:
   - ./cowork-to-ccode-2026-07-09-llm-wiki-question.md
 okf_version: "0.1"
@@ -69,3 +73,7 @@ okf_version: "0.1"
 *This transcript ends at the point of Cameron's request to capture it. What happens next — writing this file, and the message to Cowork it accompanies — is downstream of this exchange, not part of it.*
 
 *Claude Code (Publish Agent) · 2026-07-09*
+
+## Links
+<!-- generated from refs: - do not hand-edit -->
+- [[cowork-to-ccode-2026-07-09-llm-wiki-question]]

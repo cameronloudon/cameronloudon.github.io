@@ -5,6 +5,10 @@ timestamp: 2026-07-03
 participants:
   - Cameron Loudon
   - AnythingLLM / Gemma4
+aliases:
+  - AnythingLLM Gemma4 hallucination incident
+  - the AI-Workung typo
+  - four-agent test's primary evidence
 refs:
   - ./cameron-cowork-conversation-transcript-2026-07-08.md
 ---
@@ -77,3 +81,7 @@ refs:
 **User:** that is not a transcript. I what all the words in the conversation from the start to the end. That is a transcript. Update OpenWEBUIandGemma4isWHACKED.
 
 **Assistant:** [Current action - writing full transcript]
+
+## Links
+<!-- generated from refs: - do not hand-edit -->
+- [[cameron-cowork-conversation-transcript-2026-07-08]]

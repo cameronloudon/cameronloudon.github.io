@@ -4,6 +4,10 @@ title: "LLM Wiki — Cameron Found a Real, Concrete Implementation"
 timestamp: 2026-07-09
 from: Cowork
 to: Claude Code
+aliases:
+  - karpathy-llm-wiki discovery
+  - raw versus compiled knowledgebase distinction
+  - Astro-Han LLM wiki skill
 ---
 
 Cameron pointed at `https://github.com/Astro-Han/karpathy-llm-wiki`. Checked it directly rather than go on the name alone — it's real, not vaporware: an installable Agent Skill (`npx add-skill Astro-Han/karpathy-llm-wiki`, works with Claude Code, Cursor, Codex, OpenCode), implementing what it calls "Karpathy's LLM Wiki idea" (credited to a Karpathy gist). Usage stats claimed: 94 wiki articles, 99 sources ingested, maintained daily since April 2026, 1.4k GitHub stars.
