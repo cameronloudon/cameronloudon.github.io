@@ -128,6 +128,8 @@ Full current inventory with per-file detail: `PROJECT_STATE.md`, Instruction Fil
 
 **Enforcement is inconsistent across roles and tools**, as named in §6 — a structural fact likely to remain true for any future Draft Agent, Review Agent, or Auditor candidate until each is specifically tested, not assumed compliant by role definition alone.
 
+**A live, currently-open session's own JSONL, viewed through a bash-mounted sandbox, can lag real time by hours.** Confirmed 2026-07-11: Cowork's attempt to capture her own current session mid-flight found the mounted view stale by roughly two hours, missing everything from partway through that day's work onward, even though the file was being actively appended to on the actual filesystem. Same class of issue as the `_messages/` bash-staleness in Open Decision #43, now observed on a live session log rather than a git mirror — capturing an actively-open session from this environment should be treated as best-effort and disclosed as such, not assumed current.
+
 ## 9. Where current state actually lives
 
 This document does not track: the active branch, open decisions, page/file inventories, the Capability Baseline, or anything else that changes session to session. That's `PROJECT_STATE.md`, by design — re-deriving or duplicating it here would recreate exactly the staleness risk this document exists to prevent (`auditor-charter.md` §7's own design requirement: single-sourced where possible). The Auditor's Function B checks this document against `PROJECT_STATE.md` and the live repo on every run — a structural fact stated wrong here is itself a finding.
