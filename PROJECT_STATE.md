@@ -1,14 +1,14 @@
 # PROJECT_STATE.md
 **Single source of current project state. Read this before every session. Update this at every session close.**
 **Last updated:** 2026-07-11
-**Updated by:** Claude Code (Publish Agent) — Phase 2 state correction on merge confirmation. session-31 merged (PR #55): the acceptance test passed (Open Decision #42 closed) and independently verified by Cowork, the bash-mount reliability finding logged (#43), provenance stamping shipped for both existing mechanical transcripts (#44), the action-digest pilot built, run, and adopted as a decoupled capture-now/decide-later policy on both platforms (#45), and the four resulting conventions consolidated into `_ai-context/messages-promotion-procedure.md` (#46). session-32 opened immediately, no work started yet
+**Updated by:** Claude Code (Publish Agent) — Phase 2 state correction on merge confirmation. session-32 merged (PR #56): Auditor first-mission plan agreed and held pending Cameron (#47), outside-conversation capture convention ratified including the pre-founding scope decision (#48), full rewrite of the system architecture document with OKF pilot treatment, two generator bugs found/fixed, and Cowork's content review applied (#49). session-33 opened immediately, no work started yet
 
 ---
 
 ## Active Branch
 
-`session-32` (current session — just opened via Phase 2, no work started yet)
-Branched from `main` at `3949092` — Merge pull request #55 from cameronloudon/session-31
+`session-33` (current session — just opened via Phase 2, no work started yet)
+Branched from `main` at `82ef466` — Merge pull request #56 from cameronloudon/session-32
 Not yet merged. No commits yet.
 Cameron merges to main. Do not commit directly to main.
 
