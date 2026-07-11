@@ -1,14 +1,14 @@
 # PROJECT_STATE.md
 **Single source of current project state. Read this before every session. Update this at every session close.**
 **Last updated:** 2026-07-11
-**Updated by:** Claude Code (Publish Agent) — Phase 2 state correction on merge confirmation. session-34 merged (PR #58): the four-agent-collaboration-test page's diagnosis corrected (Open Decision #36 resolved) — full Edison-reframe, drafted by Cowork per the standing content/HTML boundary, published by Claude Code. session-35 opened immediately, no work started yet
+**Updated by:** Claude Code (Publish Agent) — Phase 2 state correction on merge confirmation. session-35 merged (PR #59): Cowork caught session-34's skipped session-close protocol (Open Decision #52) — retroactively logged, `NEXT_SESSION_LOG_ID` corrected. session-36 opened immediately, no work started yet
 
 ---
 
 ## Active Branch
 
-`session-35` (current session — just opened via Phase 2, no work started yet)
-Branched from `main` at `e0e0b50` — Merge pull request #58 from cameronloudon/session-34
+`session-36` (current session — just opened via Phase 2, no work started yet)
+Branched from `main` at `e8e7c93` — Merge pull request #59 from cameronloudon/session-35
 Not yet merged. No commits yet.
 Cameron merges to main. Do not commit directly to main.
 
