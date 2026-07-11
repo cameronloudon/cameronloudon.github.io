@@ -1,14 +1,14 @@
 # PROJECT_STATE.md
 **Single source of current project state. Read this before every session. Update this at every session close.**
 **Last updated:** 2026-07-11
-**Updated by:** Claude Code (Publish Agent) — Phase 2 state correction on merge confirmation. session-29 merged (PR #53): the 2026-07-11 AI-Auditor proposals package handled end to end — independent charter review, consensus process with Cowork (including her disclosed unauthorized rescue, Open Decision #38), Claude Code's own authorized JSONL rescue and the encoding bug it surfaced in `extract-session-transcript.ps1` (Open Decision #39), the long-deferred `.obsidian` robocopy exclude fix, the Auditor Charter's ratification (Open Decision #40), and the audit-finding home decision and implementation (Open Decision #41). session-30 opened immediately, no work started yet
+**Updated by:** Claude Code (Publish Agent) — Phase 2 state correction on merge confirmation. session-30 merged (PR #54): the link/wikilink convention (Open Decision #42) — `aliases:` frontmatter and generated `## Links` footers applied to all 36 `_messages/` files, `_ai-context/generate-links-footer.ps1` built and run, 0 failures, purely additive. session-31 opened immediately, no work started yet; Obsidian graph before/after acceptance check pending the AI-Prod sync below
 
 ---
 
 ## Active Branch
 
-`session-30` (current session — just opened via Phase 2, no work started yet)
-Branched from `main` at `f36f329` — Merge pull request #53 from cameronloudon/session-29
+`session-31` (current session — just opened via Phase 2, no work started yet)
+Branched from `main` at `423c5e6` — Merge pull request #54 from cameronloudon/session-30
 Not yet merged. No commits yet.
 Cameron merges to main. Do not commit directly to main.
 
