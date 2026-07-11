@@ -1,14 +1,14 @@
 # PROJECT_STATE.md
 **Single source of current project state. Read this before every session. Update this at every session close.**
 **Last updated:** 2026-07-11
-**Updated by:** Claude Code (Publish Agent) — Phase 2 state correction on merge confirmation. session-33 merged (PR #57): live-session bash-mount staleness finding added to `system-architecture.md` §8 (#43), `cleanupPeriodDays` raised to 90 globally (#50), `_ai-context/` folder-wide OKF policy decided — adopted, next-touch rollout (#49 closed), provenance sidecar built with full Cowork consensus (#51). session-34 opened immediately, no work started yet
+**Updated by:** Claude Code (Publish Agent) — Phase 2 state correction on merge confirmation. session-34 merged (PR #58): the four-agent-collaboration-test page's diagnosis corrected (Open Decision #36 resolved) — full Edison-reframe, drafted by Cowork per the standing content/HTML boundary, published by Claude Code. session-35 opened immediately, no work started yet
 
 ---
 
 ## Active Branch
 
-`session-34` (current session — just opened via Phase 2, no work started yet)
-Branched from `main` at `71cf802` — Merge pull request #57 from cameronloudon/session-33
+`session-35` (current session — just opened via Phase 2, no work started yet)
+Branched from `main` at `e0e0b50` — Merge pull request #58 from cameronloudon/session-34
 Not yet merged. No commits yet.
 Cameron merges to main. Do not commit directly to main.
 
