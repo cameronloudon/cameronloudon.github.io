@@ -1,14 +1,14 @@
 # PROJECT_STATE.md
 **Single source of current project state. Read this before every session. Update this at every session close.**
 **Last updated:** 2026-07-11
-**Updated by:** Claude Code (Publish Agent) — session-33's work, closing out session log `session-2026-07-11-002`. Live-session bash-mount staleness finding added to `system-architecture.md` §8 and cross-referenced from #43; `cleanupPeriodDays` raised to 90 globally (#50); `_ai-context/` folder-wide OKF policy decided — adopted, next-touch rollout (closes #49); provenance sidecar built with full Cowork consensus (#51). session-33 not yet merged
+**Updated by:** Claude Code (Publish Agent) — Phase 2 state correction on merge confirmation. session-33 merged (PR #57): live-session bash-mount staleness finding added to `system-architecture.md` §8 (#43), `cleanupPeriodDays` raised to 90 globally (#50), `_ai-context/` folder-wide OKF policy decided — adopted, next-touch rollout (#49 closed), provenance sidecar built with full Cowork consensus (#51). session-34 opened immediately, no work started yet
 
 ---
 
 ## Active Branch
 
-`session-33` (current session — just opened via Phase 2, no work started yet)
-Branched from `main` at `82ef466` — Merge pull request #56 from cameronloudon/session-32
+`session-34` (current session — just opened via Phase 2, no work started yet)
+Branched from `main` at `71cf802` — Merge pull request #57 from cameronloudon/session-33
 Not yet merged. No commits yet.
 Cameron merges to main. Do not commit directly to main.
 
