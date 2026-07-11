@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 **Single source of current project state. Read this before every session. Update this at every session close.**
 **Last updated:** 2026-07-11
-**Updated by:** Claude Code (Publish Agent) — Phase 2 state correction on merge confirmation. session-32 merged (PR #56): Auditor first-mission plan agreed and held pending Cameron (#47), outside-conversation capture convention ratified including the pre-founding scope decision (#48), full rewrite of the system architecture document with OKF pilot treatment, two generator bugs found/fixed, and Cowork's content review applied (#49). session-33 opened immediately, no work started yet
+**Updated by:** Claude Code (Publish Agent) — session-33's work, closing out session log `session-2026-07-11-002`. Live-session bash-mount staleness finding added to `system-architecture.md` §8 and cross-referenced from #43; `cleanupPeriodDays` raised to 90 globally (#50); `_ai-context/` folder-wide OKF policy decided — adopted, next-touch rollout (closes #49); provenance sidecar built with full Cowork consensus (#51). session-33 not yet merged
 
 ---
 
@@ -16,11 +16,11 @@ Cameron merges to main. Do not commit directly to main.
 
 ## Next Session Log ID
 
-`NEXT_SESSION_LOG_ID: 2026-07-11-002`
+`NEXT_SESSION_LOG_ID: 2026-07-11-003`
 
-**Correction made at this close:** the field read `2026-07-10-002` going into this session — seeded during the Phase 2 branch-open commit and never revisited, so it still carried the prior day's date even though every commit in session-29 (`git log`, checked at close) is timestamped 2026-07-11. Using it as-is would have dated this session log a day wrong. Corrected here rather than propagated — the same "don't act on stale state without checking" principle this file already applies to the Active Branch section. This session used `session-2026-07-11-001`, the first log of the day.
+This session used `session-2026-07-11-002`, the second log of the day — all six of session-33's commits (`git log`, checked at close) are timestamped 2026-07-11, matching the field going into this close, so no correction was needed this time.
 
-The thirty-eight existing session logs are: `session-2026-06-10-001`, `session-2026-06-11-001`, `session-2026-06-11-002`, `session-2026-06-21-001`, `session-2026-06-21-002`, `session-2026-06-29-001`, `session-2026-07-03-001`, `session-2026-07-03-002`, `session-2026-07-03-003`, `session-2026-07-03-004`, `session-2026-07-05-001`, `session-2026-07-05-002`, `session-2026-07-05-003`, `session-2026-07-05-004`, `session-2026-07-05-005`, `session-2026-07-05-006`, `session-2026-07-05-007`, `session-2026-07-05-008`, `session-2026-07-05-009`, `session-2026-07-05-010`, `session-2026-07-05-011`, `session-2026-07-05-012`, `session-2026-07-05-013`, `session-2026-07-05-014`, `session-2026-07-05-015`, `session-2026-07-05-016`, `session-2026-07-05-017`, `session-2026-07-05-018`, `session-2026-07-05-019`, `session-2026-07-05-020`, `session-2026-07-05-021`, `session-2026-07-05-022`, `session-2026-07-05-023`, `session-2026-07-05-024`, `session-2026-07-09-001`, `session-2026-07-09-002`, `session-2026-07-09-003`, `session-2026-07-11-001`.
+The thirty-nine existing session logs are: `session-2026-06-10-001`, `session-2026-06-11-001`, `session-2026-06-11-002`, `session-2026-06-21-001`, `session-2026-06-21-002`, `session-2026-06-29-001`, `session-2026-07-03-001`, `session-2026-07-03-002`, `session-2026-07-03-003`, `session-2026-07-03-004`, `session-2026-07-05-001`, `session-2026-07-05-002`, `session-2026-07-05-003`, `session-2026-07-05-004`, `session-2026-07-05-005`, `session-2026-07-05-006`, `session-2026-07-05-007`, `session-2026-07-05-008`, `session-2026-07-05-009`, `session-2026-07-05-010`, `session-2026-07-05-011`, `session-2026-07-05-012`, `session-2026-07-05-013`, `session-2026-07-05-014`, `session-2026-07-05-015`, `session-2026-07-05-016`, `session-2026-07-05-017`, `session-2026-07-05-018`, `session-2026-07-05-019`, `session-2026-07-05-020`, `session-2026-07-05-021`, `session-2026-07-05-022`, `session-2026-07-05-023`, `session-2026-07-05-024`, `session-2026-07-09-001`, `session-2026-07-09-002`, `session-2026-07-09-003`, `session-2026-07-11-001`, `session-2026-07-11-002`.
 Note: `session-2026-06-21-003` was never written (anticipated but session did not recur that day). Session on 2026-06-26 (pre-test repo prep, session-3b) and the session-4 branch (2026-06-29 branch-workflow correction, folded into `session-2026-06-29-001`'s log) were also not separately logged — acknowledged gaps.
 
 ---
