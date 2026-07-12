@@ -1,14 +1,14 @@
 # PROJECT_STATE.md
 **Single source of current project state. Read this before every session. Update this at every session close.**
 **Last updated:** 2026-07-12
-**Updated by:** Claude Code (Publish Agent) — Phase 2 state correction on merge confirmation. session-36 merged (PR #61): implemented the generic instruction-sync check in `AI_INSTRUCTIONS.md` §2 (Open Decision #28, full propose→independent-review→consensus with Cowork), corrected two stale entries in the Instruction File Index, and added `.gitattributes` to stop CRLF/LF checkout churn from showing as false diffs. session-37 opened immediately, no work started yet
+**Updated by:** Claude Code (Publish Agent) — Phase 2 state correction on merge confirmation. session-37 merged (PR #62): tightened the Auditor's write-access model (no `AI-Working` write at all, Cameron's manual relay is the sole crossing point), settled the Auditor charter's §8 cadence, added the role-generic capability self-check (`AI_INSTRUCTIONS.md` §10), and closed Open Decision #53's threads 1+2 while holding thread 3 (corpus discoverability) per Cameron's direction. session-38 opened immediately, no work started yet
 
 ---
 
 ## Active Branch
 
-`session-37` (current session — just opened via Phase 2, no work started yet)
-Branched from `main` at `4a4c8ce` — Merge pull request #61 from cameronloudon/session-36
+`session-38` (current session — just opened via Phase 2, no work started yet)
+Branched from `main` at `708672c` — Merge pull request #62 from cameronloudon/session-37
 Not yet merged. No commits yet.
 Cameron merges to main. Do not commit directly to main.
 
