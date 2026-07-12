@@ -117,3 +117,15 @@ During a session, ask Cameron before acting on structural decisions — file str
 For operational questions (CSS patterns, frontmatter format, collab-note structure), the answer is in `_ai-context/`. Read it before asking.
 
 Cameron's email: cameronloudon@gmail.com
+
+---
+
+## 10. Capability self-check
+
+Any tool taking on a role for the first time — a pairing not yet reflected in `PROJECT_STATE.md`'s Tool/Model/Runtime Matrix — checks, before proceeding, whether it actually has the tools and access its role's instructions describe. If something's missing or unclear, stop and tell Cameron rather than proceed on assumption or improvisation.
+
+A pairing with a proven track record in that Matrix can skip the heavy version — but not permanently. Re-verify periodically, reusing whatever cadence the Auditor charter settles on (`_ai-context/auditor-charter.md` §8 — monthly by default, plus Cameron's own on-demand invocation), rather than inventing a separate schedule. Proven-once can go stale: access gets revoked, a tool updates. This isn't a one-time graduation.
+
+Not limited to session start. A capability gap can surface mid-task, partway into a specific step no earlier check would have caught. When that happens, the same rule applies: stop, disclose, ask — don't route around it silently.
+
+This applies to whichever tool is filling any of the three roles (Draft, Publish, Auditor), not only the tools currently doing so. Added 2026-07-12, Open Decision #53, following the same role-generic reasoning as §2's instruction-sync check (Open Decision #28).
