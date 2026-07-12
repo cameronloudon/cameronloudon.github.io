@@ -1,5 +1,5 @@
 # AI Instructions — cameronloudon.github.io
-**Last updated:** 2026-06-21
+**Last updated:** 2026-07-12
 **Authoritative on:** Intent and conventions. For Claude Code-specific detail, see CLAUDE.md. If they conflict, this file wins.
 
 ---
@@ -18,7 +18,7 @@ Do this at the start of every session, before taking any action:
 2. Read `PROJECT_STATE.md` — current branch, page inventory, open decisions, what was last done
 3. Verify PROJECT_STATE.md's Active Branch claim against actual git state (`git status`, `git branch --show-current`, `git log`). The Publish Agent's job ends at push; Cameron merges afterward, in a separate action outside that session. This means the Active Branch section is only ever true for the window before merge — if the named branch has already been merged, or doesn't match the branch you're actually on, correct `PROJECT_STATE.md` before doing anything else. Do not proceed on the assumption that the file is current just because you read it. This exact gap — a branch merges, nothing updates the file, the next session inherits stale state — has recurred multiple times on this project; treat the check as mandatory, not optional.
 4. Read the relevant files in `_ai-context/` for your current task
-5. If you are Claude Code, `CLAUDE.md` has already auto-loaded — cross-check it against this file if anything appears to conflict
+5. Compare every canonical instruction file relevant to your role (this file, and any others — see `PROJECT_STATE.md`'s Instruction File Index) against your own tool-specific derivative file(s), also listed there. (For Claude Code specifically, the derivative is `CLAUDE.md`, which has already auto-loaded by this point.) Check for a rule-level disagreement — not wording, phrasing, or formatting — and if you find one, stop and tell Cameron before taking any other action. This applies to whichever tool is filling either role, not only the tools currently doing so
 6. `master-synthesis-prompt.html` (published page, repo root) is the founding document — it describes the original intent of the project. Read it once for historical context when first onboarding. You do not need to read it every session; `PROJECT_STATE.md` is the current-state reference.
 
 Do not begin work until you have read PROJECT_STATE.md and confirmed its Active Branch claim against real git state. Acting on stale state is the most common source of errors on this project.
