@@ -45,16 +45,16 @@ Three functions, in priority order:
 | Direction | Access |
 |---|---|
 | Read | Repo (read-only), AI-Prod mirror, any document Cameron provides |
-| Write | Its own `type: audit-finding` files only, to `AI-Working/Audit/` — a path-scoped grant, same enforcement mechanism as the Draft Agent's `Messages/` grant, not a documented courtesy |
-| Never | Repo writes, AI-Working/Drafts, AI-Working/Ready, instruction files, GitHub |
+| Write | Its own `type: audit-finding` files, to its own designated workspace only (e.g. `AI-Auditor`) — never to `AI-Working`, including `AI-Working/Audit/` |
+| Never | Repo writes, all of `AI-Working` (Drafts, Ready, Audit, Messages), instruction files, GitHub |
 
-Any workspace used to *design* the Auditor (e.g. a separate meta/design workspace under `Documents\AI`, read-only by Cameron's own standing rule) is structurally distinct from — and incapable of also being — the operational Auditor described here, since it lacks the `AI-Working/Audit/` write grant entirely. Design and operation are separated by an enforced boundary, not a convention.
+`AI-Working/Audit/` is populated only by Cameron's own manual relay, after he reviews and approves a report in the Auditor's own workspace — never by a direct write from the Auditor itself. This replaces the original path-scoped write grant to `AI-Working/Audit/` (decided 2026-07-11, Open Decision #41): the enforced boundary is now that no Auditor instantiation, design or operational, ever writes into `AI-Working` at all. Amended 2026-07-12, Open Decision #53, per Cameron's direction and full consensus with Cowork.
 
 ## 6. Output format
 
 Findings use OKF `type: audit-finding` — the reserved fourth type, taking its first genuine customer. Minimum fields per finding: what was checked, what was found, evidence (`refs:` to git-tracked paths), the instruction clause it bears on, severity (`blocks-independence` / `cosmetic`), failure-kind (reserved, may be blank per §4), and a one-line recommendation. One audit run = one file, written to `AI-Working/Audit/` (§5).
 
-**Promotion to `_audit-findings/`.** The Publish Agent promotes each finding, verbatim, into the git-tracked `_audit-findings/` collection (sibling to `_messages/`, same non-rendered treatment) on a session branch; Cameron reviews and merges; the post-merge sync mirrors it to AI-Prod. The promoting agent is one of the audited parties and never edits a finding's authored content — if a finding is wrong, the remedy is a response document in the normal flow, never a silent edit. Once the link convention (generated `[[wikilink]]` footers from `refs:`) applies here too, "verbatim" means two separate mechanical checks: (a) strip the marked generated footer — the remainder must be byte-identical to the staged original in `AI-Working/Audit/`; (b) regenerate the footer from the finding's own `refs:` — it must match what's present. Check (a) catches edits to the finding; check (b) catches footer tampering or generator faults.
+**Promotion to `_audit-findings/`.** The Publish Agent promotes each finding, verbatim, into the git-tracked `_audit-findings/` collection (sibling to `_messages/`, same non-rendered treatment) on a session branch; Cameron reviews and merges; the post-merge sync mirrors it to AI-Prod. The promoting agent is one of the audited parties and never edits a finding's authored content — if a finding is wrong, the remedy is a response document in the normal flow, never a silent edit. Once the link convention (generated `[[wikilink]]` footers from `refs:`) applies here too, "verbatim" means two separate mechanical checks: (a) strip the marked generated footer — the remainder must be byte-identical to the staged original in `AI-Working/Audit/`; (b) regenerate the footer from the finding's own `refs:` — it must match what's present. Check (a) catches edits to the finding; check (b) catches footer tampering or generator faults. **Since §5's 2026-07-12 amendment, the staged original in `AI-Working/Audit/` is itself Cameron's manual copy from the Auditor's own workspace** — "verbatim" now also depends on that copy being clean, not only on the Auditor's original write and the Publish Agent's promotion. Stated here plainly rather than left implicit.
 
 ## 7. The audit baseline: system architecture document
 
@@ -109,10 +109,16 @@ Ratified 2026-07-11 (session-29) by Cameron, following independent review by Cow
 
 **Not resolved by ratification, still open:**
 
-- **§8's monthly cadence** — flagged as worth revisiting once activity settles, not blocking.
+- ~~§8's monthly cadence~~ — resolved 2026-07-12, see the write-access-model addendum below.
 
 ### Addendum, same day: audit-finding home decided
 
 Cameron approved, 2026-07-11: staging at `AI-Working/Audit/` (path-scoped grant, replacing the `AI-Auditor\` prototype folder), durable home at `_audit-findings/` (git-tracked, sibling to `_messages/`, same non-rendered treatment). Reached via Cowork's initial recommendation (`AI-Working/Messages/cowork-to-ccode-2026-07-11-audit-finding-home-view.md`), a concurring second read from a separate AI-Auditor design session with three riders (`fable-to-cameron-2026-07-11-audit-finding-home-concurrence.md`), and Cowork's full concurrence with those riders including an amendment to the verbatim-promotion rule (`cowork-to-ccode-2026-07-11-audit-finding-home-final-position.md`) — resolving a real collision that surfaced between "byte-identical promotion" and the link convention's generated footers. §5 and §6 above reflect the decided state directly; this addendum is the record of how it was reached, not a duplicate of it.
 
-*Ratified under the Radical Collaboration Transparency framework. Original design: Claude (Anthropic), model claude-fable-5, AI-Auditor workspace, 2026-07-10. Independent reviews: Cowork (Draft Agent) and Claude Code (Publish Agent), 2026-07-11. Ratification decision: Cameron Loudon, 2026-07-11.*
+### Addendum, 2026-07-12: write-access model tightened, cadence settled (Open Decision #53)
+
+**Write-access model (§5, §6):** the Auditor never writes into `AI-Working` at all, not even the previously-granted `AI-Working/Audit/` path from the addendum above. Cameron's own manual relay, after reviewing and approving a report in the Auditor's own workspace, is now the sole mechanism by which anything crosses that boundary. §6 updated to acknowledge this adds a dependency on that manual copy being clean, on top of the Auditor's original write and the Publish Agent's promotion. Reached during session-37's discussion (transcript: `AI-Working/Messages/cameron-claudecode-conversation-transcript-2026-07-12.md`), formalized and independently reviewed with Cowork (`AI-Working/Messages/ccode-to-cowork-2026-07-12-three-threads-formalization-proposal.md` → her response), Cameron's go-ahead the same day. See `PROJECT_STATE.md` Open Decision #53.
+
+**§8 cadence, resolved:** monthly stays the documented default. Cameron's own on-demand invocation — already part of the design — will be used far more often than monthly early on, as a matter of practice, not a policy change requiring separate documentation here.
+
+*Ratified under the Radical Collaboration Transparency framework. Original design: Claude (Anthropic), model claude-fable-5, AI-Auditor workspace, 2026-07-10. Independent reviews: Cowork (Draft Agent) and Claude Code (Publish Agent), 2026-07-11. Ratification decision: Cameron Loudon, 2026-07-11. Write-access and cadence amendment: Cameron Loudon, 2026-07-12.*
