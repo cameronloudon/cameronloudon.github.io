@@ -1,14 +1,14 @@
 # PROJECT_STATE.md
 **Single source of current project state. Read this before every session. Update this at every session close.**
 **Last updated:** 2026-07-13
-**Updated by:** Claude Code (Publish Agent) — session-39, token-burn structural fix (Open Decisions #34/#35 territory). Added `PROJECT_STATE.md`/`AI_INSTRUCTIONS.md`/`CLAUDE.md`/`ONBOARDING.md` to `_config.yml`'s `exclude:` (they were live on the public site, confirmed by direct fetch, unrelated to bloat). Archived the 46 resolved Open Decisions to new `_ai-context/decisions-archive.md` (file-level OKF frontmatter, shared file per Cameron's granularity pushback — zero historical demand for per-decision wikilinks, confirmed empirically). `PROJECT_STATE.md` dropped 95,720 → 62,749 bytes. 7 genuinely open decisions (#35, #37, #38, #43, #47, #48, #53) untouched. Added a patch-in-place editing convention above the Open Decisions table. Full propose→review→consensus chain in `AI-Working/Messages/`
+**Updated by:** Claude Code (Publish Agent) — Phase 2 state correction on merge confirmation. Session-39's PR #64 merged; opened `session-40`, no work started on it yet
 
 ---
 
 ## Active Branch
 
-`session-39` — token-burn structural fix in progress
-Branched from `main` at `6a75690` — Merge pull request #63 from cameronloudon/session-38
+`session-40` (opened by Phase 2 state correction; no work started yet)
+Branched from `main` at `4acaca0` — Merge pull request #64 from cameronloudon/session-39
 Not yet merged. Not yet pushed.
 Cameron merges to main. Do not commit directly to main.
 
