@@ -1,14 +1,14 @@
 # PROJECT_STATE.md
 **Single source of current project state. Read this before every session. Update this at every session close.**
 **Last updated:** 2026-07-13
-**Updated by:** Claude Code (Publish Agent) — session-close, session-38. Root-caused Open Decision #52 further with Cameron (the tool-permission gate polices actions attempted, not actions silently skipped) and built the actual fix: a session-close handshake (draft-ready → please-hold → finalised) tied to the one action that already reliably happens — announcing PR-readiness — instead of to internal judgment about "the session is over." Applied to `CLAUDE.md`; proposed, independently reviewed by Cowork, and ratified into `AI_INSTRUCTIONS.md` §11 as the canonical role-generic version. This session log is the handshake's first real use
+**Updated by:** Claude Code (Publish Agent) — Phase 2 state correction on merge confirmation. Session-38's PR #63 merged; opened `session-39`, no work started on it yet
 
 ---
 
 ## Active Branch
 
-`session-38` (session-close work for sessions 36–37's retroactive logging; not yet pushed)
-Branched from `main` at `708672c` — Merge pull request #62 from cameronloudon/session-37
+`session-39` (opened by Phase 2 state correction; no work started yet)
+Branched from `main` at `6a75690` — Merge pull request #63 from cameronloudon/session-38
 Not yet merged. Not yet pushed.
 Cameron merges to main. Do not commit directly to main.
 
