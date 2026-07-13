@@ -49,3 +49,7 @@ exclude:
   - _ai-context
   - _messages
   - _audit-findings
+  - PROJECT_STATE.md
+  - AI_INSTRUCTIONS.md
+  - CLAUDE.md
+  - ONBOARDING.md
