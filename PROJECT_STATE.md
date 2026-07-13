@@ -1,14 +1,14 @@
 # PROJECT_STATE.md
 **Single source of current project state. Read this before every session. Update this at every session close.**
 **Last updated:** 2026-07-13
-**Updated by:** Claude Code (Publish Agent) — session-40. Merged #37 into #53, then #53 into #35 (same corpus-discoverability objective restated across three entries) — closed a stale "body-link generator" note by citing #42/#49, dropped Obsidian-MCP from consideration entirely per Cameron's direction, cross-referenced #35's historical-backfill line to its real dependency (#48). Verified the `understory` (Codacus) repo directly against its own primary source rather than the video's self-description — added as a named, unevaluated candidate under #35. Open Decisions down from 7 to 5
+**Updated by:** Claude Code (Publish Agent) — Phase 2 state correction on merge confirmation. Session-40's PR #65 merged; opened `session-41`, no work started on it yet
 
 ---
 
 ## Active Branch
 
-`session-40` — Open Decisions consolidation (#35/#37/#48/#53), `understory` research
-Branched from `main` at `4acaca0` — Merge pull request #64 from cameronloudon/session-39
+`session-41` (opened by Phase 2 state correction; no work started yet)
+Branched from `main` at `d318d1a` — Merge pull request #65 from cameronloudon/session-40
 Not yet merged. Not yet pushed.
 Cameron merges to main. Do not commit directly to main.
 
