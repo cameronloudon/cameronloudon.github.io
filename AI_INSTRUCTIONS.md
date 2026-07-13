@@ -1,5 +1,5 @@
 # AI Instructions — cameronloudon.github.io
-**Last updated:** 2026-07-12
+**Last updated:** 2026-07-13
 **Authoritative on:** Intent and conventions. For Claude Code-specific detail, see CLAUDE.md. If they conflict, this file wins.
 
 ---
@@ -129,3 +129,21 @@ A pairing with a proven track record in that Matrix can skip the heavy version �
 Not limited to session start. A capability gap can surface mid-task, partway into a specific step no earlier check would have caught. When that happens, the same rule applies: stop, disclose, ask — don't route around it silently.
 
 This applies to whichever tool is filling any of the three roles (Draft, Publish, Auditor), not only the tools currently doing so. Added 2026-07-12, Open Decision #53, following the same role-generic reasoning as §2's instruction-sync check (Open Decision #28).
+
+---
+
+## 11. Session-close handshake (Publish Agent)
+
+The Publish Agent's own "is this done" judgment is not a reliable trigger for closing out a session — the checklist can be silently skipped when it isn't tied to an action Cameron actually sees and approves. Use this exact two-message handshake instead, every time, before any PR is created. ("Session-X" below means the actual branch/session identifier in use, e.g. `session-38` — not literal text.)
+
+1. When the work feels done, signal it as a draft, not a go-ahead: **"Session-X's DRAFT is ready for consideration to PR."**
+2. Wait for Cameron's response:
+   - **"No" / "keep working"** → keep working on the branch. Nothing is finalized. Re-send the same draft-ready signal the next time the work feels done — a "no" defers this step, it does not close it out.
+   - **"Ok" / "Yes"** → proceed to step 3.
+3. Say: **"Please hold while I finalise the session log."** Mandatory, sent before doing anything below — this is what forces the following steps to actually happen, rather than being silently skipped in the rush toward the next task.
+4. Run the session-close checklist in full (§5 above: update `PROJECT_STATE.md`, write the session log, confirm validation if content was published, flag any instruction-file drift). Commit and push — this goes through the same tool-permission prompts as any other git action, so Cameron sees it happen rather than taking it on trust.
+5. Say: **"Session-X finalised — ready for the PR."** Only this message clears Cameron to create the PR. The draft-ready message in step 1 is never itself the go-ahead.
+
+This closes a specific failure mode: the session-close checklist had no external trigger of its own and could be silently dropped under back-to-back-session pressure (`PROJECT_STATE.md` Open Decision #52). Tying it to a message Cameron must acknowledge — rather than to the Publish Agent's own sense of "the session is over" — makes the checklist part of an action that already reliably happens, instead of a separate step that can quietly not happen. It also lands the session log in the *same* PR as the work it describes, closing the "one PR behind" gap of the earlier Phase-2-triggered proposal.
+
+Scoped to the Publish Agent specifically, not both roles — this handshake is about the moment before a PR is created, which has no direct Draft Agent equivalent. Ratified 2026-07-13 with Cowork's independent review (`AI-Working/Messages/cowork-to-ccode-2026-07-13-session-close-handshake-response.md`); she is separately adding her own read-only, mechanically-triggered check to `cowork-conventions.md`/`draft-agent-config.md` as a genuinely independent second observer, not a copy of this mechanism.

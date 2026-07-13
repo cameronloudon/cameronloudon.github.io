@@ -139,25 +139,30 @@ Restaurants and brewing.
 2. Confirm task with Cameron before starting; also confirm with Cameron before any structural decision made mid-session
 3. Create session branch: git checkout -b session-N
 4. Do all work on that branch
-5. At end of session: produce summary, commit, push branch
-6. Cameron reviews on GitHub and merges to main
+5. When the work feels done, signal it as a draft, not a go-ahead: **"Session-X's DRAFT is ready for consideration to PR."** Wait for Cameron's response:
+   - **"No" / "keep working"** → stay on the branch, keep working. Nothing is finalized, no logs are written. Re-send this same draft-ready signal the next time the work feels done — a "no" does not close this step out, it just defers it.
+   - **"Ok" / "Yes"** → proceed to the Session-Close Protocol below, starting with its required "please hold" message.
+6. Only after the Session-Close Protocol's final message ("Session-X finalised — ready for the PR") does Cameron create the PR. The draft-ready message in step 5 is never itself the go-ahead.
 
 ## Session-Close Protocol
 
-At the end of every session that changes the repo:
+Triggered only by Cameron acknowledging the draft-ready signal above (Session Workflow step 5) — never by internal judgment about "the end of a session." This replaces the previous "at the end of every session that changes the repo" trigger, which had no external forcing mechanism and let the checklist below get silently skipped under back-to-back-session pressure (see `PROJECT_STATE.md` Open Decision #52).
 
-1. Update `PROJECT_STATE.md`:
+1. Say to Cameron: **"Please hold while I finalise the session log."** This message is mandatory and must be sent before any step below — it is what forces the following steps to actually run, rather than being silently skipped in the rush toward the next task.
+2. Update `PROJECT_STATE.md`:
    - Set `Last updated` to today's date
    - Set `Updated by` to your tool name and role
    - Increment `NEXT_SESSION_LOG_ID`
    - Update page inventory if any pages were added, changed, or removed
    - Update Open Decisions if any were resolved or newly raised
-2. Write a session log to `_session-logs/` using the format in `_ai-context/rct-session-primer.md`
+3. Write a session log to `_session-logs/` using the format in `_ai-context/rct-session-primer.md`
    - Filename: `session-YYYY-MM-DD-NNN.md` where NNN is the ID you read from PROJECT_STATE.md *before* incrementing
-3. If content was published in this session, confirm the validation checklist in `_ai-context/rct-validation-checklist.md` was run
-4. Sync check: if you made changes that affect AI_INSTRUCTIONS.md or CLAUDE.md conventions, flag it to Cameron — do not let the two files drift
+4. If content was published in this session, confirm the validation checklist in `_ai-context/rct-validation-checklist.md` was run
+5. Sync check: if you made changes that affect AI_INSTRUCTIONS.md or CLAUDE.md conventions, flag it to Cameron — do not let the two files drift
+6. Commit `PROJECT_STATE.md` and the session log in the same commit or immediately after the content commit, then push. This goes through the normal tool-permission prompts, same as any other git action — Cameron sees it happen rather than taking it on trust.
+7. Say to Cameron: **"Session-X finalised — ready for the PR."** Only this message clears Cameron to create the PR.
 
-Commit PROJECT_STATE.md and the session log in the same commit or immediately after the content commit.
+This lands the session log in the *same* PR as the work it describes, closing the "one PR behind" gap of the earlier Phase-2-triggered approach — Phase 2 below remains as a fallback safety net in case this sequence is itself somehow skipped, not the primary mechanism.
 
 ### Phase 2 — AI-Prod Sync and State Correction
 
