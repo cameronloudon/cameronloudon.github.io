@@ -1,23 +1,23 @@
 # PROJECT_STATE.md
 **Single source of current project state. Read this before every session. Update this at every session close.**
 **Last updated:** 2026-07-15
-**Updated by:** Claude Code (Publish Agent) — retroactive session log for session-41 (`session-2026-07-13-003.md`), `NEXT_SESSION_LOG_ID` advanced, Open Decision #52 reopened
+**Updated by:** Claude Code (Publish Agent) — session-42 close-out, session log `session-2026-07-15-001.md` written, `NEXT_SESSION_LOG_ID` advanced
 
 ---
 
 ## Active Branch
 
-`session-42` (opened by Phase 2 state correction; one edit carried forward, not yet committed)
+`session-42` (closed out, draft-ready → please-hold → finalised handshake followed in full this time)
 Branched from `main` at `c054765` — Merge pull request #66 from cameronloudon/session-41
 **Note on session-41:** PR #66 was merged prematurely — session-41 never had anything pushed to it beyond the commit it was opened at, so the merge closed an already-in-main commit a second time with no actual content change. Session-41's real work (the Open Decision #35 `llm-wiki-compiler` finding) had only ever existed as an uncommitted local edit; it was stashed before switching branches and popped onto `session-42` cleanly, so nothing was lost — it just never went through session-41's PR.
-Not yet merged. Not yet pushed.
+Session-42 holds: the carried-forward Open Decision #35 edit, the retroactive session-41 log, and this close-out's own session log. Pushed, ready for the PR.
 Cameron merges to main. Do not commit directly to main.
 
 ---
 
 ## Next Session Log ID
 
-`NEXT_SESSION_LOG_ID: 2026-07-15-001`
+`NEXT_SESSION_LOG_ID: 2026-07-15-002`
 
 **Recurred a third time, session-41, corrected in session-42 (2026-07-15):** session-41 closed without a session log — not by the old "handoff ran immediately, log-writing step never happened" pattern this time, but by a new failure mode of the same underlying problem: Cameron created and merged PR #66 directly on GitHub, out of sequence, before the draft-ready → please-hold → finalised handshake (built in session-38 specifically to prevent this) ever got a chance to run. The handshake assumes the human always waits for the "finalised" signal before creating a PR; nothing stops it happening earlier by mistake. Verified via `git fetch`/`git log` before reacting: PR #66 genuinely merged, but session-41 had nothing pushed to it beyond its opening commit, so the merge carried zero actual content — session-41's real work (the Open Decision #35 update below) had only existed as an uncommitted local edit, stashed and carried forward onto `session-42` rather than lost. `session-2026-07-13-003.md` (literal reserved ID despite its date predating the actual 2026-07-15 work, same pattern as `session-2026-07-11-004.md`) written retroactively to cover session-41's actual work; this field advances past it now. Per Cameron's explicit instruction, only the missing log itself was fixed this pass — the handshake's exposure to a human acting out of sequence is named but not re-engineered here. See Open Decision #52, reopened.
 
@@ -27,7 +27,7 @@ Cameron merges to main. Do not commit directly to main.
 
 **Resolved, same session-38, later the same day:** rather than another retroactive patch, Cameron and Claude Code built the actual forcing function — a session-close handshake (draft-ready → please-hold → finalised) tied to the one action that already never fails to happen, announcing PR-readiness, instead of to internal judgment about session-end. `session-2026-07-12-002.md` (same reserved-ID-vs-actual-date pattern as `session-2026-07-11-004.md`) is that handshake's own first real use — this session closed itself out under the new mechanism rather than being caught after the fact. See Open Decision #52, closed.
 
-The forty-six existing session logs are: `session-2026-06-10-001`, `session-2026-06-11-001`, `session-2026-06-11-002`, `session-2026-06-21-001`, `session-2026-06-21-002`, `session-2026-06-29-001`, `session-2026-07-03-001`, `session-2026-07-03-002`, `session-2026-07-03-003`, `session-2026-07-03-004`, `session-2026-07-05-001`, `session-2026-07-05-002`, `session-2026-07-05-003`, `session-2026-07-05-004`, `session-2026-07-05-005`, `session-2026-07-05-006`, `session-2026-07-05-007`, `session-2026-07-05-008`, `session-2026-07-05-009`, `session-2026-07-05-010`, `session-2026-07-05-011`, `session-2026-07-05-012`, `session-2026-07-05-013`, `session-2026-07-05-014`, `session-2026-07-05-015`, `session-2026-07-05-016`, `session-2026-07-05-017`, `session-2026-07-05-018`, `session-2026-07-05-019`, `session-2026-07-05-020`, `session-2026-07-05-021`, `session-2026-07-05-022`, `session-2026-07-05-023`, `session-2026-07-05-024`, `session-2026-07-09-001`, `session-2026-07-09-002`, `session-2026-07-09-003`, `session-2026-07-11-001`, `session-2026-07-11-002`, `session-2026-07-11-003`, `session-2026-07-11-004`, `session-2026-07-12-001`, `session-2026-07-12-002`, `session-2026-07-13-001`, `session-2026-07-13-002`, `session-2026-07-13-003`.
+The forty-seven existing session logs are: `session-2026-06-10-001`, `session-2026-06-11-001`, `session-2026-06-11-002`, `session-2026-06-21-001`, `session-2026-06-21-002`, `session-2026-06-29-001`, `session-2026-07-03-001`, `session-2026-07-03-002`, `session-2026-07-03-003`, `session-2026-07-03-004`, `session-2026-07-05-001`, `session-2026-07-05-002`, `session-2026-07-05-003`, `session-2026-07-05-004`, `session-2026-07-05-005`, `session-2026-07-05-006`, `session-2026-07-05-007`, `session-2026-07-05-008`, `session-2026-07-05-009`, `session-2026-07-05-010`, `session-2026-07-05-011`, `session-2026-07-05-012`, `session-2026-07-05-013`, `session-2026-07-05-014`, `session-2026-07-05-015`, `session-2026-07-05-016`, `session-2026-07-05-017`, `session-2026-07-05-018`, `session-2026-07-05-019`, `session-2026-07-05-020`, `session-2026-07-05-021`, `session-2026-07-05-022`, `session-2026-07-05-023`, `session-2026-07-05-024`, `session-2026-07-09-001`, `session-2026-07-09-002`, `session-2026-07-09-003`, `session-2026-07-11-001`, `session-2026-07-11-002`, `session-2026-07-11-003`, `session-2026-07-11-004`, `session-2026-07-12-001`, `session-2026-07-12-002`, `session-2026-07-13-001`, `session-2026-07-13-002`, `session-2026-07-13-003`, `session-2026-07-15-001`.
 Note: `session-2026-06-21-003` was never written (anticipated but session did not recur that day). Session on 2026-06-26 (pre-test repo prep, session-3b) and the session-4 branch (2026-06-29 branch-workflow correction, folded into `session-2026-06-29-001`'s log) were also not separately logged — acknowledged gaps.
 
 ---
@@ -163,6 +163,7 @@ Split from the single flat `now.html` page (Open Decision #22).
 | `session-2026-07-13-001.md` | Published |
 | `session-2026-07-13-002.md` | Published |
 | `session-2026-07-13-003.md` | Published |
+| `session-2026-07-15-001.md` | Published |
 
 ### _messages/ bundle (not rendered — chain-of-custody archive)
 
