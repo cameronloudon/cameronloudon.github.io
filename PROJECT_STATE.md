@@ -7,10 +7,7 @@
 
 ## Active Branch
 
-`session-42` (closed out, draft-ready → please-hold → finalised handshake followed in full this time)
-Branched from `main` at `c054765` — Merge pull request #66 from cameronloudon/session-41
-**Note on session-41:** PR #66 was merged prematurely — session-41 never had anything pushed to it beyond the commit it was opened at, so the merge closed an already-in-main commit a second time with no actual content change. Session-41's real work (the Open Decision #35 `llm-wiki-compiler` finding) had only ever existed as an uncommitted local edit; it was stashed before switching branches and popped onto `session-42` cleanly, so nothing was lost — it just never went through session-41's PR.
-Session-42 holds: the carried-forward Open Decision #35 edit, the retroactive session-41 log, and this close-out's own session log. Pushed, ready for the PR.
+`session-43` — branched from `main` at `45a5d25` (Merge pull request #67 from cameronloudon/session-42). No work started yet.
 Cameron merges to main. Do not commit directly to main.
 
 ---
