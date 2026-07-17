@@ -106,6 +106,8 @@ Read `PROJECT_STATE.md` before every session. It contains: active branch, sessio
 
 Update `PROJECT_STATE.md` at session close. The Publish Agent owns all PROJECT_STATE.md updates and commits them at session close. The Draft Agent does not write a PROJECT_STATE.md block.
 
+**Citation on correction.** Any time an Open Decision's own text is corrected because it was found stale, wrong, or incomplete — not a normal status update, but a factual fix to what the entry itself claims — the patch must cite the specific evidence that revealed it: a commit hash, session log, or message file, not "checked and fixed." Same standard already applied to mechanical transcripts (provenance stamping, `_ai-context/messages-promotion-procedure.md` §4) and to the Auditor's own findings (`_ai-context/auditor-charter.md` §4, "evidence or silence") — extended here to `PROJECT_STATE.md` self-corrections specifically, since this file's own accuracy is exactly what the rest of the project trusts without re-checking. Role-generic: applies to whichever tool holds the Publish Agent role, not tied to any one tool's convention file. Added 2026-07-17, Open Decision #54.
+
 ---
 
 ## 9. When uncertain
