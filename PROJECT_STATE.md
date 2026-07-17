@@ -7,9 +7,7 @@
 
 ## Active Branch
 
-`session-44` (closed out, draft-ready → please-hold → finalised handshake followed in full)
-Branched from `main` at `7d92f85` — Merge pull request #68 from cameronloudon/session-43
-Session-44 holds: the Phase 2 state-correction commit; closing Open Decision #52 (handshake recurrence declared tolerable); the `_ai-context/` OKF-frontmatter coverage fix closing Open Decision #35's capability-2 coverage gap (9 files stamped with `refs:`, `generate-links-footer.ps1` run clean); correcting Open Decision #38's stale gate text (two of its three questions had already been resolved 2026-07-11 but never written back in); and closing #38 itself (`AI_INSTRUCTIONS.md` §3 widened to give both roles read/write on `AI-Evidence\`, Auditor charter's trust model left unchanged) — the last a joint recommendation independently reasoned by Claude Code and Cowork before comparing notes, then accepted by Cameron. Pushed, ready for the PR.
+`session-45` — branched from `main` at `fd483c0` (Merge pull request #69 from cameronloudon/session-44). No work started yet.
 Cameron merges to main. Do not commit directly to main.
 
 ---
