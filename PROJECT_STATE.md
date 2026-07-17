@@ -1,22 +1,24 @@
 # PROJECT_STATE.md
 **Single source of current project state. Read this before every session. Update this at every session close.**
 **Last updated:** 2026-07-17
-**Updated by:** Claude Code (Publish Agent) — session-45 close-out, session log `session-2026-07-15-004.md` written, `NEXT_SESSION_LOG_ID` advanced
+**Updated by:** Claude Code (Publish Agent) — session-46 close-out, session log `session-2026-07-15-005.md` written, `NEXT_SESSION_LOG_ID` advanced
 
 ---
 
 ## Active Branch
 
-`session-45` (closed out, draft-ready → please-hold → finalised handshake followed in full)
-Branched from `main` at `fd483c0` — Merge pull request #69 from cameronloudon/session-44
-Session-45 holds: the Phase 2 state-correction commit; the `llm-wiki-compiler` capability-3 trial's robocopy `/XD`/`/XF` fix (`sources`, `wiki`, `.llmwiki`, `log.md` — verified empirically, different output shape than Graphify's); and the #35 patch recording the trial's result (real contradiction-detection capability demonstrated, reconciliation failed cleanly and dangerously — false "Fresh" status while contradictory pages coexisted — not adopted, parked alongside `understory`). The trial itself ran in a separate throwaway worktree, torn down, nothing committed from it. Pushed, ready for the PR.
+`session-46` (closed out, draft-ready → please-hold → finalised handshake followed in full)
+Branched from `main` at `a5cdf93` — Merge pull request #70 from cameronloudon/session-45
+Session-46 holds: the Phase 2 state-correction commit; investigating `karpathy-llm-wiki` as #35's last capability-3 candidate (found to be an Agent Skill, not a program — not trialed, reasoning ratified by Cowork); Open Decision #54, extracting two mechanical conventions from that investigation — `_ai-context/cascade-check.ps1` (built, tested, bug fixed, noise problem fixed) wired into the Session-Close Protocol, and a citation-on-correction rule in `AI_INSTRUCTIONS.md` §8 — ratified by Cameron and archived same-session; and the incidental fix of #53's own stale text, caught while drafting #54. Pushed, ready for the PR.
 Cameron merges to main. Do not commit directly to main.
 
 ---
 
 ## Next Session Log ID
 
-`NEXT_SESSION_LOG_ID: 2026-07-15-005`
+`NEXT_SESSION_LOG_ID: 2026-07-15-006`
+
+**Session-46 close-out (2026-07-17):** `session-2026-07-15-005.md` written to cover session-46's actual work — same reserved-ID-vs-actual-date pattern as its predecessors; the ID was reserved when session-45 closed on 2026-07-15, but session-46's real work (Phase 2 correction, the `karpathy-llm-wiki` investigation, and Open Decision #54) ran 2026-07-17. This field advances past it now.
 
 **Session-45 close-out (2026-07-17):** `session-2026-07-15-004.md` written to cover session-45's actual work — same reserved-ID-vs-actual-date pattern as its predecessors; the ID was reserved when session-44 closed on 2026-07-15, but session-45's real work (Phase 2 correction, the `llm-wiki-compiler` trial, and closing #35's patch) ran 2026-07-17. This field advances past it now.
 
@@ -32,7 +34,7 @@ Cameron merges to main. Do not commit directly to main.
 
 **Resolved, same session-38, later the same day:** rather than another retroactive patch, Cameron and Claude Code built the actual forcing function — a session-close handshake (draft-ready → please-hold → finalised) tied to the one action that already never fails to happen, announcing PR-readiness, instead of to internal judgment about session-end. `session-2026-07-12-002.md` (same reserved-ID-vs-actual-date pattern as `session-2026-07-11-004.md`) is that handshake's own first real use — this session closed itself out under the new mechanism rather than being caught after the fact. See Open Decision #52, closed.
 
-The fifty existing session logs are: `session-2026-06-10-001`, `session-2026-06-11-001`, `session-2026-06-11-002`, `session-2026-06-21-001`, `session-2026-06-21-002`, `session-2026-06-29-001`, `session-2026-07-03-001`, `session-2026-07-03-002`, `session-2026-07-03-003`, `session-2026-07-03-004`, `session-2026-07-05-001`, `session-2026-07-05-002`, `session-2026-07-05-003`, `session-2026-07-05-004`, `session-2026-07-05-005`, `session-2026-07-05-006`, `session-2026-07-05-007`, `session-2026-07-05-008`, `session-2026-07-05-009`, `session-2026-07-05-010`, `session-2026-07-05-011`, `session-2026-07-05-012`, `session-2026-07-05-013`, `session-2026-07-05-014`, `session-2026-07-05-015`, `session-2026-07-05-016`, `session-2026-07-05-017`, `session-2026-07-05-018`, `session-2026-07-05-019`, `session-2026-07-05-020`, `session-2026-07-05-021`, `session-2026-07-05-022`, `session-2026-07-05-023`, `session-2026-07-05-024`, `session-2026-07-09-001`, `session-2026-07-09-002`, `session-2026-07-09-003`, `session-2026-07-11-001`, `session-2026-07-11-002`, `session-2026-07-11-003`, `session-2026-07-11-004`, `session-2026-07-12-001`, `session-2026-07-12-002`, `session-2026-07-13-001`, `session-2026-07-13-002`, `session-2026-07-13-003`, `session-2026-07-15-001`, `session-2026-07-15-002`, `session-2026-07-15-003`, `session-2026-07-15-004`.
+The fifty-one existing session logs are: `session-2026-06-10-001`, `session-2026-06-11-001`, `session-2026-06-11-002`, `session-2026-06-21-001`, `session-2026-06-21-002`, `session-2026-06-29-001`, `session-2026-07-03-001`, `session-2026-07-03-002`, `session-2026-07-03-003`, `session-2026-07-03-004`, `session-2026-07-05-001`, `session-2026-07-05-002`, `session-2026-07-05-003`, `session-2026-07-05-004`, `session-2026-07-05-005`, `session-2026-07-05-006`, `session-2026-07-05-007`, `session-2026-07-05-008`, `session-2026-07-05-009`, `session-2026-07-05-010`, `session-2026-07-05-011`, `session-2026-07-05-012`, `session-2026-07-05-013`, `session-2026-07-05-014`, `session-2026-07-05-015`, `session-2026-07-05-016`, `session-2026-07-05-017`, `session-2026-07-05-018`, `session-2026-07-05-019`, `session-2026-07-05-020`, `session-2026-07-05-021`, `session-2026-07-05-022`, `session-2026-07-05-023`, `session-2026-07-05-024`, `session-2026-07-09-001`, `session-2026-07-09-002`, `session-2026-07-09-003`, `session-2026-07-11-001`, `session-2026-07-11-002`, `session-2026-07-11-003`, `session-2026-07-11-004`, `session-2026-07-12-001`, `session-2026-07-12-002`, `session-2026-07-13-001`, `session-2026-07-13-002`, `session-2026-07-13-003`, `session-2026-07-15-001`, `session-2026-07-15-002`, `session-2026-07-15-003`, `session-2026-07-15-004`, `session-2026-07-15-005`.
 Note: `session-2026-06-21-003` was never written (anticipated but session did not recur that day). Session on 2026-06-26 (pre-test repo prep, session-3b) and the session-4 branch (2026-06-29 branch-workflow correction, folded into `session-2026-06-29-001`'s log) were also not separately logged — acknowledged gaps.
 
 ---
@@ -259,7 +261,8 @@ None.
 | 50 | `cleanupPeriodDays` — the actual retention-window setting behind the JSONL rescue urgency (Open Decision #39) — was confirmed unset (default ~30 days) but never actually raised; only the one-time rescue copy was done | 9 | ✓ Archived — see `_ai-context/decisions-archive.md` | — |
 | 51 | Provenance sidecar (Auditor Charter §10, mission 3) — Fable's original 2026-07-10 analysis was addressed to Cameron only, never sent to Cowork; the charter's mission-list entry named it but no concrete design existed at ratification time, so her charter agreement didn't cover this deliverable's actual content | 9 | ✓ Archived — see `_ai-context/decisions-archive.md` | — |
 | 52 | Session-34 (the four-agent-test page correction, PR #58) closed without a session log — the session-close protocol was skipped entirely, going straight from publishing into the Phase 2 handoff for session-35 | 9, 38 | ✓ Archived — see `_ai-context/decisions-archive.md` | — |
-| 53 | Session-37 wide-ranging discussion (post-#28) covering three threads: (1) refining the Auditor's write-access grant beyond #41/#47; (2) a capability/tool self-check idea for any agent taking on a role; (3) corpus-discoverability — merged into #35, 2026-07-13 | 37 | ✓ Threads 1/2 resolved and implemented 2026-07-12. Thread 3 merged into #35 (same objective, one entry not two) — Obsidian-MCP dropped from consideration entirely there, Graphify the only live candidate. See `_ai-context/decisions-archive.md` | — |
+| 53 | Session-37 wide-ranging discussion (post-#28) covering three threads: (1) refining the Auditor's write-access grant beyond #41/#47; (2) a capability/tool self-check idea for any agent taking on a role; (3) corpus-discoverability — merged into #35, 2026-07-13 | 37 | ✓ Threads 1/2 resolved and implemented 2026-07-12. Thread 3 merged into #35 (same objective, one entry not two) — Obsidian-MCP dropped from consideration entirely there. **Corrected 2026-07-17** (caught while drafting #54 — was stale, not touched by the #35/#38/#52 cascade-check gap this same fix addresses): Graphify was the only live candidate as of 2026-07-13, but both it and `llm-wiki-compiler` have since been trialed and parked (2026-07-17, see #35); `karpathy-llm-wiki` was investigated but not trialed (#54). See `_ai-context/decisions-archive.md` | — |
+| 54 | Investigating `karpathy-llm-wiki` as #35's last untried capability-3 candidate surfaced two conventions worth adopting independent of the tool itself — a mechanical cascade-check step and a citation-on-correction rule — plus a placement question distinct enough from #35/#52 to need its own entry | 9 | ✓ Archived — see `_ai-context/decisions-archive.md` | — |
 
 ---
 

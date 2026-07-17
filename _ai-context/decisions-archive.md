@@ -33,6 +33,18 @@ Cowork created `AI-Evidence\cowork-transcripts\` (a new folder outside her docum
 
 ---
 
+## Decision #54 — Investigating `karpathy-llm-wiki` as #35's last untried capability-3 candidate surfaced two conventions worth adopting independent of the tool itself, plus a placement question distinct enough from #35/#52 to need its own entry
+
+**Resolved.** ✓ Ratified 2026-07-17, same day it was raised. Not trialed — verified directly (npm/GitHub for the implementation, then the original Karpathy gist itself, since the implementation's own README undersold what its `SKILL.md` actually specifies) that it's an Agent Skill, not a program: no binary, no API key, execution happens inside whichever agent hosts it. A "trial" would test the hosting agent's own instruction-following, not independent tool behavior — a different kind of evidence than Graphify or `llm-wiki-compiler` produced. Pointing it at `_messages/` was also rejected on a second, separate ground: the skill is raw→compiled, `_messages/` is deliberately archive+link (chain-of-custody, nothing synthesized into a derived page) — a call already made in the original 2026-07-09 thread that seeded capability 3, not one this investigation was asked to reopen. Cowork's independent review confirmed both points, no changes to the reasoning.
+
+Two mechanical pieces extracted instead, filtered through Cameron's own "only take what's mechanical, OKF-style, not judgment-dependent" standard — directly informed by #52's lesson that "remember to check" is a failure shape, not a mitigation: (1) `_ai-context/cascade-check.ps1`, built and tested — greps `PROJECT_STATE.md` + `decisions-archive.md` for terms shared with the entry being closed, filtered by actual document frequency (a term is dropped if it appears in more than a handful of entries total) rather than a hand-maintained stopword list, since the first draft's stopword approach was tested against #35 and #47 and found both noisy and buggy (a `$Matches`-clobbering bug, plus boilerplate text like the archive-pointer stub flooding results) before the frequency-based rewrite fixed both. Wired into the Session-Close Protocol's step 2 as a mandatory sub-step (`CLAUDE.md`), not a standalone tool — the same forcing-function reasoning #52 already established, applied to a new gap rather than re-learned; (2) citation-on-correction formalized in `AI_INSTRUCTIONS.md` §8 (role-generic, not `CLAUDE.md`, per Cowork's placement note — the rule must survive a Publish Agent tool change) — any `PROJECT_STATE.md` self-correction must cite the specific commit/session-log/message that revealed it, same standard already applied to provenance stamping and Auditor findings.
+
+Semantic contradiction/staleness checking (the tool's `Lint` heuristics) deliberately not duplicated — that's already Auditor Charter Function B, blocked on #47 (a real Auditor tool existing), and building a lighter interim version now risks two half-built systems instead of one real one once #47 unblocks.
+
+**Cameron ratified all of it as drafted** — `cascade-check.ps1`, the `CLAUDE.md` wiring, and the `AI_INSTRUCTIONS.md` §8 addition — committed `6059405`, same session. Also caught and fixed in the same pass: #53's own archived text had gone stale (still named Graphify as "the only live candidate" after both Graphify and `llm-wiki-compiler` had already been trialed and parked) — corrected there directly.
+
+---
+
 ## Decision #1 — ai-content-creation-spec.md reconciliation
 
 **Resolved.** ✓ Done — merged to main
