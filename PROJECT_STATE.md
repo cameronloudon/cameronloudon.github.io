@@ -7,9 +7,7 @@
 
 ## Active Branch
 
-`session-43` (closed out, draft-ready → please-hold → finalised handshake followed in full)
-Branched from `main` at `45a5d25` — Merge pull request #67 from cameronloudon/session-42
-Session-43 holds: the Phase 2 state-correction commit; the Open Decision #35 Graphify repositioning that had been agreed in consensus but missed from PR #67's merge, landed here after Cowork's independent post-merge check caught it; the `CLAUDE.md` robocopy `/XD "graphify-out"` fix; the full Graphify capability-3 discovery trial (run in a separate throwaway worktree, not part of this branch's own history — nothing from the trial itself is committed anywhere); and the #35 patch closing the Graphify sub-thread per Cameron/Cowork's close-out instruction. Pushed, ready for the PR.
+`session-44` — branched from `main` at `7d92f85` (Merge pull request #68 from cameronloudon/session-43). No work started yet.
 Cameron merges to main. Do not commit directly to main.
 
 ---
