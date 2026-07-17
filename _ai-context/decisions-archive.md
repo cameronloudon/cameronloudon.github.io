@@ -57,6 +57,14 @@ One deliberate non-change: point 1's disqualifying stance was reviewed and kept 
 
 ---
 
+## Decision #43 — While independently verifying the link convention (#42), Cowork's first pass used her bash sandbox to check all 36 files mechanically — the tool reported 29 of 32 refs-bearing files missing their generated footer, and separately flagged one file as byte-truncated mid-word. Both were false: direct `Read` calls on the same files showed the footer present and every file intact
+
+Not a new bug class — a stronger instance of the stale-AI-Prod-mount pattern already noted twice before (session-9's `_config.yml` false alarm, session-27's "file reported committed but not found" finding, both previously explained as sync-timing lag). This instance is different in kind, not just degree: it happened *after* the merge and sync had genuinely completed, on files that were actually correct — so "not yet synced" doesn't explain it here. Whatever's stale is specific to how Cowork's bash sandbox reads `_messages/` in the window right after a merge, not a timing gap. Self-caught and self-corrected before being reported as fact: Cowork redid the entire check via direct `Read` calls (through a subagent, to keep the volume out of her own context) rather than let a false 29-file regression stand — the right response, and worth crediting as such, same as her unauthorized-rescue disclosure (#38) and the "verify other agents, don't trust self-reports" standard both sides have held all session, now shown to apply to a tool checking its own platform's files, not just to cross-agent claims. **Extended, 2026-07-11:** the same class of staleness hit a live session's own JSONL, not just a git mirror — Cowork's attempt to capture her current session mid-flight found the bash-mounted view lagging real time by ~2 hours, silently missing the session's second half. Documented as a permanent-limits finding in `_ai-context/system-architecture.md` §8 rather than re-attempted.
+
+**Resolved 2026-07-17.** Cameron's call: worth a standing caveat, not left as a one-off data point. Claude Code doesn't have write access to Cowork's own working notes (`AI-Working/Protocols/`, by design — Publish Agent's documented access doesn't extend there), so the actual caveat line was requested of Cowork directly rather than written in by Claude Code: "bash sandbox unreliable on `_messages/` immediately post-merge and on live session JSONL mid-session — prefer direct file reads in both cases." Cascade-checked before closing (`_ai-context/cascade-check.ps1 -DecisionNumber 43`) — all candidates flagged were already-archived entries, nothing else needed updating.
+
+---
+
 ## Decision #1 — ai-content-creation-spec.md reconciliation
 
 **Resolved.** ✓ Done — merged to main
