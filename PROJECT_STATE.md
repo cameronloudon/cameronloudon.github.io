@@ -7,9 +7,7 @@
 
 ## Active Branch
 
-`session-47` (closed out, draft-ready → please-hold → finalised handshake followed in full)
-Branched from `main` at `85ec323` — Merge pull request #71 from cameronloudon/session-46
-Session-47 holds: the Phase 2 state-correction commit; correcting #35's stale `karpathy-llm-wiki` framing (caught live by `cascade-check.ps1`'s first real use, checking #35 after #54 closed — the exact gap it exists to catch); Open Decision #55, the cold-walk isolation safeguard (`_ai-context/cold-walk-isolation-safeguard.md`, five points, ratified by Cameron after one Cowork-reviewed redraft round, pointed to from `auditor-charter.md` §2 and #47's own corrected gate text); and closing #43 (a standing bash-sandbox-reliability caveat, requested from and confirmed added by Cowork to her own working notes, since Claude Code has no write access there). Pushed, ready for the PR.
+`session-48` — branched from `main` at `e9e14b7` (Merge pull request #72 from cameronloudon/session-47). No work started yet.
 Cameron merges to main. Do not commit directly to main.
 
 ---
