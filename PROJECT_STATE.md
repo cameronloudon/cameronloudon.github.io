@@ -1,20 +1,24 @@
 # PROJECT_STATE.md
 **Single source of current project state. Read this before every session. Update this at every session close.**
 **Last updated:** 2026-07-17
-**Updated by:** Claude Code (Publish Agent) — session-47 close-out, session log `session-2026-07-15-006.md` written, `NEXT_SESSION_LOG_ID` advanced
+**Updated by:** Claude Code (Publish Agent) — session-48 close-out, session log `session-2026-07-15-007.md` written, `NEXT_SESSION_LOG_ID` advanced
 
 ---
 
 ## Active Branch
 
-`session-48` — branched from `main` at `e9e14b7` (Merge pull request #72 from cameronloudon/session-47). No work started yet.
+`session-48` (closed out, draft-ready → please-hold → finalised handshake followed in full)
+Branched from `main` at `e9e14b7` — Merge pull request #72 from cameronloudon/session-47
+Session-48 holds: the Phase 2 state-correction commit; and `_ai-context/list-open-decisions.ps1`, a reliable open-decisions filter built after the "no checkmark anywhere in the row" heuristic missed #43 and #48 (a decision can be partially resolved — a ratified sub-clause, a still-open Gate line — and that pattern isn't caught by scanning for checkmarks). Two real bugs found and fixed before it was usable: a literal em-dash breaking Windows PowerShell 5.1's parser without a UTF-8 BOM (same class as #39), then a silent `Get-Content` misread that made every row compare as open. Pushed, ready for the PR.
 Cameron merges to main. Do not commit directly to main.
 
 ---
 
 ## Next Session Log ID
 
-`NEXT_SESSION_LOG_ID: 2026-07-15-007`
+`NEXT_SESSION_LOG_ID: 2026-07-15-008`
+
+**Session-48 close-out (2026-07-17):** `session-2026-07-15-007.md` written to cover session-48's actual work — same reserved-ID-vs-actual-date pattern as its predecessors; the ID was reserved when session-47 closed on 2026-07-15, but session-48's real work (Phase 2 correction, discovering the #48 capture-prompt gap, and building `list-open-decisions.ps1`) ran 2026-07-17. This field advances past it now.
 
 **Session-47 close-out (2026-07-17):** `session-2026-07-15-006.md` written to cover session-47's actual work — same reserved-ID-vs-actual-date pattern as its predecessors; the ID was reserved when session-46 closed on 2026-07-15, but session-47's real work (Phase 2 correction, the #35 correction, Open Decision #55, and closing #43) ran 2026-07-17. This field advances past it now.
 
@@ -34,7 +38,7 @@ Cameron merges to main. Do not commit directly to main.
 
 **Resolved, same session-38, later the same day:** rather than another retroactive patch, Cameron and Claude Code built the actual forcing function — a session-close handshake (draft-ready → please-hold → finalised) tied to the one action that already never fails to happen, announcing PR-readiness, instead of to internal judgment about session-end. `session-2026-07-12-002.md` (same reserved-ID-vs-actual-date pattern as `session-2026-07-11-004.md`) is that handshake's own first real use — this session closed itself out under the new mechanism rather than being caught after the fact. See Open Decision #52, closed.
 
-The fifty-two existing session logs are: `session-2026-06-10-001`, `session-2026-06-11-001`, `session-2026-06-11-002`, `session-2026-06-21-001`, `session-2026-06-21-002`, `session-2026-06-29-001`, `session-2026-07-03-001`, `session-2026-07-03-002`, `session-2026-07-03-003`, `session-2026-07-03-004`, `session-2026-07-05-001`, `session-2026-07-05-002`, `session-2026-07-05-003`, `session-2026-07-05-004`, `session-2026-07-05-005`, `session-2026-07-05-006`, `session-2026-07-05-007`, `session-2026-07-05-008`, `session-2026-07-05-009`, `session-2026-07-05-010`, `session-2026-07-05-011`, `session-2026-07-05-012`, `session-2026-07-05-013`, `session-2026-07-05-014`, `session-2026-07-05-015`, `session-2026-07-05-016`, `session-2026-07-05-017`, `session-2026-07-05-018`, `session-2026-07-05-019`, `session-2026-07-05-020`, `session-2026-07-05-021`, `session-2026-07-05-022`, `session-2026-07-05-023`, `session-2026-07-05-024`, `session-2026-07-09-001`, `session-2026-07-09-002`, `session-2026-07-09-003`, `session-2026-07-11-001`, `session-2026-07-11-002`, `session-2026-07-11-003`, `session-2026-07-11-004`, `session-2026-07-12-001`, `session-2026-07-12-002`, `session-2026-07-13-001`, `session-2026-07-13-002`, `session-2026-07-13-003`, `session-2026-07-15-001`, `session-2026-07-15-002`, `session-2026-07-15-003`, `session-2026-07-15-004`, `session-2026-07-15-005`, `session-2026-07-15-006`.
+The fifty-three existing session logs are: `session-2026-06-10-001`, `session-2026-06-11-001`, `session-2026-06-11-002`, `session-2026-06-21-001`, `session-2026-06-21-002`, `session-2026-06-29-001`, `session-2026-07-03-001`, `session-2026-07-03-002`, `session-2026-07-03-003`, `session-2026-07-03-004`, `session-2026-07-05-001`, `session-2026-07-05-002`, `session-2026-07-05-003`, `session-2026-07-05-004`, `session-2026-07-05-005`, `session-2026-07-05-006`, `session-2026-07-05-007`, `session-2026-07-05-008`, `session-2026-07-05-009`, `session-2026-07-05-010`, `session-2026-07-05-011`, `session-2026-07-05-012`, `session-2026-07-05-013`, `session-2026-07-05-014`, `session-2026-07-05-015`, `session-2026-07-05-016`, `session-2026-07-05-017`, `session-2026-07-05-018`, `session-2026-07-05-019`, `session-2026-07-05-020`, `session-2026-07-05-021`, `session-2026-07-05-022`, `session-2026-07-05-023`, `session-2026-07-05-024`, `session-2026-07-09-001`, `session-2026-07-09-002`, `session-2026-07-09-003`, `session-2026-07-11-001`, `session-2026-07-11-002`, `session-2026-07-11-003`, `session-2026-07-11-004`, `session-2026-07-12-001`, `session-2026-07-12-002`, `session-2026-07-13-001`, `session-2026-07-13-002`, `session-2026-07-13-003`, `session-2026-07-15-001`, `session-2026-07-15-002`, `session-2026-07-15-003`, `session-2026-07-15-004`, `session-2026-07-15-005`, `session-2026-07-15-006`, `session-2026-07-15-007`.
 Note: `session-2026-06-21-003` was never written (anticipated but session did not recur that day). Session on 2026-06-26 (pre-test repo prep, session-3b) and the session-4 branch (2026-06-29 branch-workflow correction, folded into `session-2026-06-29-001`'s log) were also not separately logged — acknowledged gaps.
 
 ---
