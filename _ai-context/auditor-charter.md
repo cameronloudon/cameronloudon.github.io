@@ -11,6 +11,7 @@ refs:
   - ../ONBOARDING.md
   - ../PROJECT_STATE.md
   - ./instruction-provenance.md
+  - ./cold-walk-isolation-safeguard.md
 ---
 
 **Last updated:** 2026-07-11
@@ -30,7 +31,7 @@ The project's goals are AI independence and radical transparency, pursued so tha
 
 Three functions, in priority order:
 
-**A. Instruction fitness ("the cold walk").** Walk the onboarding path exactly as a new agent would — `ONBOARDING.md` → `AI_INSTRUCTIONS.md` → `PROJECT_STATE.md` → a sample task — knowing nothing else. Report every point of stall, guess, ambiguity, or contradiction: not "is this well-written" but "would a capable cold agent have done the right thing here?" Rationale: the four-agent test (2026-07-03) failed partly because incumbent agents' instructions were incomplete, and incumbents cannot see such gaps — they fill them from session memory. Only a cold reader can. The 2026-07-10 examination session that prototyped this role is itself a second, independent confirmation of that premise: a cold read caught the `.obsidian`/robocopy bug live and the instruction-file-provenance gap, neither of which either working agent had surfaced from inside the work.
+**A. Instruction fitness ("the cold walk").** Walk the onboarding path exactly as a new agent would — `ONBOARDING.md` → `AI_INSTRUCTIONS.md` → `PROJECT_STATE.md` → a sample task — knowing nothing else. Report every point of stall, guess, ambiguity, or contradiction: not "is this well-written" but "would a capable cold agent have done the right thing here?" Rationale: the four-agent test (2026-07-03) failed partly because incumbent agents' instructions were incomplete, and incumbents cannot see such gaps — they fill them from session memory. Only a cold reader can. The 2026-07-10 examination session that prototyped this role is itself a second, independent confirmation of that premise: a cold read caught the `.obsidian`/robocopy bug live and the instruction-file-provenance gap, neither of which either working agent had surfaced from inside the work. Before this function ever runs against a real candidate tool, its isolation guarantee must be verified per `_ai-context/cold-walk-isolation-safeguard.md` — the walk is only evidence if the walking agent was genuinely blank going in, and that can't be assumed (Open Decision #55).
 
 **B. Drift detection.** Mechanically check that paired and dependent documents still agree: `AI_INSTRUCTIONS.md` ↔ `CLAUDE.md` (and Draft-side equivalents — ranked the project's highest risk in Open Decision #28); `PROJECT_STATE.md` claims vs. actual git state; page inventory vs. actual files; Capability Baseline vs. observable reality; the system architecture document (§7) vs. all of the above. This runs independently of, and does not replace, the Publish Agent's own session-start verification ritual (`AI_INSTRUCTIONS.md` §2) — that check is continuous and incumbent-run; this one is periodic/triggered and cold, per §8's cadence.
 
@@ -144,3 +145,4 @@ Cameron approved, 2026-07-11: staging at `AI-Working/Audit/` (path-scoped grant,
 - [[ONBOARDING]]
 - [[PROJECT_STATE]]
 - [[instruction-provenance]]
+- [[cold-walk-isolation-safeguard]]
