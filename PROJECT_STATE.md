@@ -7,9 +7,7 @@
 
 ## Active Branch
 
-`session-48` (closed out, draft-ready → please-hold → finalised handshake followed in full)
-Branched from `main` at `e9e14b7` — Merge pull request #72 from cameronloudon/session-47
-Session-48 holds: the Phase 2 state-correction commit; and `_ai-context/list-open-decisions.ps1`, a reliable open-decisions filter built after the "no checkmark anywhere in the row" heuristic missed #43 and #48 (a decision can be partially resolved — a ratified sub-clause, a still-open Gate line — and that pattern isn't caught by scanning for checkmarks). Two real bugs found and fixed before it was usable: a literal em-dash breaking Windows PowerShell 5.1's parser without a UTF-8 BOM (same class as #39), then a silent `Get-Content` misread that made every row compare as open. Pushed, ready for the PR.
+`session-49` — branched from `main` at `423b32c` (Merge pull request #73 from cameronloudon/session-48). No work started yet.
 Cameron merges to main. Do not commit directly to main.
 
 ---
