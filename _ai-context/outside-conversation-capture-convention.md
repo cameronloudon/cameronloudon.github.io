@@ -1,4 +1,14 @@
-# Outside-Conversation Capture Convention
+---
+type: reference
+title: "Outside-Conversation Capture Convention"
+aliases:
+  - outside conversation capture convention
+  - Class 3 capture convention
+  - capture prompt v0.2
+refs:
+  - ./messages-promotion-procedure.md
+---
+
 **Last updated:** 2026-07-11
 **Status:** Ratified — Cameron's decision on scope (§8 below), following formal proposal and Cowork's independent review
 **Provenance:** Originally sketched in `AI-Working/Messages/fable-to-cameron-2026-07-11-outside-conversation-capture.md` (Fable 5, AI-Auditor workspace). Formalized and pressure-tested with Cowork: `ccode-to-cowork-2026-07-11-capture-convention-formal-proposal.md` → `cowork-to-ccode-2026-07-11-capture-convention-formal-review.md` → `ccode-to-cowork-2026-07-11-capture-convention-final.md` (all `AI-Working/Messages/`).
@@ -64,3 +74,7 @@ Decoupled, same pattern already used for the JSONL rescue and the action-digest 
 - Whether native transcripts ever gain a `note-source` field with a transitional (not permanent) value set.
 - Platform export availability/formats were not verified against real accounts — ChatGPT/Google Takeout are known to exist as of this convention's design; others need checking at capture time.
 - The capture prompt is untested against any real outside platform — its first real run should be treated as a pilot, same as everything else built today: judge from real output.
+
+## Links
+<!-- generated from refs: - do not hand-edit -->
+- [[messages-promotion-procedure]]

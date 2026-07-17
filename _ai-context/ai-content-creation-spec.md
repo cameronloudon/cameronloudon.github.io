@@ -1,4 +1,20 @@
-# AI Content Creation Specification — cameronloudon.github.io
+---
+type: reference
+title: "AI Content Creation Specification — cameronloudon.github.io"
+aliases:
+  - content creation spec
+  - HTML authoring spec
+  - Jekyll frontmatter rules
+refs:
+  - ../AI_INSTRUCTIONS.md
+  - ../CLAUDE.md
+  - ../ONBOARDING.md
+  - ../PROJECT_STATE.md
+  - ./rct-session-primer.md
+  - ./rct-validation-checklist.md
+  - ./single-ai-workflow.md
+---
+
 **Version:** 1.1  
 **Created:** 20 May 2026  
 **Updated:** 2026-06-21 — reconciliation pass: collab-note format, ideas folder pattern, reference files, checklist, CSS exception  
@@ -532,3 +548,13 @@ This is non-negotiable. Do not omit it. Do not minimise it. Do not suggest Camer
 *This specification is part of the Radical Collaboration Transparency framework.*  
 *cameronloudon.com — ground zero for RCT*  
 *Produced in collaboration with Claude (Anthropic) — claude-sonnet-4-6 — 20 May 2026*
+
+## Links
+<!-- generated from refs: - do not hand-edit -->
+- [[AI_INSTRUCTIONS]]
+- [[CLAUDE]]
+- [[ONBOARDING]]
+- [[PROJECT_STATE]]
+- [[rct-session-primer]]
+- [[rct-validation-checklist]]
+- [[single-ai-workflow]]

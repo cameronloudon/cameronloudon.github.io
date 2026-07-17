@@ -1,4 +1,14 @@
-# RCT Session Primer
+---
+type: reference
+title: "RCT Session Primer"
+aliases:
+  - RCT session primer
+  - session log format
+  - collaboration note format
+refs:
+  - ../PROJECT_STATE.md
+---
+
 **Last updated:** 2026-06-21
 **Part of:** Radical Collaboration Transparency framework
 
@@ -127,3 +137,7 @@ When writing a collab-note or session log, the AI identifies itself as it actual
 ---
 
 *Version: 1.1 · Updated: 2026-06-21 · Promoted from AI-Working to _ai-context/*
+
+## Links
+<!-- generated from refs: - do not hand-edit -->
+- [[PROJECT_STATE]]

@@ -1,4 +1,14 @@
-# Messages Bundle — Promotion Procedure
+---
+type: reference
+title: "Messages Bundle — Promotion Procedure"
+aliases:
+  - messages promotion procedure
+  - promotion procedure
+refs:
+  - ../AI_INSTRUCTIONS.md
+  - ./auditor-charter.md
+---
+
 **Last updated:** 2026-07-11
 **Applies to:** any file moving from `AI-Working/Messages/` (or a raw session log, via mechanical extraction) into the git-tracked `_messages/` bundle. Also the base convention for `_audit-findings/`, which reuses everything here — see `_ai-context/auditor-charter.md` §6 for the one audit-finding-specific addition (the verbatim-promotion rule).
 
@@ -41,3 +51,8 @@ Run the same extraction with `-IncludeActions` and save the output to a local, g
 
 - Commit cadence (§1).
 - Whether the separate outside-conversation capture convention's fields (`capture-method`, `capture-date`, `note-source`) fold into this same procedure once that convention is actually drafted — not yet, since it isn't finalized.
+
+## Links
+<!-- generated from refs: - do not hand-edit -->
+- [[AI_INSTRUCTIONS]]
+- [[auditor-charter]]

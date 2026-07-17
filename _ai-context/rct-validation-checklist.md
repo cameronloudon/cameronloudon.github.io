@@ -1,4 +1,14 @@
-# RCT Validation Checklist
+---
+type: reference
+title: "RCT Validation Checklist"
+aliases:
+  - RCT validation checklist
+  - pre-publish checklist
+refs:
+  - ../PROJECT_STATE.md
+  - ./ai-content-creation-spec.md
+---
+
 **Last updated:** 2026-06-21
 **Version:** 1.0
 **Purpose:** Run before any content is committed or published.
@@ -92,3 +102,8 @@ Complete this block and include it in the session log:
 ---
 
 *Version: 1.0 · Created: 2026-06-21 · Part of the RCT framework*
+
+## Links
+<!-- generated from refs: - do not hand-edit -->
+- [[PROJECT_STATE]]
+- [[ai-content-creation-spec]]

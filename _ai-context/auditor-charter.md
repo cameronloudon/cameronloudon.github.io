@@ -1,4 +1,18 @@
-# Auditor Charter
+---
+type: reference
+title: "Auditor Charter"
+aliases:
+  - auditor charter
+  - Auditor role definition
+  - drift detection charter
+refs:
+  - ../AI_INSTRUCTIONS.md
+  - ../CLAUDE.md
+  - ../ONBOARDING.md
+  - ../PROJECT_STATE.md
+  - ./instruction-provenance.md
+---
+
 **Last updated:** 2026-07-11
 **Version:** 1.0 — ratified from Fable 5's v0.1 discussion draft (AI-Auditor workspace, 2026-07-10)
 **Status:** Ratified — Cameron's decision, 2026-07-11 (session-29), following independent review by Cowork (Draft Agent) and Claude Code (Publish Agent) and their convergence
@@ -122,3 +136,11 @@ Cameron approved, 2026-07-11: staging at `AI-Working/Audit/` (path-scoped grant,
 **§8 cadence, resolved:** monthly stays the documented default. Cameron's own on-demand invocation — already part of the design — will be used far more often than monthly early on, as a matter of practice, not a policy change requiring separate documentation here.
 
 *Ratified under the Radical Collaboration Transparency framework. Original design: Claude (Anthropic), model claude-fable-5, AI-Auditor workspace, 2026-07-10. Independent reviews: Cowork (Draft Agent) and Claude Code (Publish Agent), 2026-07-11. Ratification decision: Cameron Loudon, 2026-07-11. Write-access and cadence amendment: Cameron Loudon, 2026-07-12.*
+
+## Links
+<!-- generated from refs: - do not hand-edit -->
+- [[AI_INSTRUCTIONS]]
+- [[CLAUDE]]
+- [[ONBOARDING]]
+- [[PROJECT_STATE]]
+- [[instruction-provenance]]

@@ -1,4 +1,17 @@
-# Single-AI Workflow
+---
+type: reference
+title: "Single-AI Workflow"
+aliases:
+  - single AI workflow
+  - combined Draft/Publish role
+refs:
+  - ../AI_INSTRUCTIONS.md
+  - ../PROJECT_STATE.md
+  - ./ai-content-creation-spec.md
+  - ./rct-session-primer.md
+  - ./rct-validation-checklist.md
+---
+
 **Last updated:** 2026-06-21
 **Applies when:** One AI is handling both Draft Agent and Publish Agent responsibilities
 
@@ -92,3 +105,11 @@ Whether one AI or two:
 ---
 
 *Version: 1.0 · Created: 2026-06-21 · Part of the RCT framework*
+
+## Links
+<!-- generated from refs: - do not hand-edit -->
+- [[AI_INSTRUCTIONS]]
+- [[PROJECT_STATE]]
+- [[ai-content-creation-spec]]
+- [[rct-session-primer]]
+- [[rct-validation-checklist]]

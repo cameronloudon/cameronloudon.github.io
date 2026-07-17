@@ -1,4 +1,15 @@
-# Draft Agent Config
+---
+type: reference
+title: "Draft Agent Config"
+aliases:
+  - draft agent config
+  - Draft Agent role definition
+refs:
+  - ../AI_INSTRUCTIONS.md
+  - ../PROJECT_STATE.md
+  - ./ai-content-creation-spec.md
+---
+
 **For:** Draft Agent only. Do not use as Publish Agent config.
 **Location (working):** `C:\Users\camer\Documents\AI\AI-Working\Protocols\draft-agent-config.md`
 **Location (repo):** `_ai-context\draft-agent-config.md`
@@ -210,3 +221,9 @@ Key project files (read when relevant, not by default):
 ---
 
 *This file is the single source of truth for the Draft Agent workflow. If this file conflicts with AI_INSTRUCTIONS.md, AI_INSTRUCTIONS.md wins.*
+
+## Links
+<!-- generated from refs: - do not hand-edit -->
+- [[AI_INSTRUCTIONS]]
+- [[PROJECT_STATE]]
+- [[ai-content-creation-spec]]
