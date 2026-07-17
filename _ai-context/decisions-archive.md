@@ -45,6 +45,18 @@ Semantic contradiction/staleness checking (the tool's `Lint` heuristics) deliber
 
 ---
 
+## Decision #55 — Open Decision #47's memory-index question — left explicitly un-timestamped, "needs re-judging against whatever tool actually runs mission 1" — designed as a standalone, tool-agnostic safeguard rather than waiting for a real Auditor tool to exist first
+
+**Resolved.** ✓ Ratified 2026-07-17. Proposed by Claude Code, one substantive redraft round after Cowork's independent review (added the tool-description and filesystem-metadata leak vectors to the disclosure step — a model won't necessarily connect its own tool surface or working directory to "this reveals identity" unless asked directly; tightened the decoy dry-run to "structurally parallel to the real target," not just "an unrelated project," since a generic decoy risks never triggering the real retrieval pathway; named OpenWork+DeepSeek concretely for the empirical architecture check, since Cameron already has tokens available and the check no longer needs to wait for a future candidate). Ratified by Cameron the same day.
+
+Full design lives in `_ai-context/cold-walk-isolation-safeguard.md`, pointed to from `auditor-charter.md` §2 Function A rather than folded into the charter directly — keeps the charter itself cold-context and self-contained per its own §4 principle. Five points: (1) genuinely fresh spawn required — a tool whose architecture makes this structurally impossible is disqualified from mission 1, not accommodated; (2) mandatory three-part step-zero disclosure (system-prompt inference, explicit tool-surface flagging, explicit environment-metadata reporting — split into three because a model won't self-connect these without being asked directly) logged verbatim in the permanent audit record; (3) a decoy dry-run, structurally parallel to the real target, run before the real walk to test the isolation mechanism itself without spending the one real cold walk this project gets; (4) an empirical subagent-architecture check against OpenWork specifically, asking directly whether it inherits parent context by default and separately whether it auto-retrieves/injects context at all (RAG-style) — the one vector step 2's disclosure structurally cannot catch, since an agent can't self-report contamination it has no way to distinguish from its own reasoning; (5) the real walk treated as one-shot once the mechanism's verified clean, not casually repeated.
+
+One deliberate non-change: point 1's disqualifying stance was reviewed and kept as written — the actual bar is "no specific, correct claim about this project," not "zero context of any kind," so it isn't over-strict. If empirical testing later shows nothing clears even that narrower bar, that's evidence Function A's own premise needs rethinking, not evidence the safeguard is miscalibrated.
+
+`#47` itself stays open — this resolves the design question specifically, not mission 1's execution, which remains blocked on actually standing up OpenWork as a candidate and running the safeguard's own point-4 check against it.
+
+---
+
 ## Decision #1 — ai-content-creation-spec.md reconciliation
 
 **Resolved.** ✓ Done — merged to main
