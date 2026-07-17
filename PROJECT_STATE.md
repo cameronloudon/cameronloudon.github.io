@@ -7,9 +7,7 @@
 
 ## Active Branch
 
-`session-46` (closed out, draft-ready → please-hold → finalised handshake followed in full)
-Branched from `main` at `a5cdf93` — Merge pull request #70 from cameronloudon/session-45
-Session-46 holds: the Phase 2 state-correction commit; investigating `karpathy-llm-wiki` as #35's last capability-3 candidate (found to be an Agent Skill, not a program — not trialed, reasoning ratified by Cowork); Open Decision #54, extracting two mechanical conventions from that investigation — `_ai-context/cascade-check.ps1` (built, tested, bug fixed, noise problem fixed) wired into the Session-Close Protocol, and a citation-on-correction rule in `AI_INSTRUCTIONS.md` §8 — ratified by Cameron and archived same-session; and the incidental fix of #53's own stale text, caught while drafting #54. Pushed, ready for the PR.
+`session-47` — branched from `main` at `85ec323` (Merge pull request #71 from cameronloudon/session-46). No work started yet.
 Cameron merges to main. Do not commit directly to main.
 
 ---
