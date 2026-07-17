@@ -1,4 +1,15 @@
-# Cowork Memory Backup — cameronloudon.github.io
+---
+type: reference
+title: "Cowork Memory Backup — cameronloudon.github.io"
+aliases:
+  - cowork memory backup
+  - Draft Agent memory export
+refs:
+  - ../AI_INSTRUCTIONS.md
+  - ../PROJECT_STATE.md
+  - ./draft-agent-config.md
+---
+
 **Last updated:** 2026-07-05
 **Purpose:** Plain-language export of Cowork's memory context. Readable by any AI taking over the Draft Agent role. Not a memory-format file — do not import as memory.
 
@@ -81,3 +92,9 @@ This file captures conventions and context that don't change often. It does not 
 ---
 
 *Created: 2026-06-21 · Last refreshed: 2026-07-05 · Companion to `cowork-conventions.md`*
+
+## Links
+<!-- generated from refs: - do not hand-edit -->
+- [[AI_INSTRUCTIONS]]
+- [[PROJECT_STATE]]
+- [[draft-agent-config]]
