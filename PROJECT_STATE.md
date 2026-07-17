@@ -7,9 +7,7 @@
 
 ## Active Branch
 
-`session-45` (closed out, draft-ready → please-hold → finalised handshake followed in full)
-Branched from `main` at `fd483c0` — Merge pull request #69 from cameronloudon/session-44
-Session-45 holds: the Phase 2 state-correction commit; the `llm-wiki-compiler` capability-3 trial's robocopy `/XD`/`/XF` fix (`sources`, `wiki`, `.llmwiki`, `log.md` — verified empirically, different output shape than Graphify's); and the #35 patch recording the trial's result (real contradiction-detection capability demonstrated, reconciliation failed cleanly and dangerously — false "Fresh" status while contradictory pages coexisted — not adopted, parked alongside `understory`). The trial itself ran in a separate throwaway worktree, torn down, nothing committed from it. Pushed, ready for the PR.
+`session-46` — branched from `main` at `a5cdf93` (Merge pull request #70 from cameronloudon/session-45). No work started yet.
 Cameron merges to main. Do not commit directly to main.
 
 ---
