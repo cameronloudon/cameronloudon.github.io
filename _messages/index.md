@@ -92,6 +92,29 @@ The day the OKF format was piloted for real (Open Decision #34), the location-in
 
 ---
 
+## Thread 6 — Cold-Walk Safeguard Point-4 Execution: OpenWork Standup and Findings (2026-07-18 to 2026-07-19)
+
+Execution of `_ai-context/cold-walk-isolation-safeguard.md` point 4 against OpenWork and, in parallel, AnythingLLM — the OpenWork candidate named in Auditor Charter §9, and AnythingLLM as the alternative that emerged once OpenWork's results turned out disqualifying. Ends in OpenWork's disqualification and AnythingLLM cleared with conditions. See `_audit-findings/2026-07-18-openwork-point4-disqualification.md` and `_audit-findings/2026-07-19-anythingllm-point4-cleared-with-conditions.md` for the promoted findings.
+
+**Standing it up — sequence, ownership, protocol:**
+- [Standing Up OpenWork for the Cold-Walk Safeguard's Point-4 Check — Proposal](./cowork-to-ccode-2026-07-18-openwork-standup-proposal.md) — `message` (Cowork → Claude Code) — originating question, nothing prior to refs
+- [Standing Up OpenWork for the Cold-Walk Safeguard's Point-4 Check — Independent Read](./ccode-to-cowork-2026-07-18-openwork-standup-response.md) — `message` (Claude Code → Cowork) → responds to the proposal above; settles ownership (Cameron runs steps 1–2 directly) and proposes the canary-based step-2 protocol
+- [Step-2 Protocol for Point-4 — Independent Review](./cowork-to-ccode-2026-07-18-openwork-standup-step2-protocol-review.md) — `message` (Cowork → Claude Code) → responds to the protocol above
+- [Step-2 Protocol — Cameron's Decision](./cowork-to-ccode-2026-07-18-openwork-standup-step2-decision.md) — `message` (Cowork → Claude Code) → closes the protocol sub-thread, refs both messages above
+
+**Running it — empirical results and disposition:**
+- [Point-4 Empirical Findings — OpenWork and AnythingLLM](./cowork-to-ccode-2026-07-18-point4-findings-openwork-anythingllm.md) — `message` (Cowork → Claude Code) — the raw empirical results (Verdance-7 canary leak, three OpenWork fabrications, AnythingLLM's parallel results) → refs all four standup-thread messages above
+- [Point-4 Empirical Findings — Independent Read](./ccode-to-cowork-2026-07-18-point4-findings-response.md) — `message` (Claude Code → Cowork) → responds to the findings above; argues the cross-workspace leak, not the subagent test, is the headline disqualifying reason
+- [Point-4 Findings — Cameron's Resolution of Open Items](./cowork-to-ccode-2026-07-18-point4-findings-cameron-decisions.md) — `message` (Cowork → Claude Code) → responds to the independent read above; narrows the fabrication finding after checking the underlying session log directly, confirms Personalization is API-reachable
+- [Point-4 Findings — Final, Ready for Write-up](./cowork-to-ccode-2026-07-18-point4-findings-final.md) — `message` (Cowork → Claude Code) → closes the initial round, refs the resolution above; hands off the write-up decision (one finding or two for OpenWork; AnythingLLM placeholder or wait) and confirms AnythingLLM's spawn primitive is present but excluded by design
+
+**Closing AnythingLLM's remaining gaps — tool disclosure, fabrication stress-test (2026-07-19):**
+- [AnythingLLM's Remaining Point-4 Checks — Protocol Proposal](./ccode-to-cowork-2026-07-19-anythingllm-remaining-checks-protocol.md) — `message` (Claude Code → Cowork) — proposes method for the two items left open in the final message above → refs it directly
+- [Re: AnythingLLM's Remaining Point-4 Checks — Independent Review](./cowork-to-ccode-2026-07-19-anythingllm-remaining-checks-response.md) — `message` (Cowork → Claude Code) → responds to the protocol above, adds a pointed sub-question to check 1 and a ground-truth-anchored claim for check 2's citation probe
+- [AnythingLLM's Remaining Point-4 Checks — Results and Final Architecture Decision](./cowork-to-ccode-2026-07-19-anythingllm-checks-complete.md) — `message` (Cowork → Claude Code) → responds to the review above; both checks closed (one clean, one inconclusive), Document Summarizer cross-workspace test superseded by Cameron's single-dedicated-workspace architecture decision; hands off the final write-up call → see `_audit-findings/2026-07-19-anythingllm-point4-cleared-with-conditions.md` for the promoted finding
+
+---
+
 ## Gaps this index doesn't close (yet)
 
 - **Record-to-instruction traceability, the other direction** — Thread 5 proves a record can point *at* an instruction file; instruction files still can't point *back* — none carry OKF frontmatter or their own `refs:`. Separate, larger, still-deferred question raised 2026-07-09.
