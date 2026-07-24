@@ -12,6 +12,7 @@ refs:
   - ../PROJECT_STATE.md
   - ./instruction-provenance.md
   - ./cold-walk-isolation-safeguard.md
+  - ./auditor-kickoff-prompt.md
 ---
 
 **Last updated:** 2026-07-11
@@ -67,7 +68,7 @@ Three functions, in priority order:
 
 ## 6. Output format
 
-Findings use OKF `type: audit-finding` — the reserved fourth type, taking its first genuine customer. Minimum fields per finding: what was checked, what was found, evidence (`refs:` to git-tracked paths), the instruction clause it bears on, severity (`blocks-independence` / `cosmetic`), failure-kind (reserved, may be blank per §4), and a one-line recommendation. One audit run = one file, written to `AI-Working/Audit/` (§5).
+Findings use OKF `type: audit-finding` — the reserved fourth type, taking its first genuine customer. Minimum fields per finding: what was checked, what was found, evidence (`refs:` to git-tracked paths), the instruction clause it bears on, severity (`blocks-independence` / `cosmetic`), failure-kind (reserved, may be blank per §4), and a one-line recommendation. One audit run = one file, written to the Auditor's own designated workspace (§5) — never directly to `AI-Working/Audit/`, which is populated only by Cameron's own manual relay after he reviews and approves the report there. (Corrected 2026-07-24: this section previously still said "written to `AI-Working/Audit/` (§5)," directly contradicting §5's own 2026-07-12 amendment below — caught as Function A's own Finding 3 was being cross-checked, independent-review catch during the 2026-07-19 AnythingLLM Function A run's write-up.)
 
 **Promotion to `_audit-findings/`.** The Publish Agent promotes each finding, verbatim, into the git-tracked `_audit-findings/` collection (sibling to `_messages/`, same non-rendered treatment) on a session branch; Cameron reviews and merges; the post-merge sync mirrors it to AI-Prod. The promoting agent is one of the audited parties and never edits a finding's authored content — if a finding is wrong, the remedy is a response document in the normal flow, never a silent edit. Once the link convention (generated `[[wikilink]]` footers from `refs:`) applies here too, "verbatim" means two separate mechanical checks: (a) strip the marked generated footer — the remainder must be byte-identical to the staged original in `AI-Working/Audit/`; (b) regenerate the footer from the finding's own `refs:` — it must match what's present. Check (a) catches edits to the finding; check (b) catches footer tampering or generator faults. **Since §5's 2026-07-12 amendment, the staged original in `AI-Working/Audit/` is itself Cameron's manual copy from the Auditor's own workspace** — "verbatim" now also depends on that copy being clean, not only on the Auditor's original write and the Publish Agent's promotion. Stated here plainly rather than left implicit.
 
@@ -100,7 +101,7 @@ Never per-session. Runs are: (1) **triggered** — before any AI-independence te
 
 ## 9. Instantiation
 
-Any capable frontier model, fresh context, this charter as the complete brief. Candidate platform per the Capability Baseline: OpenWork with a token-driven API model — deliberately not a local model; the role that checks reliability must be the most reliable component in the system (the four-agent test's clearest lesson). The prototype run was Fable 5 / Claude Code / AI-Auditor workspace, 2026-07-10.
+Any capable frontier model, fresh context, this charter as the complete brief, plus the actual kickoff text in `_ai-context/auditor-kickoff-prompt.md` — kept as its own versioned sibling file rather than folded in here, same reasoning as the Cold-Walk Isolation Safeguard's own separate file: fixes learned from watching a real run stay durable and pasteable by Cameron alone, not implicit knowledge only the humans present for that run carry forward. Candidate platform per the Capability Baseline: OpenWork with a token-driven API model — deliberately not a local model; the role that checks reliability must be the most reliable component in the system (the four-agent test's clearest lesson). The prototype run was Fable 5 / Claude Code / AI-Auditor workspace, 2026-07-10. First genuine Function A run: 2026-07-19, AnythingLLM/DeepSeek — see `_ai-context/auditor-kickoff-prompt.md` for what that run revealed about the kickoff text itself, and why it now exists as its own file.
 
 ## 10. First missions (in order)
 
@@ -146,3 +147,4 @@ Cameron approved, 2026-07-11: staging at `AI-Working/Audit/` (path-scoped grant,
 - [[PROJECT_STATE]]
 - [[instruction-provenance]]
 - [[cold-walk-isolation-safeguard]]
+- [[auditor-kickoff-prompt]]
