@@ -14,6 +14,28 @@ Each entry below is `[Title](./file.md)` — `type` — a one-line pointer to wh
 
 ---
 
+## Thread 0 — AI Independence Verification & Two-Agent System Audit (2026-06-26 to 2026-06-29)
+
+The earliest material in the whole backlog — predates `_messages/` as a convention by weeks. First slice promoted from the wider 343-file `AI-Working/Messages/` backlog per Cameron's 2026-07-24 request (see "Gaps" below); a 10-file validation batch under full manual `refs:`/`aliases:` rigor, chosen deliberately to include a type-ambiguity case (operational prompt-paste templates were excluded from this batch and the standing rule going forward — they aren't correspondence) alongside genuine summaries and message pairs.
+
+**AI Independence Verification — DeepSeek's runbook review (2026-06-26 to 06-27):**
+- [Cowork Response — AI Independence Verification Document](./ai-independence-cowork-response.md) — `message` (Cowork → DeepSeek) → refs the Claude Code response and the synthesis below
+- [Claude Code Response — AI Independence Verification Document](./ai-independence-claude-code-response.md) — `message` (Claude Code → DeepSeek) → refs the Cowork response and the synthesis below; explicitly reviews Cowork's response in Part 2
+- [AI Independence Verification — Synthesis Document](./ai-independence-synthesis.md) — `summary` (Cowork → DeepSeek) → refs both responses above, its own stated source documents
+- [AI Independence Verification — Session Report](./ai-independence-session-report-2026-06-27.md) — `summary` (Cowork → Claude Code and DeepSeek) → refs the synthesis above; covers the practical execution phase (OpenCode/AnythingLLM configuration, the anti-hallucination guard finding)
+
+**Shared Prompts Folder proposal — becomes the Messages/ convention (2026-06-29):**
+- [Shared Prompts Folder — Proposal for Discussion](./cowork-to-ccode-2026-06-29-shared-prompts-folder.md) — `message` (Cowork → Claude Code) — originating proposal, nothing prior to refs; the naming convention proposed here (`[from]-to-[to]-[date]-[topic].md`) is the one this whole bundle now uses
+- [Re: Shared Prompts Folder Proposal](./ccode-to-cowork-2026-06-29-shared-prompts-folder.md) — `message` (Claude Code → Cowork) → responds to the proposal above; confirms the Messages/ subfolder decision and settings.json permission syntax
+
+**Two-agent system audit and AnythingLLM pre-test fixes (2026-06-29):**
+- [Claude Code — Catch-up Prompt](./claude-code-catchup-2026-06-29.md) — `message` (Cowork → Claude Code) → refs the pre-test-fixes-complete message below; tracks the AnythingLLM system-prompt test-blockers as they're found
+- [Claude Code — Pre-Test Fixes Complete](./claude-code-pretest-complete-2026-06-29.md) — `message` (Cowork → Claude Code) → refs the catch-up prompt above; closes every tracked test-blocker
+- [Cowork Session Handoff](./cowork-session-handoff-2026-06-29.md) — `message` (Cowork → Cowork, cross-session) → refs the verification findings below; the agreed two-agent system (actors, data stores, permissions table) as re-architected this session
+- [Cowork — Independent Verification Findings](./cowork-verification-findings-2026-06-29.md) — `summary` (Cowork → Claude Code) → refs the session handoff above; 15 findings auditing the re-architected system's actual documentation
+
+---
+
 ## Thread 1 — Origin (2026-07-02)
 
 Where the living-knowledgebase idea first came up, five days before "Messages" existed as a convention. See Open Decision #35.
@@ -119,4 +141,4 @@ Execution of `_ai-context/cold-walk-isolation-safeguard.md` point 4 against Open
 
 - **Record-to-instruction traceability, the other direction** — Thread 5 proves a record can point *at* an instruction file; instruction files still can't point *back* — none carry OKF frontmatter or their own `refs:`. Separate, larger, still-deferred question raised 2026-07-09.
 - **Obsidian graph compatibility** — every `refs:` above is a relative markdown link (`./file.md`), not an Obsidian `[[wikilink]]`. Confirmed 2026-07-10 that the Karpathy LLM Wiki plugin's retrieval-time PageRank only walks native `[[wikilink]]` connections — this index's links won't feed that specific mechanism without a separate conversion step.
-- **The wider backlog** (Jun 21–Jul 5, ~80 files) and all pre-`_messages/` history (DeepSeek, ChatGPT, old AnythingLLM/Gemma sessions) — deliberately out of scope for this pass. See Open Decision #35.
+- **The wider backlog** — Cameron requested 2026-07-24 that the *full* remaining `AI-Working/Messages/` backlog be promoted, not just the originally-flagged Jun 21–Jul 5 slice (see `AI-Working/Messages/cowork-to-ccode-2026-07-24-full-backlog-promotion-request.md`). Verified count at that point: 343 unpromoted files (operational prompt-paste templates excluded by standing rule, not counted toward this total), spanning 2026-06-21 through 2026-07-24. Thread 0 above is the first 10-file validation batch under full manual rigor; the remainder is being promoted in further batches, sequencing and rigor level still being decided. All pre-`_messages/` history on outside platforms (DeepSeek, ChatGPT, old AnythingLLM/Gemma sessions) remains separately out of scope — covered by `_ai-context/outside-conversation-capture-convention.md`, not this procedure. See Open Decision #35.
