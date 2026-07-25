@@ -1,13 +1,13 @@
 # PROJECT_STATE.md
 **Single source of current project state. Read this before every session. Update this at every session close.**
 **Last updated:** 2026-07-25
-**Updated by:** Claude Code (Publish Agent) — session-50, added Open Decision #58 (attribution schema — Role/Wrapper/Identity split, addendum to #56); fixed two pre-existing malformed table rows found while adding it (#56 and #57 were both missing their Gate column entirely — 4 columns instead of 5); added a forward-pointer from #56 to #58
+**Updated by:** Claude Code (Publish Agent) — Phase 2 state correction, session-50 merged (PR #75), opened session-51 on merge confirmation. No work started on it yet.
 
 ---
 
 ## Active Branch
 
-`session-50` — branched from `main` at `2ff4c7b` (Merge pull request #74 from cameronloudon/session-49).
+`session-51` — branched from `main` at `19908c0` (Merge pull request #75 from cameronloudon/session-50). No work started yet.
 Cameron merges to main. Do not commit directly to main.
 
 ---
