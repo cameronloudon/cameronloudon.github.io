@@ -1,13 +1,13 @@
 # PROJECT_STATE.md
 **Single source of current project state. Read this before every session. Update this at every session close.**
 **Last updated:** 2026-07-26
-**Updated by:** Claude Code (Publish Agent) — session-51: Function A repeatability run resolved (Open Decision #47 updated, not closed), instruction-file drift fixed, Auditor scoped to AI-Prod by design, third `_audit-findings/` entry promoted.
+**Updated by:** Claude Code (Publish Agent) — Phase 2 state correction, session-51 merged (PR #76), opened session-52 on merge confirmation. No work started on it yet.
 
 ---
 
 ## Active Branch
 
-`session-51` — branched from `main` at `19908c0` (Merge pull request #75 from cameronloudon/session-50). No work started yet.
+`session-52` — branched from `main` at `c074176` (Merge pull request #76 from cameronloudon/session-51). No work started yet.
 Cameron merges to main. Do not commit directly to main.
 
 ---
