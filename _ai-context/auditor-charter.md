@@ -60,11 +60,13 @@ Three functions, in priority order:
 
 | Direction | Access |
 |---|---|
-| Read | Repo (read-only), AI-Prod mirror, any document Cameron provides |
+| Read | AI-Prod mirror, any document Cameron provides — **not** the live repo |
 | Write | Its own `type: audit-finding` files, to its own designated workspace only (e.g. `AI-Auditor`) — never to `AI-Working`, including `AI-Working/Audit/` |
 | Never | Repo writes, all of `AI-Working` (Drafts, Ready, Audit, Messages), instruction files, GitHub |
 
 `AI-Working/Audit/` is populated only by Cameron's own manual relay, after he reviews and approves a report in the Auditor's own workspace — never by a direct write from the Auditor itself. This replaces the original path-scoped write grant to `AI-Working/Audit/` (decided 2026-07-11, Open Decision #41): the enforced boundary is now that no Auditor instantiation, design or operational, ever writes into `AI-Working` at all. Amended 2026-07-12, Open Decision #53, per Cameron's direction and full consensus with Cowork.
+
+**Corrected 2026-07-26:** this row previously read "Repo (read-only), AI-Prod mirror," describing access that was never actually configured — the Auditor's tool grant has only ever covered the AI-Prod mirror (no `.git` present there; a robocopy `/MIR` mirror, not a clone). Caught live by Function A's own cold walk (Finding 1, `AI-Working/Audit/2026-07-26-function-a-cold-walk-repeatability.md`): three denied/failed attempts to reach git state (`.git/HEAD` inside AI-Prod, and the real repo path directly), confirming no path to verifying `PROJECT_STATE.md`'s Active Branch claim or any other git-state fact. Deliberately not resolved by granting repo access instead: AI-Prod is a post-merge-only mirror by design (Cameron reviews and merges before anything syncs), and the live repo at any moment holds in-progress, unreviewed session work — giving the Auditor a live view into that would cut against the same review-gate the mirror exists to enforce. Active Branch / git-state verification and the git-state piece of Function B (drift detection, §2B) are therefore out of scope for this Auditor by design, not a gap awaiting a future access grant. `AI_INSTRUCTIONS.md` §3's Auditor row corrected to match the same day.
 
 ## 6. Output format
 

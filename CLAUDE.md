@@ -2,7 +2,7 @@
 
 ## Project Overview
 Personal brand website and ideas repository. Jekyll site hosted on GitHub Pages.
-The complete project specification is in master-synthesis-prompt.html in this repo root — the founding document. Read it once for historical context when first onboarding; PROJECT_STATE.md is the current-state reference for every session after that.
+The complete project specification is in master-synthesis-prompt/master-synthesis-prompt.html — the founding document. Read it once for historical context when first onboarding; PROJECT_STATE.md is the current-state reference for every session after that.
 
 ## Two-Agent System
 This project uses a two-agent workflow. Claude Code is the Publish Agent. The Draft Agent (Cowork) handles all content creation. The workflow, roles, and permissions are documented in `AI_INSTRUCTIONS.md` — read it before executing any publish task.
@@ -32,8 +32,8 @@ assets/js/       → theme.js (theme toggle logic)
 assets/audio/    → audio files
 _config.yml      → Jekyll configuration
 index.html       → Homepage
-approach.html    → RCT framework page
-master-synthesis-prompt.html → Published prompt page
+approach/approach.html → RCT framework page
+master-synthesis-prompt/master-synthesis-prompt.html → Published prompt page
 
 ## Jekyll Rules
 Every content file MUST start with frontmatter — no blank lines before the first ---
@@ -135,7 +135,7 @@ Restaurants and brewing.
 - Skills section: honest Markdown files, no progress bars or percentages
 
 ## Session Workflow
-1. Read PROJECT_STATE.md (master-synthesis-prompt.html is the founding document — read once on first onboarding, not every session)
+1. Read PROJECT_STATE.md (master-synthesis-prompt/master-synthesis-prompt.html is the founding document — read once on first onboarding, not every session)
 2. Confirm task with Cameron before starting; also confirm with Cameron before any structural decision made mid-session
 3. Create session branch: git checkout -b session-N
 4. Do all work on that branch
