@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 **Single source of current project state. Read this before every session. Update this at every session close.**
-**Last updated:** 2026-07-25
-**Updated by:** Claude Code (Publish Agent) — Phase 2 state correction, session-50 merged (PR #75), opened session-51 on merge confirmation. No work started on it yet.
+**Last updated:** 2026-07-26
+**Updated by:** Claude Code (Publish Agent) — session-51: Function A repeatability run resolved (Open Decision #47 updated, not closed), instruction-file drift fixed, Auditor scoped to AI-Prod by design, third `_audit-findings/` entry promoted.
 
 ---
 
@@ -14,7 +14,9 @@ Cameron merges to main. Do not commit directly to main.
 
 ## Next Session Log ID
 
-`NEXT_SESSION_LOG_ID: 2026-07-15-010`
+`NEXT_SESSION_LOG_ID: 2026-07-15-011`
+
+**Session-51 close-out (2026-07-26):** `session-2026-07-15-010.md` written to cover session-51's actual work — same reserved-ID-vs-actual-date pattern as its predecessors; the ID was reserved when session-50 closed on 2026-07-25, but session-51's real work (the Function A repeatability run's promotion, three settled questions on git-access scope and kickoff-text hardening, instruction-file drift fixes, and a mid-session correction to the session-close handshake itself) ran 2026-07-26. This field advances past it now.
 
 **Session-50 close-out (2026-07-25):** `session-2026-07-15-009.md` written to cover session-50's actual work — same reserved-ID-vs-actual-date pattern as its predecessors; the ID was reserved when session-49 closed on 2026-07-24, but session-50's real work (correcting Open Decision #47, promoting the first 10-file backlog-promotion validation batch, adding Open Decisions #56 and #57, then this close-out's own long attribution-schema conversation resulting in #58) ran 2026-07-24 through 2026-07-25. This field advances past it now.
 
@@ -40,7 +42,7 @@ Cameron merges to main. Do not commit directly to main.
 
 **Resolved, same session-38, later the same day:** rather than another retroactive patch, Cameron and Claude Code built the actual forcing function — a session-close handshake (draft-ready → please-hold → finalised) tied to the one action that already never fails to happen, announcing PR-readiness, instead of to internal judgment about session-end. `session-2026-07-12-002.md` (same reserved-ID-vs-actual-date pattern as `session-2026-07-11-004.md`) is that handshake's own first real use — this session closed itself out under the new mechanism rather than being caught after the fact. See Open Decision #52, closed.
 
-The fifty-five existing session logs are: `session-2026-06-10-001`, `session-2026-06-11-001`, `session-2026-06-11-002`, `session-2026-06-21-001`, `session-2026-06-21-002`, `session-2026-06-29-001`, `session-2026-07-03-001`, `session-2026-07-03-002`, `session-2026-07-03-003`, `session-2026-07-03-004`, `session-2026-07-05-001`, `session-2026-07-05-002`, `session-2026-07-05-003`, `session-2026-07-05-004`, `session-2026-07-05-005`, `session-2026-07-05-006`, `session-2026-07-05-007`, `session-2026-07-05-008`, `session-2026-07-05-009`, `session-2026-07-05-010`, `session-2026-07-05-011`, `session-2026-07-05-012`, `session-2026-07-05-013`, `session-2026-07-05-014`, `session-2026-07-05-015`, `session-2026-07-05-016`, `session-2026-07-05-017`, `session-2026-07-05-018`, `session-2026-07-05-019`, `session-2026-07-05-020`, `session-2026-07-05-021`, `session-2026-07-05-022`, `session-2026-07-05-023`, `session-2026-07-05-024`, `session-2026-07-09-001`, `session-2026-07-09-002`, `session-2026-07-09-003`, `session-2026-07-11-001`, `session-2026-07-11-002`, `session-2026-07-11-003`, `session-2026-07-11-004`, `session-2026-07-12-001`, `session-2026-07-12-002`, `session-2026-07-13-001`, `session-2026-07-13-002`, `session-2026-07-13-003`, `session-2026-07-15-001`, `session-2026-07-15-002`, `session-2026-07-15-003`, `session-2026-07-15-004`, `session-2026-07-15-005`, `session-2026-07-15-006`, `session-2026-07-15-007`, `session-2026-07-15-008`, `session-2026-07-15-009`.
+The fifty-six existing session logs are: `session-2026-06-10-001`, `session-2026-06-11-001`, `session-2026-06-11-002`, `session-2026-06-21-001`, `session-2026-06-21-002`, `session-2026-06-29-001`, `session-2026-07-03-001`, `session-2026-07-03-002`, `session-2026-07-03-003`, `session-2026-07-03-004`, `session-2026-07-05-001`, `session-2026-07-05-002`, `session-2026-07-05-003`, `session-2026-07-05-004`, `session-2026-07-05-005`, `session-2026-07-05-006`, `session-2026-07-05-007`, `session-2026-07-05-008`, `session-2026-07-05-009`, `session-2026-07-05-010`, `session-2026-07-05-011`, `session-2026-07-05-012`, `session-2026-07-05-013`, `session-2026-07-05-014`, `session-2026-07-05-015`, `session-2026-07-05-016`, `session-2026-07-05-017`, `session-2026-07-05-018`, `session-2026-07-05-019`, `session-2026-07-05-020`, `session-2026-07-05-021`, `session-2026-07-05-022`, `session-2026-07-05-023`, `session-2026-07-05-024`, `session-2026-07-09-001`, `session-2026-07-09-002`, `session-2026-07-09-003`, `session-2026-07-11-001`, `session-2026-07-11-002`, `session-2026-07-11-003`, `session-2026-07-11-004`, `session-2026-07-12-001`, `session-2026-07-12-002`, `session-2026-07-13-001`, `session-2026-07-13-002`, `session-2026-07-13-003`, `session-2026-07-15-001`, `session-2026-07-15-002`, `session-2026-07-15-003`, `session-2026-07-15-004`, `session-2026-07-15-005`, `session-2026-07-15-006`, `session-2026-07-15-007`, `session-2026-07-15-008`, `session-2026-07-15-009`, `session-2026-07-15-010`.
 Note: `session-2026-06-21-003` was never written (anticipated but session did not recur that day). Session on 2026-06-26 (pre-test repo prep, session-3b) and the session-4 branch (2026-06-29 branch-workflow correction, folded into `session-2026-06-29-001`'s log) were also not separately logged — acknowledged gaps.
 
 ---
@@ -186,6 +188,7 @@ Split from the single flat `now.html` page (Open Decision #22).
 | `session-2026-07-15-007.md` | Published |
 | `session-2026-07-15-008.md` | Published |
 | `session-2026-07-15-009.md` | Published |
+| `session-2026-07-15-010.md` | Published |
 
 Rows for `002` through `007` were missing from this table despite the files existing on disk and being referenced in the close-out notes above — found 2026-07-24 while adding `008`'s own row; a gap in the session-close ritual itself (page-inventory update skipped, several sessions running), not a one-off. Added now rather than left for a future pass.
 
@@ -208,11 +211,14 @@ Not a Jekyll collection — added to `_config.yml`'s `exclude:` list (same mecha
 
 ### _audit-findings/ bundle (not rendered — chain-of-custody archive)
 
-Not a Jekyll collection — added to `_config.yml`'s `exclude:` list (same mechanism as `_messages/` and `_ai-context/`), not declared as a collection. Sibling to `_messages/`, not a subfolder — decided 2026-07-11 (session-29, Open Decision #41) specifically so the Auditor's write boundary stays a path-scoped grant (`AI-Working/Audit/`) rather than a shared folder enforced only by convention about which `type:` a file claims. Empty except for `index.md` until the Auditor's first real run (charter §10, mission 1).
+Not a Jekyll collection — added to `_config.yml`'s `exclude:` list (same mechanism as `_messages/` and `_ai-context/`), not declared as a collection. Sibling to `_messages/`, not a subfolder — decided 2026-07-11 (session-29, Open Decision #41) specifically so the Auditor's write boundary stays a path-scoped grant (`AI-Working/Audit/`) rather than a shared folder enforced only by convention about which `type:` a file claims. **This section had gone stale since the first two findings landed** ("Empty except for `index.md`... No findings yet") — corrected 2026-07-26 (session-51) while promoting the third; caught doing routine page-inventory maintenance, not flagged by anything else.
 
 | File | Type | Notes |
 |---|---|---|
-| `_audit-findings/index.md` | index | Bundle index; describes the promotion workflow and the verbatim/two-check integrity rule. No findings yet |
+| `_audit-findings/index.md` | index | Bundle index; describes the promotion workflow and the verbatim/two-check integrity rule |
+| `_audit-findings/2026-07-18-openwork-point4-disqualification.md` | audit-finding | `blocks-independence` — cold-walk isolation safeguard, point-4 check; OpenWork disqualified (autonomous cross-session context retrieval, no disable path) |
+| `_audit-findings/2026-07-19-anythingllm-point4-cleared-with-conditions.md` | audit-finding | Disposition doesn't fit the severity axis cleanly (see the finding's own Severity section) — AnythingLLM cleared with conditions as a Function A candidate |
+| `_audit-findings/2026-07-26-function-a-cold-walk-repeatability.md` | audit-finding | Mixed, 2 `blocks-independence` / 2 `cosmetic` — first genuine cold-walk since 2026-07-19, repeatability confirmed (Open Decision #47). Finding 3 has a citation-fabrication discrepancy, noted in the index rather than silently edited |
 
 ### Directories pending action
 
