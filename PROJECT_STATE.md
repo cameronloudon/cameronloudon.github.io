@@ -1,13 +1,13 @@
 # PROJECT_STATE.md
 **Single source of current project state. Read this before every session. Update this at every session close.**
 **Last updated:** 2026-07-26
-**Updated by:** Claude Code (Publish Agent) — session-52: Cowork's kickoff-hardening review reached full consensus; all four rounds built into `auditor-kickoff-prompt.md`, relocation-boundary rule into `auditor-charter.md` §6, Open Decision #47 updated (stays open pending a confirming run).
+**Updated by:** Claude Code (Publish Agent) — Phase 2 state correction, session-52 merged (PR #77), opened session-53 on merge confirmation. No work started on it yet.
 
 ---
 
 ## Active Branch
 
-`session-52` — branched from `main` at `c074176` (Merge pull request #76 from cameronloudon/session-51). No work started yet.
+`session-53` — branched from `main` at `afd3e2a` (Merge pull request #77 from cameronloudon/session-52). No work started yet.
 Cameron merges to main. Do not commit directly to main.
 
 ---
