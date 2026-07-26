@@ -1,13 +1,13 @@
 # PROJECT_STATE.md
 **Single source of current project state. Read this before every session. Update this at every session close.**
 **Last updated:** 2026-07-26
-**Updated by:** Claude Code (Publish Agent) — session-53: Function A's confirming run for Open Decision #47 verified and promoted, six new instruction-file findings fixed, Rounds 6/7 built into `auditor-kickoff-prompt.md`, Open Decision #47 closed and archived.
+**Updated by:** Claude Code (Publish Agent) — Phase 2 state correction, session-53 merged (PR #78), opened session-54 on merge confirmation. No work started on it yet.
 
 ---
 
 ## Active Branch
 
-`session-53` — branched from `main` at `afd3e2a` (Merge pull request #77 from cameronloudon/session-52). No work started yet.
+`session-54` — branched from `main` at `a06db1f` (Merge pull request #78 from cameronloudon/session-53). No work started yet.
 Cameron merges to main. Do not commit directly to main.
 
 ---
