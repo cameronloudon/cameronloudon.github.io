@@ -24,16 +24,27 @@ Cameron reviews the diff on GitHub, then merges to main.
 - Single JS file: assets/js/theme.js
 
 ## File Structure
+
+Quick orientation only — corrected 2026-07-26 after a cold walk found this list still described a pre-root-separation layout (missing several directories, and describing `now.html` as living at root when it moved into `_now/` in session-21). `PROJECT_STATE.md`'s Page Inventory is the authoritative, current source; this list is not guaranteed to stay exhaustive as new collections or pages are added.
+
 _ideas/          → Ideas content pages (Jekyll collection)
-_now/            → Now project updates (Jekyll collection, flat-file pattern) — now.html (root) is the hand-written index
+_signals/        → Signals content pages (Jekyll collection)
+_now/            → Now project updates (Jekyll collection) — `_now/now.html` is the hand-written index
+_skills/         → Skills content pages (Jekyll collection, currently empty)
+_session-logs/   → Session log collection
+_messages/       → Chain-of-custody message archive (not rendered — excluded via `_config.yml`)
+_audit-findings/ → Chain-of-custody audit-finding archive (not rendered — excluded via `_config.yml`)
+_ai-context/     → Operational reference docs (not rendered — excluded via `_config.yml`)
 _layouts/        → default.html layout only
+about/           → About section (overview, work-history, skills sub-pages)
+approach/approach.html → RCT framework page
+contact/         → Contact page
+master-synthesis-prompt/master-synthesis-prompt.html → Published prompt page
 assets/css/      → main.css (single file, four theme modes)
 assets/js/       → theme.js (theme toggle logic)
 assets/audio/    → audio files
 _config.yml      → Jekyll configuration
 index.html       → Homepage
-approach/approach.html → RCT framework page
-master-synthesis-prompt/master-synthesis-prompt.html → Published prompt page
 
 ## Jekyll Rules
 Every content file MUST start with frontmatter — no blank lines before the first ---
