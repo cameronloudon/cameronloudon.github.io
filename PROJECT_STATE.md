@@ -105,6 +105,7 @@ Only `index.html` remains at root — the one deliberate, universal exception (s
 | File/Folder | Title | Status | Notes |
 |---|---|---|---|
 | `_ideas/index.html` | Ideas | Published | Index page |
+| `_ideas/the-auditor-has-landed/` | The Auditor Has Landed | Published | Folder pattern, `index.html`. Retrospective on Function A's journey to its first repeatable confirming run, drafted by Cowork from the project's own record and converted to HTML by Claude Code; third person by Cameron's explicit direction. Cites session-55 (reserved ID `2026-07-15-014`). Building this page surfaced a real, site-wide CSS gap — `.page-header`/`.eyebrow`/`.intro` were only ever styled under `.home-hero`, leaving every other content page (23 files) unstyled despite `ai-content-creation-spec.md` §4 claiming otherwise — fixed root-cause in `main.css` the same session, Cameron's explicit instruction |
 | `_ideas/man-with-two-brains/` | Man With Two Brains | Published | Folder pattern — reference implementation |
 | `_ideas/marketing-os-foundation.html` | Marketing OS Foundation | Published | Legacy flat file — do not use as pattern for new entries |
 | `_ideas/marketing-os/` | Marketing OS | Published | Migrated to folder pattern in session-12 (was an undocumented flat-file deviation); file inside is named after the folder (`marketing-os.html`), not `index.html` |

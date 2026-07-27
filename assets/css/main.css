@@ -365,6 +365,35 @@ hr {
 }
 
 /* ============================================
+   PAGE HEADER (SHARED — Ideas, Signals, Now, and
+   any other content page using .page-header /
+   .eyebrow / .intro outside the homepage hero)
+   ============================================ */
+.page-header {
+  padding: 2rem 0 2.5rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 2.5rem;
+}
+
+.page-header .eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.page-header .intro {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  max-width: 580px;
+  margin-top: 1rem;
+  line-height: 1.8;
+}
+
+/* ============================================
    HEADER & NAV
    ============================================ */
 .site-header {
