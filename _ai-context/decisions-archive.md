@@ -399,6 +399,16 @@ Not a new bug class — a stronger instance of the stale-AI-Prod-mount pattern a
 
 ---
 
+## Decision #60 — `draft-agent-config.md` never defined what "move" means for a Draft Agent tool with no native move/rename operation, a real incident found it
+
+**The gap.** `draft-agent-config.md` instructs the Draft Agent to "move" a file from Drafts to Ready and from Ready to Completed, but never defines what "move" means for a tool whose surface has no native move/rename operation. Cowork's tools are Write plus a sandboxed Bash only; reading "move" as "write to destination" with no explicit removal-and-verification step, she wrote "The Auditor Has Landed" into `Ready/`, then a copy into `Completed/`, without ever removing the `Ready/` copy — left sitting in both folders until Cameron caught it by checking directly. Not tool-specific: any Draft Agent whose tools lack a native move command hits the same silent failure mode, for the same reason.
+
+**Proposal and review.** Cowork proposed a fix rather than editing the read-only-to-her config file herself (`AI-Working/Messages/cowork-to-ccode-2026-07-27-move-step-ambiguity-proposal.md`): state the operational definition once, generically — write to destination, remove from source, list both folders to verify — then the existing "move" instructions can stay short, now backed by a real definition instead of an assumed one. Claude Code's independent review (`ccode-to-cowork-2026-07-27-move-step-review.md`) verified the citation and the empty-`Ready/`-folder claim directly before agreeing, confirmed the diagnosis generalizes to any tool lacking native move, and flagged a scoping gap Cowork's proposal missed: `AI_INSTRUCTIONS.md` §3 — the canonical file, which wins on conflict — uses the identical undefined "move" language in its Draft Agent role row, not just the derivative `draft-agent-config.md`. Sent to Cameron for the decision, including the `AI_INSTRUCTIONS.md` scoping question.
+
+**Resolved 2026-07-27.** Cameron: "Yes, go ahead." `draft-agent-config.md` gained a new "What 'move' means" subsection, placed before its first use (per Claude Code's suggested placement) rather than after, covering both existing move instructions (Drafts→Ready, Ready→Completed) with one definition instead of two implied ones — write to destination, remove from source, verify both by listing, don't report complete until both hold. `AI_INSTRUCTIONS.md` §3 gained a one-line pointer to that definition rather than a full duplicate — a role-summary table isn't the right place for a procedure, but leaving the canonical file's own wording unpointed would have been an oversight, not a deliberate choice. Both files' `Last updated` dates bumped. No `CLAUDE.md` counterpart needed — this gap is Draft-Agent-tool-scoping specific (no native move/rename operation); the Publish Agent's own workflow has no equivalent "move between AI-Working folders" step.
+
+---
+
 ## Links
 <!-- generated from refs: - do not hand-edit -->
 - [[PROJECT_STATE]]

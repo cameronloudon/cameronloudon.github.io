@@ -1,5 +1,5 @@
 # AI Instructions — cameronloudon.github.io
-**Last updated:** 2026-07-13
+**Last updated:** 2026-07-27
 **Authoritative on:** Intent and conventions. For Claude Code-specific detail, see CLAUDE.md. If they conflict, this file wins.
 
 ---
@@ -37,6 +37,8 @@ This project was built with two AI tools in separate roles. Those roles are defi
 | **Publish Agent** | Reads approved structured content from AI-Working/Ready/; authors all HTML and Jekyll frontmatter from it using the template library in `_ai-context/ai-content-creation-spec.md` §6; makes all repo changes; commits and pushes; runs pre-publish validation checklist; updates PROJECT_STATE.md at session close; syncs AI-Prod after merge | Read/write: repo (`C:\Users\camer\Documents\GitHub\cameronloudon.github.io`), `C:\Users\camer\Documents\AI\AI-Evidence\` (raw-material rescue/evidence store, additive only — see Open Decision #38); Read-only: AI-Working/Ready/; Write: AI-Prod (sync only, post-merge); No access: AI-Working/Drafts/, AI-Working/Completed/ |
 | **Review Agent** | Independent review of plans, implementation, and output; cold-start context; no file write access | Read access to documents provided by Cameron |
 | **Auditor** | Cold-context instruction fitness (the "cold walk"), drift detection, and sampled protocol-compliance checks — reports findings, never fixes anything; full brief in `_ai-context/auditor-charter.md`, kickoff text in `_ai-context/auditor-kickoff-prompt.md` | Read: AI-Prod mirror only, any document Cameron provides — no access to the live repo (see `_ai-context/auditor-charter.md` §5); Write: its own `type: audit-finding` files, to its own designated workspace only — never to `AI-Working`; No write access: repo, all of `AI-Working`, instruction files, GitHub |
+
+**"Moves" in the Draft Agent row** follows the operational definition in `_ai-context/draft-agent-config.md` ("move" = write to destination, remove from source, verify both) — not restated here, since this table is a role summary, not a procedure manual. Added 2026-07-27 after a real incident where reading "move" as "write to destination" only, with no removal step, left a file sitting in both `AI-Working/Ready/` and `AI-Working/Completed/` at once; see `PROJECT_STATE.md` Open Decision #60.
 
 **The content/HTML boundary is canonical**, not a workaround for any one model's limitations. The Draft Agent role never produces HTML, page structure, or frontmatter — it produces content (prose, headings, required fields) tagged with a `content_type`. The Publish Agent owns all structural and markup decisions, selecting the matching template from `_ai-context/ai-content-creation-spec.md` §6. This applies to every tool filling either role, not just the tools listed below.
 
