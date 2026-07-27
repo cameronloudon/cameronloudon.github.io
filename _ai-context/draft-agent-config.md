@@ -13,7 +13,7 @@ refs:
 **For:** Draft Agent only. Do not use as Publish Agent config.
 **Location (working):** `C:\Users\camer\Documents\AI\AI-Working\Protocols\draft-agent-config.md`
 **Location (repo):** `_ai-context\draft-agent-config.md`
-**Last updated:** 2026-07-05
+**Last updated:** 2026-07-27
 **Precedence:** If this file conflicts with AI_INSTRUCTIONS.md, AI_INSTRUCTIONS.md wins.
 
 ---
@@ -154,6 +154,18 @@ CONTENT
 FORMAT
 [ ] Header block opens and closes with ---
 [ ] Section headings use ## (not #)
+
+---
+
+## What "move" means
+
+Every "move" instruction in this file — after Cameron approves the draft, and in the Phase 2 close-out below — means the same operational thing: the file exists at the destination and does not exist at the source, verified by listing both folders afterward.
+
+If your tools have no native move/rename operation (yours don't — Write and a sandboxed Bash only), perform this as two explicit steps, in this order:
+1. Write the file to the destination folder.
+2. Remove the file from the source folder.
+
+Then list both folders and confirm: present at the destination, absent from the source. Do not report a move complete until both are verified. Reading "move" as "write to destination" only, with no removal step, has already caused a real incident — a file left sitting in both `Ready/` and `Completed/` at once, undetected until Cameron checked the folders directly. See `PROJECT_STATE.md` Open Decision #60.
 
 ---
 

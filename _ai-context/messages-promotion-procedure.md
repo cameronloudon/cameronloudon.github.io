@@ -1,12 +1,17 @@
 ---
 type: reference
 title: "Messages Bundle — Promotion Procedure"
+role: Publish
+wrapper: Claude Code
+identity: Sonnet 5
+generated.by: "Claude Code/Sonnet 5"  # generated from wrapper:+identity: - do not hand-edit
 aliases:
   - messages promotion procedure
   - promotion procedure
 refs:
   - ../AI_INSTRUCTIONS.md
   - ./auditor-charter.md
+  - ./attribution-schema.md
 ---
 
 **Last updated:** 2026-07-11
@@ -26,12 +31,17 @@ Cadence is currently at the Publish Agent's discretion, session by session — c
 - `title:`
 - `timestamp:` — not `date`; matches the OKF spec's actual optional field name.
 - `from:`/`to:` for authored content, or `participants:` for captured/transcript content — authored and captured content need different shapes (Open Decision #34).
+- `role:`/`wrapper:`/`identity:` — new fields, forward-only from 2026-07-28 (Open Decision #58). Sit alongside `from:`/`to:`, not instead of them. Full definitions and per-surface rules: `_ai-context/attribution-schema.md`.
 - `aliases:` — 2–5 alternate search terms, drafted from the file's actual content. Drafted by whoever authored it, or is closest to its original intent — not guessed by the promoting agent on the other side's behalf (Open Decision #42).
 - `refs:` — bundle-relative markdown links (`./file.md`), or a relative path to a git-tracked instruction file outside the bundle (`../AI_INSTRUCTIONS.md`) for the record-to-instruction case. `refs:` is the single source of truth; every other link representation is mechanically generated from it, never hand-authored (Open Decision #42).
 
 ## 3. Generated `## Links` footer
 
 Run `_ai-context/generate-links-footer.ps1 -BundlePath <path>` after adding or changing any file's `refs:`. It regenerates the marked footer for every file that has one, validates every ref actually resolves, and fails loudly on a broken ref rather than silently emitting a broken link. `index.md` is always skipped — it stays hand-written curation, never a generated footer (Open Decision #42).
+
+## 3a. Generated `generated.by:` field
+
+If the file carries `role:`/`wrapper:`/`identity:` (forward-only, see §2 and `_ai-context/attribution-schema.md`), run `_ai-context/generate-provenance.ps1 -BundlePath <path>` after adding or changing `wrapper:`/`identity:`. It regenerates the marked `generated.by:` frontmatter field from those two, and fails loudly if only one of the pair is present rather than guessing (Open Decision #58).
 
 ## 4. Provenance stamping — mechanical transcripts only
 
@@ -56,3 +66,4 @@ Run the same extraction with `-IncludeActions` and save the output to a local, g
 <!-- generated from refs: - do not hand-edit -->
 - [[AI_INSTRUCTIONS]]
 - [[auditor-charter]]
+- [[attribution-schema]]

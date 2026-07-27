@@ -1,12 +1,17 @@
 ---
 type: reference
 title: "RCT Session Primer"
+role: Publish
+wrapper: Claude Code
+identity: Sonnet 5
+generated.by: "Claude Code/Sonnet 5"  # generated from wrapper:+identity: - do not hand-edit
 aliases:
   - RCT session primer
   - session log format
   - collaboration note format
 refs:
   - ../PROJECT_STATE.md
+  - ./attribution-schema.md
 ---
 
 **Last updated:** 2026-06-21
@@ -44,7 +49,7 @@ Every published page carrying AI-assisted content must include a Collaboration N
   </div>
   <div class="collab-note-body">
     <p>This [page/piece/section] was developed in a session with [AI name] ([provider]).</p>
-    <p>Model: [model string] · Session: [session ID] · Platform: [platform] · Date: [YYYY-MM-DD]</p>
+    <p>Role: [Publish/Draft/etc.] · Model: [model string] · Session: [session ID] · Platform: [platform] · Date: [YYYY-MM-DD]</p>
     <p>[1–2 sentences on what Cameron contributed vs what the AI contributed. Be specific — "developed collaboratively" is not acceptable.]</p>
     <p>Reviewed and approved by Cameron Loudon. Part of the Radical Collaboration Transparency framework.</p>
   </div>
@@ -124,7 +129,7 @@ End every session log with:
 
 ```
 *Session conducted under the Radical Collaboration Transparency framework.*
-*Model: [model] · Session ID: [ID] · Platform: [platform]*
+*Role: [Publish/Draft/etc.] · Model: [model] · Session ID: [ID] · Platform: [platform]*
 *Reviewed and approved by Cameron Loudon.*
 ```
 
@@ -141,3 +146,4 @@ When writing a collab-note or session log, the AI identifies itself as it actual
 ## Links
 <!-- generated from refs: - do not hand-edit -->
 - [[PROJECT_STATE]]
+- [[attribution-schema]]
