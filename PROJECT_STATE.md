@@ -1,13 +1,13 @@
 # PROJECT_STATE.md
 **Single source of current project state. Read this before every session. Update this at every session close.**
 **Last updated:** 2026-07-27
-**Updated by:** Claude Code (Publish Agent) — session-57 close-out: Function B's first script ratified and committed, Open Decision #59 closed and archived.
+**Updated by:** Claude Code (Publish Agent) — Phase 2 state correction, session-57 merged (PR #82), opened session-58 on merge confirmation. No work started on it yet.
 
 ---
 
 ## Active Branch
 
-`session-57` — branched from `main` at `df033f3` (Merge pull request #81 from cameronloudon/session-56). No work started yet.
+`session-58` — branched from `main` at `95f3119` (Merge pull request #82 from cameronloudon/session-57). No work started yet.
 Cameron merges to main. Do not commit directly to main.
 
 ---
