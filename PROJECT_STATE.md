@@ -1,20 +1,22 @@
 # PROJECT_STATE.md
 **Single source of current project state. Read this before every session. Update this at every session close.**
 **Last updated:** 2026-07-27
-**Updated by:** Claude Code (Publish Agent) — session-54 close-out: committed the already-resolved Open Decision #58 patch and the AnythingLLM System Prompt configuration note, fixed a real `_audit-findings/` page-inventory gap, added Open Decision #59 (Function B design settled).
+**Updated by:** Claude Code (Publish Agent) — session-55 close-out: published "The Auditor Has Landed" idea entry, fixed a site-wide `.page-header`/`.eyebrow`/`.intro` CSS gap affecting 23 files.
 
 ---
 
 ## Active Branch
 
-`session-54` — branched from `main` at `a06db1f` (Merge pull request #78 from cameronloudon/session-53). Work done: see NEXT_SESSION_LOG_ID close-out note and Open Decision #59 below.
+`session-55` — branched from `main` at `3d1e91f` (Merge pull request #79 from cameronloudon/session-54). Work done: see NEXT_SESSION_LOG_ID close-out note and `_ideas/` page inventory below.
 Cameron merges to main. Do not commit directly to main.
 
 ---
 
 ## Next Session Log ID
 
-`NEXT_SESSION_LOG_ID: 2026-07-15-014`
+`NEXT_SESSION_LOG_ID: 2026-07-15-015`
+
+**Session-55 close-out (2026-07-27):** `session-2026-07-15-014.md` written to cover session-55's actual work — same reserved-ID-vs-actual-date pattern as its predecessors; the ID was reserved at session-54's close-out on 2026-07-27, but session-55's real work (converting Cowork's Ready draft "The Auditor Has Landed" into a published `_ideas/` entry per §6's template — with a deliberate decision not to extend Open Decision #58's attribution split to the Collaboration Note yet, and to cite this session rather than pick one from several source sessions — plus finding and fixing, root-cause, a site-wide gap where `.page-header`/`.eyebrow`/`.intro` were only ever styled under `.home-hero`) ran 2026-07-27. This field advances past it now.
 
 **Session-54 close-out (2026-07-27):** `session-2026-07-15-013.md` written to cover session-54's actual work — same reserved-ID-vs-actual-date pattern as its predecessors; the ID was reserved when session-53 closed on 2026-07-26, but session-54's real work (committing Open Decision #58's already-resolved attribution-schema patch and the AnythingLLM System Prompt configuration note, fixing a real `_audit-findings/` page-inventory gap found while verifying the Auditor's confirming-run retrospective against source, and settling Function B's design in full with Cowork — the judgment layer stays cold-context, and the script-trust model for a future Function B script is resolved via consensus-gating plus a mandatory cold read for the first script — captured as Open Decision #59) ran 2026-07-27. This field advances past it now.
 
@@ -50,7 +52,7 @@ Cameron merges to main. Do not commit directly to main.
 
 **Corrected 2026-07-26** (Function A cold walk, confirming run for Open Decision #47): `session-2026-07-10-001` was missing from both this enumerated list and the `_session-logs/` inventory table below, despite genuinely existing on disk — a real gap, not caught by anything else in the meantime. Added to both; count corrected from fifty-seven to fifty-eight.
 
-The sixty existing session logs are: `session-2026-06-10-001`, `session-2026-06-11-001`, `session-2026-06-11-002`, `session-2026-06-21-001`, `session-2026-06-21-002`, `session-2026-06-29-001`, `session-2026-07-03-001`, `session-2026-07-03-002`, `session-2026-07-03-003`, `session-2026-07-03-004`, `session-2026-07-05-001`, `session-2026-07-05-002`, `session-2026-07-05-003`, `session-2026-07-05-004`, `session-2026-07-05-005`, `session-2026-07-05-006`, `session-2026-07-05-007`, `session-2026-07-05-008`, `session-2026-07-05-009`, `session-2026-07-05-010`, `session-2026-07-05-011`, `session-2026-07-05-012`, `session-2026-07-05-013`, `session-2026-07-05-014`, `session-2026-07-05-015`, `session-2026-07-05-016`, `session-2026-07-05-017`, `session-2026-07-05-018`, `session-2026-07-05-019`, `session-2026-07-05-020`, `session-2026-07-05-021`, `session-2026-07-05-022`, `session-2026-07-05-023`, `session-2026-07-05-024`, `session-2026-07-09-001`, `session-2026-07-09-002`, `session-2026-07-09-003`, `session-2026-07-10-001`, `session-2026-07-11-001`, `session-2026-07-11-002`, `session-2026-07-11-003`, `session-2026-07-11-004`, `session-2026-07-12-001`, `session-2026-07-12-002`, `session-2026-07-13-001`, `session-2026-07-13-002`, `session-2026-07-13-003`, `session-2026-07-15-001`, `session-2026-07-15-002`, `session-2026-07-15-003`, `session-2026-07-15-004`, `session-2026-07-15-005`, `session-2026-07-15-006`, `session-2026-07-15-007`, `session-2026-07-15-008`, `session-2026-07-15-009`, `session-2026-07-15-010`, `session-2026-07-15-011`, `session-2026-07-15-012`, `session-2026-07-15-013`.
+The sixty-one existing session logs are: `session-2026-06-10-001`, `session-2026-06-11-001`, `session-2026-06-11-002`, `session-2026-06-21-001`, `session-2026-06-21-002`, `session-2026-06-29-001`, `session-2026-07-03-001`, `session-2026-07-03-002`, `session-2026-07-03-003`, `session-2026-07-03-004`, `session-2026-07-05-001`, `session-2026-07-05-002`, `session-2026-07-05-003`, `session-2026-07-05-004`, `session-2026-07-05-005`, `session-2026-07-05-006`, `session-2026-07-05-007`, `session-2026-07-05-008`, `session-2026-07-05-009`, `session-2026-07-05-010`, `session-2026-07-05-011`, `session-2026-07-05-012`, `session-2026-07-05-013`, `session-2026-07-05-014`, `session-2026-07-05-015`, `session-2026-07-05-016`, `session-2026-07-05-017`, `session-2026-07-05-018`, `session-2026-07-05-019`, `session-2026-07-05-020`, `session-2026-07-05-021`, `session-2026-07-05-022`, `session-2026-07-05-023`, `session-2026-07-05-024`, `session-2026-07-09-001`, `session-2026-07-09-002`, `session-2026-07-09-003`, `session-2026-07-10-001`, `session-2026-07-11-001`, `session-2026-07-11-002`, `session-2026-07-11-003`, `session-2026-07-11-004`, `session-2026-07-12-001`, `session-2026-07-12-002`, `session-2026-07-13-001`, `session-2026-07-13-002`, `session-2026-07-13-003`, `session-2026-07-15-001`, `session-2026-07-15-002`, `session-2026-07-15-003`, `session-2026-07-15-004`, `session-2026-07-15-005`, `session-2026-07-15-006`, `session-2026-07-15-007`, `session-2026-07-15-008`, `session-2026-07-15-009`, `session-2026-07-15-010`, `session-2026-07-15-011`, `session-2026-07-15-012`, `session-2026-07-15-013`, `session-2026-07-15-014`.
 Note: `session-2026-06-21-003` was never written (anticipated but session did not recur that day). Session on 2026-06-26 (pre-test repo prep, session-3b) and the session-4 branch (2026-06-29 branch-workflow correction, folded into `session-2026-06-29-001`'s log) were also not separately logged — acknowledged gaps.
 
 ---
@@ -105,6 +107,7 @@ Only `index.html` remains at root — the one deliberate, universal exception (s
 | File/Folder | Title | Status | Notes |
 |---|---|---|---|
 | `_ideas/index.html` | Ideas | Published | Index page |
+| `_ideas/the-auditor-has-landed/` | The Auditor Has Landed | Published | Folder pattern, `index.html`. Retrospective on Function A's journey to its first repeatable confirming run, drafted by Cowork from the project's own record and converted to HTML by Claude Code; third person by Cameron's explicit direction. Cites session-55 (reserved ID `2026-07-15-014`). Building this page surfaced a real, site-wide CSS gap — `.page-header`/`.eyebrow`/`.intro` were only ever styled under `.home-hero`, leaving every other content page (23 files) unstyled despite `ai-content-creation-spec.md` §4 claiming otherwise — fixed root-cause in `main.css` the same session, Cameron's explicit instruction |
 | `_ideas/man-with-two-brains/` | Man With Two Brains | Published | Folder pattern — reference implementation |
 | `_ideas/marketing-os-foundation.html` | Marketing OS Foundation | Published | Legacy flat file — do not use as pattern for new entries |
 | `_ideas/marketing-os/` | Marketing OS | Published | Migrated to folder pattern in session-12 (was an undocumented flat-file deviation); file inside is named after the folder (`marketing-os.html`), not `index.html` |
@@ -201,6 +204,7 @@ Split from the single flat `now.html` page (Open Decision #22).
 | `session-2026-07-15-011.md` | Published |
 | `session-2026-07-15-012.md` | Published |
 | `session-2026-07-15-013.md` | Published |
+| `session-2026-07-15-014.md` | Published |
 
 Rows for `002` through `007` were missing from this table despite the files existing on disk and being referenced in the close-out notes above — found 2026-07-24 while adding `008`'s own row; a gap in the session-close ritual itself (page-inventory update skipped, several sessions running), not a one-off. Added now rather than left for a future pass.
 
