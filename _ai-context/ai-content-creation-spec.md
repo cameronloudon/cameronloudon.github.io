@@ -1,6 +1,10 @@
 ---
 type: reference
 title: "AI Content Creation Specification — cameronloudon.github.io"
+role: Publish
+wrapper: Claude Code
+identity: Sonnet 5
+generated.by: "Claude Code/Sonnet 5"  # generated from wrapper:+identity: - do not hand-edit
 aliases:
   - content creation spec
   - HTML authoring spec
@@ -13,6 +17,7 @@ refs:
   - ./rct-session-primer.md
   - ./rct-validation-checklist.md
   - ./single-ai-workflow.md
+  - ./attribution-schema.md
 ---
 
 **Version:** 1.1  
@@ -217,7 +222,7 @@ These are the standard components available across the site. Use them consistent
   <div class="collab-note-header">🤝 Collaboration Note</div>
   <div class="collab-note-body">
     <p>This [page/piece/section] was developed in a session with [AI name] ([provider]).</p>
-    <p>Model: [model string] · Session: [session ID] · Platform: [platform] · Date: [YYYY-MM-DD]</p>
+    <p>Role: [Publish/Draft/etc.] · Model: [model string] · Session: [session ID] · Platform: [platform] · Date: [YYYY-MM-DD]</p>
     <p>[1–2 sentences on what Cameron contributed vs what the AI contributed. Be specific — "developed collaboratively" is not acceptable.]</p>
     <p>Reviewed and approved by Cameron Loudon. Part of the Radical Collaboration Transparency framework.</p>
   </div>
@@ -295,7 +300,7 @@ description: One sentence description.
     <div class="collab-note-header">🤝 Collaboration Note</div>
     <div class="collab-note-body">
       <p>This page was developed in a session with Claude (Anthropic).</p>
-      <p>Model: claude-sonnet-4-6 · Session: [YYYY-MM-DD-NNN] · Platform: Cowork · Date: [YYYY-MM-DD]</p>
+      <p>Role: Draft · Model: claude-sonnet-4-6 · Session: [YYYY-MM-DD-NNN] · Platform: Cowork · Date: [YYYY-MM-DD]</p>
       <p>[What Cameron contributed vs what the AI contributed — be specific.]</p>
       <p>Reviewed and approved by Cameron Loudon. Part of the Radical Collaboration Transparency framework.</p>
     </div>
@@ -383,7 +388,7 @@ description: One sentence description.
     <div class="collab-note-header">🤝 Collaboration Note</div>
     <div class="collab-note-body">
       <p>This page was developed in a session with Claude (Anthropic).</p>
-      <p>Model: [model string] · Session: [YYYY-MM-DD-NNN] · Platform: [platform] · Date: [YYYY-MM-DD]</p>
+      <p>Role: [Publish/Draft/etc.] · Model: [model string] · Session: [YYYY-MM-DD-NNN] · Platform: [platform] · Date: [YYYY-MM-DD]</p>
       <p>[What Cameron contributed vs what the AI contributed — be specific.]</p>
       <p>Reviewed and approved by Cameron Loudon. Part of the Radical Collaboration Transparency framework.</p>
     </div>
@@ -558,3 +563,4 @@ This is non-negotiable. Do not omit it. Do not minimise it. Do not suggest Camer
 - [[rct-session-primer]]
 - [[rct-validation-checklist]]
 - [[single-ai-workflow]]
+- [[attribution-schema]]
