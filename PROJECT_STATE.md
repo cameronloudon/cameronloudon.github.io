@@ -210,7 +210,7 @@ Rows for `002` through `007` were missing from this table despite the files exis
 
 ### _messages/ bundle (not rendered — chain-of-custody archive)
 
-Not a Jekyll collection — added to `_config.yml`'s `exclude:` list (same mechanism as `_ai-context/`), not declared as a collection. Repo-resident audit copy of selected `AI-Working/Messages/` exchanges, OKF-stamped (`type`, `title`, `timestamp`, `from`/`to` or `participants`, `refs:` as bundle-relative paths). Authored originals continue to live in `AI-Working/Messages/`; this is the record of custody, not the authoring workflow. Piloted 2026-07-09 (session-26) — see Open Decision #34. **8 files here vs. 118 in the `AI-Working/Messages/` backlog as of session-27 — this bundle is a small pilot slice, not yet a representative corpus.** See Open Decision #35.
+Not a Jekyll collection — added to `_config.yml`'s `exclude:` list (same mechanism as `_ai-context/`), not declared as a collection. Repo-resident audit copy of selected `AI-Working/Messages/` exchanges, OKF-stamped (`type`, `title`, `timestamp`, `from`/`to` or `participants`, `refs:` as bundle-relative paths). Authored originals continue to live in `AI-Working/Messages/`; this is the record of custody, not the authoring workflow. Piloted 2026-07-09 (session-26) — see Open Decision #34. **Corrected 2026-07-27 (session-56):** the "8 files here vs. 118 in the backlog — small pilot slice" framing below this bundle carried since piloting was stale — caught during independent review (Cowork) of Function B's first draft script, which found the real folder holds 58 files against this table's 8 (`ccode-to-cowork-2026-07-27-function-b-script-independent-review.md`, verified directly via `ls _messages/*.md` before accepting). All 58 now listed below with a best-effort `Type` only, not full per-entry curation — Open Decision #35's "not yet a real relationship index" gap and #57's scaling-the-index discussion both still apply and are unaffected by this mechanical count fix.
 
 | File | Type | Notes |
 |---|---|---|
@@ -222,6 +222,56 @@ Not a Jekyll collection — added to `_config.yml`'s `exclude:` list (same mecha
 | `_messages/OpenWEBUIandGemma4isWHACKED.md` | summary | Recovered from a chat-UI attachment Cameron held (never previously saved to disk); reclassified from its own self-described "Transcript" title to `type: summary` on inspection — bracketed placeholders stand in for real dialogue, not a raw capture. Resolves the previously-unresolvable `PROJECT_STATE.md` Capability Baseline citation (see Tool/Model/Runtime Matrix, AnythingLLM row) to a real bundle-relative path |
 | `_messages/cameron-claudecode-conversation-transcript-2026-07-09.md` | transcript | Live-context capture — written directly from Claude Code's own active session while the conversation was still open, not reconstructed afterward |
 | `_messages/cameron-claudecode-conversation-transcript-2026-07-08.md` | transcript | Mechanically extracted from a closed session's raw JSONL log (`_ai-context/extract-session-transcript.ps1`), not live-context or manual reconstruction — a stronger verbatim guarantee than either, since it depends on no one's recollection at all. Proof-of-concept for Open Decision #35's backfill question |
+| `_messages/ai-independence-claude-code-response.md` | message | Added 2026-07-27, mechanical inventory fix — see correction note above |
+| `_messages/ai-independence-cowork-response.md` | message | Added 2026-07-27, mechanical inventory fix |
+| `_messages/ai-independence-session-report-2026-06-27.md` | summary | Added 2026-07-27, mechanical inventory fix |
+| `_messages/ai-independence-synthesis.md` | summary | Added 2026-07-27, mechanical inventory fix |
+| `_messages/cameron-cowork-conversation-transcript-full-2026-07-09.md` | transcript | Added 2026-07-27, mechanical inventory fix — the fuller extraction that superseded the partial 2026-07-08 capture above, per Open Decision #35 |
+| `_messages/ccode-and-cowork-2026-07-09-resume-tomorrow.md` | message | Added 2026-07-27, mechanical inventory fix |
+| `_messages/ccode-to-cowork-2026-06-29-shared-prompts-folder.md` | message | Added 2026-07-27, mechanical inventory fix |
+| `_messages/ccode-to-cowork-2026-07-02-conversation-summary.md` | summary | Added 2026-07-27, mechanical inventory fix |
+| `_messages/ccode-to-cowork-2026-07-02-conversation-transcript.md` | transcript | Added 2026-07-27, mechanical inventory fix |
+| `_messages/ccode-to-cowork-2026-07-08-capability-baseline-restructure-proposal.md` | message | Added 2026-07-27, mechanical inventory fix |
+| `_messages/ccode-to-cowork-2026-07-08-consensus-response.md` | message | Added 2026-07-27, mechanical inventory fix |
+| `_messages/ccode-to-cowork-2026-07-08-foundation-layer-independent-read.md` | message | Added 2026-07-27, mechanical inventory fix |
+| `_messages/ccode-to-cowork-2026-07-09-ai-wiki-plan-proposal.md` | message | Added 2026-07-27, mechanical inventory fix |
+| `_messages/ccode-to-cowork-2026-07-09-config-exclude-recheck.md` | message | Added 2026-07-27, mechanical inventory fix |
+| `_messages/ccode-to-cowork-2026-07-09-pilot-close.md` | message | Added 2026-07-27, mechanical inventory fix |
+| `_messages/ccode-to-cowork-2026-07-09-pilot-results.md` | message | Added 2026-07-27, mechanical inventory fix |
+| `_messages/ccode-to-cowork-2026-07-09-transcript-capture-howto.md` | message | Added 2026-07-27, mechanical inventory fix |
+| `_messages/ccode-to-cowork-2026-07-09-transcript-extraction-result.md` | message | Added 2026-07-27, mechanical inventory fix |
+| `_messages/ccode-to-cowork-2026-07-09-transcript-method-and-sequencing.md` | message | Added 2026-07-27, mechanical inventory fix |
+| `_messages/ccode-to-cowork-2026-07-09-transcript-pilot-results.md` | message | Added 2026-07-27, mechanical inventory fix |
+| `_messages/ccode-to-cowork-2026-07-10-refs-to-instruction-demo.md` | message | Added 2026-07-27, mechanical inventory fix |
+| `_messages/ccode-to-cowork-2026-07-18-openwork-standup-response.md` | message | Added 2026-07-27, mechanical inventory fix |
+| `_messages/ccode-to-cowork-2026-07-18-point4-findings-response.md` | message | Added 2026-07-27, mechanical inventory fix |
+| `_messages/ccode-to-cowork-2026-07-19-anythingllm-remaining-checks-protocol.md` | message | Added 2026-07-27, mechanical inventory fix |
+| `_messages/claude-code-catchup-2026-06-29.md` | message | Added 2026-07-27, mechanical inventory fix |
+| `_messages/claude-code-pretest-complete-2026-06-29.md` | message | Added 2026-07-27, mechanical inventory fix |
+| `_messages/cowork-session-handoff-2026-06-29.md` | message | Added 2026-07-27, mechanical inventory fix |
+| `_messages/cowork-to-ccode-2026-06-29-shared-prompts-folder.md` | message | Added 2026-07-27, mechanical inventory fix |
+| `_messages/cowork-to-ccode-2026-07-08-capability-baseline-go-ahead.md` | message | Added 2026-07-27, mechanical inventory fix |
+| `_messages/cowork-to-ccode-2026-07-08-capability-baseline-response.md` | message | Added 2026-07-27, mechanical inventory fix |
+| `_messages/cowork-to-ccode-2026-07-08-consensus-update.md` | message | Added 2026-07-27, mechanical inventory fix |
+| `_messages/cowork-to-ccode-2026-07-08-foundation-layer-context.md` | message | Added 2026-07-27, mechanical inventory fix |
+| `_messages/cowork-to-ccode-2026-07-08-foundation-layer-proposal.md` | message | Added 2026-07-27, mechanical inventory fix |
+| `_messages/cowork-to-ccode-2026-07-09-ai-wiki-plan-response.md` | message | Added 2026-07-27, mechanical inventory fix |
+| `_messages/cowork-to-ccode-2026-07-09-config-exclude-resolution.md` | message | Added 2026-07-27, mechanical inventory fix |
+| `_messages/cowork-to-ccode-2026-07-09-llm-wiki-question.md` | message | Added 2026-07-27, mechanical inventory fix |
+| `_messages/cowork-to-ccode-2026-07-09-my-extraction-result.md` | message | Added 2026-07-27, mechanical inventory fix |
+| `_messages/cowork-to-ccode-2026-07-09-pilot-response.md` | message | Added 2026-07-27, mechanical inventory fix |
+| `_messages/cowork-to-ccode-2026-07-09-transcript-capture-response.md` | message | Added 2026-07-27, mechanical inventory fix |
+| `_messages/cowork-to-ccode-2026-07-09-transcript-method-response.md` | message | Added 2026-07-27, mechanical inventory fix |
+| `_messages/cowork-to-ccode-2026-07-09-transcript-pilot-response.md` | message | Added 2026-07-27, mechanical inventory fix |
+| `_messages/cowork-to-ccode-2026-07-18-openwork-standup-proposal.md` | message | Added 2026-07-27, mechanical inventory fix |
+| `_messages/cowork-to-ccode-2026-07-18-openwork-standup-step2-decision.md` | message | Added 2026-07-27, mechanical inventory fix |
+| `_messages/cowork-to-ccode-2026-07-18-openwork-standup-step2-protocol-review.md` | message | Added 2026-07-27, mechanical inventory fix |
+| `_messages/cowork-to-ccode-2026-07-18-point4-findings-cameron-decisions.md` | message | Added 2026-07-27, mechanical inventory fix |
+| `_messages/cowork-to-ccode-2026-07-18-point4-findings-final.md` | message | Added 2026-07-27, mechanical inventory fix |
+| `_messages/cowork-to-ccode-2026-07-18-point4-findings-openwork-anythingllm.md` | message | Added 2026-07-27, mechanical inventory fix |
+| `_messages/cowork-to-ccode-2026-07-19-anythingllm-checks-complete.md` | message | Added 2026-07-27, mechanical inventory fix |
+| `_messages/cowork-to-ccode-2026-07-19-anythingllm-remaining-checks-response.md` | message | Added 2026-07-27, mechanical inventory fix |
+| `_messages/cowork-verification-findings-2026-06-29.md` | summary | Added 2026-07-27, mechanical inventory fix |
 
 `type: audit-finding` deliberately untested — deferred to the real Auditor track rather than a synthetic file. See Open Decision #34.
 
