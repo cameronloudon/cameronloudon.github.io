@@ -8,8 +8,8 @@ refs:
   - ./auditor-charter.md
 ---
 
-**Last updated:** 2026-07-17
-**Status:** Ratified — Claude Code and Cowork's independent review converged after one redraft round, Cameron ratified 2026-07-17, Open Decision #55.
+**Last updated:** 2026-07-26
+**Status:** Ratified — Claude Code and Cowork's independent review converged after one redraft round, Cameron ratified 2026-07-17, Open Decision #55. AnythingLLM workspace System Prompt configuration recorded 2026-07-26 (see below), Cameron's decision, not requiring a re-ratification of the safeguard itself.
 **Purpose:** Auditor Charter Function A (the cold walk) only produces real evidence if the walking agent is genuinely blank going in. This document is that guarantee's actual verification mechanism — tool-agnostic, designed before any real Auditor tool existed so it's ready whenever one does.
 
 ---
@@ -45,6 +45,12 @@ The second question matters because it's the one vector step 2's disclosure stru
 ## What this safeguard is not
 
 Point 1's disqualifying stance is deliberate, not a placeholder to loosen later: the actual bar is "no specific, correct claim about this project," not "zero context of any kind" — ordinary ambient AI-agent framing that doesn't identify *this* project still passes. If empirical testing against a real candidate later shows nothing clears even that narrower bar, that is evidence Function A's own premise needs rethinking, not evidence this safeguard is miscalibrated.
+
+## Known configuration: AnythingLLM workspace System Prompt, recorded 2026-07-26
+
+The Auditor's AnythingLLM workspace has a platform-level System Prompt field, separate from the charter and kickoff text pasted into each conversation — a real instance of the exact risk `_ai-context/system-architecture.md` §8 already names for the Draft Agent's environment: "No file-based inventory can discover an instruction injected outside any file... nothing that reads a folder — including this document, including a future Auditor run — can discover that such a setting exists or what it contains." Point 2's step-zero disclosure (above) asks what the model infers from its system prompt, which would catch project-*identifying* content leaking through it, but would not surface non-identifying framing that could still subtly shape behavior (e.g. RAG-style "relevant context" language, when the Auditor's actual tools are plain function-calling, not embedding retrieval).
+
+**Decided, 2026-07-26: left at AnythingLLM's own default, not customized with Auditor-specific content.** Current literal value, as configured: *"Given the following conversation, relevant context, and a follow up question, reply with an answer to the current question the user is asking. Return only your response to the question given the above information following the users instructions as needed."* Writing Auditor-specific instructions into this field instead was considered and rejected — it would create a second instruction channel outside the charter and kickoff text, undermining charter §4's claim that the charter (plus kickoff text) is the Auditor's *complete* standing brief, and doing so somewhere step-zero's own disclosure can't reliably surface. This entry exists so the field's actual content is a known, recorded fact rather than an undocumented one, even though it remains something the model itself cannot disclose by inspection alone. A separate, unrelated setting — the workspace's Query-mode refusal response — was checked the same day and confirmed not applicable: this workspace runs in Chat/agent completion mode, not Query mode, so that setting is dormant for how the Auditor is actually used.
 
 ## Sources
 
