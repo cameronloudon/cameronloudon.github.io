@@ -343,6 +343,28 @@ Not a Jekyll collection — added to `_config.yml`'s `exclude:` list (same mecha
 | `_messages/cowork-to-ccode-2026-07-05-repo-architecture-response.md` | message | Batch-5 backlog promotion, 2026-07-28 (session-61) |
 | `_messages/ccode-to-cowork-2026-07-05-merged-architecture-map.md` | message | Batch-5 backlog promotion, 2026-07-28 (session-61) |
 | `_messages/cowork-to-ccode-2026-07-05-merged-architecture-map-feedback.md` | message | Batch-5 backlog promotion, 2026-07-28 (session-61) |
+| `_messages/ccode-to-cowork-2026-07-05-restart-handoff.md` | message | Batch-6 backlog promotion, 2026-07-28 (session-62) — full manual rigor, refs now-collection-origin files directly, records Open Decision #21's fix |
+| `_messages/ccode-to-cowork-2026-07-05-closing-open-items.md` | message | Batch-6 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by session-2026-07-05-004.md |
+| `_messages/cowork-to-ccode-2026-07-05-closing-open-items-response.md` | message | Batch-6 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by session-2026-07-05-004.md |
+| `_messages/ccode-to-cowork-2026-07-05-closing-items-confirmed.md` | message | Batch-6 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-05-check-your-open-items.md` | message | Batch-6 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-2026-07-05-open-items-cleaned-up.md` | message | Batch-6 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-05-go-ahead-sync-draft-agent-config.md` | message | Batch-6 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-2026-07-05-draft-agent-config-synced.md` | message | Batch-6 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-05-session-start-prompts-consolidation.md` | message | Batch-6 backlog promotion, 2026-07-28 (session-62) — Open Decision #32 |
+| `_messages/cowork-to-ccode-2026-07-05-session-start-prompts-recommendation.md` | message | Batch-6 backlog promotion, 2026-07-28 (session-62) — Open Decision #32 |
+| `_messages/ccode-to-cowork-2026-07-05-session-start-prompts-approved.md` | message | Batch-6 backlog promotion, 2026-07-28 (session-62) — Open Decision #32 |
+| `_messages/cowork-to-ccode-2026-07-05-decision-32-closed.md` | message | Batch-6 backlog promotion, 2026-07-28 (session-62) — Open Decision #32 |
+| `_messages/ccode-to-cowork-2026-07-05-draft-agent-config-sync-request.md` | message | Batch-6 backlog promotion, 2026-07-28 (session-62) — Open Decision #32 |
+| `_messages/cowork-to-ccode-2026-07-05-decision-32-text-quoted.md` | message | Batch-6 backlog promotion, 2026-07-28 (session-62) — Open Decision #32 |
+| `_messages/ccode-to-cowork-2026-07-05-instruction-sync-check-parked.md` | message | Batch-6 backlog promotion, 2026-07-28 (session-62) — Open Decision #28 |
+| `_messages/ccode-to-cowork-2026-07-05-instruction-sync-project-plan.md` | message | Batch-6 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by decisions-archive.md Decision #28 |
+| `_messages/ccode-to-cowork-2026-07-05-signals-now-migrated.md` | message | Batch-6 backlog promotion, 2026-07-28 (session-62) — Open Decision #29 |
+| `_messages/ccode-to-cowork-2026-07-05-session16-not-empty.md` | message | Batch-6 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-05-daily-report-claude-code.md` | message | Batch-6 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-05-title-decided.md` | message | Batch-6 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-2026-07-05-repo-redesign-draft-handoff.md` | message | Batch-6 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-05-repo-redesign-published.md` | message | Batch-6 backlog promotion, 2026-07-28 (session-62) |
 
 `type: audit-finding` deliberately untested — deferred to the real Auditor track rather than a synthetic file. See Open Decision #34.
 
