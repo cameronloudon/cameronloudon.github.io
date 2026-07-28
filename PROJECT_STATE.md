@@ -395,6 +395,21 @@ Not a Jekyll collection — added to `_config.yml`'s `exclude:` list (same mecha
 | `_messages/cowork-to-ccode-2026-07-11-aliases-both-flags-accepted.md` | message | Batch-8 backlog promotion, 2026-07-28 (session-62) |
 | `_messages/ccode-to-cowork-2026-07-11-joint-file-aliases-and-count-correction.md` | message | Batch-8 backlog promotion, 2026-07-28 (session-62) |
 | `_messages/cowork-to-ccode-2026-07-11-joint-file-confirmed-all-36-covered.md` | message | Batch-8 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-2026-07-11-audit-finding-home-view.md` | message | Batch-9 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by auditor-charter.md addendum |
+| `_messages/cowork-to-ccode-2026-07-11-audit-finding-home-final-position.md` | message | Batch-9 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by auditor-charter.md addendum |
+| `_messages/ccode-to-cowork-2026-07-11-audit-finding-home-implemented.md` | message | Batch-9 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by auditor-charter.md addendum |
+| `_messages/ccode-to-cowork-2026-07-11-link-convention-proposal.md` | message | Batch-9 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by decisions-archive.md Decision #42 |
+| `_messages/cowork-to-ccode-2026-07-11-link-convention-review.md` | message | Batch-9 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-11-link-convention-independent-verification-request.md` | message | Batch-9 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by decisions-archive.md Decision #42 |
+| `_messages/cowork-to-ccode-2026-07-11-link-convention-verification-result.md` | message | Batch-9 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by decisions-archive.md Decision #42 |
+| `_messages/ccode-to-cowork-2026-07-11-provenance-sidecar-proposal.md` | message | Batch-9 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by decisions-archive.md Decision #51 |
+| `_messages/ccode-to-cowork-2026-07-11-provenance-stamping-proposal.md` | message | Batch-9 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by decisions-archive.md Decision #44 |
+| `_messages/cowork-to-ccode-2026-07-11-provenance-stamping-response.md` | message | Batch-9 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by decisions-archive.md Decision #44 |
+| `_messages/ccode-to-cowork-2026-07-11-rescue-destination-question.md` | message | Batch-9 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-2026-07-11-rescue-destination-answer.md` | message | Batch-9 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-2026-07-11-unauthorized-rescue-acknowledgment.md` | message | Batch-9 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by decisions-archive.md Decision #38 |
+| `_messages/cowork-to-ccode-2026-07-11-broke-the-hold-flagging-it.md` | message | Batch-9 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-11-session-34-log-fixed.md` | message | Batch-9 backlog promotion, 2026-07-28 (session-62) |
 
 `type: audit-finding` deliberately untested — deferred to the real Auditor track rather than a synthetic file. See Open Decision #34.
 
