@@ -321,6 +321,15 @@ Not a Jekyll collection — added to `_config.yml`'s `exclude:` list (same mecha
 | `_messages/allm-to-cowork-2026-07-02-deviation-explanation.md` | message | Batch-2 backlog promotion, 2026-07-28 (session-61) |
 | `_messages/cowork-to-ccode-2026-07-02-anythingllm-analysis.md` | message | Batch-2 backlog promotion, 2026-07-28 (session-61) |
 | `_messages/ccode-to-cowork-2026-07-02-anythingllm-analysis.md` | message | Batch-2 backlog promotion, 2026-07-28 (session-61) |
+| `_messages/cowork-to-ccode-2026-07-03-workflow-reframe.md` | message | Batch-3 backlog promotion, 2026-07-28 (session-61) — full manual rigor, source of `CLAUDE.md`'s content/HTML boundary |
+| `_messages/ccode-to-cowork-2026-07-03-workflow-reframe.md` | message | Batch-3 backlog promotion, 2026-07-28 (session-61) — full manual rigor, source of `CLAUDE.md`'s content/HTML boundary |
+| `_messages/cowork-to-ccode-2026-07-03-workflow-reframe-response.md` | message | Batch-3 backlog promotion, 2026-07-28 (session-61) — full manual rigor, source of `CLAUDE.md`'s content/HTML boundary |
+| `_messages/ccode-to-cowork-2026-07-03-canonical-updates-done.md` | message | Batch-3 backlog promotion, 2026-07-28 (session-61) — full manual rigor, refs `AI_INSTRUCTIONS.md`/`CLAUDE.md` directly |
+| `_messages/cameron-to-ccode-2026-07-03-system-documentation-task.md` | message | Batch-3 backlog promotion, 2026-07-28 (session-61) |
+| `_messages/cameron-to-cowork-2026-07-03-system-documentation-task.md` | message | Batch-3 backlog promotion, 2026-07-28 (session-61) |
+| `_messages/cowork-to-allm-2026-07-03-draft-brief.md` | message | Batch-3 backlog promotion, 2026-07-28 (session-61) |
+| `_messages/allm-to-ccode-2026-07-03-four-agent-test.md` | message | Batch-3 backlog promotion, 2026-07-28 (session-61) |
+| `_messages/allm-to-ccode-2026-07-03-four-agent-collaboration-test.md` | message | Batch-3 backlog promotion, 2026-07-28 (session-61) |
 
 `type: audit-finding` deliberately untested — deferred to the real Auditor track rather than a synthetic file. See Open Decision #34.
 
