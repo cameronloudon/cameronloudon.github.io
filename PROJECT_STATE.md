@@ -7,7 +7,7 @@
 
 ## Active Branch
 
-`session-61` — branched from `main` at `0cfa373` (Merge pull request #85 from cameronloudon/session-60). Work complete, draft-ready, session-close in progress.
+`session-62` — branched from `main` at `8ba5641` (Merge pull request #86 from cameronloudon/session-61). No work started yet.
 Cameron merges to main. Do not commit directly to main.
 
 ---
