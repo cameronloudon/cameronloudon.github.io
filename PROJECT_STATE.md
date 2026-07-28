@@ -380,6 +380,21 @@ Not a Jekyll collection — added to `_config.yml`'s `exclude:` list (same mecha
 | `_messages/ccode-to-cowork-2026-07-10-cold-question-test-openbrain.md` | message | Batch-7 backlog promotion, 2026-07-28 (session-62) |
 | `_messages/cowork-to-ccode-2026-07-10-cold-question-test-answer.md` | message | Batch-7 backlog promotion, 2026-07-28 (session-62) |
 | `_messages/ccode-and-cowork-2026-07-10-resume-handoff.md` | message | Batch-7 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-11-action-digest-pilot-proposal.md` | message | Batch-8 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by decisions-archive.md Decision #45 |
+| `_messages/cowork-to-ccode-2026-07-11-action-digest-pilot-response.md` | message | Batch-8 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by decisions-archive.md Decision #45 |
+| `_messages/ccode-to-cowork-2026-07-11-action-digest-adoption-question.md` | message | Batch-8 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-2026-07-11-action-digest-adoption-response.md` | message | Batch-8 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-11-action-digest-policy-adopted.md` | message | Batch-8 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-2026-07-11-my-action-digest-done.md` | message | Batch-8 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-11-aliases-split-proposal.md` | message | Batch-8 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-2026-07-11-aliases-split-confirmed.md` | message | Batch-8 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-11-my-aliases-draft.md` | message | Batch-8 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-2026-07-11-my-aliases-draft.md` | message | Batch-8 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-11-aliases-cross-check.md` | message | Batch-8 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-2026-07-11-aliases-cross-check.md` | message | Batch-8 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-2026-07-11-aliases-both-flags-accepted.md` | message | Batch-8 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-11-joint-file-aliases-and-count-correction.md` | message | Batch-8 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-2026-07-11-joint-file-confirmed-all-36-covered.md` | message | Batch-8 backlog promotion, 2026-07-28 (session-62) |
 
 `type: audit-finding` deliberately untested — deferred to the real Auditor track rather than a synthetic file. See Open Decision #34.
 
