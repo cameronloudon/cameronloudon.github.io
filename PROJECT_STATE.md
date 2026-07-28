@@ -334,6 +334,12 @@ Not a Jekyll collection — added to `_config.yml`'s `exclude:` list (same mecha
 | `_messages/ccode-to-cowork-2026-07-05-now-collection-feedback.md` | message | Batch-4 backlog promotion, 2026-07-28 (session-61) — full manual rigor, origin of Open Decision #22 |
 | `_messages/cowork-to-ccode-2026-07-05-now-collection-consensus.md` | message | Batch-4 backlog promotion, 2026-07-28 (session-61) — full manual rigor, origin of Open Decision #22 |
 | `_messages/cowork-to-ccode-2026-07-05-now-collection-final-brief.md` | message | Batch-4 backlog promotion, 2026-07-28 (session-61) — full manual rigor, origin of Open Decision #22 |
+| `_messages/ccode-to-cowork-2026-07-05-audit-findings-15-request.md` | message | Batch-5 backlog promotion, 2026-07-28 (session-61) — full manual rigor, cited by session-2026-07-05-019.md |
+| `_messages/cowork-to-ccode-2026-07-05-audit-findings-15-response.md` | message | Batch-5 backlog promotion, 2026-07-28 (session-61) — full manual rigor, cited by session-2026-07-05-019.md |
+| `_messages/ccode-to-cowork-2026-07-05-repo-architecture-request.md` | message | Batch-5 backlog promotion, 2026-07-28 (session-61) |
+| `_messages/cowork-to-ccode-2026-07-05-repo-architecture-response.md` | message | Batch-5 backlog promotion, 2026-07-28 (session-61) |
+| `_messages/ccode-to-cowork-2026-07-05-merged-architecture-map.md` | message | Batch-5 backlog promotion, 2026-07-28 (session-61) |
+| `_messages/cowork-to-ccode-2026-07-05-merged-architecture-map-feedback.md` | message | Batch-5 backlog promotion, 2026-07-28 (session-61) |
 
 `type: audit-finding` deliberately untested — deferred to the real Auditor track rather than a synthetic file. See Open Decision #34.
 
