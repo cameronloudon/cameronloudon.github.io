@@ -463,6 +463,11 @@ Not a Jekyll collection — added to `_config.yml`'s `exclude:` list (same mecha
 | `_messages/ccode-to-cowork-2026-07-13-handshake-landing-log-false-alarm.md` | message | Batch-12 backlog promotion, 2026-07-28 (session-62) |
 | `_messages/cowork-to-ccode-2026-07-13-session-close-handshake-response.md` | message | Batch-12 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by AI_INSTRUCTIONS.md §11 |
 | `_messages/ccode-to-cowork-2026-07-13-session-close-handshake-ratified.md` | message | Batch-12 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-15-graphify-trial-plan-proposal.md` | message | Batch-13 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-2026-07-15-graphify-trial-response.md` | message | Batch-13 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-15-graphify-trial-plan-consensus.md` | message | Batch-13 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-2026-07-15-graphify-trial-consensus-confirmed.md` | message | Batch-13 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-2026-07-15-graphify-35-fix-and-greenlight.md` | message | Batch-13 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by session-2026-07-15-002.md |
 
 `type: audit-finding` deliberately untested — deferred to the real Auditor track rather than a synthetic file. See Open Decision #34.
 
