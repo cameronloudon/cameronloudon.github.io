@@ -423,6 +423,30 @@ Not a Jekyll collection — added to `_config.yml`'s `exclude:` list (same mecha
 | `_messages/ccode-to-cowork-2026-07-11-ai-context-okf-policy-proposal.md` | message | Batch-10 backlog promotion, 2026-07-28 (session-62) |
 | `_messages/ccode-to-cowork-2026-07-11-four-agent-test-page-correction-handoff.md` | message | Batch-10 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by decisions-archive.md Decision #36 |
 | `_messages/ccode-to-cowork-2026-07-11-four-agent-test-published.md` | message | Batch-10 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-11-auditor-proposals-consensus-request.md` | message | Batch-11 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-cameron-2026-07-11-auditor-charter-independent-review.md` | message | Batch-11 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by auditor-charter.md Provenance line |
+| `_messages/cowork-to-cameron-2026-07-11-capture-prompt-pressure-test-and-status.md` | message | Batch-11 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by outside-conversation-capture-convention.md Provenance line |
+| `_messages/ccode-to-cowork-2026-07-11-charter-and-capture-convergence.md` | message | Batch-11 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by auditor-charter.md Provenance line |
+| `_messages/cowork-to-cameron-2026-07-11-holding-confirmed.md` | message | Batch-11 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-11-auditor-charter-ratified.md` | message | Batch-11 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-11-capture-convention-formal-proposal.md` | message | Batch-11 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by outside-conversation-capture-convention.md Provenance line |
+| `_messages/cowork-to-ccode-2026-07-11-capture-convention-formal-review.md` | message | Batch-11 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by outside-conversation-capture-convention.md Provenance line |
+| `_messages/ccode-to-cowork-2026-07-11-capture-convention-final.md` | message | Batch-11 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-11-capture-convention-ratified.md` | message | Batch-11 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-fable-2026-07-11-auditor-first-mission-plan.md` | message | Batch-11 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-fable-2026-07-11-first-mission-sample-task-flaw.md` | message | Batch-11 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-fable-2026-07-11-first-mission-revised-plan.md` | message | Batch-11 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-fable-2026-07-11-mission-split-agreed-plus-one-check.md` | message | Batch-11 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-fable-2026-07-11-who-spawns-mission-1.md` | message | Batch-11 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-fable-2026-07-11-corrections-accepted-and-spawn-question.md` | message | Batch-11 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-fable-2026-07-11-consolidated-first-mission-plan.md` | message | Batch-11 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/fable-to-ccode-2026-07-11-first-mission-plan-answer.md` | message | Batch-11 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-12-instruction-sync-revised-proposal.md` | message | Batch-11 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by decisions-archive.md Decision #28 |
+| `_messages/ccode-to-cowork-2026-07-12-instruction-sync-role-generic-correction.md` | message | Batch-11 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by decisions-archive.md Decision #28 |
+| `_messages/cowork-to-ccode-2026-07-12-instruction-sync-role-generic-response.md` | message | Batch-11 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by decisions-archive.md Decision #28 |
+| `_messages/ccode-to-cowork-2026-07-12-instruction-sync-final-consensus-check.md` | message | Batch-11 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by decisions-archive.md Decision #28 |
+| `_messages/cowork-to-ccode-2026-07-12-instruction-sync-final-consensus-response.md` | message | Batch-11 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by decisions-archive.md Decision #28 |
+| `_messages/ccode-to-cowork-2026-07-12-instruction-sync-closed.md` | message | Batch-11 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by decisions-archive.md Decision #28 |
 
 `type: audit-finding` deliberately untested — deferred to the real Auditor track rather than a synthetic file. See Open Decision #34.
 
