@@ -1,20 +1,22 @@
 # PROJECT_STATE.md
 **Single source of current project state. Read this before every session. Update this at every session close.**
 **Last updated:** 2026-07-28
-**Updated by:** Claude Code (Publish Agent) — Open Decision #58 built and closed: `_ai-context/attribution-schema.md` (canonical `role:`/`wrapper:`/`identity:`/`generated.by:` schema) and `_ai-context/generate-provenance.ps1` (mechanical `generated.by:` derivation), both tested against real files and synthetic edge cases. Session-58.
+**Updated by:** Claude Code (Publish Agent) — session-59: corrected two stale OpenWork references in the Auditor Charter (found by Cowork), then continued the OKF trust-signals thread from session-58 — `generate-provenance.ps1` corrected to OKF's real nested `generated: { by, at }` shape (the original build's flat string was wrong, verified via raw `curl` after a genuine cross-agent disagreement with Cowork got resolved), and `_ai-context/record-verification.ps1` built for `verified:`, OKF's real trust-tier list. Session-59.
 
 ---
 
 ## Active Branch
 
-`session-59` — branched from `main` at `3d61acd` (Merge pull request #83 from cameronloudon/session-58). No work started yet.
+`session-59` — branched from `main` at `3d61acd` (Merge pull request #83 from cameronloudon/session-58). Work complete, draft-ready, session-close in progress.
 Cameron merges to main. Do not commit directly to main.
 
 ---
 
 ## Next Session Log ID
 
-`NEXT_SESSION_LOG_ID: 2026-07-15-018`
+`NEXT_SESSION_LOG_ID: 2026-07-15-019`
+
+**Session-59 close-out (2026-07-28):** `session-2026-07-15-018.md` written to cover session-59's actual work — same reserved-ID-vs-actual-date pattern as its predecessors; the ID was reserved at session-58's close-out on 2026-07-28, but session-59's real work (the Phase 2 branch-open, the Auditor Charter's stale OpenWork references corrected, the `generated.by:` shape bug found and fixed via `curl`-verified evidence after a genuine cross-agent disagreement with Cowork, and `record-verification.ps1` built for OKF's `verified:` trust-tier list) ran the same day. This field advances past it now.
 
 **Session-58 close-out (2026-07-28):** `session-2026-07-15-017.md` written to cover session-58's actual work — same reserved-ID-vs-actual-date pattern as its predecessors; the ID was reserved at session-57's close-out on 2026-07-27, but session-58's real work (Open Decision #58 built: `_ai-context/attribution-schema.md`, `_ai-context/generate-provenance.ps1`, four procedural docs updated for consistency, tested against real `_ai-context/` files and synthetic edge cases, decision closed and archived) ran 2026-07-28. This field advances past it now.
 
@@ -58,7 +60,7 @@ Cameron merges to main. Do not commit directly to main.
 
 **Corrected 2026-07-26** (Function A cold walk, confirming run for Open Decision #47): `session-2026-07-10-001` was missing from both this enumerated list and the `_session-logs/` inventory table below, despite genuinely existing on disk — a real gap, not caught by anything else in the meantime. Added to both; count corrected from fifty-seven to fifty-eight.
 
-The sixty-four existing session logs are: `session-2026-06-10-001`, `session-2026-06-11-001`, `session-2026-06-11-002`, `session-2026-06-21-001`, `session-2026-06-21-002`, `session-2026-06-29-001`, `session-2026-07-03-001`, `session-2026-07-03-002`, `session-2026-07-03-003`, `session-2026-07-03-004`, `session-2026-07-05-001`, `session-2026-07-05-002`, `session-2026-07-05-003`, `session-2026-07-05-004`, `session-2026-07-05-005`, `session-2026-07-05-006`, `session-2026-07-05-007`, `session-2026-07-05-008`, `session-2026-07-05-009`, `session-2026-07-05-010`, `session-2026-07-05-011`, `session-2026-07-05-012`, `session-2026-07-05-013`, `session-2026-07-05-014`, `session-2026-07-05-015`, `session-2026-07-05-016`, `session-2026-07-05-017`, `session-2026-07-05-018`, `session-2026-07-05-019`, `session-2026-07-05-020`, `session-2026-07-05-021`, `session-2026-07-05-022`, `session-2026-07-05-023`, `session-2026-07-05-024`, `session-2026-07-09-001`, `session-2026-07-09-002`, `session-2026-07-09-003`, `session-2026-07-10-001`, `session-2026-07-11-001`, `session-2026-07-11-002`, `session-2026-07-11-003`, `session-2026-07-11-004`, `session-2026-07-12-001`, `session-2026-07-12-002`, `session-2026-07-13-001`, `session-2026-07-13-002`, `session-2026-07-13-003`, `session-2026-07-15-001`, `session-2026-07-15-002`, `session-2026-07-15-003`, `session-2026-07-15-004`, `session-2026-07-15-005`, `session-2026-07-15-006`, `session-2026-07-15-007`, `session-2026-07-15-008`, `session-2026-07-15-009`, `session-2026-07-15-010`, `session-2026-07-15-011`, `session-2026-07-15-012`, `session-2026-07-15-013`, `session-2026-07-15-014`, `session-2026-07-15-015`, `session-2026-07-15-016`, `session-2026-07-15-017`.
+The sixty-five existing session logs are: `session-2026-06-10-001`, `session-2026-06-11-001`, `session-2026-06-11-002`, `session-2026-06-21-001`, `session-2026-06-21-002`, `session-2026-06-29-001`, `session-2026-07-03-001`, `session-2026-07-03-002`, `session-2026-07-03-003`, `session-2026-07-03-004`, `session-2026-07-05-001`, `session-2026-07-05-002`, `session-2026-07-05-003`, `session-2026-07-05-004`, `session-2026-07-05-005`, `session-2026-07-05-006`, `session-2026-07-05-007`, `session-2026-07-05-008`, `session-2026-07-05-009`, `session-2026-07-05-010`, `session-2026-07-05-011`, `session-2026-07-05-012`, `session-2026-07-05-013`, `session-2026-07-05-014`, `session-2026-07-05-015`, `session-2026-07-05-016`, `session-2026-07-05-017`, `session-2026-07-05-018`, `session-2026-07-05-019`, `session-2026-07-05-020`, `session-2026-07-05-021`, `session-2026-07-05-022`, `session-2026-07-05-023`, `session-2026-07-05-024`, `session-2026-07-09-001`, `session-2026-07-09-002`, `session-2026-07-09-003`, `session-2026-07-10-001`, `session-2026-07-11-001`, `session-2026-07-11-002`, `session-2026-07-11-003`, `session-2026-07-11-004`, `session-2026-07-12-001`, `session-2026-07-12-002`, `session-2026-07-13-001`, `session-2026-07-13-002`, `session-2026-07-13-003`, `session-2026-07-15-001`, `session-2026-07-15-002`, `session-2026-07-15-003`, `session-2026-07-15-004`, `session-2026-07-15-005`, `session-2026-07-15-006`, `session-2026-07-15-007`, `session-2026-07-15-008`, `session-2026-07-15-009`, `session-2026-07-15-010`, `session-2026-07-15-011`, `session-2026-07-15-012`, `session-2026-07-15-013`, `session-2026-07-15-014`, `session-2026-07-15-015`, `session-2026-07-15-016`, `session-2026-07-15-017`, `session-2026-07-15-018`.
 Note: `session-2026-06-21-003` was never written (anticipated but session did not recur that day). Session on 2026-06-26 (pre-test repo prep, session-3b) and the session-4 branch (2026-06-29 branch-workflow correction, folded into `session-2026-06-29-001`'s log) were also not separately logged — acknowledged gaps.
 
 ---
@@ -218,6 +220,7 @@ Split from the single flat `now.html` page (Open Decision #22).
 | `session-2026-07-15-015.md` | Published |
 | `session-2026-07-15-016.md` | Published |
 | `session-2026-07-15-017.md` | Published |
+| `session-2026-07-15-018.md` | Published |
 
 Rows for `002` through `007` were missing from this table despite the files existing on disk and being referenced in the close-out notes above — found 2026-07-24 while adding `008`'s own row; a gap in the session-close ritual itself (page-inventory update skipped, several sessions running), not a one-off. Added now rather than left for a future pass.
 
