@@ -230,7 +230,7 @@ Rows for `002` through `007` were missing from this table despite the files exis
 
 ### _messages/ bundle (not rendered — chain-of-custody archive)
 
-Not a Jekyll collection — added to `_config.yml`'s `exclude:` list (same mechanism as `_ai-context/`), not declared as a collection. Repo-resident audit copy of selected `AI-Working/Messages/` exchanges, OKF-stamped (`type`, `title`, `timestamp`, `from`/`to` or `participants`, `refs:` as bundle-relative paths). Authored originals continue to live in `AI-Working/Messages/`; this is the record of custody, not the authoring workflow. Piloted 2026-07-09 (session-26) — see Open Decision #34. **Corrected 2026-07-27 (session-56):** the "8 files here vs. 118 in the backlog — small pilot slice" framing below this bundle carried since piloting was stale — caught during independent review (Cowork) of Function B's first draft script, which found the real folder holds 58 files against this table's 8 (`ccode-to-cowork-2026-07-27-function-b-script-independent-review.md`, verified directly via `ls _messages/*.md` before accepting). All 58 now listed below with a best-effort `Type` only, not full per-entry curation — Open Decision #35's "not yet a real relationship index" gap and #57's scaling-the-index discussion both still apply and are unaffected by this mechanical count fix.
+Not a Jekyll collection — added to `_config.yml`'s `exclude:` list (same mechanism as `_ai-context/`), not declared as a collection. Repo-resident audit copy of selected `AI-Working/Messages/` exchanges, OKF-stamped (`type`, `title`, `timestamp`, `from`/`to` or `participants`, `refs:` as bundle-relative paths). Authored originals continue to live in `AI-Working/Messages/`; this is the record of custody, not the authoring workflow. Piloted 2026-07-09 (session-26) — see Open Decision #34. **Corrected 2026-07-27 (session-56):** the "8 files here vs. 118 in the backlog — small pilot slice" framing below this bundle carried since piloting was stale — caught during independent review (Cowork) of Function B's first draft script, which found the real folder holds 58 files against this table's 8 (`ccode-to-cowork-2026-07-27-function-b-script-independent-review.md`, verified directly via `ls _messages/*.md` before accepting). All 58 (as of 2026-07-27) now listed below with a best-effort `Type` only, not full per-entry curation — Open Decision #35's "not yet a real relationship index" gap and #57's scaling-the-index discussion both still apply and are unaffected by this mechanical count fix. 19 more added 2026-07-28 (session-61), the first resumed backlog-promotion batch under the 2026-07-24 tiered-rigor decision — see Open Decision #57's row and `_messages/index.md`'s own Gaps section for the fuller story.
 
 | File | Type | Notes |
 |---|---|---|
@@ -292,6 +292,25 @@ Not a Jekyll collection — added to `_config.yml`'s `exclude:` list (same mecha
 | `_messages/cowork-to-ccode-2026-07-19-anythingllm-checks-complete.md` | message | Added 2026-07-27, mechanical inventory fix |
 | `_messages/cowork-to-ccode-2026-07-19-anythingllm-remaining-checks-response.md` | message | Added 2026-07-27, mechanical inventory fix |
 | `_messages/cowork-verification-findings-2026-06-29.md` | summary | Added 2026-07-27, mechanical inventory fix |
+| `_messages/cowork-to-ccode-2026-07-02-architecture-proposal.md` | message | Batch-1 backlog promotion, 2026-07-28 (session-61) |
+| `_messages/ccode-to-cowork-2026-07-02-architecture-feedback.md` | message | Batch-1 backlog promotion, 2026-07-28 (session-61) |
+| `_messages/cowork-to-ccode-2026-07-02-messages-folder-consensus.md` | message | Batch-1 backlog promotion, 2026-07-28 (session-61) |
+| `_messages/cowork-to-ccode-2026-07-02-response-as-file.md` | message | Batch-1 backlog promotion, 2026-07-28 (session-61) |
+| `_messages/ccode-to-cowork-2026-07-02-messages-folder-consensus-response.md` | message | Batch-1 backlog promotion, 2026-07-28 (session-61) |
+| `_messages/cowork-to-ccode-2026-07-02-consensus-next-steps.md` | message | Batch-1 backlog promotion, 2026-07-28 (session-61) |
+| `_messages/ccode-to-cowork-2026-07-02-test1-result.md` | message | Batch-1 backlog promotion, 2026-07-28 (session-61) |
+| `_messages/cowork-to-ccode-2026-07-02-create-opencode-json.md` | message | Batch-1 backlog promotion, 2026-07-28 (session-61) |
+| `_messages/ccode-to-cowork-2026-07-02-opencode-json-created.md` | message | Batch-1 backlog promotion, 2026-07-28 (session-61) |
+| `_messages/ccode-to-cowork-2026-07-02-copy-item-correction.md` | message | Batch-1 backlog promotion, 2026-07-28 (session-61) |
+| `_messages/ccode-to-cowork-2026-07-02-big-pickle-confirmed.md` | message | Batch-1 backlog promotion, 2026-07-28 (session-61) |
+| `_messages/cowork-to-ccode-2026-07-02-opencode-readiness.md` | message | Batch-1 backlog promotion, 2026-07-28 (session-61) |
+| `_messages/cowork-to-ccode-2026-07-02-opencode-files-for-review.md` | message | Batch-1 backlog promotion, 2026-07-28 (session-61) |
+| `_messages/ccode-to-cowork-2026-07-02-opencode-readiness-response.md` | message | Batch-1 backlog promotion, 2026-07-28 (session-61) |
+| `_messages/cowork-to-opencode-2026-07-02-verification.md` | message | Batch-1 backlog promotion, 2026-07-28 (session-61) |
+| `_messages/opencode-to-cowork-2026-07-02-verification-response.md` | message | Batch-1 backlog promotion, 2026-07-28 (session-61) |
+| `_messages/cowork-to-ccode-2026-07-02-opencode-verified.md` | message | Batch-1 backlog promotion, 2026-07-28 (session-61) |
+| `_messages/ccode-to-cowork-2026-07-02-opencode-verified-note.md` | message | Batch-1 backlog promotion, 2026-07-28 (session-61) |
+| `_messages/ccode-to-cowork-2026-07-02-opencode-feedback-review.md` | message | Batch-1 backlog promotion, 2026-07-28 (session-61) |
 
 `type: audit-finding` deliberately untested — deferred to the real Auditor track rather than a synthetic file. See Open Decision #34.
 
