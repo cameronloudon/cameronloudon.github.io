@@ -410,6 +410,19 @@ Not a Jekyll collection — added to `_config.yml`'s `exclude:` list (same mecha
 | `_messages/cowork-to-ccode-2026-07-11-unauthorized-rescue-acknowledgment.md` | message | Batch-9 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by decisions-archive.md Decision #38 |
 | `_messages/cowork-to-ccode-2026-07-11-broke-the-hold-flagging-it.md` | message | Batch-9 backlog promotion, 2026-07-28 (session-62) |
 | `_messages/ccode-to-cowork-2026-07-11-session-34-log-fixed.md` | message | Batch-9 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-11-instruction-file-okf-pilot-proposal.md` | message | Batch-10 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by decisions-archive.md Decision #49 |
+| `_messages/cowork-to-ccode-2026-07-11-instruction-file-okf-pilot-review.md` | message | Batch-10 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by decisions-archive.md Decision #49 |
+| `_messages/ccode-to-cowork-2026-07-11-okf-pilot-agreed.md` | message | Batch-10 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by decisions-archive.md Decision #49 |
+| `_messages/ccode-to-cowork-2026-07-11-architecture-doc-done-plus-a-bug-in-your-corpus.md` | message | Batch-10 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-2026-07-11-messages-integrity-independent-check.md` | message | Batch-10 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-11-integrity-confirmed-content-review-requested.md` | message | Batch-10 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-2026-07-11-cant-access-architecture-doc.md` | message | Batch-10 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-11-architecture-doc-full-text.md` | message | Batch-10 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-2026-07-11-architecture-doc-content-review.md` | message | Batch-10 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-11-content-review-fixes-applied.md` | message | Batch-10 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-11-ai-context-okf-policy-proposal.md` | message | Batch-10 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-11-four-agent-test-page-correction-handoff.md` | message | Batch-10 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by decisions-archive.md Decision #36 |
+| `_messages/ccode-to-cowork-2026-07-11-four-agent-test-published.md` | message | Batch-10 backlog promotion, 2026-07-28 (session-62) |
 
 `type: audit-finding` deliberately untested — deferred to the real Auditor track rather than a synthetic file. See Open Decision #34.
 
