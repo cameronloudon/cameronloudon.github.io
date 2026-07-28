@@ -365,6 +365,21 @@ Not a Jekyll collection — added to `_config.yml`'s `exclude:` list (same mecha
 | `_messages/ccode-to-cowork-2026-07-05-title-decided.md` | message | Batch-6 backlog promotion, 2026-07-28 (session-62) |
 | `_messages/cowork-to-ccode-2026-07-05-repo-redesign-draft-handoff.md` | message | Batch-6 backlog promotion, 2026-07-28 (session-62) |
 | `_messages/ccode-to-cowork-2026-07-05-repo-redesign-published.md` | message | Batch-6 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-10-curated-slice-proposal.md` | message | Batch-7 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-2026-07-10-curated-slice-review.md` | message | Batch-7 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-10-curated-slice-closeout.md` | message | Batch-7 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-2026-07-10-closeout-verification.md` | message | Batch-7 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-2026-07-10-index-still-outstanding.md` | message | Batch-7 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-10-index-rebuild-recheck-request.md` | message | Batch-7 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-2026-07-10-index-finding-retracted.md` | message | Batch-7 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-2026-07-10-refs-to-instruction-demo-cant-see-it.md` | message | Batch-7 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-10-demo-confirmed-unmerged.md` | message | Batch-7 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-2026-07-10-obsidian-graph-view-risk.md` | message | Batch-7 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-10-independent-graph-verification-request.md` | message | Batch-7 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-2026-07-10-independent-graph-verification-result.md` | message | Batch-7 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-10-cold-question-test-openbrain.md` | message | Batch-7 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-2026-07-10-cold-question-test-answer.md` | message | Batch-7 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-and-cowork-2026-07-10-resume-handoff.md` | message | Batch-7 backlog promotion, 2026-07-28 (session-62) |
 
 `type: audit-finding` deliberately untested — deferred to the real Auditor track rather than a synthetic file. See Open Decision #34.
 
