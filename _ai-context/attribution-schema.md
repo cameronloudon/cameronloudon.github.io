@@ -70,13 +70,24 @@ OKF's real spec (v0.2, verified directly — not the v0.1 originally assumed) ha
 
 A file with only one of `wrapper:`/`identity:` present is a real error, not a value to guess past — the script fails loudly on it rather than emitting a partial or wrong `generated:`.
 
-`verified:` is a good future fit — `_audit-findings/` already has a real generate/verify split in practice (Auditor produces, Cameron approves, Cowork/Claude Code often independently re-verify specific claims before trusting a report) — but is explicitly **not** part of this build. Real open design question, not yet decided: OKF's `verified:` is list-shaped (multiple independent confirmations), which doesn't fit this project's flat-scalar `wrapper:`/`identity:` precedent the way `generated:` did — and unlike every mechanical field built so far, a hand-appended growing list is a genuinely new authoring pattern, possibly needing its own small append tool rather than a derive-in-place script. Tracked as a live discussion with Cowork, not designed here.
+## 3a. `verified:` — append-only, via `_ai-context/record-verification.ps1`
+
+Built 2026-07-28, per Cameron's direction to stay as OKF-conformant as possible — the real list (`verified: [{ by, at }, ...]`), not a flat single-pair field, since `_audit-findings/` already has a genuine generate/verify split in practice (Auditor produces, Cameron approves, Cowork/Claude Code often independently re-verify specific claims before trusting a report) that a flat field would have lost the moment more than one party checks the same file.
+
+Unlike `generated:`, this field is never regenerated wholesale — every other script in this family derives and replaces a whole field from source-of-truth inputs; `verified:` is an accumulating log, so the script only ever appends one entry per invocation, never touching prior ones.
+
+**Interface:** `record-verification.ps1 -File <path> -Wrapper <wrapper> -Identity <identity> [-At <ISO8601>]`, or `-Process <id>` as a mutually exclusive alternative producing `by: process:<id>` directly — the third actor form OKF's own convention defines (alongside `<producer>/<version>` and `human:<id>`) for a mechanical, non-agent, non-human verifier. Not used by anything in this project yet as of 2026-07-28 (`function-b-state-check.ps1`/`cascade-check.ps1` are the two plausible future callers), added to complete the convention rather than because a concrete caller exists.
+
+**`-At`** defaults to the system clock at invocation, not `git log` — deliberately different from `generated.at`'s sourcing, since a verification event has no necessary relationship to any file commit (Cowork could verify a file Claude Code committed days earlier). Reading the system clock isn't the model-inferred-date risk this project's anti-guessing rule targets; an explicit override is available for recording an event after the fact.
+
+**Duplicate handling:** an identical `{ by, at }` pair is skipped, not re-appended (protects against an accidental double-run); a matching `by` with a different `at` is always appended as a genuine new event, per OKF §5.2 ("facts can be re-confirmed without regeneration"). If the file's existing `verified:` content doesn't match one of the two shapes the spec actually tolerates (a bare single mapping, or a plain list of one-line `{ by, at }` entries), the script fails loudly and leaves the file untouched rather than risk corrupting real verification history — a harder, riskier parse-and-mutate operation than anything else in this script family, named as such rather than hand-waved past.
+
+No precondition on `role:`/`wrapper:`/`identity:`/`generated:` already being present — a legitimate re-check of an old, not-yet-migrated file is a real case, so `verified:` appearing without `generated:` alongside it is an expected, valid combination, not a sign of a broken file.
 
 ## 4. Still open, not resolved by this doc
 
 - `participants:` (multi-author `_messages/` transcripts) — see §2.
 - Whether `_audit-findings/`'s `provenance:` prose field should eventually be split further once more findings exist to generalize from — not decided, not blocking.
-- `verified[].by:` — named as a good future fit, not designed.
 
 ## Links
 <!-- generated from refs: - do not hand-edit -->
