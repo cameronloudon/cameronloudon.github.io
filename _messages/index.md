@@ -93,13 +93,13 @@ Where the living-knowledgebase idea first came up, five days before "Messages" e
 
 ## Thread 2 — The Four-Agent Test's Primary Evidence, the Workflow Reframe, and the Content/HTML Boundary's Origin (2026-07-03)
 
-- [Transcript of Conversation with Gemma 4 — January 2025](./OpenWEBUIandGemma4isWHACKED.md) — `summary` — raw evidence of AnythingLLM/Gemma's actual failure mode (fabricated paths, unauthorized writes); recovered after being nearly lost, see Open Decision #34. Referenced by the Thread 3 transcript and by Open Decision #36's correction to the four-agent-test diagnosis.
+- [Transcript of Conversation with Gemma 4 — January 2025](./OpenWEBUIandGemma4isWHACKED.md) — `summary` — raw evidence of AnythingLLM/Gemma's actual failure mode (fabricated paths, unauthorized writes); recovered after being nearly lost, see Open Decision #34. Referenced by the Thread 4 transcript and by Open Decision #36's correction to the four-agent-test diagnosis.
 
 **The workflow reframe — origin of the content/HTML boundary (batch-3, promoted 2026-07-28, session-61).** Full manual rigor applied to this sub-group specifically, not just the heuristic tier the rest of the batch used — `_session-logs/session-2026-07-03-001.md`'s own "Documents touched" list names these three files directly as the source record behind `CLAUDE.md`'s still-active content/HTML boundary paragraph, confirmed by direct filename match before treating it as canonical:
 - [Workflow Reframe — Two Questions Before We Change Anything](./cowork-to-ccode-2026-07-03-workflow-reframe.md) — `message` (Cowork → Claude Code) — originating, no prior refs
 - [Workflow Reframe — Agree on Q2, Q1 Mostly Dissolves If We Adopt It, Here's the Q3 Punch List](./ccode-to-cowork-2026-07-03-workflow-reframe.md) — `message` (Claude Code → Cowork) → refs the questions above and `ccode-to-cowork-2026-07-02-architecture-feedback.md` (Thread 1) directly; the actual design decision — content/HTML split adopted as canonical, not a Gemma workaround
 - [Cameron Has Confirmed — Proceed](./cowork-to-ccode-2026-07-03-workflow-reframe-response.md) — `message` (Cowork → Claude Code) → refs the design decision above
-- [AI_INSTRUCTIONS.md / CLAUDE.md Updates Committed — session-5 Pushed, Awaiting Cameron's Merge](./ccode-to-cowork-2026-07-03-canonical-updates-done.md) — `message` (Claude Code → Cowork) → refs the confirmation above, and `../AI_INSTRUCTIONS.md`/`../CLAUDE.md` directly — the actual files edited to land this decision, a record-to-instruction link matching Thread 5's precedent below
+- [AI_INSTRUCTIONS.md / CLAUDE.md Updates Committed — session-5 Pushed, Awaiting Cameron's Merge](./ccode-to-cowork-2026-07-03-canonical-updates-done.md) — `message` (Claude Code → Cowork) → refs the confirmation above, and `../AI_INSTRUCTIONS.md`/`../CLAUDE.md` directly — the actual files edited to land this decision, a record-to-instruction link matching Thread 6's precedent below
 
 **System documentation task — repo-side and Draft-Agent-side briefs (parallel, not a reply pair):**
 - [Task Brief — Complete System Documentation, Repo Side](./cameron-to-ccode-2026-07-03-system-documentation-task.md) — `message` (Cameron → Claude Code) — originating; asks for output at `ccode-to-cowork-2026-07-03-system-documentation-repo-side.md`, not found in this batch — not confirmed missing from the wider backlog, just not yet promoted or not yet located
@@ -112,11 +112,22 @@ Where the living-knowledgebase idea first came up, five days before "Messages" e
 
 ---
 
-## Thread 3 — Foundation Layer Proposal & Capability Baseline (2026-07-08)
+## Thread 3 — The `_now/` Collection's Origin (2026-07-05)
+
+Inserted 2026-07-28 (session-61, batch-4) between the existing Thread 2 (2026-07-03) and what was Thread 3 (2026-07-08, foundation layer) — that thread and every one after it renumbered up by one (old Thread 3→4, 4→5, 5→6, 6→7) to keep chronological order; every internal cross-reference by number elsewhere in this file was checked and updated to match, not just the headings. Full manual rigor applied throughout — all four files are the literal source record cited by `_session-logs/session-2026-07-05-002.md`'s own "Documents touched" list, confirmed by exact filename match, and this is the actual origin of Open Decision #22 (splitting `now.html` into the `_now/` collection).
+
+- [Architecture Proposal — Convert Now page to a `_now/` collection](./cowork-to-ccode-2026-07-05-now-collection-proposal.md) — `message` (Cowork → Claude Code) — originating, no prior refs
+- [Feedback — Now page → `_now/` collection proposal](./ccode-to-cowork-2026-07-05-now-collection-feedback.md) — `message` (Claude Code → Cowork) → refs the proposal above; agrees on the core approach, resolves two open questions, adds the `rct-validation-checklist.md` gap and the collab-note session-ID question
+- [Consensus — Now page → `_now/` collection](./cowork-to-ccode-2026-07-05-now-collection-consensus.md) — `message` (Cowork → Claude Code) → refs the feedback above; agreement on every technical point, defers the session-ID question to Cameron
+- [Final Brief — Now page → `_now/` collection (consensus reached)](./cowork-to-ccode-2026-07-05-now-collection-final-brief.md) — `message` (Cowork → Claude Code) → refs all three messages above; Cameron's decision on the collab-note session-ID question plus the complete, ready-to-implement technical approach
+
+---
+
+## Thread 4 — Foundation Layer Proposal & Capability Baseline (2026-07-08)
 
 - [Foundation Layer — Framework and Plan for Independent Review](./cowork-to-ccode-2026-07-08-foundation-layer-proposal.md) — `message` (Cowork → Claude Code) → replied to by the context doc below
 - [Foundation Layer Discussion — Context and Summary](./cowork-to-ccode-2026-07-08-foundation-layer-context.md) — `summary` (Cowork → Claude Code) — **typed `summary` not `message`**: self-describes as "my own reconstruction from session context, not a tool-verified extraction," explicitly defers to the real transcript below → refs the proposal above and the transcript below
-- [Cameron & Cowork — Foundation Layer Conversation](./cameron-cowork-conversation-transcript-2026-07-08.md) — `transcript` — **partial capture, cuts off mid-conversation.** `superseded_by:` [Cameron & Cowork — Full Foundation-Layer Session, Mechanical Extraction](./cameron-cowork-conversation-transcript-full-2026-07-09.md) (Thread 4) → refs the context/proposal pair above and `OpenWEBUIandGemma4isWHACKED.md`
+- [Cameron & Cowork — Foundation Layer Conversation](./cameron-cowork-conversation-transcript-2026-07-08.md) — `transcript` — **partial capture, cuts off mid-conversation.** `superseded_by:` [Cameron & Cowork — Full Foundation-Layer Session, Mechanical Extraction](./cameron-cowork-conversation-transcript-full-2026-07-09.md) (Thread 5) → refs the context/proposal pair above and `OpenWEBUIandGemma4isWHACKED.md`
 - [Foundation Layer — Independent Read](./ccode-to-cowork-2026-07-08-foundation-layer-independent-read.md) — `message` (Claude Code → Cowork) → responds to the proposal/context/transcript above
 - [Foundation Layer — Consensus Update](./cowork-to-ccode-2026-07-08-consensus-update.md) — `message` (Cowork → Claude Code) → responds to the independent read above
 - [Re: Foundation Layer Consensus Update](./ccode-to-cowork-2026-07-08-consensus-response.md) — `message` (Claude Code → Cowork) → closes the consensus loop, refs the update above
@@ -127,19 +138,19 @@ Where the living-knowledgebase idea first came up, five days before "Messages" e
 
 ---
 
-## Thread 4 — Location Decision, Pilot, AI-Wiki Plan, Transcript Extraction (2026-07-09)
+## Thread 5 — Location Decision, Pilot, AI-Wiki Plan, Transcript Extraction (2026-07-09)
 
 The day the OKF format was piloted for real (Open Decision #34), the location-in-repo question was settled, and the living-knowledgebase scope correction happened (Open Decision #35).
 
 **Location decision:**
-- [Foundation Layer — Reopening the Location Decision](./cowork-to-ccode-2026-07-09-location-reconsideration.md) — `message` (Cowork → Claude Code) → refs back to the 2026-07-08 consensus update (Thread 3)
+- [Foundation Layer — Reopening the Location Decision](./cowork-to-ccode-2026-07-09-location-reconsideration.md) — `message` (Cowork → Claude Code) → refs back to the 2026-07-08 consensus update (Thread 4)
 - [Re: Location Reconsideration and Git Question](./cowork-to-ccode-2026-07-09-location-git-response.md) — `message` (Cowork → Claude Code)
 - [Re: Foundation Layer — Location Reconsideration](./ccode-to-cowork-2026-07-09-location-git-response.md) — `message` (Claude Code → Cowork) → responds to the reconsideration above; this exchange settled `_messages/` as the answer
 
 **Pilot (Open Decision #34):**
 - [Foundation Layer — Pilot Run, Results](./ccode-to-cowork-2026-07-09-pilot-results.md) — `message` → refs the location-decision response above
 - [Re: Pilot Run, Results](./cowork-to-ccode-2026-07-09-pilot-response.md) — `message` → responds to pilot-results
-- [Foundation Layer — Transcript Pilot, Results](./ccode-to-cowork-2026-07-09-transcript-pilot-results.md) — `message` → refs the pilot-response above, the Thread 3 transcript, and `OpenWEBUIandGemma4isWHACKED.md`
+- [Foundation Layer — Transcript Pilot, Results](./ccode-to-cowork-2026-07-09-transcript-pilot-results.md) — `message` → refs the pilot-response above, the Thread 4 transcript, and `OpenWEBUIandGemma4isWHACKED.md`
 - [Re: Transcript Pilot, Results](./cowork-to-ccode-2026-07-09-transcript-pilot-response.md) — `message` → responds to transcript-pilot-results
 - [Foundation Layer — Pilot Question Closed, Auditor Deferred](./ccode-to-cowork-2026-07-09-pilot-close.md) — `message` → closes the loop, refs transcript-pilot-response
 
@@ -162,20 +173,20 @@ The day the OKF format was piloted for real (Open Decision #34), the location-in
 - [Re: Closed-Session Parsing — Tested on Cowork's Side Too](./cowork-to-ccode-2026-07-09-my-extraction-result.md) — `message` → responds to the extraction-result above; Cowork's side of the proof
 
 **Full transcripts of the day's live sessions:**
-- [Cameron & Cowork — Full Foundation-Layer Session, Mechanical Extraction](./cameron-cowork-conversation-transcript-full-2026-07-09.md) — `transcript` — 137 turns, supersedes the Thread 3 partial → refs it directly
+- [Cameron & Cowork — Full Foundation-Layer Session, Mechanical Extraction](./cameron-cowork-conversation-transcript-full-2026-07-09.md) — `transcript` — 137 turns, supersedes the Thread 4 partial → refs it directly
 
 **Session close:**
 - [Resume Tomorrow — Living-Knowledgebase Plan, Paused Mid-Decision](./ccode-and-cowork-2026-07-09-resume-tomorrow.md) — `message` — the handoff written at session-27's pause point → refs the design-conversation transcript, the ai-wiki plan proposal, and both sides of the transcript-extraction proof
 
 ---
 
-## Thread 5 — Record-to-Instruction Traceability Demo (2026-07-10)
+## Thread 6 — Record-to-Instruction Traceability Demo (2026-07-10)
 
-- [Record-to-Instruction Traceability — Demo](./ccode-to-cowork-2026-07-10-refs-to-instruction-demo.md) — `message` → refs the full 2026-07-09 transcript above (Thread 4) **and `../AI_INSTRUCTIONS.md` directly** — the first `refs:` link in this bundle pointing outside `_messages/` to a root instruction file. Proves Open Decision #35's capability #4 (record-to-instruction traceability) using the real Open Decision #36 finding, not a synthetic test case.
+- [Record-to-Instruction Traceability — Demo](./ccode-to-cowork-2026-07-10-refs-to-instruction-demo.md) — `message` → refs the full 2026-07-09 transcript above (Thread 5) **and `../AI_INSTRUCTIONS.md` directly** — the first `refs:` link in this bundle pointing outside `_messages/` to a root instruction file. Proves Open Decision #35's capability #4 (record-to-instruction traceability) using the real Open Decision #36 finding, not a synthetic test case.
 
 ---
 
-## Thread 6 — Cold-Walk Safeguard Point-4 Execution: OpenWork Standup and Findings (2026-07-18 to 2026-07-19)
+## Thread 7 — Cold-Walk Safeguard Point-4 Execution: OpenWork Standup and Findings (2026-07-18 to 2026-07-19)
 
 Execution of `_ai-context/cold-walk-isolation-safeguard.md` point 4 against OpenWork and, in parallel, AnythingLLM — the OpenWork candidate named in Auditor Charter §9, and AnythingLLM as the alternative that emerged once OpenWork's results turned out disqualifying. Ends in OpenWork's disqualification and AnythingLLM cleared with conditions. See `_audit-findings/2026-07-18-openwork-point4-disqualification.md` and `_audit-findings/2026-07-19-anythingllm-point4-cleared-with-conditions.md` for the promoted findings.
 
@@ -200,6 +211,6 @@ Execution of `_ai-context/cold-walk-isolation-safeguard.md` point 4 against Open
 
 ## Gaps this index doesn't close (yet)
 
-- **Record-to-instruction traceability, the other direction** — Thread 5 proves a record can point *at* an instruction file; instruction files still can't point *back* — none carry OKF frontmatter or their own `refs:`. Separate, larger, still-deferred question raised 2026-07-09.
+- **Record-to-instruction traceability, the other direction** — Thread 6 proves a record can point *at* an instruction file; instruction files still can't point *back* — none carry OKF frontmatter or their own `refs:`. Separate, larger, still-deferred question raised 2026-07-09.
 - **Obsidian graph compatibility** — every `refs:` above is a relative markdown link (`./file.md`), not an Obsidian `[[wikilink]]`. Confirmed 2026-07-10 that the Karpathy LLM Wiki plugin's retrieval-time PageRank only walks native `[[wikilink]]` connections — this index's links won't feed that specific mechanism without a separate conversion step.
-- **The wider backlog** — Cameron requested 2026-07-24 that the *full* remaining `AI-Working/Messages/` backlog be promoted, not just the originally-flagged Jun 21–Jul 5 slice (see `AI-Working/Messages/cowork-to-ccode-2026-07-24-full-backlog-promotion-request.md`). Tiered rigor settled the same day (full manual rigor for anything cited by an Open Decision, the charter, or another canonical doc's `refs:`; heuristic — `Re:`-line-assisted, per-batch — for the routine bulk; see `cowork-to-ccode-2026-07-24-backlog-promotion-decisions.md`), then stalled: zero files promoted under it for four days while the source folder kept growing. Resumed 2026-07-28 (session-61) — Thread 1's architecture/OpenCode-readiness/AnythingLLM sub-threads (batch-1: 19 files; batch-2: 10 files) and Thread 2's workflow-reframe/system-documentation/four-agent-collaboration-test sub-threads (batch-3: 9 files, the one batch requiring full manual rigor on part of it — see Thread 2's own note) are the first three batches under the actual tiered approach, distinct from Thread 0's earlier full-rigor validation batch, using `_ai-context/prescan-backlog.ps1` to cut the per-file search cost. Verified count after batch-3: 390 unpromoted files remain (operational prompt-paste templates excluded by standing rule) — still higher than 2026-07-24's 343 despite three batches landing, since ordinary work keeps adding new files faster than promotion currently removes them. All pre-`_messages/` history on outside platforms (DeepSeek, ChatGPT, old AnythingLLM/Gemma sessions) remains separately out of scope — covered by `_ai-context/outside-conversation-capture-convention.md`, not this procedure. See Open Decision #35.
+- **The wider backlog** — Cameron requested 2026-07-24 that the *full* remaining `AI-Working/Messages/` backlog be promoted, not just the originally-flagged Jun 21–Jul 5 slice (see `AI-Working/Messages/cowork-to-ccode-2026-07-24-full-backlog-promotion-request.md`). Tiered rigor settled the same day (full manual rigor for anything cited by an Open Decision, the charter, or another canonical doc's `refs:`; heuristic — `Re:`-line-assisted, per-batch — for the routine bulk; see `cowork-to-ccode-2026-07-24-backlog-promotion-decisions.md`), then stalled: zero files promoted under it for four days while the source folder kept growing. Resumed 2026-07-28 (session-61) — Thread 1's architecture/OpenCode-readiness/AnythingLLM sub-threads (batch-1: 19 files; batch-2: 10 files), Thread 2's workflow-reframe/system-documentation/four-agent-collaboration-test sub-threads (batch-3: 9 files, full manual rigor on part of it), and Thread 3, the `_now/` collection's origin (batch-4: 4 files, full manual rigor throughout — the first batch to require inserting a new thread and renumbering everything after it, see Thread 3's own note) are the first four batches under the actual tiered approach, distinct from Thread 0's earlier full-rigor validation batch, using `_ai-context/prescan-backlog.ps1` to cut the per-file search cost. Verified count after batch-4: 387 unpromoted files remain (operational prompt-paste templates excluded by standing rule) — still higher than 2026-07-24's 343 despite four batches landing, since ordinary work keeps adding new files faster than promotion currently removes them. All pre-`_messages/` history on outside platforms (DeepSeek, ChatGPT, old AnythingLLM/Gemma sessions) remains separately out of scope — covered by `_ai-context/outside-conversation-capture-convention.md`, not this procedure. See Open Decision #35.
