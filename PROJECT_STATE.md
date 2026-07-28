@@ -525,6 +525,17 @@ Not a Jekyll collection — added to `_config.yml`'s `exclude:` list (same mecha
 | `_messages/ccode-to-cowork-2026-07-12-three-threads-formalization-proposal.md` | message | Batch-17 backlog promotion, 2026-07-28 (session-63) |
 | `_messages/cowork-to-ccode-2026-07-12-session-37-three-threads-feedback.md` | message | Batch-17 backlog promotion, 2026-07-28 (session-63) |
 | `_messages/cowork-to-ccode-2026-07-12-three-threads-formalization-response.md` | message | Batch-17 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/cowork-to-ccode-2026-07-18-openwork-thread-closeout-proposal.md` | message | Batch-18 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/ccode-to-cowork-2026-07-18-openwork-thread-closeout-response.md` | message | Batch-18 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/cowork-to-ccode-2026-07-24-full-backlog-promotion-request.md` | message | Batch-18 backlog promotion, 2026-07-28 (session-63) — full manual rigor, cited by _messages/index.md |
+| `_messages/ccode-to-cowork-2026-07-24-backlog-promotion-handoff.md` | message | Batch-18 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/cowork-to-ccode-2026-07-24-backlog-promotion-decisions.md` | message | Batch-18 backlog promotion, 2026-07-28 (session-63) — full manual rigor, cited by two session logs and _messages/index.md |
+| `_messages/cowork-to-ccode-2026-07-24-stand-up-the-auditor-consolidated-ask.md` | message | Batch-18 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/ccode-to-cowork-2026-07-24-auditor-fixes-made.md` | message | Batch-18 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/cowork-to-ccode-2026-07-24-fixes-acknowledged-pending-merge-verification.md` | message | Batch-18 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/cowork-to-ccode-2026-07-24-fixes-independently-verified.md` | message | Batch-18 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/cowork-to-ccode-2026-07-24-cameron-decision-findings-closed-run-provisional.md` | message | Batch-18 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/cowork-to-ccode-2026-07-24-auditor-collaborator-open-decision-request.md` | message | Batch-18 backlog promotion, 2026-07-28 (session-63) — full manual rigor, cited by PROJECT_STATE.md |
 
 `type: audit-finding` deliberately untested — deferred to the real Auditor track rather than a synthetic file. See Open Decision #34.
 
