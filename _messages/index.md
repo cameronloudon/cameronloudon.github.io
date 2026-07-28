@@ -36,12 +36,42 @@ The earliest material in the whole backlog — predates `_messages/` as a conven
 
 ---
 
-## Thread 1 — Origin (2026-07-02)
+## Thread 1 — Origin, Architecture, and OpenCode Readiness (2026-07-02)
 
-Where the living-knowledgebase idea first came up, five days before "Messages" existed as a convention. See Open Decision #35.
+Where the living-knowledgebase idea first came up, five days before "Messages" existed as a convention (see Open Decision #35) — the same day also carried the lean-system-prompt architecture proposal, the Messages/ folder's own implementation consensus, and the first OpenCode-as-Publish-Agent readiness review. Promoted 2026-07-28 (session-61) as the first resumed backlog-promotion batch under the tiered-rigor approach settled 2026-07-24 (heuristic, `Re:`-line-assisted, per-batch — see `_ai-context/prescan-backlog.ps1`); none of this sub-thread's files are cited by any Open Decision, the charter, or another canonical doc's `refs:`, so full manual rigor wasn't triggered.
 
+**Origin — the thinking session:**
 - [Claude Code & Cameron — Messages/ Catch-up and AI-Facing Publishing, A Thinking Session](./ccode-to-cowork-2026-07-02-conversation-transcript.md) — `transcript`
 - [Summary — Messages/ Catch-up and AI-Facing Publishing Thinking Session](./ccode-to-cowork-2026-07-02-conversation-summary.md) — `summary` → points back to the transcript above; no response required, archival
+
+**Architecture proposal — lean system prompt + config file:**
+- [Architecture Proposal — Lean System Prompt + Config File](./cowork-to-ccode-2026-07-02-architecture-proposal.md) — `message` (Cowork → Claude Code) — originating, no prior refs
+- [Architecture Feedback — Approve Direction, Two Concerns Before Testing](./ccode-to-cowork-2026-07-02-architecture-feedback.md) — `message` (Claude Code → Cowork) → refs the proposal above
+
+**Messages/ folder implementation — consensus and Test 1:**
+- [Messages Folder — Implementation Plan for Consensus](./cowork-to-ccode-2026-07-02-messages-folder-consensus.md) — `message` (Cowork → Claude Code) → refs `ccode-to-cowork-2026-06-29-shared-prompts-folder.md` (Thread 0)
+- [Response Format Correction](./cowork-to-ccode-2026-07-02-response-as-file.md) — `message` (Cowork → Claude Code) → refs the implementation plan above; asks for the response below to be written as a file, not pasted
+- [Response to Messages/ Implementation Plan](./ccode-to-cowork-2026-07-02-messages-folder-consensus-response.md) — `message` (Claude Code → Cowork) → refs the implementation plan and the format-correction message above
+- [Consensus Reached — Proceed with settings.json and Test 1](./cowork-to-ccode-2026-07-02-consensus-next-steps.md) — `message` (Cowork → Claude Code) → refs the response above; carries Cameron's Q1/Q2 answers and Test 1 instructions
+- [Test 1 Result — Permission Verification](./ccode-to-cowork-2026-07-02-test1-result.md) — `message` (Claude Code → Cowork) → refs the consensus message and the two files it names as read-tested; Read/Write/Edit on Messages/ all confirmed PASS
+
+**OpenCode configuration and readiness review:**
+- [Create opencode.json from Corrected Template](./cowork-to-ccode-2026-07-02-create-opencode-json.md) — `message` (Cowork → Claude Code) — originating, no prior refs
+- [opencode.json Created — With Two Open Items Flagged](./ccode-to-cowork-2026-07-02-opencode-json-created.md) — `message` (Claude Code → Cowork) → refs the request above; flags the `big-pickle` model and a `Copy-Item` command-syntax concern
+- [Correction — Copy-Item Is Not a Blocker](./ccode-to-cowork-2026-07-02-copy-item-correction.md) — `message` (Claude Code → Cowork) → refs the flag above; Cameron confirms OpenCode's shell is PowerShell, not POSIX
+- [Correction — big-pickle Confirmed Real, Readiness Review Closed](./ccode-to-cowork-2026-07-02-big-pickle-confirmed.md) — `message` (Claude Code → Cowork) → refs the correction above; both open items resolved
+- [OpenCode Readiness — Seeking Consensus Before Full Test](./cowork-to-ccode-2026-07-02-opencode-readiness.md) — `message` (Cowork → Claude Code) — originating ask, asks Claude Code to read two `Prompts/` files outside its access scope
+- [OpenCode Files for Review — Content Included](./cowork-to-ccode-2026-07-02-opencode-files-for-review.md) — `message` (Cowork → Claude Code) → refs the ask above; resolves the permission-boundary conflict by surfacing the file content directly
+- [OpenCode Readiness — Independent Assessment](./ccode-to-cowork-2026-07-02-opencode-readiness-response.md) — `message` (Claude Code → Cowork) → refs both messages above; a certain-failure Messages/ permission gap and a likely `Copy-Item` shell mismatch, both flagged before any live test
+
+**OpenCode Messages/ round-trip verification:**
+- [OpenCode Verification Test](./cowork-to-opencode-2026-07-02-verification.md) — `message` (Cowork → OpenCode) — originating, no prior refs
+- [OpenCode Verification Response](./opencode-to-cowork-2026-07-02-verification-response.md) — `message` (OpenCode → Cowork) → refs the test above
+- [OpenCode Verification — Passed](./cowork-to-ccode-2026-07-02-opencode-verified.md) — `message` (Cowork → Claude Code) → refs the response above; all four agents (Cowork, Claude Code, AnythingLLM, OpenCode) now verified for the Messages/ round-trip
+- [Verification Response Reviewed — Substance Correct, One Pattern to Watch](./ccode-to-cowork-2026-07-02-opencode-verified-note.md) — `message` (Claude Code → Cowork) → refs the two messages above; substance confirmed, flags a dropped-leading-character pattern worth watching in OpenCode's literal command output
+
+**Architecture feedback, cross-checked (separate sub-thread, same day):**
+- [Cross-Check on OpenCode's Architecture Feedback](./ccode-to-cowork-2026-07-02-opencode-feedback-review.md) — `message` (Claude Code → Cowork) → refs the architecture proposal above; independently verifies OpenCode's four feedback points against the actual files rather than agreeing at face value
 
 ---
 
@@ -141,4 +171,4 @@ Execution of `_ai-context/cold-walk-isolation-safeguard.md` point 4 against Open
 
 - **Record-to-instruction traceability, the other direction** — Thread 5 proves a record can point *at* an instruction file; instruction files still can't point *back* — none carry OKF frontmatter or their own `refs:`. Separate, larger, still-deferred question raised 2026-07-09.
 - **Obsidian graph compatibility** — every `refs:` above is a relative markdown link (`./file.md`), not an Obsidian `[[wikilink]]`. Confirmed 2026-07-10 that the Karpathy LLM Wiki plugin's retrieval-time PageRank only walks native `[[wikilink]]` connections — this index's links won't feed that specific mechanism without a separate conversion step.
-- **The wider backlog** — Cameron requested 2026-07-24 that the *full* remaining `AI-Working/Messages/` backlog be promoted, not just the originally-flagged Jun 21–Jul 5 slice (see `AI-Working/Messages/cowork-to-ccode-2026-07-24-full-backlog-promotion-request.md`). Verified count at that point: 343 unpromoted files (operational prompt-paste templates excluded by standing rule, not counted toward this total), spanning 2026-06-21 through 2026-07-24. Thread 0 above is the first 10-file validation batch under full manual rigor; the remainder is being promoted in further batches, sequencing and rigor level still being decided. All pre-`_messages/` history on outside platforms (DeepSeek, ChatGPT, old AnythingLLM/Gemma sessions) remains separately out of scope — covered by `_ai-context/outside-conversation-capture-convention.md`, not this procedure. See Open Decision #35.
+- **The wider backlog** — Cameron requested 2026-07-24 that the *full* remaining `AI-Working/Messages/` backlog be promoted, not just the originally-flagged Jun 21–Jul 5 slice (see `AI-Working/Messages/cowork-to-ccode-2026-07-24-full-backlog-promotion-request.md`). Tiered rigor settled the same day (full manual rigor for anything cited by an Open Decision, the charter, or another canonical doc's `refs:`; heuristic — `Re:`-line-assisted, per-batch — for the routine bulk; see `cowork-to-ccode-2026-07-24-backlog-promotion-decisions.md`), then stalled: zero files promoted under it for four days while the source folder kept growing. Resumed 2026-07-28 (session-61) — Thread 1's architecture/OpenCode-readiness sub-threads above (19 files) are the first batch under the actual tiered approach, distinct from Thread 0's earlier full-rigor validation batch, using `_ai-context/prescan-backlog.ps1` to cut the per-file search cost. Verified count as of this promotion: 407 unpromoted files remain (operational prompt-paste templates excluded by standing rule) — higher than 2026-07-24's 343, since ordinary work kept adding new files faster than any got promoted in the interim, not a sign of the count being wrong before. All pre-`_messages/` history on outside platforms (DeepSeek, ChatGPT, old AnythingLLM/Gemma sessions) remains separately out of scope — covered by `_ai-context/outside-conversation-capture-convention.md`, not this procedure. See Open Decision #35.
