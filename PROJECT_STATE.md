@@ -1,20 +1,22 @@
 # PROJECT_STATE.md
 **Single source of current project state. Read this before every session. Update this at every session close.**
 **Last updated:** 2026-07-28
-**Updated by:** Claude Code (Publish Agent) — session-62: eight more backlog-promotion batches (batches 6–13, 113 files), carrying the effort from 2026-07-05 through 2026-07-15 fully promoted. Two new `_messages/index.md` threads inserted (Thread 3→ already existed; this session added Thread 8 and Thread 9), with the OpenWork thread renumbered twice (8→9→10) to keep chronological order. Found and fixed a real gap mid-session — one 2026-07-12 file missed by an earlier batch's mechanical-tier scan, promoted in Thread 8 instead of left orphaned. Confirmed a genuine process shift: from 2026-07-13 onward, raw backlog files in `AI-Working/Messages/` already carry correct OKF frontmatter at the source, making later batches cheaper per file. Backlog count: 315 → 257. Session-62.
+**Updated by:** Claude Code (Publish Agent) — session-63: five more backlog-promotion batches (batches 14–18, 65 files), carrying the effort from 2026-07-17 through 2026-07-24 fully or substantially promoted. Batch 14–15 closed out 2026-07-17 (Graphify/llm-wiki-compiler trial conclusions, Open Decision #38/#54/#55, the cold-walk isolation safeguard, the "three tools" report). Batch 16 reached back to 2026-06-26 (the runbook's two review cycles). Batch 17 was the first to span multiple non-contiguous date gaps in one pass — Fable 5's AI-Auditor workspace origin material (2026-07-10/11, the literal source of the Auditor Charter and link/capture conventions), the 2026-07-05 DeepSeek audit-reference document, four small 2026-07-11 gaps, and session-37's full transcript — plus a mid-batch bug fix (six files' `refs:` used repo-root-relative paths that stopped resolving once promoted into `_messages/`, corrected). Batch 18 closed the OpenWork standup paperwork and promoted 2026-07-24 in full as a new Thread 11 — the Auditor stood up as a real role, and this backlog-promotion effort's own origin story. Backlog count: 220 → 192. Session-63.
 
 ---
 
 ## Active Branch
 
-`session-62` — branched from `main` at `8ba5641` (Merge pull request #86 from cameronloudon/session-61). No work started yet.
+`session-63` — branched from `main` at `ab00576` (Merge pull request #87 from cameronloudon/session-62). No work started yet.
 Cameron merges to main. Do not commit directly to main.
 
 ---
 
 ## Next Session Log ID
 
-`NEXT_SESSION_LOG_ID: 2026-07-15-022`
+`NEXT_SESSION_LOG_ID: 2026-07-15-023`
+
+**Session-63 close-out (2026-07-28):** `session-2026-07-15-022.md` written to cover session-63's actual work — same reserved-ID-vs-actual-date pattern as its predecessors; the ID was reserved at session-62's close-out on 2026-07-28, but session-63's real work (five backlog-promotion batches, 65 files, spanning batches 14–18 across 2026-06-26 and 2026-07-05 through 2026-07-24, a new Thread 11 opened, several existing threads extended, one ref-path bug caught and fixed mid-batch) ran the same day. This field advances past it now.
 
 **Session-62 close-out (2026-07-28):** `session-2026-07-15-021.md` written to cover session-62's actual work — same reserved-ID-vs-actual-date pattern as its predecessors; the ID was reserved at session-61's close-out on 2026-07-28, but session-62's real work (eight backlog-promotion batches, 113 files, `_messages/` Threads 8 and 9 added, the OpenWork thread renumbered twice, a missed-file gap caught and fixed mid-session, and the discovery that post-2026-07-13 backlog files already carry source OKF frontmatter) ran the same day. This field advances past it now.
 
@@ -66,7 +68,7 @@ Cameron merges to main. Do not commit directly to main.
 
 **Corrected 2026-07-26** (Function A cold walk, confirming run for Open Decision #47): `session-2026-07-10-001` was missing from both this enumerated list and the `_session-logs/` inventory table below, despite genuinely existing on disk — a real gap, not caught by anything else in the meantime. Added to both; count corrected from fifty-seven to fifty-eight.
 
-The sixty-eight existing session logs are: `session-2026-06-10-001`, `session-2026-06-11-001`, `session-2026-06-11-002`, `session-2026-06-21-001`, `session-2026-06-21-002`, `session-2026-06-29-001`, `session-2026-07-03-001`, `session-2026-07-03-002`, `session-2026-07-03-003`, `session-2026-07-03-004`, `session-2026-07-05-001`, `session-2026-07-05-002`, `session-2026-07-05-003`, `session-2026-07-05-004`, `session-2026-07-05-005`, `session-2026-07-05-006`, `session-2026-07-05-007`, `session-2026-07-05-008`, `session-2026-07-05-009`, `session-2026-07-05-010`, `session-2026-07-05-011`, `session-2026-07-05-012`, `session-2026-07-05-013`, `session-2026-07-05-014`, `session-2026-07-05-015`, `session-2026-07-05-016`, `session-2026-07-05-017`, `session-2026-07-05-018`, `session-2026-07-05-019`, `session-2026-07-05-020`, `session-2026-07-05-021`, `session-2026-07-05-022`, `session-2026-07-05-023`, `session-2026-07-05-024`, `session-2026-07-09-001`, `session-2026-07-09-002`, `session-2026-07-09-003`, `session-2026-07-10-001`, `session-2026-07-11-001`, `session-2026-07-11-002`, `session-2026-07-11-003`, `session-2026-07-11-004`, `session-2026-07-12-001`, `session-2026-07-12-002`, `session-2026-07-13-001`, `session-2026-07-13-002`, `session-2026-07-13-003`, `session-2026-07-15-001`, `session-2026-07-15-002`, `session-2026-07-15-003`, `session-2026-07-15-004`, `session-2026-07-15-005`, `session-2026-07-15-006`, `session-2026-07-15-007`, `session-2026-07-15-008`, `session-2026-07-15-009`, `session-2026-07-15-010`, `session-2026-07-15-011`, `session-2026-07-15-012`, `session-2026-07-15-013`, `session-2026-07-15-014`, `session-2026-07-15-015`, `session-2026-07-15-016`, `session-2026-07-15-017`, `session-2026-07-15-018`, `session-2026-07-15-019`, `session-2026-07-15-020`, `session-2026-07-15-021`.
+The sixty-nine existing session logs are: `session-2026-06-10-001`, `session-2026-06-11-001`, `session-2026-06-11-002`, `session-2026-06-21-001`, `session-2026-06-21-002`, `session-2026-06-29-001`, `session-2026-07-03-001`, `session-2026-07-03-002`, `session-2026-07-03-003`, `session-2026-07-03-004`, `session-2026-07-05-001`, `session-2026-07-05-002`, `session-2026-07-05-003`, `session-2026-07-05-004`, `session-2026-07-05-005`, `session-2026-07-05-006`, `session-2026-07-05-007`, `session-2026-07-05-008`, `session-2026-07-05-009`, `session-2026-07-05-010`, `session-2026-07-05-011`, `session-2026-07-05-012`, `session-2026-07-05-013`, `session-2026-07-05-014`, `session-2026-07-05-015`, `session-2026-07-05-016`, `session-2026-07-05-017`, `session-2026-07-05-018`, `session-2026-07-05-019`, `session-2026-07-05-020`, `session-2026-07-05-021`, `session-2026-07-05-022`, `session-2026-07-05-023`, `session-2026-07-05-024`, `session-2026-07-09-001`, `session-2026-07-09-002`, `session-2026-07-09-003`, `session-2026-07-10-001`, `session-2026-07-11-001`, `session-2026-07-11-002`, `session-2026-07-11-003`, `session-2026-07-11-004`, `session-2026-07-12-001`, `session-2026-07-12-002`, `session-2026-07-13-001`, `session-2026-07-13-002`, `session-2026-07-13-003`, `session-2026-07-15-001`, `session-2026-07-15-002`, `session-2026-07-15-003`, `session-2026-07-15-004`, `session-2026-07-15-005`, `session-2026-07-15-006`, `session-2026-07-15-007`, `session-2026-07-15-008`, `session-2026-07-15-009`, `session-2026-07-15-010`, `session-2026-07-15-011`, `session-2026-07-15-012`, `session-2026-07-15-013`, `session-2026-07-15-014`, `session-2026-07-15-015`, `session-2026-07-15-016`, `session-2026-07-15-017`, `session-2026-07-15-018`, `session-2026-07-15-019`, `session-2026-07-15-020`, `session-2026-07-15-021`, `session-2026-07-15-022`.
 Note: `session-2026-06-21-003` was never written (anticipated but session did not recur that day). Session on 2026-06-26 (pre-test repo prep, session-3b) and the session-4 branch (2026-06-29 branch-workflow correction, folded into `session-2026-06-29-001`'s log) were also not separately logged — acknowledged gaps.
 
 ---
@@ -231,12 +233,13 @@ Split from the single flat `now.html` page (Open Decision #22).
 | `session-2026-07-15-019.md` | Published |
 | `session-2026-07-15-020.md` | Published |
 | `session-2026-07-15-021.md` | Published |
+| `session-2026-07-15-022.md` | Published |
 
 Rows for `002` through `007` were missing from this table despite the files existing on disk and being referenced in the close-out notes above — found 2026-07-24 while adding `008`'s own row; a gap in the session-close ritual itself (page-inventory update skipped, several sessions running), not a one-off. Added now rather than left for a future pass.
 
 ### _messages/ bundle (not rendered — chain-of-custody archive)
 
-Not a Jekyll collection — added to `_config.yml`'s `exclude:` list (same mechanism as `_ai-context/`), not declared as a collection. Repo-resident audit copy of selected `AI-Working/Messages/` exchanges, OKF-stamped (`type`, `title`, `timestamp`, `from`/`to` or `participants`, `refs:` as bundle-relative paths). Authored originals continue to live in `AI-Working/Messages/`; this is the record of custody, not the authoring workflow. Piloted 2026-07-09 (session-26) — see Open Decision #34. **Corrected 2026-07-27 (session-56):** the "8 files here vs. 118 in the backlog — small pilot slice" framing below this bundle carried since piloting was stale — caught during independent review (Cowork) of Function B's first draft script, which found the real folder holds 58 files against this table's 8 (`ccode-to-cowork-2026-07-27-function-b-script-independent-review.md`, verified directly via `ls _messages/*.md` before accepting). All 58 (as of 2026-07-27) now listed below with a best-effort `Type` only, not full per-entry curation — Open Decision #35's "not yet a real relationship index" gap and #57's scaling-the-index discussion both still apply and are unaffected by this mechanical count fix. 19 more added 2026-07-28 (session-61), the first resumed backlog-promotion batch under the 2026-07-24 tiered-rigor decision — see Open Decision #57's row and `_messages/index.md`'s own Gaps section for the fuller story.
+Not a Jekyll collection — added to `_config.yml`'s `exclude:` list (same mechanism as `_ai-context/`), not declared as a collection. Repo-resident audit copy of selected `AI-Working/Messages/` exchanges, OKF-stamped (`type`, `title`, `timestamp`, `from`/`to` or `participants`, `refs:` as bundle-relative paths). Authored originals continue to live in `AI-Working/Messages/`; this is the record of custody, not the authoring workflow. Piloted 2026-07-09 (session-26) — see Open Decision #34. **Corrected 2026-07-27 (session-56):** the "8 files here vs. 118 in the backlog — small pilot slice" framing below this bundle carried since piloting was stale — caught during independent review (Cowork) of Function B's first draft script, which found the real folder holds 58 files against this table's 8 (`ccode-to-cowork-2026-07-27-function-b-script-independent-review.md`, verified directly via `ls _messages/*.md` before accepting). All 58 (as of 2026-07-27) now listed below with a best-effort `Type` only, not full per-entry curation — Open Decision #35's "not yet a real relationship index" gap and #57's scaling-the-index discussion both still apply and are unaffected by this mechanical count fix. 19 more added 2026-07-28 (session-61), the first resumed backlog-promotion batch under the 2026-07-24 tiered-rigor decision; 19 more added 2026-07-28 (session-63, batch-15), closing out 2026-07-17's remaining threads (Open Decision #38 cleanup, #54/#55 ratifications, the bash-sandbox caveat, the cold-walk isolation safeguard, and the "three tools" NotebookLM report) — see Open Decision #57's row and `_messages/index.md`'s own Gaps section for the fuller story.
 
 | File | Type | Notes |
 |---|---|---|
@@ -471,6 +474,71 @@ Not a Jekyll collection — added to `_config.yml`'s `exclude:` list (same mecha
 | `_messages/ccode-to-cowork-2026-07-15-graphify-trial-plan-consensus.md` | message | Batch-13 backlog promotion, 2026-07-28 (session-62) |
 | `_messages/cowork-to-ccode-2026-07-15-graphify-trial-consensus-confirmed.md` | message | Batch-13 backlog promotion, 2026-07-28 (session-62) |
 | `_messages/cowork-to-ccode-2026-07-15-graphify-35-fix-and-greenlight.md` | message | Batch-13 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by session-2026-07-15-002.md |
+| `_messages/ccode-to-cowork-2026-07-17-graphify-trial-results.md` | message | Batch-14 backlog promotion, 2026-07-28 (session-63) — full manual rigor, cited by PROJECT_STATE.md #35 and session-2026-07-15-002.md |
+| `_messages/cowork-to-ccode-2026-07-17-graphify-trial-close-out.md` | message | Batch-14 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/ccode-to-cowork-2026-07-17-graphify-trial-teardown-confirmed.md` | message | Batch-14 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/ccode-to-cowork-2026-07-17-llm-wiki-compiler-trial-plan-proposal.md` | message | Batch-14 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/cowork-to-ccode-2026-07-17-llm-wiki-compiler-trial-response.md` | message | Batch-14 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/ccode-to-cowork-2026-07-17-llm-wiki-compiler-trial-plan-consensus.md` | message | Batch-14 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/ccode-to-cowork-2026-07-17-llm-wiki-compiler-trial-results.md` | message | Batch-14 backlog promotion, 2026-07-28 (session-63) — full manual rigor, cited by PROJECT_STATE.md #35 |
+| `_messages/cowork-to-ccode-2026-07-17-llm-wiki-compiler-trial-close-out.md` | message | Batch-14 backlog promotion, 2026-07-28 (session-63) — full manual rigor, cited by PROJECT_STATE.md #35 |
+| `_messages/ccode-to-cowork-2026-07-17-llm-wiki-compiler-trial-teardown-confirmed.md` | message | Batch-14 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/ccode-to-cowork-2026-07-17-karpathy-schema-stealing-proposal.md` | message | Batch-14 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/cowork-to-ccode-2026-07-17-karpathy-schema-stealing-response.md` | message | Batch-14 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/cowork-to-ccode-2026-07-17-open-decision-38-cleanup.md` | message | Batch-15 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/ccode-to-cowork-2026-07-17-open-decision-38-cleanup-response.md` | message | Batch-15 backlog promotion, 2026-07-28 (session-63) — full manual rigor, cited by decisions-archive.md Decision #38 |
+| `_messages/ccode-to-cowork-2026-07-17-open-decision-38-closed.md` | message | Batch-15 backlog promotion, 2026-07-28 (session-63) — full manual rigor, cited by decisions-archive.md Decision #38 |
+| `_messages/ccode-to-cowork-2026-07-17-open-decision-54-ratified.md` | message | Batch-15 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/ccode-to-cowork-2026-07-17-open-decision-55-ratified.md` | message | Batch-15 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/ccode-to-cowork-2026-07-17-bash-sandbox-caveat-request.md` | message | Batch-15 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/cowork-to-ccode-2026-07-17-bash-sandbox-caveat-confirmed.md` | message | Batch-15 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/ccode-to-cowork-2026-07-17-cold-walk-isolation-safeguard-proposal.md` | message | Batch-15 backlog promotion, 2026-07-28 (session-63) — full manual rigor, cited by cold-walk-isolation-safeguard.md's own Sources section |
+| `_messages/cowork-to-ccode-2026-07-17-cold-walk-isolation-safeguard-response.md` | message | Batch-15 backlog promotion, 2026-07-28 (session-63) — full manual rigor, cited by cold-walk-isolation-safeguard.md's own Sources section |
+| `_messages/ccode-to-cowork-2026-07-17-cold-walk-isolation-safeguard-redraft.md` | message | Batch-15 backlog promotion, 2026-07-28 (session-63) — full manual rigor, cited by cold-walk-isolation-safeguard.md's own Sources section |
+| `_messages/cowork-to-ccode-2026-07-17-cold-walk-isolation-safeguard-ratify.md` | message | Batch-15 backlog promotion, 2026-07-28 (session-63) — full manual rigor, cited by cold-walk-isolation-safeguard.md's own Sources section |
+| `_messages/ccode-to-cowork-2026-07-17-three-tools-video-report.md` | message | Batch-15 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/ccode-to-cowork-2026-07-17-three-tools-video-report-update.md` | message | Batch-15 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/cowork-to-ccode-2026-07-17-three-tools-report-corrections.md` | message | Batch-15 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/cowork-to-ccode-2026-07-17-three-tools-report-reframe.md` | message | Batch-15 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/cowork-to-ccode-2026-07-17-three-tools-tone-correction.md` | message | Batch-15 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/cowork-to-ccode-2026-07-17-three-tools-report-full-reframed-draft.md` | message | Batch-15 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/ccode-to-cowork-2026-07-17-three-tools-report-final-fix.md` | message | Batch-15 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/cowork-to-ccode-2026-07-17-three-tools-report-final-fix-applied.md` | message | Batch-15 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/ai-independence-runbook-claude-code-review.md` | message | Batch-16 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/ai-independence-runbook-cowork-review.md` | message | Batch-16 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/ai-independence-runbook-cowork-rereview.md` | message | Batch-16 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/ai-independence-runbook-synthesis.md` | summary | Batch-16 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/ai-independence-runbook-v1-1-claude-code-review.md` | message | Batch-16 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/ai-independence-runbook-v1-1-cowork-review.md` | message | Batch-16 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/ai-independence-runbook-v1-1-synthesis.md` | summary | Batch-16 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/fable-to-cameron-2026-07-10-ai-prod-examination-and-proposals.md` | message | Batch-17 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/fable-to-cameron-2026-07-10-auditor-charter-draft.md` | message | Batch-17 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/fable-to-cameron-2026-07-10-discoverability-and-link-representation.md` | message | Batch-17 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/fable-to-cameron-2026-07-10-instruction-file-provenance.md` | message | Batch-17 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/fable-to-cameron-2026-07-11-audit-finding-home-concurrence.md` | message | Batch-17 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/fable-to-cameron-2026-07-11-outside-conversation-capture.md` | message | Batch-17 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/prompt-cowork-and-ccode-auditor-proposals-2026-07-11.md` | message | Batch-17 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/audit-reference-standalone-2026-07-05.md` | reference | Batch-17 backlog promotion, 2026-07-28 (session-63) — full manual rigor, cited by decisions-archive.md, system-architecture.md, and session-2026-07-05-005.md |
+| `_messages/cowork-to-ccode-2026-07-11-ai-context-okf-policy-response.md` | message | Batch-17 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/cowork-to-ccode-2026-07-11-four-agent-test-correction-ready.md` | message | Batch-17 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/cowork-to-ccode-2026-07-11-missing-session-34-log.md` | message | Batch-17 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/cowork-to-ccode-2026-07-11-provenance-sidecar-response.md` | message | Batch-17 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/cameron-claudecode-conversation-transcript-2026-07-12.md` | transcript | Batch-17 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/ccode-to-cowork-2026-07-12-session-recap-and-consensus-request.md` | message | Batch-17 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/ccode-to-cowork-2026-07-12-three-threads-formalization-proposal.md` | message | Batch-17 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/cowork-to-ccode-2026-07-12-session-37-three-threads-feedback.md` | message | Batch-17 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/cowork-to-ccode-2026-07-12-three-threads-formalization-response.md` | message | Batch-17 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/cowork-to-ccode-2026-07-18-openwork-thread-closeout-proposal.md` | message | Batch-18 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/ccode-to-cowork-2026-07-18-openwork-thread-closeout-response.md` | message | Batch-18 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/cowork-to-ccode-2026-07-24-full-backlog-promotion-request.md` | message | Batch-18 backlog promotion, 2026-07-28 (session-63) — full manual rigor, cited by _messages/index.md |
+| `_messages/ccode-to-cowork-2026-07-24-backlog-promotion-handoff.md` | message | Batch-18 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/cowork-to-ccode-2026-07-24-backlog-promotion-decisions.md` | message | Batch-18 backlog promotion, 2026-07-28 (session-63) — full manual rigor, cited by two session logs and _messages/index.md |
+| `_messages/cowork-to-ccode-2026-07-24-stand-up-the-auditor-consolidated-ask.md` | message | Batch-18 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/ccode-to-cowork-2026-07-24-auditor-fixes-made.md` | message | Batch-18 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/cowork-to-ccode-2026-07-24-fixes-acknowledged-pending-merge-verification.md` | message | Batch-18 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/cowork-to-ccode-2026-07-24-fixes-independently-verified.md` | message | Batch-18 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/cowork-to-ccode-2026-07-24-cameron-decision-findings-closed-run-provisional.md` | message | Batch-18 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/cowork-to-ccode-2026-07-24-auditor-collaborator-open-decision-request.md` | message | Batch-18 backlog promotion, 2026-07-28 (session-63) — full manual rigor, cited by PROJECT_STATE.md |
 
 `type: audit-finding` deliberately untested — deferred to the real Auditor track rather than a synthetic file. See Open Decision #34.
 
