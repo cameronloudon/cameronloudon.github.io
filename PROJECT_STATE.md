@@ -447,6 +447,22 @@ Not a Jekyll collection — added to `_config.yml`'s `exclude:` list (same mecha
 | `_messages/ccode-to-cowork-2026-07-12-instruction-sync-final-consensus-check.md` | message | Batch-11 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by decisions-archive.md Decision #28 |
 | `_messages/cowork-to-ccode-2026-07-12-instruction-sync-final-consensus-response.md` | message | Batch-11 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by decisions-archive.md Decision #28 |
 | `_messages/ccode-to-cowork-2026-07-12-instruction-sync-closed.md` | message | Batch-11 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by decisions-archive.md Decision #28 |
+| `_messages/ccode-to-cowork-2026-07-12-session-close-forcing-function.md` | message | Batch-12 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by session-2026-07-12-002.md; missed by batch-11's mechanical scan |
+| `_messages/cameron-to-cowork-2026-07-13-AI-memory-discussion.md` | reference | Batch-12 backlog promotion, 2026-07-28 (session-62) — raw YouTube transcript, hand-stamped, no source frontmatter |
+| `_messages/cowork-to-ccode-2026-07-13-token-burn-structural-problem.md` | message | Batch-12 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by decisions-archive.md header |
+| `_messages/ccode-to-cowork-2026-07-13-understory-repo-findings.md` | message | Batch-12 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-2026-07-13-understory-findings-response.md` | message | Batch-12 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-13-star-count-resolved-placeholder-added.md` | message | Batch-12 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-13-token-burn-proposal.md` | message | Batch-12 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by decisions-archive.md header |
+| `_messages/cowork-to-ccode-2026-07-13-token-burn-proposal-response.md` | message | Batch-12 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-2026-07-13-archive-granularity-pushback.md` | message | Batch-12 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by decisions-archive.md header |
+| `_messages/ccode-to-cowork-2026-07-13-archive-granularity-settled.md` | message | Batch-12 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by decisions-archive.md header |
+| `_messages/cowork-to-ccode-2026-07-13-draft-agent-session-close-gap.md` | message | Batch-12 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by session-2026-07-12-002.md |
+| `_messages/ccode-to-cowork-2026-07-13-session-close-handshake-proposal.md` | message | Batch-12 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by session-2026-07-12-002.md |
+| `_messages/cowork-to-ccode-2026-07-13-handshake-own-landing-missing-log.md` | message | Batch-12 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-13-handshake-landing-log-false-alarm.md` | message | Batch-12 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-2026-07-13-session-close-handshake-response.md` | message | Batch-12 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by AI_INSTRUCTIONS.md §11 |
+| `_messages/ccode-to-cowork-2026-07-13-session-close-handshake-ratified.md` | message | Batch-12 backlog promotion, 2026-07-28 (session-62) |
 
 `type: audit-finding` deliberately untested — deferred to the real Auditor track rather than a synthetic file. See Open Decision #34.
 
