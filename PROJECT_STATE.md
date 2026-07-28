@@ -501,6 +501,13 @@ Not a Jekyll collection — added to `_config.yml`'s `exclude:` list (same mecha
 | `_messages/cowork-to-ccode-2026-07-17-three-tools-report-full-reframed-draft.md` | message | Batch-15 backlog promotion, 2026-07-28 (session-63) |
 | `_messages/ccode-to-cowork-2026-07-17-three-tools-report-final-fix.md` | message | Batch-15 backlog promotion, 2026-07-28 (session-63) |
 | `_messages/cowork-to-ccode-2026-07-17-three-tools-report-final-fix-applied.md` | message | Batch-15 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/ai-independence-runbook-claude-code-review.md` | message | Batch-16 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/ai-independence-runbook-cowork-review.md` | message | Batch-16 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/ai-independence-runbook-cowork-rereview.md` | message | Batch-16 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/ai-independence-runbook-synthesis.md` | summary | Batch-16 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/ai-independence-runbook-v1-1-claude-code-review.md` | message | Batch-16 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/ai-independence-runbook-v1-1-cowork-review.md` | message | Batch-16 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/ai-independence-runbook-v1-1-synthesis.md` | summary | Batch-16 backlog promotion, 2026-07-28 (session-63) |
 
 `type: audit-finding` deliberately untested — deferred to the real Auditor track rather than a synthetic file. See Open Decision #34.
 
