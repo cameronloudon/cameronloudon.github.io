@@ -508,6 +508,23 @@ Not a Jekyll collection — added to `_config.yml`'s `exclude:` list (same mecha
 | `_messages/ai-independence-runbook-v1-1-claude-code-review.md` | message | Batch-16 backlog promotion, 2026-07-28 (session-63) |
 | `_messages/ai-independence-runbook-v1-1-cowork-review.md` | message | Batch-16 backlog promotion, 2026-07-28 (session-63) |
 | `_messages/ai-independence-runbook-v1-1-synthesis.md` | summary | Batch-16 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/fable-to-cameron-2026-07-10-ai-prod-examination-and-proposals.md` | message | Batch-17 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/fable-to-cameron-2026-07-10-auditor-charter-draft.md` | message | Batch-17 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/fable-to-cameron-2026-07-10-discoverability-and-link-representation.md` | message | Batch-17 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/fable-to-cameron-2026-07-10-instruction-file-provenance.md` | message | Batch-17 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/fable-to-cameron-2026-07-11-audit-finding-home-concurrence.md` | message | Batch-17 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/fable-to-cameron-2026-07-11-outside-conversation-capture.md` | message | Batch-17 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/prompt-cowork-and-ccode-auditor-proposals-2026-07-11.md` | message | Batch-17 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/audit-reference-standalone-2026-07-05.md` | reference | Batch-17 backlog promotion, 2026-07-28 (session-63) — full manual rigor, cited by decisions-archive.md, system-architecture.md, and session-2026-07-05-005.md |
+| `_messages/cowork-to-ccode-2026-07-11-ai-context-okf-policy-response.md` | message | Batch-17 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/cowork-to-ccode-2026-07-11-four-agent-test-correction-ready.md` | message | Batch-17 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/cowork-to-ccode-2026-07-11-missing-session-34-log.md` | message | Batch-17 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/cowork-to-ccode-2026-07-11-provenance-sidecar-response.md` | message | Batch-17 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/cameron-claudecode-conversation-transcript-2026-07-12.md` | transcript | Batch-17 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/ccode-to-cowork-2026-07-12-session-recap-and-consensus-request.md` | message | Batch-17 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/ccode-to-cowork-2026-07-12-three-threads-formalization-proposal.md` | message | Batch-17 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/cowork-to-ccode-2026-07-12-session-37-three-threads-feedback.md` | message | Batch-17 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/cowork-to-ccode-2026-07-12-three-threads-formalization-response.md` | message | Batch-17 backlog promotion, 2026-07-28 (session-63) |
 
 `type: audit-finding` deliberately untested — deferred to the real Auditor track rather than a synthetic file. See Open Decision #34.
 
