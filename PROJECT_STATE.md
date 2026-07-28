@@ -311,6 +311,16 @@ Not a Jekyll collection — added to `_config.yml`'s `exclude:` list (same mecha
 | `_messages/cowork-to-ccode-2026-07-02-opencode-verified.md` | message | Batch-1 backlog promotion, 2026-07-28 (session-61) |
 | `_messages/ccode-to-cowork-2026-07-02-opencode-verified-note.md` | message | Batch-1 backlog promotion, 2026-07-28 (session-61) |
 | `_messages/ccode-to-cowork-2026-07-02-opencode-feedback-review.md` | message | Batch-1 backlog promotion, 2026-07-28 (session-61) |
+| `_messages/cowork-to-allm-2026-07-02-verify-system-prompt.md` | message | Batch-2 backlog promotion, 2026-07-28 (session-61) |
+| `_messages/allm-to-cowork-2026-07-02-system-prompt-summary.md` | message | Batch-2 backlog promotion, 2026-07-28 (session-61) |
+| `_messages/cowork-to-allm-2026-07-02-draft-brief.md` | message | Batch-2 backlog promotion, 2026-07-28 (session-61) |
+| `_messages/cowork-to-allm-2026-07-02-path-correction.md` | message | Batch-2 backlog promotion, 2026-07-28 (session-61) |
+| `_messages/allm-to-opencode-2026-07-02-handoff.md` | message | Batch-2 backlog promotion, 2026-07-28 (session-61) |
+| `_messages/cowork-to-allm-2026-07-02-self-diagnostic.md` | message | Batch-2 backlog promotion, 2026-07-28 (session-61) |
+| `_messages/cowork-to-allm-2026-07-02-structure-deviations.md` | message | Batch-2 backlog promotion, 2026-07-28 (session-61) |
+| `_messages/allm-to-cowork-2026-07-02-deviation-explanation.md` | message | Batch-2 backlog promotion, 2026-07-28 (session-61) |
+| `_messages/cowork-to-ccode-2026-07-02-anythingllm-analysis.md` | message | Batch-2 backlog promotion, 2026-07-28 (session-61) |
+| `_messages/ccode-to-cowork-2026-07-02-anythingllm-analysis.md` | message | Batch-2 backlog promotion, 2026-07-28 (session-61) |
 
 `type: audit-finding` deliberately untested — deferred to the real Auditor track rather than a synthetic file. See Open Decision #34.
 
