@@ -1,20 +1,22 @@
 # PROJECT_STATE.md
 **Single source of current project state. Read this before every session. Update this at every session close.**
 **Last updated:** 2026-07-28
-**Updated by:** Claude Code (Publish Agent) — session-61: actually resumed the stalled backlog-promotion effort, five batches (48 files: 19+10+9+4+6), covering 2026-07-02 through 2026-07-05 — architecture/OpenCode-readiness/AnythingLLM threads, the content/HTML boundary's origin record, the `_now/` collection's origin (Open Decision #22), Open Decision #15's real provenance, and a system architecture map. First batch requiring `_messages/index.md` thread renumbering (Thread 3 inserted, Threads 3–6 renumbered to 4–7), done carefully with full internal-cross-reference verification. Session-61.
+**Updated by:** Claude Code (Publish Agent) — session-62: eight more backlog-promotion batches (batches 6–13, 113 files), carrying the effort from 2026-07-05 through 2026-07-15 fully promoted. Two new `_messages/index.md` threads inserted (Thread 3→ already existed; this session added Thread 8 and Thread 9), with the OpenWork thread renumbered twice (8→9→10) to keep chronological order. Found and fixed a real gap mid-session — one 2026-07-12 file missed by an earlier batch's mechanical-tier scan, promoted in Thread 8 instead of left orphaned. Confirmed a genuine process shift: from 2026-07-13 onward, raw backlog files in `AI-Working/Messages/` already carry correct OKF frontmatter at the source, making later batches cheaper per file. Backlog count: 315 → 257. Session-62.
 
 ---
 
 ## Active Branch
 
-`session-61` — branched from `main` at `0cfa373` (Merge pull request #85 from cameronloudon/session-60). Work complete, draft-ready, session-close in progress.
+`session-62` — branched from `main` at `8ba5641` (Merge pull request #86 from cameronloudon/session-61). No work started yet.
 Cameron merges to main. Do not commit directly to main.
 
 ---
 
 ## Next Session Log ID
 
-`NEXT_SESSION_LOG_ID: 2026-07-15-021`
+`NEXT_SESSION_LOG_ID: 2026-07-15-022`
+
+**Session-62 close-out (2026-07-28):** `session-2026-07-15-021.md` written to cover session-62's actual work — same reserved-ID-vs-actual-date pattern as its predecessors; the ID was reserved at session-61's close-out on 2026-07-28, but session-62's real work (eight backlog-promotion batches, 113 files, `_messages/` Threads 8 and 9 added, the OpenWork thread renumbered twice, a missed-file gap caught and fixed mid-session, and the discovery that post-2026-07-13 backlog files already carry source OKF frontmatter) ran the same day. This field advances past it now.
 
 **Session-61 close-out (2026-07-28):** `session-2026-07-15-020.md` written to cover session-61's actual work — same reserved-ID-vs-actual-date pattern as its predecessors; the ID was reserved at session-60's close-out on 2026-07-28, but session-61's real work (five backlog-promotion batches, 48 files, the first thread-renumbering in `_messages/index.md`'s history, and a belated-but-completed `cascade-check.ps1` run on Open Decision #57 caught during this close-out) ran the same day. This field advances past it now.
 
@@ -64,7 +66,7 @@ Cameron merges to main. Do not commit directly to main.
 
 **Corrected 2026-07-26** (Function A cold walk, confirming run for Open Decision #47): `session-2026-07-10-001` was missing from both this enumerated list and the `_session-logs/` inventory table below, despite genuinely existing on disk — a real gap, not caught by anything else in the meantime. Added to both; count corrected from fifty-seven to fifty-eight.
 
-The sixty-seven existing session logs are: `session-2026-06-10-001`, `session-2026-06-11-001`, `session-2026-06-11-002`, `session-2026-06-21-001`, `session-2026-06-21-002`, `session-2026-06-29-001`, `session-2026-07-03-001`, `session-2026-07-03-002`, `session-2026-07-03-003`, `session-2026-07-03-004`, `session-2026-07-05-001`, `session-2026-07-05-002`, `session-2026-07-05-003`, `session-2026-07-05-004`, `session-2026-07-05-005`, `session-2026-07-05-006`, `session-2026-07-05-007`, `session-2026-07-05-008`, `session-2026-07-05-009`, `session-2026-07-05-010`, `session-2026-07-05-011`, `session-2026-07-05-012`, `session-2026-07-05-013`, `session-2026-07-05-014`, `session-2026-07-05-015`, `session-2026-07-05-016`, `session-2026-07-05-017`, `session-2026-07-05-018`, `session-2026-07-05-019`, `session-2026-07-05-020`, `session-2026-07-05-021`, `session-2026-07-05-022`, `session-2026-07-05-023`, `session-2026-07-05-024`, `session-2026-07-09-001`, `session-2026-07-09-002`, `session-2026-07-09-003`, `session-2026-07-10-001`, `session-2026-07-11-001`, `session-2026-07-11-002`, `session-2026-07-11-003`, `session-2026-07-11-004`, `session-2026-07-12-001`, `session-2026-07-12-002`, `session-2026-07-13-001`, `session-2026-07-13-002`, `session-2026-07-13-003`, `session-2026-07-15-001`, `session-2026-07-15-002`, `session-2026-07-15-003`, `session-2026-07-15-004`, `session-2026-07-15-005`, `session-2026-07-15-006`, `session-2026-07-15-007`, `session-2026-07-15-008`, `session-2026-07-15-009`, `session-2026-07-15-010`, `session-2026-07-15-011`, `session-2026-07-15-012`, `session-2026-07-15-013`, `session-2026-07-15-014`, `session-2026-07-15-015`, `session-2026-07-15-016`, `session-2026-07-15-017`, `session-2026-07-15-018`, `session-2026-07-15-019`, `session-2026-07-15-020`.
+The sixty-eight existing session logs are: `session-2026-06-10-001`, `session-2026-06-11-001`, `session-2026-06-11-002`, `session-2026-06-21-001`, `session-2026-06-21-002`, `session-2026-06-29-001`, `session-2026-07-03-001`, `session-2026-07-03-002`, `session-2026-07-03-003`, `session-2026-07-03-004`, `session-2026-07-05-001`, `session-2026-07-05-002`, `session-2026-07-05-003`, `session-2026-07-05-004`, `session-2026-07-05-005`, `session-2026-07-05-006`, `session-2026-07-05-007`, `session-2026-07-05-008`, `session-2026-07-05-009`, `session-2026-07-05-010`, `session-2026-07-05-011`, `session-2026-07-05-012`, `session-2026-07-05-013`, `session-2026-07-05-014`, `session-2026-07-05-015`, `session-2026-07-05-016`, `session-2026-07-05-017`, `session-2026-07-05-018`, `session-2026-07-05-019`, `session-2026-07-05-020`, `session-2026-07-05-021`, `session-2026-07-05-022`, `session-2026-07-05-023`, `session-2026-07-05-024`, `session-2026-07-09-001`, `session-2026-07-09-002`, `session-2026-07-09-003`, `session-2026-07-10-001`, `session-2026-07-11-001`, `session-2026-07-11-002`, `session-2026-07-11-003`, `session-2026-07-11-004`, `session-2026-07-12-001`, `session-2026-07-12-002`, `session-2026-07-13-001`, `session-2026-07-13-002`, `session-2026-07-13-003`, `session-2026-07-15-001`, `session-2026-07-15-002`, `session-2026-07-15-003`, `session-2026-07-15-004`, `session-2026-07-15-005`, `session-2026-07-15-006`, `session-2026-07-15-007`, `session-2026-07-15-008`, `session-2026-07-15-009`, `session-2026-07-15-010`, `session-2026-07-15-011`, `session-2026-07-15-012`, `session-2026-07-15-013`, `session-2026-07-15-014`, `session-2026-07-15-015`, `session-2026-07-15-016`, `session-2026-07-15-017`, `session-2026-07-15-018`, `session-2026-07-15-019`, `session-2026-07-15-020`, `session-2026-07-15-021`.
 Note: `session-2026-06-21-003` was never written (anticipated but session did not recur that day). Session on 2026-06-26 (pre-test repo prep, session-3b) and the session-4 branch (2026-06-29 branch-workflow correction, folded into `session-2026-06-29-001`'s log) were also not separately logged — acknowledged gaps.
 
 ---
@@ -228,6 +230,7 @@ Split from the single flat `now.html` page (Open Decision #22).
 | `session-2026-07-15-018.md` | Published |
 | `session-2026-07-15-019.md` | Published |
 | `session-2026-07-15-020.md` | Published |
+| `session-2026-07-15-021.md` | Published |
 
 Rows for `002` through `007` were missing from this table despite the files existing on disk and being referenced in the close-out notes above — found 2026-07-24 while adding `008`'s own row; a gap in the session-close ritual itself (page-inventory update skipped, several sessions running), not a one-off. Added now rather than left for a future pass.
 
@@ -343,6 +346,131 @@ Not a Jekyll collection — added to `_config.yml`'s `exclude:` list (same mecha
 | `_messages/cowork-to-ccode-2026-07-05-repo-architecture-response.md` | message | Batch-5 backlog promotion, 2026-07-28 (session-61) |
 | `_messages/ccode-to-cowork-2026-07-05-merged-architecture-map.md` | message | Batch-5 backlog promotion, 2026-07-28 (session-61) |
 | `_messages/cowork-to-ccode-2026-07-05-merged-architecture-map-feedback.md` | message | Batch-5 backlog promotion, 2026-07-28 (session-61) |
+| `_messages/ccode-to-cowork-2026-07-05-restart-handoff.md` | message | Batch-6 backlog promotion, 2026-07-28 (session-62) — full manual rigor, refs now-collection-origin files directly, records Open Decision #21's fix |
+| `_messages/ccode-to-cowork-2026-07-05-closing-open-items.md` | message | Batch-6 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by session-2026-07-05-004.md |
+| `_messages/cowork-to-ccode-2026-07-05-closing-open-items-response.md` | message | Batch-6 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by session-2026-07-05-004.md |
+| `_messages/ccode-to-cowork-2026-07-05-closing-items-confirmed.md` | message | Batch-6 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-05-check-your-open-items.md` | message | Batch-6 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-2026-07-05-open-items-cleaned-up.md` | message | Batch-6 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-05-go-ahead-sync-draft-agent-config.md` | message | Batch-6 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-2026-07-05-draft-agent-config-synced.md` | message | Batch-6 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-05-session-start-prompts-consolidation.md` | message | Batch-6 backlog promotion, 2026-07-28 (session-62) — Open Decision #32 |
+| `_messages/cowork-to-ccode-2026-07-05-session-start-prompts-recommendation.md` | message | Batch-6 backlog promotion, 2026-07-28 (session-62) — Open Decision #32 |
+| `_messages/ccode-to-cowork-2026-07-05-session-start-prompts-approved.md` | message | Batch-6 backlog promotion, 2026-07-28 (session-62) — Open Decision #32 |
+| `_messages/cowork-to-ccode-2026-07-05-decision-32-closed.md` | message | Batch-6 backlog promotion, 2026-07-28 (session-62) — Open Decision #32 |
+| `_messages/ccode-to-cowork-2026-07-05-draft-agent-config-sync-request.md` | message | Batch-6 backlog promotion, 2026-07-28 (session-62) — Open Decision #32 |
+| `_messages/cowork-to-ccode-2026-07-05-decision-32-text-quoted.md` | message | Batch-6 backlog promotion, 2026-07-28 (session-62) — Open Decision #32 |
+| `_messages/ccode-to-cowork-2026-07-05-instruction-sync-check-parked.md` | message | Batch-6 backlog promotion, 2026-07-28 (session-62) — Open Decision #28 |
+| `_messages/ccode-to-cowork-2026-07-05-instruction-sync-project-plan.md` | message | Batch-6 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by decisions-archive.md Decision #28 |
+| `_messages/ccode-to-cowork-2026-07-05-signals-now-migrated.md` | message | Batch-6 backlog promotion, 2026-07-28 (session-62) — Open Decision #29 |
+| `_messages/ccode-to-cowork-2026-07-05-session16-not-empty.md` | message | Batch-6 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-05-daily-report-claude-code.md` | message | Batch-6 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-05-title-decided.md` | message | Batch-6 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-2026-07-05-repo-redesign-draft-handoff.md` | message | Batch-6 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-05-repo-redesign-published.md` | message | Batch-6 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-10-curated-slice-proposal.md` | message | Batch-7 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-2026-07-10-curated-slice-review.md` | message | Batch-7 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-10-curated-slice-closeout.md` | message | Batch-7 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-2026-07-10-closeout-verification.md` | message | Batch-7 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-2026-07-10-index-still-outstanding.md` | message | Batch-7 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-10-index-rebuild-recheck-request.md` | message | Batch-7 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-2026-07-10-index-finding-retracted.md` | message | Batch-7 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-2026-07-10-refs-to-instruction-demo-cant-see-it.md` | message | Batch-7 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-10-demo-confirmed-unmerged.md` | message | Batch-7 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-2026-07-10-obsidian-graph-view-risk.md` | message | Batch-7 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-10-independent-graph-verification-request.md` | message | Batch-7 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-2026-07-10-independent-graph-verification-result.md` | message | Batch-7 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-10-cold-question-test-openbrain.md` | message | Batch-7 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-2026-07-10-cold-question-test-answer.md` | message | Batch-7 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-and-cowork-2026-07-10-resume-handoff.md` | message | Batch-7 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-11-action-digest-pilot-proposal.md` | message | Batch-8 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by decisions-archive.md Decision #45 |
+| `_messages/cowork-to-ccode-2026-07-11-action-digest-pilot-response.md` | message | Batch-8 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by decisions-archive.md Decision #45 |
+| `_messages/ccode-to-cowork-2026-07-11-action-digest-adoption-question.md` | message | Batch-8 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-2026-07-11-action-digest-adoption-response.md` | message | Batch-8 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-11-action-digest-policy-adopted.md` | message | Batch-8 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-2026-07-11-my-action-digest-done.md` | message | Batch-8 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-11-aliases-split-proposal.md` | message | Batch-8 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-2026-07-11-aliases-split-confirmed.md` | message | Batch-8 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-11-my-aliases-draft.md` | message | Batch-8 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-2026-07-11-my-aliases-draft.md` | message | Batch-8 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-11-aliases-cross-check.md` | message | Batch-8 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-2026-07-11-aliases-cross-check.md` | message | Batch-8 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-2026-07-11-aliases-both-flags-accepted.md` | message | Batch-8 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-11-joint-file-aliases-and-count-correction.md` | message | Batch-8 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-2026-07-11-joint-file-confirmed-all-36-covered.md` | message | Batch-8 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-2026-07-11-audit-finding-home-view.md` | message | Batch-9 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by auditor-charter.md addendum |
+| `_messages/cowork-to-ccode-2026-07-11-audit-finding-home-final-position.md` | message | Batch-9 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by auditor-charter.md addendum |
+| `_messages/ccode-to-cowork-2026-07-11-audit-finding-home-implemented.md` | message | Batch-9 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by auditor-charter.md addendum |
+| `_messages/ccode-to-cowork-2026-07-11-link-convention-proposal.md` | message | Batch-9 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by decisions-archive.md Decision #42 |
+| `_messages/cowork-to-ccode-2026-07-11-link-convention-review.md` | message | Batch-9 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-11-link-convention-independent-verification-request.md` | message | Batch-9 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by decisions-archive.md Decision #42 |
+| `_messages/cowork-to-ccode-2026-07-11-link-convention-verification-result.md` | message | Batch-9 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by decisions-archive.md Decision #42 |
+| `_messages/ccode-to-cowork-2026-07-11-provenance-sidecar-proposal.md` | message | Batch-9 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by decisions-archive.md Decision #51 |
+| `_messages/ccode-to-cowork-2026-07-11-provenance-stamping-proposal.md` | message | Batch-9 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by decisions-archive.md Decision #44 |
+| `_messages/cowork-to-ccode-2026-07-11-provenance-stamping-response.md` | message | Batch-9 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by decisions-archive.md Decision #44 |
+| `_messages/ccode-to-cowork-2026-07-11-rescue-destination-question.md` | message | Batch-9 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-2026-07-11-rescue-destination-answer.md` | message | Batch-9 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-2026-07-11-unauthorized-rescue-acknowledgment.md` | message | Batch-9 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by decisions-archive.md Decision #38 |
+| `_messages/cowork-to-ccode-2026-07-11-broke-the-hold-flagging-it.md` | message | Batch-9 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-11-session-34-log-fixed.md` | message | Batch-9 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-11-instruction-file-okf-pilot-proposal.md` | message | Batch-10 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by decisions-archive.md Decision #49 |
+| `_messages/cowork-to-ccode-2026-07-11-instruction-file-okf-pilot-review.md` | message | Batch-10 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by decisions-archive.md Decision #49 |
+| `_messages/ccode-to-cowork-2026-07-11-okf-pilot-agreed.md` | message | Batch-10 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by decisions-archive.md Decision #49 |
+| `_messages/ccode-to-cowork-2026-07-11-architecture-doc-done-plus-a-bug-in-your-corpus.md` | message | Batch-10 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-2026-07-11-messages-integrity-independent-check.md` | message | Batch-10 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-11-integrity-confirmed-content-review-requested.md` | message | Batch-10 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-2026-07-11-cant-access-architecture-doc.md` | message | Batch-10 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-11-architecture-doc-full-text.md` | message | Batch-10 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-2026-07-11-architecture-doc-content-review.md` | message | Batch-10 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-11-content-review-fixes-applied.md` | message | Batch-10 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-11-ai-context-okf-policy-proposal.md` | message | Batch-10 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-11-four-agent-test-page-correction-handoff.md` | message | Batch-10 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by decisions-archive.md Decision #36 |
+| `_messages/ccode-to-cowork-2026-07-11-four-agent-test-published.md` | message | Batch-10 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-11-auditor-proposals-consensus-request.md` | message | Batch-11 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-cameron-2026-07-11-auditor-charter-independent-review.md` | message | Batch-11 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by auditor-charter.md Provenance line |
+| `_messages/cowork-to-cameron-2026-07-11-capture-prompt-pressure-test-and-status.md` | message | Batch-11 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by outside-conversation-capture-convention.md Provenance line |
+| `_messages/ccode-to-cowork-2026-07-11-charter-and-capture-convergence.md` | message | Batch-11 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by auditor-charter.md Provenance line |
+| `_messages/cowork-to-cameron-2026-07-11-holding-confirmed.md` | message | Batch-11 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-11-auditor-charter-ratified.md` | message | Batch-11 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-11-capture-convention-formal-proposal.md` | message | Batch-11 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by outside-conversation-capture-convention.md Provenance line |
+| `_messages/cowork-to-ccode-2026-07-11-capture-convention-formal-review.md` | message | Batch-11 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by outside-conversation-capture-convention.md Provenance line |
+| `_messages/ccode-to-cowork-2026-07-11-capture-convention-final.md` | message | Batch-11 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-11-capture-convention-ratified.md` | message | Batch-11 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-fable-2026-07-11-auditor-first-mission-plan.md` | message | Batch-11 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-fable-2026-07-11-first-mission-sample-task-flaw.md` | message | Batch-11 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-fable-2026-07-11-first-mission-revised-plan.md` | message | Batch-11 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-fable-2026-07-11-mission-split-agreed-plus-one-check.md` | message | Batch-11 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-fable-2026-07-11-who-spawns-mission-1.md` | message | Batch-11 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-fable-2026-07-11-corrections-accepted-and-spawn-question.md` | message | Batch-11 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-fable-2026-07-11-consolidated-first-mission-plan.md` | message | Batch-11 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/fable-to-ccode-2026-07-11-first-mission-plan-answer.md` | message | Batch-11 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-12-instruction-sync-revised-proposal.md` | message | Batch-11 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by decisions-archive.md Decision #28 |
+| `_messages/ccode-to-cowork-2026-07-12-instruction-sync-role-generic-correction.md` | message | Batch-11 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by decisions-archive.md Decision #28 |
+| `_messages/cowork-to-ccode-2026-07-12-instruction-sync-role-generic-response.md` | message | Batch-11 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by decisions-archive.md Decision #28 |
+| `_messages/ccode-to-cowork-2026-07-12-instruction-sync-final-consensus-check.md` | message | Batch-11 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by decisions-archive.md Decision #28 |
+| `_messages/cowork-to-ccode-2026-07-12-instruction-sync-final-consensus-response.md` | message | Batch-11 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by decisions-archive.md Decision #28 |
+| `_messages/ccode-to-cowork-2026-07-12-instruction-sync-closed.md` | message | Batch-11 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by decisions-archive.md Decision #28 |
+| `_messages/ccode-to-cowork-2026-07-12-session-close-forcing-function.md` | message | Batch-12 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by session-2026-07-12-002.md; missed by batch-11's mechanical scan |
+| `_messages/cameron-to-cowork-2026-07-13-AI-memory-discussion.md` | reference | Batch-12 backlog promotion, 2026-07-28 (session-62) — raw YouTube transcript, hand-stamped, no source frontmatter |
+| `_messages/cowork-to-ccode-2026-07-13-token-burn-structural-problem.md` | message | Batch-12 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by decisions-archive.md header |
+| `_messages/ccode-to-cowork-2026-07-13-understory-repo-findings.md` | message | Batch-12 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-2026-07-13-understory-findings-response.md` | message | Batch-12 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-13-star-count-resolved-placeholder-added.md` | message | Batch-12 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-13-token-burn-proposal.md` | message | Batch-12 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by decisions-archive.md header |
+| `_messages/cowork-to-ccode-2026-07-13-token-burn-proposal-response.md` | message | Batch-12 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-2026-07-13-archive-granularity-pushback.md` | message | Batch-12 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by decisions-archive.md header |
+| `_messages/ccode-to-cowork-2026-07-13-archive-granularity-settled.md` | message | Batch-12 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by decisions-archive.md header |
+| `_messages/cowork-to-ccode-2026-07-13-draft-agent-session-close-gap.md` | message | Batch-12 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by session-2026-07-12-002.md |
+| `_messages/ccode-to-cowork-2026-07-13-session-close-handshake-proposal.md` | message | Batch-12 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by session-2026-07-12-002.md |
+| `_messages/cowork-to-ccode-2026-07-13-handshake-own-landing-missing-log.md` | message | Batch-12 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-13-handshake-landing-log-false-alarm.md` | message | Batch-12 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-2026-07-13-session-close-handshake-response.md` | message | Batch-12 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by AI_INSTRUCTIONS.md §11 |
+| `_messages/ccode-to-cowork-2026-07-13-session-close-handshake-ratified.md` | message | Batch-12 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-15-graphify-trial-plan-proposal.md` | message | Batch-13 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-2026-07-15-graphify-trial-response.md` | message | Batch-13 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/ccode-to-cowork-2026-07-15-graphify-trial-plan-consensus.md` | message | Batch-13 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-2026-07-15-graphify-trial-consensus-confirmed.md` | message | Batch-13 backlog promotion, 2026-07-28 (session-62) |
+| `_messages/cowork-to-ccode-2026-07-15-graphify-35-fix-and-greenlight.md` | message | Batch-13 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by session-2026-07-15-002.md |
 
 `type: audit-finding` deliberately untested — deferred to the real Auditor track rather than a synthetic file. See Open Decision #34.
 
