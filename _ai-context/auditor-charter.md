@@ -1,6 +1,10 @@
 ---
 type: reference
 title: "Auditor Charter"
+role: Publish
+wrapper: Claude Code
+identity: Sonnet 5
+generated: { by: Claude Code/Sonnet 5, at: 2026-07-28T10:01:42+10:00 }  # generated from wrapper:+identity:+commit-date - do not hand-edit
 aliases:
   - auditor charter
   - Auditor role definition
@@ -13,6 +17,7 @@ refs:
   - ./instruction-provenance.md
   - ./cold-walk-isolation-safeguard.md
   - ./auditor-kickoff-prompt.md
+  - ./attribution-schema.md
 ---
 
 **Last updated:** 2026-07-11
@@ -105,7 +110,7 @@ Never per-session. Runs are: (1) **triggered** — before any AI-independence te
 
 ## 9. Instantiation
 
-Any capable frontier model, fresh context, this charter as the complete brief, plus the actual kickoff text in `_ai-context/auditor-kickoff-prompt.md` — kept as its own versioned sibling file rather than folded in here, same reasoning as the Cold-Walk Isolation Safeguard's own separate file: fixes learned from watching a real run stay durable and pasteable by Cameron alone, not implicit knowledge only the humans present for that run carry forward. Candidate platform per the Capability Baseline: OpenWork with a token-driven API model — deliberately not a local model; the role that checks reliability must be the most reliable component in the system (the four-agent test's clearest lesson). The prototype run was Fable 5 / Claude Code / AI-Auditor workspace, 2026-07-10. First genuine Function A run: 2026-07-19, AnythingLLM/DeepSeek — see `_ai-context/auditor-kickoff-prompt.md` for what that run revealed about the kickoff text itself, and why it now exists as its own file.
+Any capable frontier model, fresh context, this charter as the complete brief, plus the actual kickoff text in `_ai-context/auditor-kickoff-prompt.md` — kept as its own versioned sibling file rather than folded in here, same reasoning as the Cold-Walk Isolation Safeguard's own separate file: fixes learned from watching a real run stay durable and pasteable by Cameron alone, not implicit knowledge only the humans present for that run carry forward. Candidate platform per the Capability Baseline: AnythingLLM with a token-driven API model — deliberately not a local model; the role that checks reliability must be the most reliable component in the system (the four-agent test's clearest lesson). The prototype run was Fable 5 / Claude Code / AI-Auditor workspace, 2026-07-10. First genuine Function A run: 2026-07-19, AnythingLLM/DeepSeek — see `_ai-context/auditor-kickoff-prompt.md` for what that run revealed about the kickoff text itself, and why it now exists as its own file.
 
 ## 10. First missions (in order)
 
@@ -113,7 +118,6 @@ Any capable frontier model, fresh context, this charter as the complete brief, p
 2. **Seed `type: audit-finding` with the real case** — Open Decision #36 (the published four-agent-test misdiagnosis) written up as the worked example: a published claim traced against its evidence and the instruction clause it bears on.
 3. **Draft the provenance sidecar** (`_ai-context/instruction-provenance.md`, per the 2026-07-10 instruction-file-provenance analysis, Option 3), using Open Decision #36 as its first worked example alongside mission 2 — the same real case, read from both directions (record checked against instruction, instruction traced back to the record that justified it) in one pass rather than two separate efforts.
 4. **Verify the architecture document** (once it exists) against reality — first run of the self-sustaining loop.
-5. **Then** the OpenWork pre-flight, when that test is actually near.
 
 ---
 
@@ -141,7 +145,13 @@ Cameron approved, 2026-07-11: staging at `AI-Working/Audit/` (path-scoped grant,
 
 **§8 cadence, resolved:** monthly stays the documented default. Cameron's own on-demand invocation — already part of the design — will be used far more often than monthly early on, as a matter of practice, not a policy change requiring separate documentation here.
 
-*Ratified under the Radical Collaboration Transparency framework. Original design: Claude (Anthropic), model claude-fable-5, AI-Auditor workspace, 2026-07-10. Independent reviews: Cowork (Draft Agent) and Claude Code (Publish Agent), 2026-07-11. Ratification decision: Cameron Loudon, 2026-07-11. Write-access and cadence amendment: Cameron Loudon, 2026-07-12.*
+### Addendum, 2026-07-28: stale OpenWork references corrected
+
+Cowork found, while checking Open Decision #58's landing, that §9's candidate-platform sentence still named OpenWork — self-contradicting the same paragraph's own next sentence, which already names AnythingLLM/DeepSeek as the actual first Function A run. Fixed: "OpenWork" → "AnythingLLM" in that sentence only; the "token-driven API model, not local" reasoning carries over unchanged, since AnythingLLM's own Capability Baseline row already describes it as a local UI wrapping a hosted model (DeepSeek), satisfying the same not-a-local-model requirement. The historical Fable 5/OpenWork prototype-run mention later in §9 is a genuine past-tense record, left untouched.
+
+Separately, §10 item 5 ("Then the OpenWork pre-flight, when that test is actually near") described a future mission step that `_audit-findings/2026-07-18-openwork-point4-disqualification.md` (`blocks-independence`) already forecloses — not delayed, dead. Cameron's decision, relayed by Cowork: "OpenWork is out for the Auditor role. Done. AnythingLLM is the working solution." Item 5 removed from the numbered list rather than rewritten as a superseded note — nothing elsewhere in the repo cites "mission 5" or "§10 item 5" by number (checked directly; "mission 1" and "mission 3" are both cited elsewhere, so those numbers were left untouched), so removing the line outright doesn't orphan any reference the way renumbering the surviving items would have.
+
+*Ratified under the Radical Collaboration Transparency framework. Original design: Claude (Anthropic), model claude-fable-5, AI-Auditor workspace, 2026-07-10. Independent reviews: Cowork (Draft Agent) and Claude Code (Publish Agent), 2026-07-11. Ratification decision: Cameron Loudon, 2026-07-11. Write-access and cadence amendment: Cameron Loudon, 2026-07-12. Stale-reference corrections: Cowork (found), Claude Code (fixed), Cameron Loudon (decided §10 item 5's removal), 2026-07-28.*
 
 ## Links
 <!-- generated from refs: - do not hand-edit -->
@@ -152,3 +162,4 @@ Cameron approved, 2026-07-11: staging at `AI-Working/Audit/` (path-scoped grant,
 - [[instruction-provenance]]
 - [[cold-walk-isolation-safeguard]]
 - [[auditor-kickoff-prompt]]
+- [[attribution-schema]]

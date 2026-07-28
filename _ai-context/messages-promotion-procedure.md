@@ -4,7 +4,7 @@ title: "Messages Bundle — Promotion Procedure"
 role: Publish
 wrapper: Claude Code
 identity: Sonnet 5
-generated.by: "Claude Code/Sonnet 5"  # generated from wrapper:+identity: - do not hand-edit
+generated: { by: Claude Code/Sonnet 5, at: 2026-07-28T09:19:06+10:00 }  # generated from wrapper:+identity:+commit-date - do not hand-edit
 aliases:
   - messages promotion procedure
   - promotion procedure
@@ -39,9 +39,9 @@ Cadence is currently at the Publish Agent's discretion, session by session — c
 
 Run `_ai-context/generate-links-footer.ps1 -BundlePath <path>` after adding or changing any file's `refs:`. It regenerates the marked footer for every file that has one, validates every ref actually resolves, and fails loudly on a broken ref rather than silently emitting a broken link. `index.md` is always skipped — it stays hand-written curation, never a generated footer (Open Decision #42).
 
-## 3a. Generated `generated.by:` field
+## 3a. Generated `generated:` field
 
-If the file carries `role:`/`wrapper:`/`identity:` (forward-only, see §2 and `_ai-context/attribution-schema.md`), run `_ai-context/generate-provenance.ps1 -BundlePath <path>` after adding or changing `wrapper:`/`identity:`. It regenerates the marked `generated.by:` frontmatter field from those two, and fails loudly if only one of the pair is present rather than guessing (Open Decision #58).
+If the file carries `role:`/`wrapper:`/`identity:` (forward-only, see §2 and `_ai-context/attribution-schema.md`), commit it first, then run `_ai-context/generate-provenance.ps1 -BundlePath <path>` — it regenerates the marked, nested `generated: { by, at }` frontmatter field (`by` from `wrapper:`/`identity:`, `at` from the file's own last-commit author date via `git log`), and fails loudly if only one of `wrapper:`/`identity:` is present, or if the file has no commit yet, rather than guessing (Open Decision #58). Stage the file again and `git commit --amend --no-edit` to fold the derived field into the same commit — full workflow and rationale in `_ai-context/attribution-schema.md` §3.
 
 ## 4. Provenance stamping — mechanical transcripts only
 
