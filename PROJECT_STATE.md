@@ -471,6 +471,17 @@ Not a Jekyll collection — added to `_config.yml`'s `exclude:` list (same mecha
 | `_messages/ccode-to-cowork-2026-07-15-graphify-trial-plan-consensus.md` | message | Batch-13 backlog promotion, 2026-07-28 (session-62) |
 | `_messages/cowork-to-ccode-2026-07-15-graphify-trial-consensus-confirmed.md` | message | Batch-13 backlog promotion, 2026-07-28 (session-62) |
 | `_messages/cowork-to-ccode-2026-07-15-graphify-35-fix-and-greenlight.md` | message | Batch-13 backlog promotion, 2026-07-28 (session-62) — full manual rigor, cited by session-2026-07-15-002.md |
+| `_messages/ccode-to-cowork-2026-07-17-graphify-trial-results.md` | message | Batch-14 backlog promotion, 2026-07-28 (session-63) — full manual rigor, cited by PROJECT_STATE.md #35 and session-2026-07-15-002.md |
+| `_messages/cowork-to-ccode-2026-07-17-graphify-trial-close-out.md` | message | Batch-14 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/ccode-to-cowork-2026-07-17-graphify-trial-teardown-confirmed.md` | message | Batch-14 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/ccode-to-cowork-2026-07-17-llm-wiki-compiler-trial-plan-proposal.md` | message | Batch-14 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/cowork-to-ccode-2026-07-17-llm-wiki-compiler-trial-response.md` | message | Batch-14 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/ccode-to-cowork-2026-07-17-llm-wiki-compiler-trial-plan-consensus.md` | message | Batch-14 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/ccode-to-cowork-2026-07-17-llm-wiki-compiler-trial-results.md` | message | Batch-14 backlog promotion, 2026-07-28 (session-63) — full manual rigor, cited by PROJECT_STATE.md #35 |
+| `_messages/cowork-to-ccode-2026-07-17-llm-wiki-compiler-trial-close-out.md` | message | Batch-14 backlog promotion, 2026-07-28 (session-63) — full manual rigor, cited by PROJECT_STATE.md #35 |
+| `_messages/ccode-to-cowork-2026-07-17-llm-wiki-compiler-trial-teardown-confirmed.md` | message | Batch-14 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/ccode-to-cowork-2026-07-17-karpathy-schema-stealing-proposal.md` | message | Batch-14 backlog promotion, 2026-07-28 (session-63) |
+| `_messages/cowork-to-ccode-2026-07-17-karpathy-schema-stealing-response.md` | message | Batch-14 backlog promotion, 2026-07-28 (session-63) |
 
 `type: audit-finding` deliberately untested — deferred to the real Auditor track rather than a synthetic file. See Open Decision #34.
 
