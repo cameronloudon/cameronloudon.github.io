@@ -4,7 +4,7 @@ title: "Attribution Schema — role / wrapper / identity / generated.by"
 role: Publish
 wrapper: Claude Code
 identity: Sonnet 5
-generated.by: "Claude Code/Sonnet 5"  # generated from wrapper:+identity: - do not hand-edit
+generated: { by: Claude Code/Sonnet 5, at: 2026-07-28T09:19:06+10:00 }  # generated from wrapper:+identity:+commit-date - do not hand-edit
 aliases:
   - attribution schema
   - role wrapper identity
@@ -55,18 +55,22 @@ Flat scalars representing **current-version attribution only** — who is respon
 
 The existing template (`ai-content-creation-spec.md` §5) already states Model and Platform on every published page — the oldest attribution precedent in this project, predating `_messages/`, OKF, and the Auditor entirely (session-2026-06-10-001). Add a **Role** line alongside them: `Role: [Publish/Draft/etc.] · Model: [model string] · Session: [session ID] · Platform: [platform] · Date: [YYYY-MM-DD]`. This is prose on a published HTML page, not YAML frontmatter — there is no `generated.by:` equivalent here; see §3.
 
-## 3. `generated.by:` — OKF-native, mechanically derived
+## 3. `generated:` — OKF-native, mechanically derived
 
-OKF's real spec (v0.2, verified directly — not the v0.1 originally assumed) has its own native actor-identity convention: `generated.by:` / `verified[].by:`, shaped as `<producer>/<version>` or `human:<id>`. This project chose the three-scalar `role:`/`wrapper:`/`identity:` split deliberately, as a genuine divergence from OKF's own native shape rather than an oversight — but the divergence doesn't need to be permanent. `generated.by:` is added as a **mechanically derived** field, the same relationship `refs:` already has to the generated `## Links` footer (`generate-links-footer.ps1`): `wrapper:`/`identity:` stay the real, hand-authored source of truth; `generated.by:` is never hand-edited, only regenerated.
+OKF's real spec (v0.2, verified directly — not the v0.1 originally assumed) has its own native actor-identity convention: a nested `generated: { by, at }` mapping and a `verified: [{ by, at }]` list, with `by` shaped as `<producer>/<version>`, `human:<id>`, or `process:<id>`. This project chose the three-scalar `role:`/`wrapper:`/`identity:` split deliberately, as a genuine divergence from OKF's own native shape rather than an oversight — but the divergence doesn't need to be permanent. `generated:` is added as a **mechanically derived** field, the same relationship `refs:` already has to the generated `## Links` footer (`generate-links-footer.ps1`): `wrapper:`/`identity:` stay the real, hand-authored source of truth; `generated:` is never hand-edited, only regenerated.
+
+**Corrected 2026-07-28:** the first build of this field (`generated.by:`, a flat dotted string) shipped before the real spec's shape was verified directly. It was wrong — checked and confirmed via raw `curl` against both the spec file and its GPG-signature-verified commit history, independently re-confirmed by Cowork after her own first check hit a stale cache. `_ai-context/generate-provenance.ps1` was rebuilt to emit the real nested shape; any file still carrying the old flat key gets it migrated automatically the next time the script runs (strips the old line, replaces it with the new one — a one-time cleanup, not an ongoing dual-format).
 
 **Derivation rule**, run by `_ai-context/generate-provenance.ps1`:
 
-- `wrapper: Person` → `generated.by: "human:<identity, lowercased, spaces to hyphens>"` (e.g. `identity: Cameron` → `human:cameron`)
-- Any other `wrapper:` → `generated.by: "<wrapper>/<identity>"` literally (e.g. `wrapper: Claude Code`, `identity: Sonnet 5` → `Claude Code/Sonnet 5`)
+- `by`: `wrapper: Person` → `human:<identity, lowercased, spaces to hyphens>` (e.g. `identity: Cameron` → `human:cameron`); any other `wrapper:` → `<wrapper>/<identity>` literally (e.g. `wrapper: Claude Code`, `identity: Sonnet 5` → `Claude Code/Sonnet 5`).
+- `at`: the file's own last-commit author date, via `git log -1 --format=%aI -- <file>` — never a model-asserted date, matching this project's standing rule against self-reported timestamps (the isolation safeguard; Open Decision #47's wrong-self-inferred-date finding). This means the file needs at least one commit before the script can compute `at:` for it — a hard failure, not a guessed value, if it doesn't have one yet.
 
-A file with only one of `wrapper:`/`identity:` present is a real error, not a value to guess past — the script fails loudly on it rather than emitting a partial or wrong `generated.by:`.
+**Workflow** (verified empirically against a real git repo before adopting it): commit the file normally first — `generated:` will be stale, incomplete, or absent at that point, and that's fine. Run the script; `git log` now resolves against the commit just made, so `at:` matches it exactly. Stage the file again and `git commit --amend --no-edit` to fold the derived field into that same commit — `--amend --no-edit` never touches the author date, only the committer date, so the `at:` value the script wrote still matches the amended commit exactly, and the history shows one commit for the change, not two. Files that already had a prior, unrelated commit (the migration itself, for example) don't need the amend step — a plain new commit is correct there, since the goal is preserving the *original* authorship date, not a just-made one.
 
-`verified[].by:` is a good future fit — `_audit-findings/` already has a real generate/verify split in practice (Auditor produces, Cameron approves, Cowork/Claude Code often independently re-verify specific claims before trusting a report) — but is explicitly **not** part of this build. Cowork's caution, agreed: keep this the same size as `generate-links-footer.ps1`, one field derived from two others. Adding `verified[].by:` is its own separate design pass.
+A file with only one of `wrapper:`/`identity:` present is a real error, not a value to guess past — the script fails loudly on it rather than emitting a partial or wrong `generated:`.
+
+`verified:` is a good future fit — `_audit-findings/` already has a real generate/verify split in practice (Auditor produces, Cameron approves, Cowork/Claude Code often independently re-verify specific claims before trusting a report) — but is explicitly **not** part of this build. Real open design question, not yet decided: OKF's `verified:` is list-shaped (multiple independent confirmations), which doesn't fit this project's flat-scalar `wrapper:`/`identity:` precedent the way `generated:` did — and unlike every mechanical field built so far, a hand-appended growing list is a genuinely new authoring pattern, possibly needing its own small append tool rather than a derive-in-place script. Tracked as a live discussion with Cowork, not designed here.
 
 ## 4. Still open, not resolved by this doc
 
