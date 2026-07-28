@@ -25,6 +25,10 @@ This file exists because four real conventions were established across a single 
 
 Cadence is currently at the Publish Agent's discretion, session by session — commit cadence for promotions (session-close only vs. also at session-start) is a genuinely open question, not decided here or anywhere else yet. Don't treat "not documented" as "not a real gap"; it's tracked, just unresolved.
 
+## 1a. Before a backlog batch — `prescan-backlog.ps1`
+
+Run `_ai-context/prescan-backlog.ps1 -Path <AI-Working/Messages> -Since <date>` right before working through a batch, not once upfront against the whole remaining backlog — keeps candidates as fresh as the promotion decision itself (built 2026-07-28, the token-cost question adjacent to Open Decision #57). Report-only: mechanically extracts `title:`/`from:`/`to:`/`timestamp:` for any file with the plain `From:`/`To:`/`Date:` header, and offers `refs:` candidates in two confidence tiers pulled from backtick-quoted `.md` mentions (the file's own `Re:` line, and the wider body). Every candidate — resolved or not — still needs a human or agent look before it lands in real frontmatter; this cuts the search-the-corpus cost per file, it doesn't replace judgment on `type:` or `aliases:`, which stay exactly as required below.
+
 ## 2. Required frontmatter
 
 - `type:` — `message` / `transcript` / `summary` / `audit-finding` / `index`. Comes from reading the content, never from the filename or the file's own self-description (Open Decision #34).
