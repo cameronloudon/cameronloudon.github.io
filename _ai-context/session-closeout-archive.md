@@ -74,3 +74,7 @@ refs:
 **Resolved, same session-38, later the same day:** rather than another retroactive patch, Cameron and Claude Code built the actual forcing function — a session-close handshake (draft-ready → please-hold → finalised) tied to the one action that already never fails to happen, announcing PR-readiness, instead of to internal judgment about session-end. `session-2026-07-12-002.md` (same reserved-ID-vs-actual-date pattern as `session-2026-07-11-004.md`) is that handshake's own first real use — this session closed itself out under the new mechanism rather than being caught after the fact. See Open Decision #52, closed.
 
 **Corrected 2026-07-26** (Function A cold walk, confirming run for Open Decision #47): `session-2026-07-10-001` was missing from both this enumerated list and the `_session-logs/` inventory table below, despite genuinely existing on disk — a real gap, not caught by anything else in the meantime. Added to both; count corrected from fifty-seven to fifty-eight.
+
+## Links
+<!-- generated from refs: - do not hand-edit -->
+- [[PROJECT_STATE]]
