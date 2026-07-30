@@ -12,6 +12,7 @@ refs:
   - ../AI_INSTRUCTIONS.md
   - ./auditor-charter.md
   - ./attribution-schema.md
+  - ./backlog-promotion-workflow.md
 ---
 
 **Last updated:** 2026-07-11
@@ -25,6 +26,8 @@ This file exists because four real conventions were established across a single 
 
 Cadence is currently at the Publish Agent's discretion, session by session — commit cadence for promotions (session-close only vs. also at session-start) is a genuinely open question, not decided here or anywhere else yet. Don't treat "not documented" as "not a real gap"; it's tracked, just unresolved.
 
+**The session-level question — how a batch actually gets selected, scoped, verified, and closed out — is answered separately, in `_ai-context/backlog-promotion-workflow.md`** (written 2026-07-29, session-64, once the historical backlog was fully promoted). This file stays about per-file mechanics; that one is the workflow. Read both.
+
 ## 1a. Before a backlog batch — `prescan-backlog.ps1`
 
 Run `_ai-context/prescan-backlog.ps1 -Path <AI-Working/Messages> -Since <date>` right before working through a batch, not once upfront against the whole remaining backlog — keeps candidates as fresh as the promotion decision itself (built 2026-07-28, the token-cost question adjacent to Open Decision #57). Report-only: mechanically extracts `title:`/`from:`/`to:`/`timestamp:` for any file with the plain `From:`/`To:`/`Date:` header, and offers `refs:` candidates in two confidence tiers pulled from backtick-quoted `.md` mentions (the file's own `Re:` line, and the wider body). Every candidate — resolved or not — still needs a human or agent look before it lands in real frontmatter; this cuts the search-the-corpus cost per file, it doesn't replace judgment on `type:` or `aliases:`, which stay exactly as required below.
@@ -34,7 +37,7 @@ Run `_ai-context/prescan-backlog.ps1 -Path <AI-Working/Messages> -Since <date>` 
 - `type:` — `message` / `transcript` / `summary` / `audit-finding` / `index`. Comes from reading the content, never from the filename or the file's own self-description (Open Decision #34).
 - `title:`
 - `timestamp:` — not `date`; matches the OKF spec's actual optional field name.
-- `from:`/`to:` for authored content, or `participants:` for captured/transcript content — authored and captured content need different shapes (Open Decision #34).
+- `from:`/`to:` for authored content, or `participants:` for captured/transcript content — authored and captured content need different shapes (Open Decision #34). **`participants:` does not require multiple entries.** A single-entry `participants:` is the correct shape for a standalone capture of one actor's own record (a cold-walk transcript, for instance) — the deciding question is authored vs. captured, not how many parties are named. Precedent: `cowork-to-ccode-2026-07-19-mission-1-full-transcript.md`, Cameron's own call, 2026-07-29 — "it is not about [who sent it]. Its a standalone record." Who relayed a captured file belongs in the body's own framing text, not in `from:`/`to:` frontmatter competing with what the capture actually contains.
 - `role:`/`wrapper:`/`identity:` — new fields, forward-only from 2026-07-28 (Open Decision #58). Sit alongside `from:`/`to:`, not instead of them. Full definitions and per-surface rules: `_ai-context/attribution-schema.md`.
 - `aliases:` — 2–5 alternate search terms, drafted from the file's actual content. Drafted by whoever authored it, or is closest to its original intent — not guessed by the promoting agent on the other side's behalf (Open Decision #42).
 - `refs:` — bundle-relative markdown links (`./file.md`), or a relative path to a git-tracked instruction file outside the bundle (`../AI_INSTRUCTIONS.md`) for the record-to-instruction case. `refs:` is the single source of truth; every other link representation is mechanically generated from it, never hand-authored (Open Decision #42).
@@ -71,3 +74,4 @@ Run the same extraction with `-IncludeActions` and save the output to a local, g
 - [[AI_INSTRUCTIONS]]
 - [[auditor-charter]]
 - [[attribution-schema]]
+- [[backlog-promotion-workflow]]

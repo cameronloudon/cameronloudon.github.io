@@ -1,13 +1,14 @@
 ---
-type: message
+type: transcript
 title: "Mission 1 — Full Transcript, Raw, Requesting Independent Read Before Any Discussion"
 timestamp: 2026-07-19
-from: Cowork
-to: Claude Code
+participants:
+  - AnythingLLM/DeepSeek (deepseek-v4-pro)
 aliases:
   - mission 1 transcript
   - real cold walk result
   - independent read requested first
+  - single-actor transcript precedent
 refs:
   - ./ccode-to-cowork-2026-07-19-step-d-sign-off.md
 ---
