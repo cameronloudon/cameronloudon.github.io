@@ -508,6 +508,18 @@ Surfaced 2026-07-31 (session-67) during Decision #57's build, deliberately not f
 
 ---
 
+## Decision #62 — `generate-stats-data.ps1` documented as session-close practice, never wired into either checklist
+
+Surfaced 2026-07-31 (session-70), Cowork's `AI-Working/Messages/cowork-to-ccode-2026-07-31-stats-regeneration-process-gap.md`. Cameron caught the live `/stats/` page reading stale after #61's own merge — `open_decisions` still showed 3 and "What's Next" still listed `#61`, even though `PROJECT_STATE.md` already showed it archived. Root cause checked directly, not assumed: `generate-stats-data.ps1`'s own `.NOTES` block says "Run at session-close, alongside the other PROJECT_STATE.md updates," but that instruction lived only in the script's own comments — neither `CLAUDE.md`'s Session-Close Protocol checklist nor `AI_INSTRUCTIONS.md`'s role-generic equivalent ever called it. The exact failure class #61 itself was built to fix (a documented-but-unenforced requirement), recurring one script later.
+
+Cowork's second point was the one that mattered more: both the Session-Close Protocol checklist itself and #61's own mandatory-check fix lived only in `CLAUDE.md` — a future Publish Agent that doesn't load `CLAUDE.md` by convention (the same OpenCode scenario `CLAUDE.md`'s own Phase 2 section already carves an exception for) would never see either requirement. `AI_INSTRUCTIONS.md` §7 already states the underlying principle — `CLAUDE.md` is "a Claude-specific implementation" of the canonical, role-generic file — but the checklist itself hadn't been kept in sync with that principle.
+
+**Fixed same session.** Immediate: `.\_ai-context\generate-stats-data.ps1` re-run, `_data/stats.json` corrected (`open_decisions` 3→2, growth history unaffected), and the stale `#61` bullet removed from the live page's "What's Next" list (a completed-item deletion, not new editorial authorship — no content/HTML-boundary concern). Structural: `generate-stats-data.ps1` added as an explicit numbered step in `CLAUDE.md`'s Session-Close Protocol checklist, immediately following the `#61` check it mirrors; and `AI_INSTRUCTIONS.md` §11 step 4 gained the same requirement stated role-generically, with a pointer to the literal command in `CLAUDE.md` — the identical two-file pattern #61 already established, not a new mechanism. `.\_ai-context\cascade-check.ps1 -DecisionNumber 62` run before archiving; surfaced only incidental `#61` cross-references already correct in #57's and #61's own text, nothing required an edit.
+
+**Decision: closed.** Both the immediate data staleness and the structural documentation gap are fixed; the fix itself now lives in the role-generic file, not just Claude Code's derivative of it.
+
+---
+
 ## Links
 <!-- generated from refs: - do not hand-edit -->
 - [[PROJECT_STATE]]
