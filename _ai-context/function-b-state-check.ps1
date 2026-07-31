@@ -181,21 +181,34 @@ if (-not $onDiskNotListed -and -not $listedNotOnDisk -and -not $listedDuplicates
 # ------------------------------------------------------------------
 Write-Host "`n=== Check 3: Page Inventory tables vs disk ===" -ForegroundColor Cyan
 
-# Each entry: heading text to search for, relative folder to check.
-# _messages/ bundle added after independent review (Cowork) found it was
-# missing from this list -- and found real, current drift sitting there
-# as a direct result: PROJECT_STATE.md's table lists 8 files, the actual
-# folder has 58. Verified independently before accepting: confirmed via
-# `ls _messages/*.md` (58 files) against the table's 8 rows. The scope
-# gap wasn't cosmetic -- the very drift Function B exists to catch was
-# sitting uncaught in the one section this script didn't check.
+# Each entry: heading text to search for, relative folder to check, and a
+# Mode ("Table" or "Count"). _messages/ bundle added after independent
+# review (Cowork) found it was missing from this list -- and found real,
+# current drift sitting there as a direct result: PROJECT_STATE.md's table
+# listed 8 files, the actual folder had 58. Verified independently before
+# accepting: confirmed via `ls _messages/*.md` (58 files) against the
+# table's 8 rows. The scope gap wasn't cosmetic -- the very drift Function
+# B exists to catch was sitting uncaught in the one section this script
+# didn't check.
+#
+# _messages/ bundle switched from Table to Count mode 2026-07-31
+# (session-66), consensus with Cowork: PROJECT_STATE.md's per-file table
+# (495 rows) was compressed to a stub stating a total, since it
+# substantially duplicated _messages/index.md's own thread-level detail at
+# real token cost and contributed nothing to Cameron's Obsidian graph
+# either way (a plain markdown table has no body-text [[wikilinks]], so it
+# was never a rendered graph edge to begin with). Table mode has nothing
+# to compare row-by-row anymore; Count mode reads the stub's stated total
+# and compares it to a real disk count instead -- same ground truth the
+# old check approximated via row-counting, just read from a sentence
+# rather than summed from a table.
 $inventorySections = @(
-    @{ Heading = "### _ideas/ collection"; Folder = "_ideas" },
-    @{ Heading = "### _signals/ collection"; Folder = "_signals" },
-    @{ Heading = "### _now/ collection"; Folder = "_now" },
-    @{ Heading = "### _session-logs/ collection"; Folder = "_session-logs" },
-    @{ Heading = "### _audit-findings/ bundle"; Folder = "_audit-findings" },
-    @{ Heading = "### _messages/ bundle"; Folder = "_messages" }
+    @{ Heading = "### _ideas/ collection"; Folder = "_ideas"; Mode = "Table" },
+    @{ Heading = "### _signals/ collection"; Folder = "_signals"; Mode = "Table" },
+    @{ Heading = "### _now/ collection"; Folder = "_now"; Mode = "Table" },
+    @{ Heading = "### _session-logs/ collection"; Folder = "_session-logs"; Mode = "Table" },
+    @{ Heading = "### _audit-findings/ bundle"; Folder = "_audit-findings"; Mode = "Table" },
+    @{ Heading = "### _messages/ bundle"; Folder = "_messages"; Mode = "Count" }
 )
 
 foreach ($section in $inventorySections) {
@@ -224,6 +237,38 @@ foreach ($section in $inventorySections) {
     # it was ever sent for review.
     $endMatch = [regex]::Match($afterHeading, '(?m)^(?:###\s|---\s*$)')
     $sectionBody = if ($endMatch.Success) { $afterHeading.Substring(0, $endMatch.Index) } else { $afterHeading }
+
+    # Count mode -- no per-file table to walk. Read the stub's stated
+    # total ("**Current total:** N entries.") and compare it directly to
+    # a real file count on disk, rather than summing table rows. Separate
+    # branch, not a fallthrough of the Table logic below: there are no
+    # rows to extract, so the duplicate-check and row-comparison logic
+    # further down don't apply and would just report false "0 listed"
+    # findings if allowed to run.
+    if ($section.Mode -eq "Count") {
+        $totalMatch = [regex]::Match($sectionBody, 'Current total:\*\*\s*(\d+)\s*entries')
+        if (-not $totalMatch.Success) {
+            Add-Finding "'$heading' is in Count mode but no 'Current total: N entries' stub sentence was found -- check the section's wording hasn't changed."
+            continue
+        }
+        $claimedTotal = [int]$totalMatch.Groups[1].Value
+
+        if (-not (Test-Path $folder)) {
+            Add-Finding "Folder '$($section.Folder)' referenced by '$heading' does not exist on disk."
+            continue
+        }
+        # Wrapped in @() for the same reason as Check 2's array fix above --
+        # a single-file folder would otherwise unwrap to a bare object and
+        # .Count would return $null instead of 1.
+        $actualCount = @(Get-ChildItem $folder -File).Count
+
+        if ($claimedTotal -ne $actualCount) {
+            Add-Finding "'$heading' claims $claimedTotal entries but $actualCount files were found on disk under '$($section.Folder)/'."
+        } else {
+            Write-Host "  OK -- $heading matches disk ($actualCount entries)." -ForegroundColor Green
+        }
+        continue
+    }
 
     # Extract first-column backtick-quoted paths from table rows only
     # (lines starting with a pipe then a backtick).
