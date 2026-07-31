@@ -4,7 +4,7 @@ title: "Attribution Schema — role / wrapper / identity / generated.by"
 role: Publish
 wrapper: Claude Code
 identity: Sonnet 5
-generated: { by: Claude Code/Sonnet 5, at: 2026-07-28T09:19:06+10:00 }  # generated from wrapper:+identity:+commit-date - do not hand-edit
+generated: { by: Claude Code/Sonnet 5, at: 2026-07-28T10:19:11+10:00 }  # generated from wrapper:+identity:+commit-date - do not hand-edit
 aliases:
   - attribution schema
   - role wrapper identity
