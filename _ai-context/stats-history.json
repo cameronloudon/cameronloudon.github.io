@@ -1,0 +1,26 @@
+﻿[
+    {
+        "date":  "2026-07-09",
+        "count":  8,
+        "commit":  "a40a56c",
+        "note":  "Piloted, small slice"
+    },
+    {
+        "date":  "2026-07-27",
+        "count":  58,
+        "commit":  "faaf66f",
+        "note":  "Mechanical inventory correction (8 listed vs 58 real)"
+    },
+    {
+        "date":  "2026-07-29",
+        "count":  476,
+        "commit":  "f415f97",
+        "note":  "Historical backlog closed out"
+    },
+    {
+        "date":  "2026-07-31",
+        "count":  494,
+        "commit":  null,
+        "note":  null
+    }
+]
