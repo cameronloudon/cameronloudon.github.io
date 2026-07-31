@@ -1,6 +1,10 @@
 ---
 type: reference
 title: "System Architecture — cameronloudon.github.io and the AI Collaboration System"
+role: Publish
+wrapper: Claude Code
+identity: Sonnet 5
+generated: { by: Claude Code/Sonnet 5, at: 2026-07-31T15:10:18+10:00 }  # generated from wrapper:+identity:+commit-date - do not hand-edit
 aliases:
   - system architecture document
   - architecture reference
@@ -12,10 +16,14 @@ refs:
   - ./auditor-charter.md
   - ./messages-promotion-procedure.md
   - ./outside-conversation-capture-convention.md
+  - ./decisions-archive.md
+  - ./function-b-state-check.ps1
+  - ./generate-stats-data.ps1
 ---
 
-**Last updated:** 2026-07-11 (session-32)
+**Last updated:** 2026-07-31 (session-69)
 **Status:** Full rewrite, superseding `AI-Working/Messages/audit-reference-standalone-2026-07-05.md` (the 2026-07-05 version, DeepSeek-audited — see Open Decision #28). That document was used as a structural template, not a binding one; sections, emphasis, and content have all changed where the system itself changed. This document is the prerequisite deliverable named in `auditor-charter.md` §7 — the Auditor's Function B (drift detection) verifies it against reality every run. Piloted as the first `_ai-context/` file to carry OKF frontmatter, per consensus with Cowork (`AI-Working/Messages/ccode-to-cowork-2026-07-11-okf-pilot-agreed.md`).
+**2026-07-31 update:** Cameron asked directly whether this document reflected everything built since. It didn't — two genuinely structural additions were missing, not fast-changing facts this document is designed to exclude. §5a (mechanical state verification) and §5b (the Stats data-generation pipeline) added; §5's own diagram and bullets extended to include `generate-index-entry.ps1`, built after this document's prior update and never folded in.
 **Single-sourcing rule this document follows:** anything that changes often — the active branch, the current Open Decisions list, exact page/file inventories, the Capability Baseline tables — is not duplicated here. It lives in `PROJECT_STATE.md`, cited by `refs:`, not restated. This document describes *structure*: what doesn't change every session, even when the specific facts inside that structure do.
 
 ---
@@ -88,16 +96,52 @@ flowchart LR
     MB --> GEN[generate-links-footer.ps1<br/>refs: is canonical]
     AF --> GEN
     GEN --> WL[Generated ## Links footer<br/>Obsidian-visible wikilinks]
+    MB --> GIE[generate-index-entry.ps1<br/>console output only]
+    GIE --> IDX[index.md entry line<br/>human places it]
     JSONL[Raw session JSONL<br/>.claude/projects/.../*.jsonl] -->|extract-session-transcript.ps1| MT[Mechanical transcript<br/>+ provenance stamp]
     JSONL -->|-IncludeActions, adopted policy| AD[(AI-Evidence/action-digests/<br/>local, unpromoted)]
     MT --> MB
 ```
 
 - **`_messages/`** — git-tracked chain-of-custody bundle. `type:` (`message`/`transcript`/`summary`/`index`) comes from reading content, never from filename or self-description (Open Decision #34). Every content file carries `aliases:` and `refs:`; `refs:` is the single source of truth, every other link representation (the generated footer) is mechanically derived and marked as such, never hand-edited (Open Decision #42). Full promotion procedure: `messages-promotion-procedure.md`.
+- **`generate-index-entry.ps1`** (Open Decision #57, session-67) — reads one promoted file's frontmatter and assembles `_messages/index.md`'s entry-line format to console only; never writes to `index.md` directly. Thread placement, sub-group headers, editorial framing, and the Gaps section stay entirely hand-composed — deliberately smaller scope than `generate-links-footer.ps1`, since `index.md` is genuinely hand-curated narrative, not a flat generated list. Does not verify every real `_messages/` file has a corresponding entry at all — a separate, still-open gap, `PROJECT_STATE.md` Open Decision #61.
 - **`_audit-findings/`** — same treatment, sibling collection for the Auditor's own reports. Verbatim-promotion rule layered on top: the promoting agent is an audited party and never edits a finding's content; the generated footer is the one exception, since it's derived, not authored (`auditor-charter.md` §6).
 - **Provenance stamping** — mechanical transcripts carry `source-path`/`source-sha256`/`extraction-script-version`, converting "trust this transcript" into a checkable claim (Open Decision #44). If the source log was still open/growing at extraction time, the hash covers only the extracted slice, disclosed via `source-sha256-note`, not the whole file.
 - **Action-digest capture** — `extract-session-transcript.ps1 -IncludeActions` (Claude Code) and Cowork's own Python equivalent, mirroring the same per-field-truncation logic independently on her own platform, both run at every future mechanical extraction as a matter of course, output held locally and unpromoted (`AI-Evidence\action-digests\<platform>\`) until an actual Auditor consumer exists. Two independent implementations of the same policy, not one shared script — decoupling capture from adoption exists because the raw JSONL evidence is itself on a retention clock — waiting to decide risks losing it permanently (Open Decision #45).
 - **Outside-conversation capture** — a separate, narrower convention for pre-founding material from outside platforms (ChatGPT, DeepSeek, etc.), not the mechanisms above. Full convention: `outside-conversation-capture-convention.md`.
+
+## 5a. Mechanical state verification (Function B)
+
+Did not exist in this document's 2026-07-11 version — built session-56, ratified session-57 (2026-07-27) via the propose→review→cold-read-twice→ratify→commit process settled for this exact category of script (`PROJECT_STATE.md` Open Decision #59). Distinct from, and a precursor to, the Auditor's own cold-context judgment-layer work referenced in §9 below — Function B was split deliberately into a mechanical half (structural claims, checkable by a script) and a semantic half (contradictions between documents, requiring judgment) that stays cold-context by design, not something a script should attempt.
+
+`_ai-context/function-b-state-check.ps1` checks three things, report-only, changing nothing:
+
+1. **Active Branch** — `PROJECT_STATE.md`'s claimed branch against `git branch --show-current`.
+2. **Session-log enumerated list** — the `existing session logs are:` sentence against real files in `_session-logs/`.
+3. **Page Inventory tables** — six sections (`_ideas/`, `_signals/`, `_now/`, `_session-logs/`, `_audit-findings/`, `_messages/`) checked against disk. Five run in **Table mode** (row-by-row comparison against folder contents). `_messages/` runs in **Count mode** since 2026-07-31 (session-66) — `PROJECT_STATE.md`'s own `_messages/` table was compressed to a stub stating a total rather than listing all 515+ entries individually (a real token-cost fix, not a scope reduction — full per-file detail moved to `_messages/index.md`, the one file already confirmed as the actual Obsidian-graph-visible node for this corpus, `PROJECT_STATE.md` Open Decision #35). Count mode compares that stated total against a real `Get-ChildItem` count instead of summing table rows.
+
+Exit codes 0/1/2 (clean / script error / findings present) — deliberately composable into future automation, not just interactive use. Currently run manually by the Publish Agent after state-changing edits, and mandatorily before closing an Open Decision (paired with `cascade-check.ps1`). **Not yet a universal session-close gate** — whether it should be mandatory at every ordinary close, not just after promotion batches or decision closures, is a real, still-open gap named by a cold-context audit of the Publish Agent onboarding path (session-67) and not yet resolved.
+
+## 5b. The Stats data-generation pipeline
+
+Built 2026-07-31 (session-67) — Cameron's request for a public page showing real telemetry about how the project runs, not just describing RCT in prose. Same mechanical-generation principle as §5's evidence layer, applied to derived public content instead of chain-of-custody records.
+
+```mermaid
+flowchart LR
+    PS[PROJECT_STATE.md] --> GSD[generate-stats-data.ps1]
+    MSG[(_messages/*.md<br/>disk count)] --> GSD
+    SL[(_session-logs/*.md<br/>disk count)] --> GSD
+    DA[decisions-archive.md<br/>headers cross-referenced] --> GSD
+    GSD --> HIST[stats-history.json<br/>forward-only, seeded once]
+    GSD --> DATA[(_data/stats.json)]
+    DATA -->|site.data, Liquid,<br/>server-rendered| STATS[/stats/<br/>public page]
+```
+
+- **`_ai-context/generate-stats-data.ps1`** — computes sessions logged, articles published (real collection entries only, excluding each collection's own hand-written index page), messages archived (excluding `_messages/index.md` itself, which is curation, not an archived exchange), and open decisions. The open-decisions count is cross-referenced against `decisions-archive.md`'s own `## Decision #N` headers rather than parsed from `PROJECT_STATE.md`'s Gate column — the Gate column isn't a reliable single-column signal (a decision can be genuinely open with a Gate of just an em-dash if its live status lives in its Owner-column prose instead), found the hard way when an early version of the script undercounted real open decisions.
+- **Growth history** — forward-only, same precedent as `role:`/`wrapper:`/`identity:` and every other append-only convention in this project: seeded once with real historical checkpoints mined from `git log` on `PROJECT_STATE.md`'s own text (exact commit hashes cited in the seed data), then appended to at every subsequent run rather than reconstructed from full git archaeology.
+- **`_data/stats.json`** — Jekyll's own `site.data` mechanism, not a client-side fetch. Rendered server-side via Liquid at GitHub Pages' own build time; no JavaScript dependency for the page's numbers.
+- **Refresh cadence: session-close**, alongside the other `PROJECT_STATE.md` updates — not a live backend, not a GitHub Action. Cameron's explicit direction, matching this project's general preference for the simplest mechanism that stays correct over an always-fresh one that adds infrastructure.
+- **Deliberately out of scope for this script**: the page's "What's Next" and "Caught and Fixed" sections are real editorial content — drafted by the Draft Agent, or re-derived by the Publish Agent from an established template at rebuild time (a standing process handoff settled the same session the page was built), never mechanically generated. Same content/HTML boundary this project applies everywhere else.
 
 ## 6. Instruction file map
 
@@ -152,3 +196,6 @@ This document does not track: the active branch, open decisions, page/file inven
 - [[auditor-charter]]
 - [[messages-promotion-procedure]]
 - [[outside-conversation-capture-convention]]
+- [[decisions-archive]]
+- [[function-b-state-check]]
+- [[generate-stats-data]]
