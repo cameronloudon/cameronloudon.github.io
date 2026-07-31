@@ -4,7 +4,7 @@ title: "Open Decisions Archive — cameronloudon.github.io"
 role: Publish
 wrapper: Claude Code
 identity: Sonnet 5
-generated: { by: Claude Code/Sonnet 5, at: 2026-07-31T11:46:23+10:00 }  # generated from wrapper:+identity:+commit-date - do not hand-edit
+generated: { by: Claude Code/Sonnet 5, at: 2026-07-31T15:35:06+10:00 }  # generated from wrapper:+identity:+commit-date - do not hand-edit
 aliases:
   - decisions archive
   - resolved open decisions
@@ -493,6 +493,18 @@ Tested against real promoted files before being trusted, not just synthetic fixt
 `_ai-context/messages-promotion-procedure.md` §2 gained `thread_number:`/`subgroup:`/`note:` as new, forward-only optional frontmatter (same drafted-at-promotion-time authorship rule as `aliases:`), and §6 documents the new script's role and scope boundary.
 
 **Decision: closed.** Thread membership/titles, topic framing, qualitative editorial paragraphs, and the Gaps section remain entirely hand-written, as originally scoped — never intended to be mechanized. One real, adjacent gap surfaced during consensus with Cowork and deliberately not folded in here: nothing verifies every real `_messages/` file on disk actually has a *corresponding entry at all* in `index.md` — this script only makes existing entries more accurate, it doesn't detect a missing one. Tracked separately as Open Decision #61, undrafted, not blocking this closure.
+
+---
+
+## Decision #61 — Nothing verifies every real `_messages/` file has a corresponding `index.md` entry
+
+Surfaced 2026-07-31 (session-67) during Decision #57's build, deliberately not folded into it. `generate-index-entry.ps1` (#57) improves correctness of entries that already exist; this was about detecting entries that don't exist at all — the same category distinction this project already draws between `record-verification.ps1` (checks what's there) and `prescan-backlog.ps1` (surfaces what isn't yet). Function B's Check 3 didn't cover this either, in either Table or Count mode — it only ever compared `PROJECT_STATE.md`'s own stated total against disk, never `index.md`'s actual entries against disk. Not a new hole that session's own work introduced — `index.md` had just lost the soft, informal redundancy of a second hand-maintained list existing alongside it (Cowork's framing, more accurate than "a mechanism stopped checking something it used to check"). Cameron's original call: tracked, not scheduled — whether it was even worth building was a real open question, since nothing had actually gone missing from the index as far as anyone had checked.
+
+**Manual check run before deciding, 2026-07-31 (session-69).** Cameron asked to verify rather than guess before progressing. Cross-checked all 514 real `_messages/` files (excluding `index.md` itself) against every `](./file.md)` link in `index.md`: zero missing, and after tracing down one apparent dangling reference ("file.md"), confirmed it was a false positive from `index.md`'s own format-description prose ("Each entry below is `[Title](./file.md)`..."), not a real broken link. Currently clean — the risk was real in principle, not yet demonstrated in practice.
+
+**Built same session, once the check confirmed the low cost.** Cameron: "cheap enough to run at every session close without it being a real token expense — lets build it." `_ai-context/check-messages-index-completeness.ps1` — filename-only comparison, mirroring the manual check's own method: lists real disk files, extracts entry links from `index.md` (anchored to real list-item lines only, `^\s*-\s*\[`, specifically to avoid the "file.md" false-positive being baked permanently into the script's own logic), reports files missing an entry and entries pointing at nothing, exit code 0/2 matching `function-b-state-check.ps1`'s convention. Tested against real data first (matched the manual check exactly, 514/514, clean) and then against a synthetic fixture covering both failure modes plus the false-positive trap, all three confirmed correct, before being trusted.
+
+**Decision: closed.** Built, tested, documented. Report-only — the same discipline as every other checker script in this family; nothing it finds gets silently auto-fixed.
 
 ---
 
