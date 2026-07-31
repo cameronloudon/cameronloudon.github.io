@@ -4,7 +4,7 @@ title: "AI Content Creation Specification — cameronloudon.github.io"
 role: Publish
 wrapper: Claude Code
 identity: Sonnet 5
-generated: { by: Claude Code/Sonnet 5, at: 2026-07-28T10:03:10+10:00 }  # generated from wrapper:+identity:+commit-date - do not hand-edit
+generated: { by: Claude Code/Sonnet 5, at: 2026-07-31T12:16:31+10:00 }  # generated from wrapper:+identity:+commit-date - do not hand-edit
 aliases:
   - content creation spec
   - HTML authoring spec
@@ -20,8 +20,9 @@ refs:
   - ./attribution-schema.md
 ---
 
-**Version:** 1.1  
+**Version:** 1.2  
 **Created:** 20 May 2026  
+**Updated:** 2026-07-31 — stale-path correction pass: found by a cold-context audit checking whether this file's own onboarding path was actually sufficient for a new Publish Agent. Six references had gone stale since the root-separation migration (Open Decision #30) and the `_now:` folder-pattern migration (Open Decision #29), both of which happened after this file's own last substantive update: `approach.html` → `approach/approach.html`, `master-synthesis-prompt.html` → `master-synthesis-prompt/master-synthesis-prompt.html`, `signals.html` → `_signals/signals.html`, the "Now entry page" section's flat-file framing → folder pattern, its `_now/local-ai-stack.html` reference → `_now/building-a-local-ai-stack/local-ai-stack.html`, and its index-location claim ("`now.html` (repo root)") → `_now/now.html`. The §1 file-location table's "Standalone pages" row carried the same root-location error for `/now/` and was corrected alongside it.  
 **Updated:** 2026-06-21 — reconciliation pass: collab-note format, ideas folder pattern, reference files, checklist, CSS exception  
 **For:** Any AI system producing content for cameronloudon.com  
 **Purpose:** Complete technical and design specification so content produced by any AI (Claude, ChatGPT, Gemini, or others) is ready to publish without conversion or reformatting.
@@ -70,7 +71,8 @@ description: One sentence description for SEO.
 | Signals | `_signals/` | `/signals/signal-name/` |
 | Skills | `_skills/` | `/about/skills/skill-name/` |
 | Now | `_now/` | `/now/entry-name/` |
-| Standalone pages | root | `/now/` (index only), `/contact/` |
+| Standalone pages | own folder (`contact/`, `approach/`, `master-synthesis-prompt/`) — `index.html` is the one deliberate exception still at bare root | `/contact/`, `/approach/` |
+| Now index | `_now/now.html` (moved from repo root, session-21) — not a standalone page, the `_now/` collection's own hand-written index | `/now/` |
 
 ---
 
@@ -311,7 +313,7 @@ description: One sentence description.
 
 **Note:** `marketing-os-foundation.html` and `marketing-os.html` in `_ideas/` are legacy flat files. Do not use them as templates for new entries.
 
-**Index page update — required, easy to miss:** `_ideas/index.html` is a hand-written static list of `<li>` entries, not a Jekyll loop over `site.ideas`. Publishing a new entry to `_ideas/` does not make it appear on `/ideas/` automatically — the collection permalink makes the page itself reachable, but the index page needs a new `<li>` block added by hand (date, type, status, title/link, excerpt, tags), matching the pattern of existing entries. The same applies to `signals.html` (repo root) for the Signals collection — it is also a static hand-written list, not a generated loop. Do this in the same commit as the new entry — a page that publishes successfully but never appears on its own index is easy to miss and was a real, confirmed failure mode (2026-07-03).
+**Index page update — required, easy to miss:** `_ideas/index.html` is a hand-written static list of `<li>` entries, not a Jekyll loop over `site.ideas`. Publishing a new entry to `_ideas/` does not make it appear on `/ideas/` automatically — the collection permalink makes the page itself reachable, but the index page needs a new `<li>` block added by hand (date, type, status, title/link, excerpt, tags), matching the pattern of existing entries. The same applies to `_signals/signals.html` (moved from repo root in session-21, Open Decision #30) for the Signals collection — it is also a static hand-written list, not a generated loop. Do this in the same commit as the new entry — a page that publishes successfully but never appears on its own index is easy to miss and was a real, confirmed failure mode (2026-07-03).
 
 ### Signals entry page (`_signals/signal-name.html`)
 
@@ -356,9 +358,9 @@ description: One sentence description.
 </article>
 ```
 
-### Now entry page — flat-file pattern (`_now/entry-name.html`)
+### Now entry page — folder pattern (`_now/entry-name/entry-name.html`)
 
-New Now entries use a **flat file** in `_now/`, not the Ideas folder pattern — these are short project updates, not multi-page write-ups. Reference implementation: `_now/local-ai-stack.html`.
+**Corrected 2026-07-31** — this section previously described a flat-file pattern, superseded by Open Decision #29 (session-16), which migrated `_now/` to the folder pattern along with `_signals/`. New Now entries still stay short (project updates, not multi-page write-ups like Ideas), but each gets a named folder. Reference implementations: `_now/building-a-local-ai-stack/local-ai-stack.html` and `_now/enrolment-pipeline-problem/enrolment-pipeline-problem.html`. Unlike newer Ideas entries, the file inside is named to match its own folder, not `index.html`.
 
 Template is a lighter shape than Ideas or Signals: `.page-header`/`.eyebrow`/`.intro` (copied local `<style>` block, same convention as other pages) plus plain prose under an `<hr>` — no `.idea-section` wrapper, no `.signal-meta` key-value block (Now entries don't have a "Source" the way Signals do).
 
@@ -404,7 +406,7 @@ description: One sentence description.
 </style>
 ```
 
-**Index page update — required, same rule as Ideas and Signals:** `now.html` (repo root) is a hand-written static list of `<li>` entries using `.entry-list`/`.entry-meta`/`.entry-title`/`.entry-excerpt`, not a Jekyll loop over `site.now`. Publishing a new entry to `_now/` does not make it appear on `/now/` automatically — add a new `<li>` block by hand in the same commit.
+**Index page update — required, same rule as Ideas and Signals:** `_now/now.html` (moved from repo root in session-21, Open Decision #30) is a hand-written static list of `<li>` entries using `.entry-list`/`.entry-meta`/`.entry-title`/`.entry-excerpt`, not a Jekyll loop over `site.now`. Publishing a new entry to `_now/` does not make it appear on `/now/` automatically — add a new `<li>` block by hand in the same commit.
 
 ### Skills entry (`_skills/skill-name.md`)
 
@@ -534,7 +536,7 @@ This is non-negotiable. Do not omit it. Do not minimise it. Do not suggest Camer
 
 | File | What it contains |
 |------|-----------------|
-| `master-synthesis-prompt.html` | Founding document — original project spec and intent. Read once for historical context. |
+| `master-synthesis-prompt/master-synthesis-prompt.html` | Founding document — original project spec and intent. Read once for historical context. |
 | `_config.yml` | Jekyll configuration |
 | `assets/css/main.css` | Complete CSS — all four modes |
 | `assets/js/theme.js` | Theme toggle logic |
@@ -545,7 +547,7 @@ This is non-negotiable. Do not omit it. Do not minimise it. Do not suggest Camer
 | File | What it shows |
 |------|--------------|
 | `index.html` | Homepage structure |
-| `approach.html` | Long-form content page |
+| `approach/approach.html` | Long-form content page |
 | `_ideas/man-with-two-brains/` | Ideas folder pattern — reference implementation |
 
 ---

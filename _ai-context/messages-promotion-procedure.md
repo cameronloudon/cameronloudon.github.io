@@ -4,7 +4,7 @@ title: "Messages Bundle — Promotion Procedure"
 role: Publish
 wrapper: Claude Code
 identity: Sonnet 5
-generated: { by: Claude Code/Sonnet 5, at: 2026-07-31T09:41:03+10:00 }  # generated from wrapper:+identity:+commit-date - do not hand-edit
+generated: { by: Claude Code/Sonnet 5, at: 2026-07-31T11:46:23+10:00 }  # generated from wrapper:+identity:+commit-date - do not hand-edit
 aliases:
   - messages promotion procedure
   - promotion procedure
@@ -41,6 +41,8 @@ Run `_ai-context/prescan-backlog.ps1 -Path <AI-Working/Messages> -Since <date>` 
 - `role:`/`wrapper:`/`identity:` — new fields, forward-only from 2026-07-28 (Open Decision #58). Sit alongside `from:`/`to:`, not instead of them. Full definitions and per-surface rules: `_ai-context/attribution-schema.md`.
 - `aliases:` — 2–5 alternate search terms, drafted from the file's actual content. Drafted by whoever authored it, or is closest to its original intent — not guessed by the promoting agent on the other side's behalf (Open Decision #42).
 - `refs:` — bundle-relative markdown links (`./file.md`), or a relative path to a git-tracked instruction file outside the bundle (`../AI_INSTRUCTIONS.md`) for the record-to-instruction case. `refs:` is the single source of truth; every other link representation is mechanically generated from it, never hand-authored (Open Decision #42).
+- `thread_number:` — new field, forward-only from 2026-07-31 (Open Decision #57). A bare integer matching one of `index.md`'s existing `## Thread N` headings — a placement hint for whoever adds the entry, not a claim about content. `subgroup:` — optional companion field, a short string matching one of that thread's existing bold sub-group headers, for threads that use them (several already do; see `index.md` directly rather than assuming a thread is flat). Neither field is guessed by the promoting agent — drafted by whoever is closest to knowing which thread the file belongs to, same authorship rule as `aliases:`.
+- `note:` — new field, forward-only from 2026-07-31 (Open Decision #57). The one-line qualitative caption that follows the semicolon in every `index.md` entry today — *why the entry matters*, not *what it points to* (that's `refs:`'s job). Not a second classification axis competing with `refs:`; carries the same drift risk `refs:`/`aliases:` already accept, not a new risk class. Drafted by whoever authors or promotes the file.
 
 ## 3. Generated `## Links` footer
 
@@ -62,12 +64,15 @@ Run the same extraction with `-IncludeActions` and save the output to a local, g
 
 `_messages/index.md` stays hand-written: a thread-grouped narrative, each entry citing its own file's `refs:` rather than re-deriving relationships. Add a new entry under the relevant thread (or open a new thread heading) at promotion time.
 
+**Line generation, 2026-07-31 (Open Decision #57).** Run `_ai-context/generate-index-entry.ps1 -File <path>` to produce the entry line itself — title, type, from/to or participants, a resolved `refs:` list, and the `note:` field, assembled into `index.md`'s established one-line format. Console output only; it does not write to `index.md` directly. The script decides nothing about *where* the line goes — thread placement (and sub-group, if the target thread uses them) stays a human call, informed by the file's own `thread_number:`/`subgroup:` frontmatter as a hint, not read automatically off any structure in `index.md` itself. Thread titles/topic framing, editorial narrative paragraphs, and the "Gaps this index doesn't close (yet)" section remain entirely hand-written — deliberately out of scope, per the same reasoning `record-verification.ps1` used to stay append-only rather than attempt a riskier in-place rewrite of hand-composed structure.
+
 ---
 
 ## Still open, not resolved by this doc
 
 - Commit cadence (§1).
 - Whether the separate outside-conversation capture convention's fields (`capture-method`, `capture-date`, `note-source`) fold into this same procedure once that convention is actually drafted — not yet, since it isn't finalized.
+- Whether every real `_messages/` file on disk actually has a corresponding `index.md` entry is not verified by anything in this procedure or by `function-b-state-check.ps1` — a genuinely separate concern from this section's line-generation tooling. Tracked as Open Decision #61, undrafted.
 
 ## Links
 <!-- generated from refs: - do not hand-edit -->

@@ -4,7 +4,7 @@ title: "Backlog-Promotion Workflow — Session-Level Procedure"
 role: Publish
 wrapper: Claude Code
 identity: Sonnet 5
-generated: { by: Claude Code/Sonnet 5, at: 2026-07-31T09:41:03+10:00 }  # generated from wrapper:+identity:+commit-date - do not hand-edit
+generated: { by: Claude Code/Sonnet 5, at: 2026-07-31T11:48:34+10:00 }  # generated from wrapper:+identity:+commit-date - do not hand-edit
 aliases:
   - backlog promotion workflow
   - how to run a promotion batch

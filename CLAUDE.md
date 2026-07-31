@@ -193,10 +193,12 @@ Edit `PROJECT_STATE.md`'s Active Branch section to name `session-N`, branched fr
 
 **Step 2 — Sync AI-Prod:**
 
+**Run this via the PowerShell tool, not Bash.** This is not a style preference — Git Bash intercepts `/MIR` as a path rather than passing it through as a robocopy flag, silently breaking the sync. This is not hypothetical: the first-ever Phase 2 run hit exactly this failure and had to be redone in PowerShell (`_session-logs/session-2026-06-29-001.md`, Thread 6). `.claude/settings.json` pre-authorizing `Bash(robocopy ...)` is a permission-namespace label, not a tool recommendation — do not read it as an instruction to run this command via Bash.
+
 ```
 robocopy "C:\Users\camer\Documents\GitHub\cameronloudon.github.io" "C:\Users\camer\Documents\AI\AI-Prod" /MIR /XD ".git" ".obsidian" "graphify-out" "sources" "wiki" ".llmwiki" /XF "opencode.json" "log.md"
 ```
 
 Confirm sync to Cameron. Cowork will then verify content is visible in AI-Prod and move the file from `AI-Working/Ready/` to `AI-Working/Completed/`.
 
-Note: The robocopy Bash permission is pre-authorised in `.claude/settings.json`. For OpenCode as Publish Agent, the robocopy step uses `permission.ask` — Cameron confirms at runtime.
+For OpenCode as Publish Agent, the robocopy step uses `permission.ask` — Cameron confirms at runtime.

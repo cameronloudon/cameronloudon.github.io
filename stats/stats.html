@@ -1,0 +1,247 @@
+---
+layout: default
+title: "Stats"
+permalink: /stats/
+description: Not a vanity metric. Not a compliance report. The aggregate receipts behind Radical Collaboration Transparency.
+---
+
+<article class="stats-page">
+
+  <header class="page-header">
+    <span class="eyebrow">How this site actually runs</span>
+    <h1>Stats</h1>
+    <p class="intro">Not a vanity metric. Not a compliance report. The aggregate receipts behind Radical Collaboration Transparency — updated at every session close.</p>
+  </header>
+
+  <hr>
+
+  <section class="stats-section">
+    <div class="stats-metric-grid">
+      <div class="stats-metric-card">
+        <span class="stats-metric-number">{{ site.data.stats.sessions_logged }}</span>
+        <span class="stats-metric-label">Sessions logged</span>
+        <p class="stats-metric-explainer">Every time work resumed here, logged before anything else happens.</p>
+      </div>
+      <div class="stats-metric-card">
+        <span class="stats-metric-number">{{ site.data.stats.articles_published }}</span>
+        <span class="stats-metric-label">Articles published</span>
+        <p class="stats-metric-explainer">Ideas, Signals and Now entries actually live on the site.</p>
+      </div>
+      <div class="stats-metric-card">
+        <span class="stats-metric-number">{{ site.data.stats.messages_archived }}</span>
+        <span class="stats-metric-label">Messages archived</span>
+        <p class="stats-metric-explainer">Every human/AI exchange that shaped a decision, kept verbatim — tracked in what this project calls Project State.</p>
+      </div>
+      <div class="stats-metric-card">
+        <span class="stats-metric-number">{{ site.data.stats.open_decisions }}</span>
+        <span class="stats-metric-label">Open decisions</span>
+        <p class="stats-metric-explainer">From Project State — the one file tracking what's settled and what isn't.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr>
+
+  <section class="stats-section">
+    <h2>Archive growth</h2>
+    <p class="stats-section-caption">Real back-and-forth, not AI output rubber-stamped once.</p>
+    <div class="stats-chart">
+      {% assign max_count = 1 %}
+      {% for point in site.data.stats.growth_history %}
+        {% if point.count > max_count %}{% assign max_count = point.count %}{% endif %}
+      {% endfor %}
+      {% for point in site.data.stats.growth_history %}
+        {% assign pct = point.count | times: 100 | divided_by: max_count %}
+        <div class="stats-bar-wrap">
+          <div class="stats-bar" style="height: {{ pct }}%;"></div>
+          <span class="stats-bar-value">{{ point.count }}</span>
+          <span class="stats-bar-date">{{ point.date }}</span>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <hr>
+
+  <section class="stats-section">
+    <h2>What's next</h2>
+    <ul class="stats-list">
+      <li>A convention for capturing conversations that happen outside this project has been built and agreed. It just hasn't been tested yet against a real outside conversation. <span class="tag stats-ref-tag">#48</span></li>
+      <li>Deciding how the Auditor, the system that checks this project's own work, should be credited, and how far its own authority should extend if it's ever given more than a screen to write to. <span class="tag stats-ref-tag">#56</span></li>
+      <li>Confirming that every real file in the message archive actually has an entry pointing to it, not just that the entries already there are accurate. <span class="tag stats-ref-tag">#61</span></li>
+    </ul>
+  </section>
+
+  <hr>
+
+  <section class="stats-section">
+    <h2>Caught and fixed</h2>
+    <ul class="stats-list stats-list-catches">
+      <li>A claimed "thirty years in CRM" didn't match the site's own published work history. Caught before it went out, corrected to what actually happened. <span class="tag stats-fixed-tag">fixed same session</span></li>
+      <li>One AI collaborator's sync step depended on a Windows-only tool the other AI collaborator had no way to run. Found during a routine check on how independent these systems really are from each other — a real gap, not a typo. <span class="tag stats-fixed-tag">fixed same session</span></li>
+      <li>A fix for how session timestamps get recorded was itself incomplete. Caught the next time the same check ran, not by a person remembering to look again. <span class="tag stats-fixed-tag">fixed same session</span></li>
+    </ul>
+  </section>
+
+  <hr>
+
+  <div class="collab-note">
+    <div class="collab-note-header">🤝 Collaboration Note</div>
+    <div class="collab-note-body">
+      <p>This page was developed by Cowork (Claude, Anthropic), then built and independently reviewed by Claude Code (Claude, Anthropic) acting in a separate Publish Agent role.</p>
+      <p>Model: Claude Sonnet 5 (Anthropic) · Session: 2026-07-15-026 · Platform: Cowork (Draft) + Claude Code (Publish) · Date: 2026-07-31</p>
+      <p>Cowork drafted the framing, the stat explainers, and translated this session's own real project history — decisions, corrections, catches — into plain language for a first-time visitor. Claude Code built the data generator and page structure, and reviewed the copy against the underlying facts before anything went live. Both arrived at this page's shape through several rounds of design discussion before Cameron gave the explicit go-ahead to build.</p>
+      <p>Reviewed and approved by Cameron Loudon. Part of the Radical Collaboration Transparency framework.</p>
+    </div>
+  </div>
+
+</article>
+
+<style>
+.stats-page .page-header {
+  padding: 2rem 0 2.5rem;
+}
+
+.stats-page .page-header .eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.stats-page .page-header .intro {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  max-width: 580px;
+  margin-top: 1rem;
+  line-height: 1.7;
+}
+
+.stats-section {
+  padding: 2.5rem 0;
+}
+
+.stats-section h2 {
+  margin-bottom: 0.5rem;
+}
+
+.stats-section-caption {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.stats-metric-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.stats-metric-card {
+  background: var(--bg);
+  padding: 1.5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.stats-metric-number {
+  font-family: var(--font-display);
+  font-size: 2.25rem;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.stats-metric-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 0.6rem;
+}
+
+.stats-metric-explainer {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 0.6rem;
+  line-height: 1.5;
+}
+
+.stats-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 1.25rem;
+  height: 160px;
+  padding: 1rem 1rem 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-secondary);
+}
+
+.stats-bar-wrap {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
+}
+
+.stats-bar {
+  width: 100%;
+  max-width: 48px;
+  min-height: 4px;
+  background: var(--accent);
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.stats-bar-value {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text);
+  margin-top: 0.5rem;
+}
+
+.stats-bar-date {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+}
+
+.stats-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.stats-list li {
+  padding: 0.9rem 1.1rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 0.925rem;
+  line-height: 1.6;
+}
+
+.stats-ref-tag,
+.stats-fixed-tag {
+  margin-left: 0.5rem;
+  opacity: 0.75;
+}
+
+@media (max-width: 640px) {
+  .stats-metric-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+</style>
