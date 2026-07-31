@@ -4,7 +4,7 @@ title: "Backlog-Promotion Workflow — Session-Level Procedure"
 role: Publish
 wrapper: Claude Code
 identity: Sonnet 5
-generated: { by: Claude Code/Sonnet 5, at: 2026-07-31T11:48:34+10:00 }  # generated from wrapper:+identity:+commit-date - do not hand-edit
+generated: { by: Claude Code/Sonnet 5, at: 2026-07-31T15:35:06+10:00 }  # generated from wrapper:+identity:+commit-date - do not hand-edit
 aliases:
   - backlog promotion workflow
   - how to run a promotion batch
@@ -73,9 +73,10 @@ A second, rarer case: a `refs:` entry pointing at a file that was never git-trac
 
 ```
 function-b-state-check.ps1 -RepoRoot .
+check-messages-index-completeness.ps1 -RepoRoot .
 ```
 
-Run this after every batch's record updates, not just at session close. It catches exactly the class of self-inflicted drift a large batch of hand-edited table rows is prone to — a miscounted total, a table row that doesn't match a real file. A clean run is the actual close-out signal for a batch, not a feeling that the edits are probably right.
+Run both after every batch's record updates, not just at session close. `function-b-state-check.ps1` catches exactly the class of self-inflicted drift a large batch of hand-edited table rows is prone to — a miscounted total, a table row that doesn't match a real file. `check-messages-index-completeness.ps1` (Open Decision #61, built 2026-07-31) catches a different, narrower thing neither Function B mode ever covered: a file promoted into `_messages/` that never got an `index.md` entry line added at all, not just an inaccurate one. A clean run on both is the actual close-out signal for a batch, not a feeling that the edits are probably right.
 
 ## 8. Looping Cowork in
 

@@ -166,6 +166,7 @@ Triggered only by Cameron acknowledging the draft-ready signal above (Session Wo
    - Increment `NEXT_SESSION_LOG_ID`
    - Update page inventory if any pages were added, changed, or removed
    - Update Open Decisions if any were resolved or newly raised. For each Open Decision touched this way, first run `.\_ai-context\cascade-check.ps1 -DecisionNumber N` and review what it surfaces — a candidate flagged there may also need updating, may not; the script only surfaces, it doesn't decide. This step is mandatory whenever an Open Decision is patched or closed, not optional or memory-dependent — the exact reason it's wired into this checklist rather than left as a standalone tool (Open Decision #54)
+   - Run `.\_ai-context\check-messages-index-completeness.ps1` and resolve any finding before proceeding. Mandatory at every session close, not just after a backlog-promotion batch — cheap enough (filename-only comparison, no message-file content read) that Cameron's own direction was to run it unconditionally rather than gate it behind whether `_messages/` happened to change this session (Open Decision #61)
 3. Write a session log to `_session-logs/` using the format in `_ai-context/rct-session-primer.md`
    - Filename: `session-YYYY-MM-DD-NNN.md` where NNN is the ID you read from PROJECT_STATE.md *before* incrementing
 4. If content was published in this session, confirm the validation checklist in `_ai-context/rct-validation-checklist.md` was run
