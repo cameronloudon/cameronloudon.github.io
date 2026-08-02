@@ -1,9 +1,9 @@
 ﻿{
-    "generated_at":  "2026-07-31T17:56:03+10:00",
-    "sessions_logged":  77,
+    "generated_at":  "2026-08-02T15:53:32+10:00",
+    "sessions_logged":  78,
     "articles_published":  15,
     "messages_archived":  514,
-    "open_decisions":  2,
+    "open_decisions":  3,
     "growth_history":  [
                            {
                                "date":  "2026-07-09",
@@ -25,6 +25,12 @@
                            },
                            {
                                "date":  "2026-07-31",
+                               "count":  514,
+                               "commit":  null,
+                               "note":  null
+                           },
+                           {
+                               "date":  "2026-08-02",
                                "count":  514,
                                "commit":  null,
                                "note":  null
