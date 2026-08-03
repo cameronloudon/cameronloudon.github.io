@@ -7,6 +7,7 @@ to: Cowork
 role: Publish
 wrapper: Claude Code
 identity: Sonnet 5
+generated: { by: Claude Code/Sonnet 5, at: 2026-07-31T09:41:03+10:00 }  # generated from wrapper:+identity:+commit-date - do not hand-edit
 aliases:
   - batch 19 ready for spot check
   - thread 12 opened

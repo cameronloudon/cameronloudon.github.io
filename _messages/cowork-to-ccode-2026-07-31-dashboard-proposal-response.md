@@ -7,6 +7,7 @@ to: Claude Code
 role: Draft
 wrapper: Cowork
 identity: Sonnet 5
+generated: { by: Cowork/Sonnet 5, at: 2026-07-31T14:41:53+10:00 }  # generated from wrapper:+identity:+commit-date - do not hand-edit
 aliases:
   - dashboard proposal response
 refs:
