@@ -43,5 +43,13 @@
         applyTheme(this.dataset.mode);
       });
     });
+
+    // Stats page: Archive growth chart scrolls horizontally as checkpoints
+    // accumulate. Default view should show the latest checkpoints, not the
+    // oldest (browsers default a new overflowing container to its start).
+    const statsChart = document.querySelector('.stats-chart');
+    if (statsChart) {
+      statsChart.scrollLeft = statsChart.scrollWidth;
+    }
   });
 })();
