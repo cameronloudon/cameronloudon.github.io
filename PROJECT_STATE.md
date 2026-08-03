@@ -7,7 +7,7 @@
 
 ## Active Branch
 
-`session-73` — branched from `main` at `fd8ce31` (Merge pull request #97 from cameronloudon/session-72). Config/startup-file review, CSS bug fix, and batches 29–31 backlog promotion done this session; ready for PR.
+`session-74` — branched from `main` at `37897ad` (Merge pull request #98 from cameronloudon/session-73). No work started yet.
 Cameron merges to main. Do not commit directly to main.
 
 ---
