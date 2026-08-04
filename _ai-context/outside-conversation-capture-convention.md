@@ -4,7 +4,7 @@ title: "Outside-Conversation Capture Convention"
 role: Publish
 wrapper: Claude Code
 identity: Sonnet 5
-generated: { by: Claude Code/Sonnet 5, at: 2026-08-04T10:25:51+10:00 }  # generated from wrapper:+identity:+commit-date - do not hand-edit
+generated: { by: Claude Code/Sonnet 5, at: 2026-08-04T12:53:19+10:00 }  # generated from wrapper:+identity:+commit-date - do not hand-edit
 aliases:
   - outside conversation capture convention
   - Class 3 capture convention
@@ -15,7 +15,7 @@ refs:
 
 **Last updated:** 2026-08-04
 **Status:** Ratified — Cameron's decision on scope (§8 below), following formal proposal and Cowork's independent review
-**Provenance:** Originally sketched in `AI-Working/Messages/fable-to-cameron-2026-07-11-outside-conversation-capture.md` (Fable 5, AI-Auditor workspace). Formalized and pressure-tested with Cowork: `ccode-to-cowork-2026-07-11-capture-convention-formal-proposal.md` → `cowork-to-ccode-2026-07-11-capture-convention-formal-review.md` → `ccode-to-cowork-2026-07-11-capture-convention-final.md` (all `AI-Working/Messages/`). **Updated 2026-08-04:** §5's capture prompt gained `wrapper:`/`identity:` for the outside AI and an explicit `role:`-inapplicability note, closing a gap against Open Decision #58's later attribution schema — full discussion and Cameron's approval in `AI-Working/Messages/` (`ccode-to-cowork-2026-08-04-outside-capture-convention-staleness-discussion.md` through `cowork-to-ccode-2026-08-04-outside-capture-convention-cameron-approved.md`).
+**Provenance:** Originally sketched in `AI-Working/Messages/fable-to-cameron-2026-07-11-outside-conversation-capture.md` (Fable 5, AI-Auditor workspace). Formalized and pressure-tested with Cowork: `ccode-to-cowork-2026-07-11-capture-convention-formal-proposal.md` → `cowork-to-ccode-2026-07-11-capture-convention-formal-review.md` → `ccode-to-cowork-2026-07-11-capture-convention-final.md` (all `AI-Working/Messages/`). **Updated 2026-08-04:** §5's capture prompt gained `wrapper:`/`identity:` for the outside AI and an explicit `role:`-inapplicability note, closing a gap against Open Decision #58's later attribution schema — full discussion and Cameron's approval in `AI-Working/Messages/` (`ccode-to-cowork-2026-08-04-outside-capture-convention-staleness-discussion.md` through `cowork-to-ccode-2026-08-04-outside-capture-convention-cameron-approved.md`). **Updated again 2026-08-04 (same day, second pass):** incorporated findings from the convention's first real pilot run — tightened §5 step 3's wording, added §6's ranged-timestamp filename rule, and added §1's note on outside-platform capture and pre-founding scope being independent axes. Full discussion in `AI-Working/Messages/` (`cowork-to-ccode-2026-08-04-outside-capture-pilot-findings.md` through `cowork-to-ccode-2026-08-04-outside-capture-pilot-converged.md`).
 
 ---
 
@@ -24,6 +24,8 @@ refs:
 Covers Class 3 material only — pre-founding conversations on outside platforms (ChatGPT, DeepSeek, Gemini, old AnythingLLM, etc.), captured via export or copy-paste. Does not cover Claude Code's or Cowork's own mechanical extraction — those already have their own conventions (`_ai-context/extract-session-transcript.ps1`, `_ai-context/messages-promotion-procedure.md`).
 
 **Scope decision (§8, Cameron, 2026-07-11):** the corpus includes pre-founding material, labelled as such. The Master Synthesis Prompt's "ground zero, not a retrospective of all prior work" framing is deliberately superseded for corpus-inclusion purposes by this decision — the founding document itself is not edited; this file is the record of the explicit exception, so it's a decision, not an accretion.
+
+**Outside-platform capture and pre-founding scope are independent axes (found 2026-08-04, first real pilot):** a transcript from an external tool already filling a defined project role — Review Agent, most notably — isn't Class 3 just because it happened to be captured via export/copy-paste rather than a live native session. Class 3 assumed both conditions (pre-founding, role-less) travel together; they don't have to. Worked example: the first real pilot capture, Cameron and DeepSeek V4-Pro reviewing the double-blind Cowork/Claude Code audit (conversation spanning 2026-06-12 to 2026-08-04, 26 days after founding) — a native Review Agent transcript (`AI_INSTRUCTIONS.md` §3), not a Class 3 import; it needed this convention's export/copy mechanics without inheriting its scope conditions or its `role:`-omission reasoning (§5 note). Full case in `AI-Working/Messages/` (`cowork-to-ccode-2026-08-04-outside-capture-pilot-findings.md` through `cowork-to-ccode-2026-08-04-outside-capture-pilot-converged.md`).
 
 ## 2. The two-channel split
 
@@ -52,7 +54,15 @@ Two parts: original collaboration (platform, model if known — "model not recor
 >
 > 1. State which platform and model you are, as precisely as you can. If you do not know the model version, say "model not recorded."
 > 2. State the first and the last message of this conversation that you can actually still see, quoted briefly. **If you are not certain this is genuinely the conversation's first message, versus simply the earliest one currently visible to you, say that explicitly.**
-> 3. Output a YAML frontmatter block with: `type: message`, `timestamp:` (the original conversation date, best effort), `from:`/`to:` (participants), `wrapper:` and `identity:` (state your own platform and model here, matching what you gave in step 1 — this field describes you, the outside AI, not Cameron), `aliases:` (2–5 alternate names someone might search this by later — **treat these as a draft, not authoritative**; better aliases will likely come from whoever promotes this file with corpus-wide context), and a one-line `title:`. **Do not output a `role:` field — see the note below.**
+> 3. Output a YAML frontmatter block with the following fields, exactly:
+> - `type: message`
+> - `timestamp:` — the original conversation's date. If this is a single conversation you returned to across multiple sessions/dates, give it as a range, `start/end` (e.g. `2026-06-12/2026-08-04`), not just one date.
+> - `from:`/`to:` — only the two parties actually in this conversation (e.g. `from: Cameron Loudon`, `to: DeepSeek`). Do not list anything discussed within the conversation as a participant.
+> - `wrapper:` — your platform name only, as a single short value (e.g. `DeepSeek`). This is not a summary of the conversation's content or scope.
+> - `identity:` — your specific model version only, as a single short value (e.g. `V3.2`, or `model not recorded` if unknown). Do not repeat the platform name here — that belongs in `wrapper:`.
+> - `aliases:` — 2–5 alternate search terms (draft only, not authoritative).
+> - `title:` — one line.
+> Do not output a `role:` field — see the note below.
 > 4. Output a two-paragraph draft collaboration note: first paragraph describing the original collaboration, second paragraph a template for the capture event. **This note is self-reported by you, with no independent check possible — say so in the note itself.**
 > 5. Do NOT output the conversation transcript itself unless asked in a follow-up. The transcript will be captured separately by export or copy.
 
@@ -63,6 +73,8 @@ Two parts: original collaboration (platform, model if known — "model not recor
 ## 6. Naming
 
 `cameron-and-<platform>-<YYYY-MM-DD>-<slug>.md` — "and," not "to," since there's no handoff direction. Platform in the filename, not model (platform is always known; model version often isn't, and belongs in frontmatter/the note when it is known). Fuzzy dates: pad the unknown part with `00` (`cameron-and-deepseek-2026-01-00-<slug>.md` for "January, day unknown"), with the honest precision declared in frontmatter (`date-precision: month`). Never guess a day to make a filename look complete.
+
+For a `timestamp:` range (§5, step 3), use the start date in the filename — it marks when the archived material begins, distinct from `capture-date:`, which is a separate field for when the capture itself happened, not the conversation.
 
 ## 7. Location
 
@@ -79,7 +91,7 @@ Decoupled, same pattern already used for the JSONL rescue and the action-digest 
 - Whether `capture-method`/`capture-date` become standard fields for all transcripts (Class 1–2 included) or stay imports-only.
 - Whether native transcripts ever gain a `note-source` field with a transitional (not permanent) value set.
 - Platform export availability/formats were not verified against real accounts — ChatGPT/Google Takeout are known to exist as of this convention's design; others need checking at capture time.
-- The capture prompt is untested against any real outside platform — its first real run should be treated as a pilot, same as everything else built today: judge from real output.
+- ~~The capture prompt is untested against any real outside platform~~ — **resolved 2026-08-04:** the first real pilot (an actual DeepSeek conversation, Cameron and DeepSeek V4-Pro) surfaced three real findings, all incorporated — step 3's original wording was too loose (fixed above, tested clean against two real re-runs), the naming convention never anticipated a ranged `timestamp:` (fixed, §6), and the pilot itself turned out not to be Class 3 material at all (§1's new note). Judged from real output, exactly as this line originally asked.
 
 ## Links
 <!-- generated from refs: - do not hand-edit -->
