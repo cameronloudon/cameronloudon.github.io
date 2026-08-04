@@ -4,9 +4,12 @@ a mechanically-derived generated: { by, at } frontmatter field, matching
 OKF v0.2's real actor-identity convention exactly (nested mapping, not a
 flat dotted key - corrected 2026-07-28 after direct verification against
 the live spec found the original flat generated.by: shape didn't match).
-wrapper:/identity: stay the single source of truth; generated: is always
-derived, never hand-edited - re-running this script refreshes it in place
-rather than duplicating it. Same relationship refs: already has to the
+wrapper:/identity: stay the single source of truth; generated: is derived
+once from them and left untouched on later runs unless wrapper:/identity:
+actually change - safe to re-run across a whole bundle repeatedly without
+advancing an already-correct at: (fixed 2026-08-04 after three confirmed
+occurrences of exactly that regression - see the idempotency guard below).
+Same relationship refs: already has to the
 generated ## Links footer (generate-links-footer.ps1), applied to a
 frontmatter field instead of a body-text footer. Full schema:
 _ai-context/attribution-schema.md.
@@ -125,6 +128,28 @@ foreach ($f in $files) {
         $by = "$wrapper/$identity"
     }
 
+    # Idempotency guard - if generated: already exists and its by: half
+    # already matches what wrapper:/identity: would produce right now,
+    # skip entirely rather than re-querying git log. Without this, running
+    # this script for any new file in the same bundle also re-touches
+    # every already-stamped file, and since re-running it after a prior
+    # amend makes that amend commit the file's new "most recent" git
+    # touch, at: silently ratchets forward to an increasingly meaningless
+    # date every time - confirmed for real across batches 29-31, 32, 33,
+    # and 34 before this guard existed. Only recompute when by: would
+    # actually change (a genuine wrapper:/identity: edit) or there's no
+    # generated: yet at all. A generated: line present but not matching
+    # this regex (malformed, or a pre-migration straggler) deliberately
+    # falls through to a normal recompute below - fixing it, not silently
+    # trusting or silently skipping it.
+    if ($generatedLineIdx -ge 0 -and $fmLines[$generatedLineIdx] -match 'generated:\s*\{\s*by:\s*([^,]+?)\s*,\s*at:') {
+        $existingBy = $Matches[1]
+        if ($existingBy -eq $by) {
+            $results += [PSCustomObject]@{ File = $f.Name; Status = "skipped (generated: already current)"; Generated = "" }
+            continue
+        }
+    }
+
     # -C targets the file's own directory explicitly - git log run from
     # wherever this script happens to be invoked (not necessarily inside
     # the bundle's own repo) silently found "no history" for a file that
@@ -169,6 +194,7 @@ Write-Output "Processed: $($files.Count) files (excluding index.md)"
 # the identity-backfill script, Open Decisions #54/#58).
 Write-Output "OK: $(@($results | Where-Object Status -eq 'OK').Count)"
 Write-Output "Skipped (no wrapper:/identity:): $(@($results | Where-Object {$_.Status -eq 'skipped (no wrapper:/identity:)'}).Count)"
+Write-Output "Skipped (generated: already current): $(@($results | Where-Object {$_.Status -eq 'skipped (generated: already current)'}).Count)"
 Write-Output "Skipped (no OKF frontmatter): $(@($results | Where-Object {$_.Status -eq 'skipped (no OKF frontmatter)'}).Count)"
 Write-Output "FAILED: $(@($results | Where-Object {$_.Status -like 'FAILED*'}).Count)"
 if ($errors.Count -gt 0) {
