@@ -85,7 +85,11 @@ Complete this block and include it in the session log:
 - **Session:** [ID]
 - **Result:** [Pass / Pass with notes / Fail — not committed]
 - **Notes:** [Any items that needed attention, or "None"]
+- **Caught and fixed (public):** [No / Yes — <one-line description>]
+- **Gibberish decoded:** [N]
 ```
+
+**On the last two lines (added 2026-08-04):** mandatory every session, answered explicitly even when the honest answer is "No" / "0" — an explicit non-occurrence is real data the public `/stats/` page can count on; a silently-omitted line isn't distinguishable from someone forgetting to check. Both feed that page's "By the numbers" and "Caught and fixed" sections directly (`_ai-context/generate-stats-data.ps1`), forward-only from 2026-08-04 — never backfilled against session logs written before this convention existed.
 
 ---
 

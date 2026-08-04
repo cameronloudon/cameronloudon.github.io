@@ -1,9 +1,26 @@
 ﻿{
-    "generated_at":  "2026-08-04T14:04:55+10:00",
+    "generated_at":  "2026-08-04T15:04:41+10:00",
     "sessions_logged":  84,
     "articles_published":  15,
     "messages_archived":  565,
     "open_decisions":  2,
+    "discussion_threads":  30,
+    "tooling_scripts":  11,
+    "independent_reviews":  1,
+    "gibberish_decoded":  0,
+    "whats_next":  [
+                       {
+                           "decision":  "#56",
+                           "text":  "Deciding how the Auditor, the system that checks this project\u0027s own work, should be credited, and how far its own authority should extend if it\u0027s ever given more than a screen to write to."
+                       },
+                       {
+                           "decision":  "#64",
+                           "text":  "A different AI model, on different software, has never actually tried to pick this project up cold and run it the way Claude Code does. The instructions are believed ready for that test — they just haven\u0027t been put in front of a stranger yet."
+                       }
+                   ],
+    "recent_catches":  [
+
+                       ],
     "growth_history":  [
                            {
                                "date":  "2026-07-09",

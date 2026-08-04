@@ -335,6 +335,39 @@ foreach ($section in $inventorySections) {
 }
 
 # ------------------------------------------------------------------
+# CHECK 4 -- Stats page's whats_next array vs live Open Decisions count
+# (added 2026-08-04, alongside the Stats page's What's Next/Caught and
+# Fixed sections moving from hand-authored HTML to data-driven loops --
+# generate-stats-data.ps1 already fails loudly on this same mismatch at
+# session-close time; this check exists so the same drift is also
+# catchable independently, without having to re-run that script.)
+# ------------------------------------------------------------------
+Write-Host "`n=== Check 4: Stats page whats_next vs live Open Decisions ===" -ForegroundColor Cyan
+
+$archivePath = Join-Path $RepoRoot "_ai-context\decisions-archive.md"
+$statsDataPath = Join-Path $RepoRoot "_data\stats.json"
+
+if (-not (Test-Path $archivePath)) {
+    Add-Finding "decisions-archive.md not found at $archivePath -- cannot verify Check 4."
+} elseif (-not (Test-Path $statsDataPath)) {
+    Add-Finding "_data/stats.json not found at $statsDataPath -- cannot verify Check 4."
+} else {
+    $archiveText = Get-Content $archivePath -Raw -Encoding UTF8
+    $tableNums = [regex]::Matches($stateText, '(?m)^\|\s*(\d+)\s*\|') | ForEach-Object { [int]$_.Groups[1].Value } | Select-Object -Unique
+    $archivedNums = [regex]::Matches($archiveText, '(?m)^## Decision #(\d+)') | ForEach-Object { [int]$_.Groups[1].Value } | Select-Object -Unique
+    $liveOpenCount = @($tableNums | Where-Object { $archivedNums -notcontains $_ }).Count
+
+    $statsData = Get-Content $statsDataPath -Raw -Encoding UTF8 | ConvertFrom-Json
+    $whatsNextCount = if ($statsData.whats_next) { @($statsData.whats_next).Count } else { 0 }
+
+    if ($whatsNextCount -ne $liveOpenCount) {
+        Add-Finding "_data/stats.json's whats_next has $whatsNextCount entries but $liveOpenCount decisions are currently open in PROJECT_STATE.md."
+    } else {
+        Write-Host "  OK -- whats_next ($whatsNextCount entries) matches the live open-decision count ($liveOpenCount)." -ForegroundColor Green
+    }
+}
+
+# ------------------------------------------------------------------
 # REPORT
 # ------------------------------------------------------------------
 Write-Host "`n=== Summary ===" -ForegroundColor Cyan

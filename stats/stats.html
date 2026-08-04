@@ -66,9 +66,22 @@ description: Not a vanity metric. Not a compliance report. The aggregate receipt
   <section class="stats-section">
     <h2>What's next</h2>
     <ul class="stats-list">
-      <li>A convention for capturing conversations that happen outside this project has been built and agreed. It just hasn't been tested yet against a real outside conversation. <span class="tag stats-ref-tag">#48</span></li>
-      <li>Deciding how the Auditor, the system that checks this project's own work, should be credited, and how far its own authority should extend if it's ever given more than a screen to write to. <span class="tag stats-ref-tag">#56</span></li>
-      <li>A different AI model, on different software, has never actually tried to pick this project up cold and run it the way Claude Code does. The instructions are believed ready for that test — they just haven't been put in front of a stranger yet. <span class="tag stats-ref-tag">#64</span></li>
+      {% for item in site.data.stats.whats_next %}
+        <li>{{ item.text }} <span class="tag stats-ref-tag">{{ item.decision }}</span></li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <hr>
+
+  <section class="stats-section">
+    <h2>By the numbers</h2>
+    <p class="stats-section-caption">A few more counts that don't fit a hero card, but say something real.</p>
+    <ul class="stats-list">
+      <li>{{ site.data.stats.discussion_threads }} discussion threads archived — the actual back-and-forth this framework exists to document, not single-shot exchanges.</li>
+      <li>{{ site.data.stats.tooling_scripts }} tooling scripts built — how much of this project's own process-checking now runs itself instead of needing a hand.</li>
+      <li>{{ site.data.stats.independent_reviews }} independent review{% if site.data.stats.independent_reviews != 1 %}s{% endif %} performed — real outside review by a different AI, not just the two building agents checking each other.</li>
+      <li>{{ site.data.stats.gibberish_decoded }} typos and nonsensical sentences decoded — real garbled input from Cameron, worked out before anything got built on a misreading. Tracked since 2026-08-04.</li>
     </ul>
   </section>
 
@@ -76,11 +89,15 @@ description: Not a vanity metric. Not a compliance report. The aggregate receipt
 
   <section class="stats-section">
     <h2>Caught and fixed</h2>
-    <ul class="stats-list stats-list-catches">
-      <li>A claimed "thirty years in CRM" didn't match the site's own published work history. Caught before it went out, corrected to what actually happened. <span class="tag stats-fixed-tag">fixed same session</span></li>
-      <li>One AI collaborator's sync step depended on a Windows-only tool the other AI collaborator had no way to run. Found during a routine check on how independent these systems really are from each other — a real gap, not a typo. <span class="tag stats-fixed-tag">fixed same session</span></li>
-      <li>A fix for how session timestamps get recorded was itself incomplete. Caught the next time the same check ran, not by a person remembering to look again. <span class="tag stats-fixed-tag">fixed same session</span></li>
-    </ul>
+    {% if site.data.stats.recent_catches.size > 0 %}
+      <ul class="stats-list stats-list-catches">
+        {% for catch in site.data.stats.recent_catches %}
+          <li>{{ catch.description }} <span class="tag stats-fixed-tag">{{ catch.date }}</span></li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p class="stats-section-caption">Nothing tagged yet under this tracking convention (started 2026-08-04) — check back after the next real catch.</p>
+    {% endif %}
   </section>
 
   <hr>
@@ -91,6 +108,7 @@ description: Not a vanity metric. Not a compliance report. The aggregate receipt
       <p>This page was developed by Cowork (Claude, Anthropic), then built and independently reviewed by Claude Code (Claude, Anthropic) acting in a separate Publish Agent role.</p>
       <p>Model: Claude Sonnet 5 (Anthropic) · Session: 2026-07-15-026 · Platform: Cowork (Draft) + Claude Code (Publish) · Date: 2026-07-31</p>
       <p>Cowork drafted the framing, the stat explainers, and translated this session's own real project history — decisions, corrections, catches — into plain language for a first-time visitor. Claude Code built the data generator and page structure, and reviewed the copy against the underlying facts before anything went live. Both arrived at this page's shape through several rounds of design discussion before Cameron gave the explicit go-ahead to build.</p>
+      <p><strong>Updated 2026-08-04 (session-79):</strong> "What's Next" and "Caught and Fixed" moved from hand-authored HTML to data-driven loops, closing the gap that let a resolved decision (#48) sit listed as still-open. A new "By the numbers" section was added (discussion threads, tooling scripts, independent reviews, and — Cameron's own addition — typos and nonsensical sentences decoded, tracked forward-only from today). Cowork's independent review caught a real design gap (an "optional tag" approach that made extraction reliable but left capture as memory-dependent as the original problem) and a real citation error in the staged proposal, both fixed before Cameron's go-ahead to build.</p>
       <p>Reviewed and approved by Cameron Loudon. Part of the Radical Collaboration Transparency framework.</p>
     </div>
   </div>

@@ -25,11 +25,29 @@
                             whose Gate column isn't the closed-decision
                             em-dash marker
 
-    Deliberately NOT generated here: "What's Next" plain-language lines
-    and "Caught and Fixed" narrative rows. Both are real editorial content
-    (Draft Agent territory, same content/HTML boundary this whole project
-    already draws) -- this script produces the numbers the page's
-    mechanical cards need, not the prose around them.
+    Additional mechanical counts (added 2026-08-04):
+      discussion_threads - count of "## Thread" headers in _messages/index.md
+      tooling_scripts    - count of _ai-context/*.ps1 files
+      independent_reviews - count of "role: Review" frontmatter lines
+                             across _messages/*.md (excluding index.md)
+
+    whats_next is NOT computed here -- it's hand-rewritten in full into
+    _data/stats.json, by whoever closes the session, BEFORE this script
+    runs (translating PROJECT_STATE.md's live Open Decisions into plain
+    English -- real editorial content, same content/HTML boundary this
+    project already draws elsewhere). This script only validates that
+    array's length against open_decisions and fails loudly on a mismatch
+    -- it never invents or silently trusts the array's content, only
+    checks a countable fact about it, then carries it forward unchanged.
+
+    gibberish_decoded and recent_catches are forward-only tallies, same
+    principle as growth_history: summed/collected from two new mandatory
+    Validation Record lines (_ai-context/rct-validation-checklist.md)
+    across every _session-logs/*.md whose own date: frontmatter is
+    2026-08-04 or later -- never backfilled against older logs that
+    predate this convention. recent_catches keeps the 5 most recent
+    "Yes" entries; gibberish_decoded sums every numeric entry, "No"/0
+    included, since an explicit zero is real data, not nothing.
 
     Growth history: appends today's messages_archived count to
     _ai-context/stats-history.json if today's date isn't already recorded
@@ -100,6 +118,82 @@ $archivedNumbers = [regex]::Matches((Get-Content $archivePath -Raw -Encoding UTF
 
 $openDecisions = @($tableNumbers | Where-Object { $archivedNumbers -notcontains $_ }).Count
 
+# discussion_threads: real "## Thread N" headers in _messages/index.md
+$indexPath = Join-Path $RepoRoot "_messages\index.md"
+$discussionThreads = @([regex]::Matches((Get-Content $indexPath -Raw -Encoding UTF8), '(?m)^## Thread \d+')).Count
+
+# tooling_scripts: the _ai-context/*.ps1 family itself
+$toolingScripts = @(Get-ChildItem (Join-Path $RepoRoot "_ai-context") -Filter "*.ps1" -ErrorAction SilentlyContinue).Count
+
+# independent_reviews: role: Review frontmatter lines across _messages/,
+# excluding index.md (hand-written curation, not a promoted record)
+$independentReviews = @(Get-ChildItem $messagesDir -Filter "*.md" -ErrorAction SilentlyContinue |
+    Where-Object { $_.Name -ne "index.md" } |
+    ForEach-Object { Get-Content $_.FullName -Raw -Encoding UTF8 } |
+    Select-String -Pattern '(?m)^role:\s*Review\s*$').Count
+
+# whats_next: validated, not computed -- see docstring. Read whatever is
+# already sitting in the existing stats.json (hand-rewritten earlier in
+# this same session-close sequence) and fail loudly if its length doesn't
+# match the live open-decision count, rather than silently trusting it.
+$whatsNext = @()
+$existingDataPath = Join-Path $RepoRoot "_data\stats.json"
+if (Test-Path $existingDataPath) {
+    $existingData = Get-Content $existingDataPath -Raw -Encoding UTF8 | ConvertFrom-Json
+    if ($existingData.whats_next) { $whatsNext = @($existingData.whats_next) }
+}
+if (@($whatsNext).Count -ne $openDecisions) {
+    Write-Output "FAILED: whats_next in _data/stats.json has $(@($whatsNext).Count) entries, but $openDecisions decisions are currently open."
+    Write-Output "Hand-rewrite the whats_next array in _data/stats.json to match PROJECT_STATE.md's live Open Decisions before running this script."
+    exit 1
+}
+
+# gibberish_decoded / recent_catches: forward-only, from session logs
+# dated 2026-08-04 or later (this convention's own start date -- see
+# docstring). Parsed from each log's own date: frontmatter, not its
+# filename, since filenames use the reserved-ID-vs-actual-date pattern
+# and don't reliably reflect when the session's real work happened.
+$tallyStartDate = [datetime]"2026-08-04"
+$gibberishDecoded = 0
+$catchCandidates = New-Object System.Collections.Generic.List[object]
+
+$logFiles = Get-ChildItem $sessionLogsDir -Filter "session-*.md" -ErrorAction SilentlyContinue
+foreach ($log in $logFiles) {
+    $logContent = Get-Content $log.FullName -Raw -Encoding UTF8
+
+    $dateMatch = [regex]::Match($logContent, '(?m)^date:\s*(\S+)\s*$')
+    if (-not $dateMatch.Success) { continue }
+    # Plain [datetime] cast in a try/catch, not TryParse -- the 2-arg
+    # TryParse(string, [ref]datetime) overload doesn't resolve on this
+    # PowerShell version (caught by actually running this against real
+    # session logs, not assumed to work from the method signature alone).
+    $logDate = $null
+    try { $logDate = [datetime]$dateMatch.Groups[1].Value } catch { continue }
+    if ($logDate -lt $tallyStartDate) { continue }
+
+    $sessionIdMatch = [regex]::Match($logContent, '(?m)^session_id:\s*(\S+)\s*$')
+    $sessionId = if ($sessionIdMatch.Success) { $sessionIdMatch.Groups[1].Value } else { $log.BaseName }
+
+    $gibberishMatch = [regex]::Match($logContent, '(?m)^\s*-\s*\*\*Gibberish decoded:\*\*\s*(\d+)')
+    if ($gibberishMatch.Success) { $gibberishDecoded += [int]$gibberishMatch.Groups[1].Value }
+
+    $catchMatch = [regex]::Match($logContent, ('(?m)^\s*-\s*\*\*Caught and fixed \(public\):\*\*\s*Yes\s*[-' + [char]0x2014 + ']\s*(.+)$'))
+    if ($catchMatch.Success) {
+        $catchCandidates.Add([ordered]@{
+            date        = $logDate.ToString("yyyy-MM-dd")
+            session     = $sessionId
+            description = $catchMatch.Groups[1].Value.Trim()
+        })
+    }
+}
+
+# Explicit List[object], not a bare pipeline result -- an empty pipeline
+# result serialized to {} instead of [] via ConvertTo-Json when nested as
+# a hashtable property value, the same PowerShell 5.1 array-wrapping
+# ambiguity $historyList was already built to avoid above. Caught by
+# running this against the real (currently empty) tally, not assumed.
+[System.Collections.Generic.List[object]]$recentCatches = @($catchCandidates | Sort-Object { [datetime]$_.date } -Descending | Select-Object -First 5)
+
 # ------------------------------------------------------------------
 # Growth history -- seed once, then append
 # ------------------------------------------------------------------
@@ -143,12 +237,18 @@ $dataDir = Split-Path $dataPath -Parent
 if (-not (Test-Path $dataDir)) { New-Item -ItemType Directory -Path $dataDir -Force | Out-Null }
 
 $output = [ordered]@{
-    generated_at       = (Get-Date -Format "yyyy-MM-ddTHH:mm:sszzz")
-    sessions_logged    = $sessionsLogged
-    articles_published = $articlesPublished
-    messages_archived  = $messagesArchived
-    open_decisions     = $openDecisions
-    growth_history     = $history
+    generated_at        = (Get-Date -Format "yyyy-MM-ddTHH:mm:sszzz")
+    sessions_logged     = $sessionsLogged
+    articles_published  = $articlesPublished
+    messages_archived   = $messagesArchived
+    open_decisions      = $openDecisions
+    discussion_threads  = $discussionThreads
+    tooling_scripts     = $toolingScripts
+    independent_reviews = $independentReviews
+    gibberish_decoded   = $gibberishDecoded
+    whats_next          = $whatsNext
+    recent_catches      = $recentCatches
+    growth_history      = $history
 }
 $output | ConvertTo-Json -Depth 5 | Set-Content -Path $dataPath -Encoding UTF8
 
@@ -157,6 +257,12 @@ Write-Output "Sessions logged: $sessionsLogged"
 Write-Output "Articles published: $articlesPublished"
 Write-Output "Messages archived: $messagesArchived"
 Write-Output "Open decisions: $openDecisions"
+Write-Output "Discussion threads: $discussionThreads"
+Write-Output "Tooling scripts: $toolingScripts"
+Write-Output "Independent reviews: $independentReviews"
+Write-Output "Gibberish decoded (total): $gibberishDecoded"
+Write-Output "What's Next entries: $(@($whatsNext).Count) (validated against $openDecisions open decisions)"
+Write-Output "Recent catches surfaced: $(@($recentCatches).Count)"
 Write-Output "Growth history: $($history.Count) points, latest = $today : $messagesArchived"
 Write-Output "Written to: $dataPath"
 Write-Output "History file: $historyPath"
