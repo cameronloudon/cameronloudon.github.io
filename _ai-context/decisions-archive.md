@@ -4,7 +4,7 @@ title: "Open Decisions Archive — cameronloudon.github.io"
 role: Publish
 wrapper: Claude Code
 identity: Sonnet 5
-generated: { by: Claude Code/Sonnet 5, at: 2026-08-02T15:53:57+10:00 }  # generated from wrapper:+identity:+commit-date - do not hand-edit
+generated: { by: Claude Code/Sonnet 5, at: 2026-08-04T13:38:14+10:00 }  # generated from wrapper:+identity:+commit-date - do not hand-edit
 aliases:
   - decisions archive
   - resolved open decisions
