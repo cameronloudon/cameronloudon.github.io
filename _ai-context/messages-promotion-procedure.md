@@ -4,7 +4,7 @@ title: "Messages Bundle — Promotion Procedure"
 role: Publish
 wrapper: Claude Code
 identity: Sonnet 5
-generated: { by: Claude Code/Sonnet 5, at: 2026-07-31T11:46:23+10:00 }  # generated from wrapper:+identity:+commit-date - do not hand-edit
+generated: { by: Claude Code/Sonnet 5, at: 2026-08-04T10:25:51+10:00 }  # generated from wrapper:+identity:+commit-date - do not hand-edit
 aliases:
   - messages promotion procedure
   - promotion procedure
@@ -15,7 +15,7 @@ refs:
   - ./backlog-promotion-workflow.md
 ---
 
-**Last updated:** 2026-07-11
+**Last updated:** 2026-08-04 — header corrected; the body already discussed Open Decision #57's `thread_number:`/`note:` (2026-07-31) and #58's `role:`/`wrapper:`/`identity:` triple (2026-07-28), both postdating what this line still claimed. Caught while reviewing `outside-conversation-capture-convention.md` against the same later conventions.
 **Applies to:** any file moving from `AI-Working/Messages/` (or a raw session log, via mechanical extraction) into the git-tracked `_messages/` bundle. Also the base convention for `_audit-findings/`, which reuses everything here — see `_ai-context/auditor-charter.md` §6 for the one audit-finding-specific addition (the verbatim-promotion rule).
 
 This file exists because four real conventions were established across a single session (Open Decisions #34, #42, #44, #45) and none of them were ever written down as one canonical procedure — each lived in its own Open Decision entry and message thread. Consolidating them here so a promotion doesn't depend on remembering, or re-deriving, four separate decisions.
