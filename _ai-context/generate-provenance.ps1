@@ -5,10 +5,20 @@ OKF v0.2's real actor-identity convention exactly (nested mapping, not a
 flat dotted key - corrected 2026-07-28 after direct verification against
 the live spec found the original flat generated.by: shape didn't match).
 wrapper:/identity: stay the single source of truth; generated: is derived
-once from them and left untouched on later runs unless wrapper:/identity:
-actually change - safe to re-run across a whole bundle repeatedly without
-advancing an already-correct at: (fixed 2026-08-04 after three confirmed
-occurrences of exactly that regression - see the idempotency guard below).
+once and then left completely alone on every later run - no comparison,
+no inference - unless the file is explicitly named via -ForceRestamp.
+(Second correction, 2026-08-04: the first fix compared by: to detect
+"nothing changed," but that fails the moment the same author genuinely
+re-edits a file's content without changing wrapper:/identity: - caught
+directly on decisions-archive.md, the same day the first fix shipped.
+Considered two automatic-detection alternatives - a commit-diff walk, a
+content hash - and rejected both in favor of an explicit signal: this
+project already prefers stated-over-inferred wherever inference has a
+real failure mode (role: not applicable stated rather than blank,
+stage: as an explicit marker), and a diff-walk's specific failure mode
+- confidently landing on a wrong date if it ever misjudges a commit -
+is worse than staleness for a field whose whole job is being a
+trustworthy record.)
 Same relationship refs: already has to the
 generated ## Links footer (generate-links-footer.ps1), applied to a
 frontmatter field instead of a body-text footer. Full schema:
@@ -53,7 +63,8 @@ Usage:
 #>
 
 param(
-    [Parameter(Mandatory=$true)][string]$BundlePath
+    [Parameter(Mandatory=$true)][string]$BundlePath,
+    [string[]]$ForceRestamp = @()
 )
 
 $marker = "# generated from wrapper:+identity:+commit-date - do not hand-edit"
@@ -128,26 +139,20 @@ foreach ($f in $files) {
         $by = "$wrapper/$identity"
     }
 
-    # Idempotency guard - if generated: already exists and its by: half
-    # already matches what wrapper:/identity: would produce right now,
-    # skip entirely rather than re-querying git log. Without this, running
-    # this script for any new file in the same bundle also re-touches
-    # every already-stamped file, and since re-running it after a prior
-    # amend makes that amend commit the file's new "most recent" git
-    # touch, at: silently ratchets forward to an increasingly meaningless
-    # date every time - confirmed for real across batches 29-31, 32, 33,
-    # and 34 before this guard existed. Only recompute when by: would
-    # actually change (a genuine wrapper:/identity: edit) or there's no
-    # generated: yet at all. A generated: line present but not matching
-    # this regex (malformed, or a pre-migration straggler) deliberately
-    # falls through to a normal recompute below - fixing it, not silently
-    # trusting or silently skipping it.
-    if ($generatedLineIdx -ge 0 -and $fmLines[$generatedLineIdx] -match 'generated:\s*\{\s*by:\s*([^,]+?)\s*,\s*at:') {
-        $existingBy = $Matches[1]
-        if ($existingBy -eq $by) {
-            $results += [PSCustomObject]@{ File = $f.Name; Status = "skipped (generated: already current)"; Generated = "" }
-            continue
-        }
+    # Explicit-signal guard (second correction, 2026-08-04) - a file with
+    # generated: already present is always left alone, full stop, unless
+    # named here. No by:/content comparison of any kind: the first fix's
+    # by:-comparison approach silently skipped a genuine same-author
+    # re-edit, since by: doesn't change when the author doesn't change.
+    # Whoever just made a real edit is the only one who actually knows
+    # it happened - they name the file, nothing is inferred. This also
+    # means a malformed generated: line (present but not the expected
+    # shape) is left alone by default too, not auto-fixed - fixing it
+    # unasked would be exactly the kind of inference this guard exists
+    # to eliminate.
+    if ($generatedLineIdx -ge 0 -and $ForceRestamp -notcontains $f.Name) {
+        $results += [PSCustomObject]@{ File = $f.Name; Status = "skipped (already stamped - not in -ForceRestamp)"; Generated = "" }
+        continue
     }
 
     # -C targets the file's own directory explicitly - git log run from
@@ -194,7 +199,7 @@ Write-Output "Processed: $($files.Count) files (excluding index.md)"
 # the identity-backfill script, Open Decisions #54/#58).
 Write-Output "OK: $(@($results | Where-Object Status -eq 'OK').Count)"
 Write-Output "Skipped (no wrapper:/identity:): $(@($results | Where-Object {$_.Status -eq 'skipped (no wrapper:/identity:)'}).Count)"
-Write-Output "Skipped (generated: already current): $(@($results | Where-Object {$_.Status -eq 'skipped (generated: already current)'}).Count)"
+Write-Output "Skipped (already stamped, not forced): $(@($results | Where-Object {$_.Status -eq 'skipped (already stamped - not in -ForceRestamp)'}).Count)"
 Write-Output "Skipped (no OKF frontmatter): $(@($results | Where-Object {$_.Status -eq 'skipped (no OKF frontmatter)'}).Count)"
 Write-Output "FAILED: $(@($results | Where-Object {$_.Status -like 'FAILED*'}).Count)"
 if ($errors.Count -gt 0) {
