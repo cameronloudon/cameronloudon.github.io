@@ -7,7 +7,7 @@
 
 ## Active Branch
 
-`session-78` — branched from `main` at `b427836` (Merge pull request #102 from cameronloudon/session-77). Open Decision #48 closed, generate-provenance.ps1's second correction, and batch-36 backlog promotion done this session; ready for PR.
+`session-79` — branched from `main` at `49580d2` (Merge pull request #103 from cameronloudon/session-78). No work started yet.
 Cameron merges to main. Do not commit directly to main.
 
 ---
