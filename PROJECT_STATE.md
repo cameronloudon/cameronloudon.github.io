@@ -7,7 +7,7 @@
 
 ## Active Branch
 
-`session-76` — branched from `main` at `63c7dd3` (Merge pull request #100 from cameronloudon/session-75). First real Class 3 pilot findings, convention edits, and batch-34 backlog promotion done this session; ready for PR.
+`session-77` — branched from `main` at `667560e` (Merge pull request #101 from cameronloudon/session-76). No work started yet.
 Cameron merges to main. Do not commit directly to main.
 
 ---
