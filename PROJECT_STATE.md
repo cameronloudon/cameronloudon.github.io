@@ -7,7 +7,7 @@
 
 ## Active Branch
 
-`session-77` — branched from `main` at `667560e` (Merge pull request #101 from cameronloudon/session-76). generate-provenance.ps1's regression fix and batch-35 backlog promotion done this session; ready for PR.
+`session-78` — branched from `main` at `b427836` (Merge pull request #102 from cameronloudon/session-77). No work started yet.
 Cameron merges to main. Do not commit directly to main.
 
 ---
