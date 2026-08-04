@@ -1,9 +1,30 @@
 ﻿{
-    "generated_at":  "2026-08-04T14:04:55+10:00",
-    "sessions_logged":  84,
+    "generated_at":  "2026-08-04T15:13:51+10:00",
+    "sessions_logged":  85,
     "articles_published":  15,
-    "messages_archived":  565,
+    "messages_archived":  576,
     "open_decisions":  2,
+    "discussion_threads":  31,
+    "tooling_scripts":  11,
+    "independent_reviews":  1,
+    "gibberish_decoded":  0,
+    "whats_next":  [
+                       {
+                           "decision":  "#56",
+                           "text":  "Deciding how the Auditor, the system that checks this project\u0027s own work, should be credited, and how far its own authority should extend if it\u0027s ever given more than a screen to write to."
+                       },
+                       {
+                           "decision":  "#64",
+                           "text":  "A different AI model, on different software, has never actually tried to pick this project up cold and run it the way Claude Code does. The instructions are believed ready for that test — they just haven\u0027t been put in front of a stranger yet."
+                       }
+                   ],
+    "recent_catches":  [
+                           {
+                               "date":  "2026-08-04",
+                               "session":  "2026-07-15-038",
+                               "description":  "Running the new stats-generation logic against live data caught two real bugs before they shipped: a PowerShell method overload that doesn\u0027t resolve on this version, and an empty list silently serializing to the wrong JSON shape — the same class of bug the page\u0027s own growth-history logic had already been built to avoid once before."
+                           }
+                       ],
     "growth_history":  [
                            {
                                "date":  "2026-07-09",
@@ -37,7 +58,7 @@
                            },
                            {
                                "date":  "2026-08-04",
-                               "count":  565,
+                               "count":  576,
                                "commit":  null,
                                "note":  null
                            }
