@@ -7,7 +7,7 @@
 
 ## Active Branch
 
-`session-79` — branched from `main` at `49580d2` (Merge pull request #103 from cameronloudon/session-78). Stats page regeneration (What's Next/Caught and Fixed data-driven) and batch-37 backlog promotion done this session; ready for PR.
+`session-80` — branched from `main` at `d693249` (Merge pull request #104 from cameronloudon/session-79). No work started yet.
 Cameron merges to main. Do not commit directly to main.
 
 ---
