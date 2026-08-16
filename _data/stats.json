@@ -1,10 +1,10 @@
 ﻿{
-    "generated_at":  "2026-08-16T15:24:47+10:00",
-    "sessions_logged":  86,
+    "generated_at":  "2026-08-16T16:42:11+10:00",
+    "sessions_logged":  87,
     "articles_published":  15,
-    "messages_archived":  576,
+    "messages_archived":  604,
     "open_decisions":  3,
-    "discussion_threads":  31,
+    "discussion_threads":  33,
     "tooling_scripts":  14,
     "independent_reviews":  1,
     "gibberish_decoded":  0,
@@ -23,6 +23,11 @@
                        }
                    ],
     "recent_catches":  [
+                           {
+                               "date":  "2026-08-16",
+                               "session":  "2026-07-15-040",
+                               "description":  "a filename that broke the index-completeness checker\u0027s own regex, caught live rather than assumed working, and a separate pre-existing gap in the wider `_messages/` corpus (43 files missing generated footers) surfaced by running the generator against the whole bundle instead of just the new batch."
+                           },
                            {
                                "date":  "2026-08-16",
                                "session":  "2026-07-15-039",
@@ -73,7 +78,7 @@
                            },
                            {
                                "date":  "2026-08-16",
-                               "count":  576,
+                               "count":  604,
                                "commit":  null,
                                "note":  null
                            }
