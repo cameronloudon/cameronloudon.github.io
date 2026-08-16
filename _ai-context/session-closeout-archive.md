@@ -26,8 +26,11 @@ refs:
 
 **Trimmed 2026-08-16** (generate-closeout-trim.ps1, threshold 5): session-76 through session-76 close-out paragraphs moved here from PROJECT_STATE.md. Sessions 81, 80, 79, 78, 77 stayed inline as the 5 most recent at the time of this trim.
 
+**Trimmed 2026-08-16** (generate-closeout-trim.ps1, threshold 5): session-77 through session-77 close-out paragraphs moved here from PROJECT_STATE.md. Sessions 82, 81, 80, 79, 78 stayed inline as the 5 most recent at the time of this trim.
+
 ---
 
+**Session-77 close-out (2026-08-04):** `session-2026-07-15-036.md` written to cover session-77's actual work — same reserved-ID-vs-actual-date pattern as its predecessors; the ID was reserved at session-76's close-out on 2026-08-04, and session-77's real work (the `generate-provenance.ps1` idempotency fix, its testing, and batch-35 backlog promotion) ran the same day. This field advances past it now.
 **Session-76 close-out (2026-08-04):** `session-2026-07-15-035.md` written to cover session-76's actual work — same reserved-ID-vs-actual-date pattern as its predecessors; the ID was reserved at session-75's close-out on 2026-08-04, and session-76's real work (the first real Class 3 pilot, its findings and reclassification, the convention edits, and batch-34 backlog promotion) ran the same day. This field advances past it now.
 **Session-75 close-out (2026-08-04):** `session-2026-07-15-034.md` written to cover session-75's actual work — same reserved-ID-vs-actual-date pattern as its predecessors; the ID was reserved at session-74's close-out on 2026-08-04, and session-75's real work (the What's Next update, the outside-capture-convention fix, and batch-33 backlog promotion) ran the same day. This field advances past it now.
 **Session-74 close-out (2026-08-04):** `session-2026-07-15-033.md` written to cover session-74's actual work — same reserved-ID-vs-actual-date pattern as its predecessors; the ID was reserved at session-73's close-out on 2026-08-04, and session-74's real work (the Archive Growth chart scaling fix, batch-32 backlog promotion, and the caught-and-reverted provenance regression) ran the same day. This field advances past it now.
