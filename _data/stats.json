@@ -1,11 +1,11 @@
 ﻿{
-    "generated_at":  "2026-08-04T15:13:51+10:00",
+    "generated_at":  "2026-08-16T15:04:13+10:00",
     "sessions_logged":  85,
     "articles_published":  15,
     "messages_archived":  576,
     "open_decisions":  2,
     "discussion_threads":  31,
-    "tooling_scripts":  11,
+    "tooling_scripts":  14,
     "independent_reviews":  1,
     "gibberish_decoded":  0,
     "whats_next":  [
@@ -58,6 +58,12 @@
                            },
                            {
                                "date":  "2026-08-04",
+                               "count":  576,
+                               "commit":  null,
+                               "note":  null
+                           },
+                           {
+                               "date":  "2026-08-16",
                                "count":  576,
                                "commit":  null,
                                "note":  null

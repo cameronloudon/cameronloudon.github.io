@@ -266,3 +266,4 @@ Write-Output "Recent catches surfaced: $(@($recentCatches).Count)"
 Write-Output "Growth history: $($history.Count) points, latest = $today : $messagesArchived"
 Write-Output "Written to: $dataPath"
 Write-Output "History file: $historyPath"
+exit 0
