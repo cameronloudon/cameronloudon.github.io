@@ -22,8 +22,11 @@ refs:
 
 **Trimmed 2026-08-16** (generate-closeout-trim.ps1, threshold 5): session-64 through session-74 close-out paragraphs moved here from PROJECT_STATE.md. Sessions 79, 78, 77, 76, 75 stayed inline as the 5 most recent at the time of this trim.
 
+**Trimmed 2026-08-16** (generate-closeout-trim.ps1, threshold 5): session-75 through session-75 close-out paragraphs moved here from PROJECT_STATE.md. Sessions 80, 79, 78, 77, 76 stayed inline as the 5 most recent at the time of this trim.
+
 ---
 
+**Session-75 close-out (2026-08-04):** `session-2026-07-15-034.md` written to cover session-75's actual work — same reserved-ID-vs-actual-date pattern as its predecessors; the ID was reserved at session-74's close-out on 2026-08-04, and session-75's real work (the What's Next update, the outside-capture-convention fix, and batch-33 backlog promotion) ran the same day. This field advances past it now.
 **Session-74 close-out (2026-08-04):** `session-2026-07-15-033.md` written to cover session-74's actual work — same reserved-ID-vs-actual-date pattern as its predecessors; the ID was reserved at session-73's close-out on 2026-08-04, and session-74's real work (the Archive Growth chart scaling fix, batch-32 backlog promotion, and the caught-and-reverted provenance regression) ran the same day. This field advances past it now.
 
 **Session-73 close-out (2026-08-04):** `session-2026-07-15-032.md` written to cover session-73's actual work — same reserved-ID-vs-actual-date pattern as its predecessors; the ID was reserved at session-72's close-out on 2026-08-02, and session-73's real work (a config/startup-file review, the link-visibility CSS fix, and the batches 29–31 backlog promotion) ran 2026-08-04. This field advances past it now.

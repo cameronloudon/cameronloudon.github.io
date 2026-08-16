@@ -1,9 +1,9 @@
 ﻿{
-    "generated_at":  "2026-08-16T15:04:13+10:00",
-    "sessions_logged":  85,
+    "generated_at":  "2026-08-16T15:24:47+10:00",
+    "sessions_logged":  86,
     "articles_published":  15,
     "messages_archived":  576,
-    "open_decisions":  2,
+    "open_decisions":  3,
     "discussion_threads":  31,
     "tooling_scripts":  14,
     "independent_reviews":  1,
@@ -16,9 +16,18 @@
                        {
                            "decision":  "#64",
                            "text":  "A different AI model, on different software, has never actually tried to pick this project up cold and run it the way Claude Code does. The instructions are believed ready for that test — they just haven\u0027t been put in front of a stranger yet."
+                       },
+                       {
+                           "decision":  "#66",
+                           "text":  "A new AI tool joined the project, took one look at how much has to be re-read every single session, and proposed streamlining it. The first round of fixes — cleaning up duplicated content, automating the tedious parts of closing a session — is built and working; deciding how much further to take it is still open."
                        }
                    ],
     "recent_catches":  [
+                           {
+                               "date":  "2026-08-16",
+                               "session":  "2026-07-15-039",
+                               "description":  "three real bugs caught by actually running new code against live data before trusting it: a path-resolution mismatch between PowerShell\u0027s working directory and .NET\u0027s file APIs that silently wrote a stray file; a doubled blank line from an off-by-one in a text-insertion script; and a missing exit code that masked success as failure when scripts were composed together, which also turned out to be a latent bug in already-shipped code (`generate-stats-data.ps1`) that had simply never been exposed before."
+                           },
                            {
                                "date":  "2026-08-04",
                                "session":  "2026-07-15-038",
