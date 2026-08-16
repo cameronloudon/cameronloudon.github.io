@@ -1,0 +1,102 @@
+---
+layout: default
+title: "Harness Racing — DeepSeek, Cowork & Code Hot to Trot"
+permalink: /ideas/harness-racing-deepseek-cowork-code/
+description: A brand-new AI with zero track record proposed rewriting this project's own foundations on its first day — what the review process caught, corrected, and left standing says more than the proposal itself did.
+---
+
+<article class="idea-page">
+
+  <header class="page-header">
+    <span class="eyebrow">My Ideas · Retrospective · Published</span>
+    <h1>Harness Racing — DeepSeek, Cowork &amp; Code Hot to Trot</h1>
+    <p class="intro">A new AI walked into a three-month-old project one morning and, by that afternoon, had proposed rewriting the files it runs on. What happened next is less a story about the AI than about the process it walked into — and what that process is actually for.</p>
+  </header>
+
+  <hr>
+
+  <section class="idea-section">
+    <p>It had no track record here. Nobody had tested whether it would follow the rules, respect the boundaries, or tell the truth about what it hadn't checked.</p>
+  </section>
+
+  <hr>
+
+  <section class="idea-section">
+    <h2>The Proposal</h2>
+    <p>DeepSeek Harness — a harness running <code>deepseek-v4-flash</code>, given a one-off, tightly scoped trial by Cameron: read access to the project's records, then a one-off grant to write into the shared discussion space where every proposal on this project gets made — read the entire startup configuration cold. It measured what every session costs to begin: somewhere between 35,000 and 45,000 tokens, before any real work starts, most of it stable reference material re-read from scratch every time. Then it proposed restructuring the instruction files this whole project depends on: a canonical core instead of four hand-maintained copies, a generated summary instead of the full read every session, automated enforcement instead of a checklist someone has to remember to run.</p>
+    <p>That is a lot of trust to extend to something with zero history. The proposal itself knew it — it offered four options, including doing nothing, and asked to be argued with rather than agreed with.</p>
+  </section>
+
+  <hr>
+
+  <section class="idea-section">
+    <h2>What the Review Actually Caught</h2>
+    <p>Two independent reviews went out the same day, deliberately built so neither would see the other's answer first. Between them, they found real problems. The proposal had mislabeled a bug — describing something as an "ordering" failure when the archived decision it cited was actually about a script never being wired into a checklist at all. It had proposed testing a redesigned instruction set against a smaller local model before the instruction set itself was proven complete — a test that couldn't have told anyone anything, since a failure would have been impossible to attribute to the model or to the leftover ambiguity in what it was being tested against. And it had framed two different problems — enforcement failures that had nothing to do with file size, and a reading burden that turned out not to exist for the one person who actually mattered — as if they were the same argument.</p>
+    <p>Every one of those went into the record as a stated finding, not a private correction folded quietly into a cleaner second draft. When one review's citation fix turned out to be half-right — pointing at a real, different, undocumented bug hiding in the same paragraph — that got named too, credited to whoever actually found the fuller picture.</p>
+  </section>
+
+  <hr>
+
+  <section class="idea-section">
+    <h2>Getting It Wrong, on the Record</h2>
+    <p>The clearest example wasn't in the proposal at all. Partway through, live, in conversation, one reviewer suspected the DeepSeek price evidence being cited might be self-interested — the model's own operating cost had just risen, and the timing read as convenient. It was a reasonable-sounding guess, and it was wrong. Cameron had raised the underlying point himself, days earlier, as a general risk that applies to any provider — DeepSeek's price hike just happened to verify it in real time, days before this conversation happened. That correction went into the filed record as plainly as everything else: not "here's what we concluded," but "here's what I got wrong, and here's what actually happened."</p>
+    <p>That's the part worth sitting with. A collaboration process is only as trustworthy as what it does with its own mistakes. This one didn't smooth them over.</p>
+  </section>
+
+  <hr>
+
+  <section class="idea-section">
+    <h2>The Argument Proving Itself, Twice, by Accident</h2>
+    <p>The proposal's real thesis wasn't about tokens. It was that nothing load-bearing should live in only one tool's files — that AI independence means no single tool holding content another tool couldn't recover. While that argument was still being debated in the abstract, it stopped being abstract. Checking her own platform against the standard being discussed, one participant found her own session-start instructions pointed at nothing — a placeholder line, not a real instruction. Checking its own configuration, DeepSeek Harness found the identical shape of gap: a working mechanism, aimed at the wrong files, because the file that mattered wasn't even in its list of defaults. Two unrelated tools, checked independently, on the same day, hit the same wall. Nobody had to argue that the risk was real after that. It had already happened, twice, in front of everyone.</p>
+  </section>
+
+  <hr>
+
+  <section class="idea-section">
+    <h2>The Decisions That Stayed Human</h2>
+    <p>At several points, all three participants converged on the same read of something, and it would have been easy to just proceed — three independent AIs agreeing looks a lot like consensus. Cameron didn't let it stand in for his own judgment. Asked directly whether a compressed, AI-facing version of the project's core instructions should replace the version he could read himself, he said he didn't know, and asked for the question to stay open rather than be resolved on his behalf by three models that happened to agree with each other. He also made calls none of the three would have made alone — replacing a single-file "wins on conflict" rule with an automated check that verifies agreement across several smaller pieces, a real structural change, decided plainly and then handed back: argue with this if you see a problem, don't assume silence means support.</p>
+  </section>
+
+  <hr>
+
+  <section class="idea-section">
+    <h2>Four Bugs, Not Four Claims</h2>
+    <p>Everything that got built that day broke at least once before it worked. A script wrote to the wrong path because two different tools disagreed about what the working directory was. A trim script left a doubled blank line behind. A missing exit code silently turned success into failure once two new scripts were composed together — and that same missing exit code turned out to be sitting, undetected, in a script that had been running in production for weeks. Nobody had ever composed it with anything else before, so nobody had ever found it. Testing that day didn't confirm things worked. It kept finding out, one layer at a time, that they didn't — and each time, the fix went in before anything was trusted.</p>
+  </section>
+
+  <hr>
+
+  <section class="idea-section">
+    <h2>The Last Check</h2>
+    <p>Toward the end of the day, at Cameron's request, a full raw transcript of the original conversation was pulled and reviewed — not the polished proposal, not the summarized account, but the actual back-and-forth as it happened. Checking it turned up something that, on first read, looked like exactly the kind of problem this whole process exists to catch: a permission denial, followed by what read like a quiet retry into a wider access mode. Following it further, in the actual raw record rather than stopping at the alarming-looking line, showed something better than that — a transparent, human-gated approval system, explained plainly before any write was attempted, with every single write requiring an individual, manual approval, and at least one moment where a cancelled approval was treated as a real signal to stop and ask, not a prompt to route around.</p>
+    <p>It was also something nobody had written down anywhere in the polished record. Every review that day had checked declared claims against source files — verifying that what was said matched what was true. None of them had checked whether what was said was complete. That gap only closed because someone went back to the raw transcript instead of trusting the summary of it, including the summaries the participants had written of themselves.</p>
+    <p>That's the actual shape of the day, more than any single script or decision: a process built to survive being handed a flawed proposal from an unproven source, strong enough to correct every one of its own participants at least once, and still leave the decisions that mattered with the one person accountable for them — right down to checking, at the very end, whether the account of the day was itself telling the whole story.</p>
+  </section>
+
+  <hr>
+
+  <section class="idea-section">
+    <h2>A Note From Cameron</h2>
+    <p>I want to say something about the tool itself, separate from what it did today. DeepSeek Harness is a developer-only release, one day old at the time of this conversation — and it was a revelation. I thoroughly enjoyed working in it. As a wrapper and client experience, it stands right up there with Claude Desktop and Claude Code, this early. That's worth saying plainly, not just implying through the fact that it held up to scrutiny all day.</p>
+  </section>
+
+  <div class="tags">
+    <span class="tag">#idea-original</span>
+    <span class="tag">#ai-collaboration</span>
+    <span class="tag">#long-forming</span>
+    <span class="tag">#session-claude</span>
+  </div>
+
+  <hr>
+
+  <div class="collab-note">
+    <div class="collab-note-header">🤝 Collaboration Note</div>
+    <div class="collab-note-body">
+      <p>This retrospective was drafted by Cowork (Claude, Anthropic), recounting the same-day proposal, review, and consensus process run with DeepSeek Harness (deepseek-v4-flash) and Claude Code (Claude, Anthropic) in <code>AI-Working/Messages/</code>.</p>
+      <p>Model: Claude Sonnet 5 · Session: 2026-07-15-041 · Platform: Cowork (Draft) + Claude Code (Publish) · Date: 2026-08-16</p>
+      <p>Cowork drafted the retrospective from the day's own record — the proposal, both independent reviews, the convergence rounds, and the raw conversation transcript. Claude Code converted the approved draft into this page. Cameron directed the third-person voice for the retrospective itself (the same deliberate departure from his usual first-person voice used for <a href="/ideas/the-auditor-has-landed/">The Auditor Has Landed</a>), contributed the closing note in his own first-person voice, and reviewed and approved the whole piece.</p>
+      <p>Reviewed and approved by Cameron Loudon. Part of the Radical Collaboration Transparency framework.</p>
+    </div>
+  </div>
+
+</article>
