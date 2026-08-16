@@ -13,15 +13,41 @@ refs:
   - ../PROJECT_STATE.md
 ---
 
-**Last updated:** 2026-07-29
+**Last updated:** 2026-08-16
 **Purpose:** The full close-out narrative for every entry that used to sit under `PROJECT_STATE.md`'s "Next Session Log ID" heading, once it's no longer the *current* entry. `PROJECT_STATE.md` keeps only the live `NEXT_SESSION_LOG_ID` value, the most recent session's close-out paragraph, and the mechanically-checked "existing session logs are:" enumerated list — that list is read directly by `_ai-context/function-b-state-check.ps1`'s Check 2 and must stay in `PROJECT_STATE.md`, not here. Everything else in this file is moved verbatim, unedited, in the same order it appeared in `PROJECT_STATE.md`. Same reasoning and pattern as `decisions-archive.md`: this file's own content is not mandatory session-start reading, so it isn't in the file that's read at the start of every session.
 
 **Trimmed 2026-07-29**, following a general configuration/startup-file review that flagged `PROJECT_STATE.md`'s size and the repetitive, near-identical shape of these close-out paragraphs as the file's own version of the token-cost problem `decisions-archive.md` was built to solve for Open Decisions. Moved here: session-43 through session-62's close-out paragraphs, plus four older narrative entries describing the session-close handshake's own history (session-35's retroactive fix, session-38's recurrence and same-day resolution, session-41's third recurrence, and the 2026-07-26 session-log-count correction). Session-63's close-out stayed inline in `PROJECT_STATE.md` as the entry current at the time of this trim.
 
 **Session-63 archived, same day, at session-64's own close-out:** superseded as the current entry once session-64 closed; moved here in the normal course of the trim this file exists to do, not a second special-case pass.
 
+**Trimmed 2026-08-16** (generate-closeout-trim.ps1, threshold 5): session-64 through session-74 close-out paragraphs moved here from PROJECT_STATE.md. Sessions 79, 78, 77, 76, 75 stayed inline as the 5 most recent at the time of this trim.
+
+**Trimmed 2026-08-16** (generate-closeout-trim.ps1, threshold 5): session-75 through session-75 close-out paragraphs moved here from PROJECT_STATE.md. Sessions 80, 79, 78, 77, 76 stayed inline as the 5 most recent at the time of this trim.
+
 ---
 
+**Session-75 close-out (2026-08-04):** `session-2026-07-15-034.md` written to cover session-75's actual work — same reserved-ID-vs-actual-date pattern as its predecessors; the ID was reserved at session-74's close-out on 2026-08-04, and session-75's real work (the What's Next update, the outside-capture-convention fix, and batch-33 backlog promotion) ran the same day. This field advances past it now.
+**Session-74 close-out (2026-08-04):** `session-2026-07-15-033.md` written to cover session-74's actual work — same reserved-ID-vs-actual-date pattern as its predecessors; the ID was reserved at session-73's close-out on 2026-08-04, and session-74's real work (the Archive Growth chart scaling fix, batch-32 backlog promotion, and the caught-and-reverted provenance regression) ran the same day. This field advances past it now.
+
+**Session-73 close-out (2026-08-04):** `session-2026-07-15-032.md` written to cover session-73's actual work — same reserved-ID-vs-actual-date pattern as its predecessors; the ID was reserved at session-72's close-out on 2026-08-02, and session-73's real work (a config/startup-file review, the link-visibility CSS fix, and the batches 29–31 backlog promotion) ran 2026-08-04. This field advances past it now.
+
+**Session-72 close-out (2026-08-02):** `session-2026-07-15-031.md` written to cover session-72's actual work — same reserved-ID-vs-actual-date pattern as its predecessors; the ID was reserved at session-71's close-out on 2026-07-31, and session-72's real work (Open Decision #65 — the Agent Participation Guide, converged with Cowork and built) ran 2026-08-02. This field advances past it now.
+
+**Session-71 close-out (2026-07-31):** `session-2026-07-15-030.md` written to cover session-71's actual work — same reserved-ID-vs-actual-date pattern as its predecessors; the ID was reserved at session-70's close-out on 2026-07-31, and session-71's real work (Open Decision #63 — the Publish Agent independence hardening pass, converged with Cowork) ran the same day. This field advances past it now.
+
+**Session-70 close-out (2026-07-31):** `session-2026-07-15-029.md` written to cover session-70's actual work — same reserved-ID-vs-actual-date pattern as its predecessors; the ID was reserved at session-69's close-out on 2026-07-31, and session-70's real work (Open Decision #62 — the Stats regeneration process gap Cowork found and reported, fixed at both the immediate-data and the structural-checklist layer) ran the same day. This field advances past it now.
+
+**Session-69 close-out (2026-07-31):** `session-2026-07-15-028.md` written to cover session-69's actual work — same reserved-ID-vs-actual-date pattern as its predecessors; the ID was reserved at session-68's close-out on 2026-07-31, and session-69's real work (`system-architecture.md` brought current, Open Decision #61 resolved and its scanner built) ran the same day. This field advances past it now.
+
+**Session-68 close-out (2026-07-31):** `session-2026-07-15-027.md` written to cover session-68's actual work — same reserved-ID-vs-actual-date pattern as its predecessors; the ID was reserved at session-67's close-out on 2026-07-31, and session-68's real work (Cowork's live-page verification, two findings fixed) ran the same day. This field advances past it now.
+
+**Session-67 close-out (2026-07-31):** `session-2026-07-15-026.md` written to cover session-67's actual work — same reserved-ID-vs-actual-date pattern as its predecessors; the ID was reserved at session-66's close-out on 2026-07-31. Five threads, not just the first: Open Decision #57 built and archived (`generate-index-entry.ps1`) and #61 opened; a cold-context subagent audit of the Publish Agent onboarding path found and fixed two real AI-independence gaps (the Phase 2 robocopy Bash/PowerShell instruction, six stale paths in `ai-content-creation-spec.md`); the `/stats/` page designed, named, and built end to end with Cowork, including three real bugs in `generate-stats-data.ps1` caught only by running it against live data; and the `AI-Working/Messages/` backlog cleared twice in the same calendar day (batches 26-27, then 28) — concrete, repeated evidence for the still-unbuilt standing-backlog-check proposal. This field advances past it now.
+
+**Session-66 close-out (2026-07-31):** `session-2026-07-15-025.md` written to cover session-66's actual work — same reserved-ID-vs-actual-date pattern as its predecessors; the ID was reserved at session-65's close-out on 2026-07-31, and session-66's real work (the `_messages/` bundle table compression, Function B redesign, and Open Decision #35's archival) ran the same day. This field advances past it now.
+
+**Session-65 close-out (2026-07-31):** `session-2026-07-15-024.md` written to cover session-65's actual work — same reserved-ID-vs-actual-date pattern as its predecessors; the ID was reserved at session-64's close-out on 2026-07-29, but session-65's real work (the Buzz/Marketing OS article build, and backlog-promotion batches 26–27 clearing `AI-Working/Messages/` to zero) ran 2026-07-31. This field advances past it now.
+
+**Session-64 close-out (2026-07-29):** `session-2026-07-15-023.md` written to cover session-64's actual work — same reserved-ID-vs-actual-date pattern as its predecessors; the ID was reserved at session-63's close-out on 2026-07-28, but session-64's real work (a configuration/startup-file review, `PROJECT_STATE.md`'s Next Session Log ID section trimmed into `_ai-context/session-closeout-archive.md`, and seven backlog-promotion batches — 19 through 25, 180 files — that close out the entire historical `AI-Working/Messages/` backlog through 2026-07-28) ran 2026-07-29. This field advances past it now.
 **Session-63 close-out (2026-07-28):** `session-2026-07-15-022.md` written to cover session-63's actual work — same reserved-ID-vs-actual-date pattern as its predecessors; the ID was reserved at session-62's close-out on 2026-07-28, but session-63's real work (five backlog-promotion batches, 65 files, spanning batches 14–18 across 2026-06-26 and 2026-07-05 through 2026-07-24, a new Thread 11 opened, several existing threads extended, one ref-path bug caught and fixed mid-batch) ran the same day. This field advances past it now.
 
 ---
