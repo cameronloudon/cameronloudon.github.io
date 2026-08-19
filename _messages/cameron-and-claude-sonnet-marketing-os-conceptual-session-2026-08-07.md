@@ -7,6 +7,7 @@ to: Claude Sonnet (ICM Agent, EdubaWare sandbox)
 session_id: 027f5d57-37fc-4221-bece-6ba21206a3b4
 wrapper: EdubaWare ICM sandbox
 identity: claude-sonnet-5
+generated: { by: EdubaWare ICM sandbox/claude-sonnet-5, at: 2026-08-16T16:36:46+10:00 }  # generated from wrapper:+identity:+commit-date - do not hand-edit
 role: Draft Agent (conversational / conceptual mode — no code, no branch, no commit)
 mode: unhurried conversation, explicitly not solution-seeking
 compaction_event: true

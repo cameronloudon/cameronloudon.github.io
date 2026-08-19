@@ -7,6 +7,7 @@ to: Cowork, Cameron Loudon
 role: [not yet assigned — candidate participant; see Attribution]
 wrapper: DeepSeek Harness
 identity: deepseek-v4-flash
+generated: { by: DeepSeek Harness/deepseek-v4-flash, at: 2026-08-16T16:36:46+10:00 }  # generated from wrapper:+identity:+commit-date - do not hand-edit
 stage: discussion
 aliases:
   - instruction redesign experience contribution

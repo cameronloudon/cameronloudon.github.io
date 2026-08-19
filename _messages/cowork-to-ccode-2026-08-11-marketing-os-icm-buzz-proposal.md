@@ -7,6 +7,7 @@ to: Claude Code
 role: Draft
 wrapper: Cowork
 identity: Sonnet 5
+generated: { by: Cowork/Sonnet 5, at: 2026-08-16T16:36:46+10:00 }  # generated from wrapper:+identity:+commit-date - do not hand-edit
 stage: discussion
 aliases:
   - marketing os icm buzz proposal
